@@ -480,3 +480,39 @@ java.lang.IllegalArgumentException: Index out of bounds
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:726)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:542)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1478)
+
+!ENTRY org.eclipse.core.resources 4 2 2016-03-21 21:00:02.100
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.dltk.internal.core.ExternalProjectFragment.getTimeStamp(ExternalProjectFragment.java:332)
+	at org.eclipse.dltk.internal.core.ModelManager$PerProjectInfo.rememberExternalLibTimestamps(ModelManager.java:227)
+	at org.eclipse.dltk.internal.core.ModelManager.saving(ModelManager.java:2366)
+	at org.eclipse.core.internal.resources.SaveManager.executeLifecycle(SaveManager.java:343)
+	at org.eclipse.core.internal.resources.SaveManager$1.run(SaveManager.java:160)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.resources.SaveManager.broadcastLifecycle(SaveManager.java:163)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1012)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:991)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:44)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.core.resources 2 2 2016-03-21 21:00:02.221
+!MESSAGE Save operation warnings.
+!SUBENTRY 1 org.eclipse.core.resources 2 566 2016-03-21 21:00:02.221
+!MESSAGE Problems occurred during save.
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.dltk.internal.core.ExternalProjectFragment.getTimeStamp(ExternalProjectFragment.java:332)
+	at org.eclipse.dltk.internal.core.ModelManager$PerProjectInfo.rememberExternalLibTimestamps(ModelManager.java:227)
+	at org.eclipse.dltk.internal.core.ModelManager.saving(ModelManager.java:2366)
+	at org.eclipse.core.internal.resources.SaveManager.executeLifecycle(SaveManager.java:343)
+	at org.eclipse.core.internal.resources.SaveManager$1.run(SaveManager.java:160)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.resources.SaveManager.broadcastLifecycle(SaveManager.java:163)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1012)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:991)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:44)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2016-03-21 21:00:02.221
+!MESSAGE The project description file (.project) for 'RemoteSystemsTempFiles' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.

@@ -183,3 +183,16 @@ REQUEST_URI=/weijia/app/index/index.php?r=site/login
 in E:\workspace\work\weijia\app\index\protected\components\UserIdentity.php (38)
 in E:\workspace\work\weijia\app\index\protected\models\LoginForm.php (52)
 in E:\workspace\work\weijia\app\index\protected\controllers\SiteController.php (116)
+2016/03/21 14:15:52 [error] [php] Undefined variable: userID (E:\workspace\work\weijia\app\framework\web\auth\CDbAuthManager.php:74)
+Stack trace:
+#0 E:\workspace\work\weijia\app\framework\web\actions\CInlineAction.php(49): SiteController->actiontest()
+#1 E:\workspace\work\weijia\app\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 E:\workspace\work\weijia\app\framework\web\CController.php(286): SiteController->runAction()
+#3 E:\workspace\work\weijia\app\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#4 E:\workspace\work\weijia\app\framework\web\CWebApplication.php(282): SiteController->run()
+#5 E:\workspace\work\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 E:\workspace\work\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 E:\workspace\work\weijia\app\index\index.php(13): CWebApplication->run()
+REQUEST_URI=/weijia/app/index/index.php?r=site/test
+in E:\workspace\work\weijia\app\index\protected\controllers\SiteController.php (28)
+in E:\workspace\work\weijia\app\index\index.php (13)
