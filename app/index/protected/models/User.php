@@ -36,16 +36,22 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username, image_url, cellphone, type, openid', 'required','message'=>'不能为空','on'=>'register'),
-			array(' gender,password', 'required', 'on'=>'login, register','message'=>'不能为空'),
+//			array('openid','required','message'=>'微信id格式不正确'),
+			array('openid','unique','message'=>'微信id已存在'),
+			array('login_id','unique','message'=>'账号已存在'),
+			array('login_id','required','message'=>'账号不能为空'),
+			array('login_id','length', 'max'=>32,'message'=>'账号过长'),
+			array('type','required','message'=>'用户类型不能为空'),
+			array('cellphone','match', 'pattern'=>"/^1[3-5,8]{1}[0-9]{9}$/",'message'=>'电话格式不正确'),
+			array('cellphone','unique','message'=>'电话号码已存在'),
+			array('image_url','url','message'=>'头像格式不正确'),
+			array(' gender,password', 'required', 'on'=>'register','message'=>'不能为空'),
 			array('password', 'authenticate','on'=>'login','message'=>'不能为空'),
 			array('username, password, inviter, openid', 'length', 'max'=>50,'message'=>'您输入的长度过大'),
 			array('gender', 'length', 'max'=>64,'message'=>'您输入的用户名不符合标准'),
 			array('image_url', 'length', 'max'=>255),
 			array('birthday, type, create_time, update_time, status', 'length', 'max'=>10),
 			array('cellphone', 'length', 'max'=>13,'on'=>'register,update'),
-			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
 			array('id, username, password, gender, image_url, birthday, cellphone, type, create_time, update_time, inviter, status, openid', 'safe', 'on'=>'search'),
 		);
 	}
@@ -76,9 +82,10 @@ class User extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'username' => '用户名',
+			'username' => '姓名',
+			'login_id' => '登陆账号',
 			'password' => '密 码',
-			'gender' => '账号',
+			'gender' => '性别',
 			'image_url' => '头 像',
 			'birthday' => '生 日',
 			'cellphone' => '电 话',

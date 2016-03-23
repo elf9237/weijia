@@ -35,8 +35,8 @@ class UserIdentity extends CUserIdentity
 		$model = User::model();
 		$username = $this->username;
 		//$userid = $this->passowrd;
-		$users = $model->find("gender = '$username'");
-		if(!$model->exists("gender = '$username'"))
+		$users = $model->find("login_id = '$username'");
+		if(!$model->exists("login_id = '$username'"))
 			$this->errorCode=self::ERROR_USERNAME_INVALID;
 		elseif ($users->password!==($this->password))
 			$this->errorCode=self::ERROR_PASSWORD_INVALID;
@@ -44,5 +44,9 @@ class UserIdentity extends CUserIdentity
 			$this->errorCode=self::ERROR_NONE;
 			return !$this->errorCode;
 	}
-	
+	public function getId(){
+		$username = $this->username;
+		$User = User::model()->find("login_id = '$username'");
+		return $User->login_id;
+	}
 }
