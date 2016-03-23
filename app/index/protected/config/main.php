@@ -17,7 +17,7 @@ return array(
 		'application.models.*',
 		'application.components.*',
 	),
-
+	'layout'=>'',
 	'modules'=>array(
 	
 		'gii'=>array(
@@ -38,10 +38,10 @@ return array(
 		),
 		'authManager' => array(
 	   'class' => 'CDbAuthManager',
-	   'defaultRoles'=>array('guest'),//默认角色 
-            'itemTable' => 'authitem',//认证项表名称 
-            'itemChildTable' => 'authitemchild',//认证项父子关系 
-            'assignmentTable' => 'authassignment',//认证项赋权关系 
+	   'defaultRoles'=>array('guest'),//默锟较斤拷色 
+            'itemTable' => 'authitem',//锟斤拷证锟斤拷锟斤拷锟斤拷 
+            'itemChildTable' => 'authitemchild',//锟斤拷证锟筋父锟接癸拷系 
+            'assignmentTable' => 'authassignment',//锟斤拷证锟筋赋权锟斤拷系 
 	   'connectionID'=>'db'
 ),
 

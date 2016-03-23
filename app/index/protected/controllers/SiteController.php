@@ -1,32 +1,8 @@
 <?php
 
-class SiteController extends Controller
+class SiteController extends BaseController
 {
-	/**
-	 * Declares class-based actions.
-	 */
-	
-	public function actiontest(){
-//	 	$auth = Yii::app()->authManager;
-//        //��������
-//        var_dump($auth);
-//        $auth->createOperation('index','��־�б�');
-//        $auth->createOperation('view','�鿴��־');
-//        $auth->createOperation('create','�����־');
-//        $auth->createOperation('update','������־');
-//        $auth->createOperation('delete','����б�');
-//       //������ɫ
-//        $role = $auth->createRole('admin');
-//        $role->addChild('index');
-//        $role->addChild('view');
-//        $role->addChild('create');
-//        $role->addChild('update');
-//        $role->addChild('delete');
-//        //��ɫid=1���û�����admin��ɫ
-//        $auth->assign('admin',1);
-        var_dump(Yii::app()->user);
-		var_dump(Yii::app()->user->checkAccess('admin'));
-	}
+
 	public function actions()
 	{
 		return array(
