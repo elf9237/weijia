@@ -491,7 +491,7 @@ input.roll {
 	background: #303133;
 	min-height: 600px;
 }
-.ad-btn{position: fixed;top: 30px;right: 20px;}
+.ad-btn{position: fixed;top: 60px;right: 20px;}
 .ad-btn a{width: 60px;height: 60px;background: #E12772;color: #fff;border-radius: 30px;display: inline-block;font-size: 30px;line-height: 60px;text-align: center;}
 .tm_selectval input{width: 200px;text-align: right;height: 30px;line-height: 30px;border: none;}
 .tx_itemtext textarea{border: none;}
@@ -499,3 +499,195 @@ input.roll {
 .tx_itemtextarea{height: 60px;line-height: 60px;}
 .tx_itemtextarea{width: auto;height: 60px;}
 .tx_itemtextarea textarea{height: 60px;line-height: 60px;width: 100%;}
+
+/*包租婆*/
+.ui-avatar-lg{float: left;margin-top: 30px;margin-left: 20px;}
+.name-id{float: left;margin-top: 25px;margin-left: 20px;color: #fff}
+.name-id h1{font-size: 32px;}
+.name-id p{font-size: 18px;}
+.cl:after,.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}.cl,.clearfix{zoom:1}
+.header-bao{height: 120px;}
+.erw,.ui-home,.ui-money{width: 45px;height: 45px;display: inline-block;font-size: 60px;}
+.erw img{width: 100%;}
+.no-text{text-indent: -9999px;}
+.ui-tiled{background: #fff;}
+.exo{color: #fff;background: #fe2c55}
+.exo h1{width: 90%;margin: 0 auto;padding: 10px 0;font-size: 30px;}
+.exo ul li h1{font-size: 24px;}
+.exo .ui-list{background: #fe2c55;}
+.exo .ui-border-tb,.exo .ui-border-tb li{border: none;}
+.exo .ui-border-tb li h4{padding-left: 50px;}
+.erw-link,.erw-link-to{text-align: center;color: #fff;background: #fe2c55}
+.erw-link .ui-icon-unfold{color: #fff;font-size: 60px;}
+
+.content {
+    top: 0%;
+    width: 100%;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;}
+    .circle80_h {
+    border: 2px solid #F1F1F1;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.circleimg80 {
+    padding: 0;
+    width: 80px;
+    height: 80px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+    -webkit-border-radius: 40px;
+    border-radius: 40px;
+}
+.images {
+    width: 100%;
+    display: block;
+    margin: 0 0;
+    border: 0;
+}
+.bzp_title {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    line-height: 20px;
+    text-align: left;
+}
+.div-center {
+    position: relative;
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    overflow: hidden;
+}
+.bzp_line {
+    background-color: #fff;
+    height: 1px;
+    margin-top: 4px;
+    margin-bottom: 12px;
+}
+.div-center {
+    position: relative;
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    overflow: hidden;
+}
+.bzp_title_num {
+    border: 2px solid #fff;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    border-radius: 50%;
+    font-size: 16px;
+    font-weight: bold;
+}
+.bzp_title_con {
+    float: left;
+    line-height: 16px;
+    margin-left: 8px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+}
+.bzp_dot {
+    background: url(../img/dline31_b.png) repeat-y center 0;
+    height: 56px;
+}
+.bzp_content {
+    font-size: 14px;
+    color: white;
+    line-height: 20px;
+    padding-left: 8px;
+    padding-bottom: 10px;
+    text-align: left;
+    vertical-align: top;
+}
+.bzp_title_num {
+    border: 2px solid #fff;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    border-radius: 50%;
+    font-size: 16px;
+    font-weight: bold;
+}
+.bzp_title_con {
+    float: left;
+    line-height: 16px;
+    margin-left: 8px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+}
+.bzp_dot {
+    background: url(../img/dline31_b.png) repeat-y center 0;
+    height: 56px;
+}
+.ewm{    background: url(../img/qrbg.jpg) repeat-y 0 0;
+    background-size: 100%;}
+    .div-center0 {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+.circle80_h {
+    border: 2px solid #F1F1F1;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.div-align-left {
+    float: left;
+    text-align: left;
+}
+.bzp_title2 {
+    font-size: 14px;
+    color: white;
+    line-height: 18px;
+    text-align: left;
+}
+.div-align-right {
+    float: right;
+    text-align: right;
+}
+.div_subdiv {
+    height: 30px;
+    line-height: 30px;
+    width: 70px;
+    font-size: 14px;
+    color: #fff;
+    letter-spacing: 2px;
+    background-color: #fe2c55;
+}
+.content table{border-collapse:separate;}
+.bzp{background: url(../img/qrbg.jpg) no-repeat center;}
+
+/*我要加盟*/
+.divpartybut {
+    height: 44px;
+    line-height: 44px;
+    font-size: 16px;
+    color: #fff;
+    letter-spacing: 2px;
+    width: 160px;
+    background-color: #ff2c55;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+.join-btn{width: 80%;height: 50px;margin: 0 auto;display: block;margin-top: 20px;}
+.mt30{margin-top: 30px;}
+.read-w{text-align: center;padding-top: 20px;}
+.ui-notice span.ui-icon-emo{font-size: 120px;color: red}
+.ui-notice .success-title{margin-top: 40px;color: red}
+.ui-notice p.success-money{color: #000;text-align: center;text-indent: 5px;margin-top: 10px;}
+.ui-notice-success{background: #fff}
+.mt10{margin-top: 10px;}
+.rent-btn a{display: block;}

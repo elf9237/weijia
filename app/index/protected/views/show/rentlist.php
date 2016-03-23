@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
         <meta name="format-detection" content="telephone=no">
-        <title>微家</title>
+        <title>租房流程</title>
         <link rel="stylesheet" href="css/frozen.css">
         <link href="./public/css/iSlider.css" rel="stylesheet">
         <link href="css/house.css" rel="stylesheet">
@@ -57,65 +57,25 @@
     <body ontouchstart="">
         <header class="ui-header ui-header-positive ui-border-b ui-header-positive-new">
            <ul class="ui-tiled ui-border-t">
-                <li data-href="./index.php?r=store" class="ui-border-r ui-rentflow"><div>商铺出租</div></li>
-                <li data-href="./index.php?r=show/add" class="ui-border-r ui-joinflow"><div>加盟流程</div></li>
-                <li data-href="./index.php?r=bzp" class="ui-bzpo"><div>包租婆</div></li>
+                 <li data-href="shopstore.html" class="ui-border-r ui-rentflow"><div>商铺出租</div></li>
+                <li data-href="add.html" class="ui-border-r ui-joinflow"><div>加盟流程</div></li>
+                <li data-href="bzp.html" class="ui-bzpo"><div>包租婆</div></li>
             </ul>
         </header>
         <footer class="ui-footer ui-footer-btn ui-footer-new">
             <ul class="ui-tiled ui-border-t">
-                <li data-href="./index.php?r=weijia" class="ui-border-r ui-house"><div>微家</div></li>
-                <li data-href="./index.php?r=lease" class="ui-border-r ui-rent"><div>我要租房</div></li>
-                <li data-href="./index.php?r=lease/crent" class="ui-rentout"><div>我要出租</div></li>
+                 <li data-href="introduce.html" class="ui-border-r ui-house"><div>微家</div></li>
+                <li data-href="rent.html" class="ui-border-r ui-rent"><div>我要租房</div></li>
+                <li data-href="crent.html" class="ui-rentout"><div>我要出租</div></li>
             </ul>
         </footer>
         <section class="ui-container">
-            <div id="iSlider-wrapper"></div>
-			<div id="hidden-space" style="display:none">
-			    <p style="font-size:3em;text-align: center;color:#04f512">A node in dom tree.</p>
-			</div>
+            <div id="bzpjs2_div" style="" class="ng-scope">
+                <img src="img/bzp-lc.png" width="100%">
+            </div>
         </section>
         <script src="lib/zepto.min.js"></script>
         <script src="js/frozen.js"></script>
         <script src="js/house.js"></script>
-        <script type="text/javascript" src="./public/js/iSlider.js"></script>
-		<script type="text/javascript" src="./public/js/iSlider.plugin.dot.js"></script>
-		<script id="show-code">
-		    var list = [
-		        // picture
-		        {
-		            content: './imgs/6.jpg'
-		        },
-		        // HTML String
-		        {
-		            content: './imgs/1.jpg'
-		        },
-		        // element
-		        {
-		            content: './imgs/2.jpg'
-		        },
-		        // fragment
-		        {
-		            content: './imgs/3.jpg'
-		        },
-		        // dom
-		        {
-		            content: './imgs/4.jpg'
-		        },
-		        // iframe
-		        {
-		            content: './imgs/5.jpg'
-		        }
-		    ];
-
-		    var S = new iSlider({
-		        dom: document.getElementById('iSlider-wrapper'),
-		        data: list,
-		        isLooping: 1,
-		        isOverspread: 1,
-		        animateTime: 800, // ms
-		        plugins: ['dot']
-		    });
-		</script>
     </body>
 </html>

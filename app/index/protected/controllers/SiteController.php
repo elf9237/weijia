@@ -29,7 +29,7 @@ class SiteController extends BaseController
 		// using the default layout 'protected/views/layouts/main.php'
 		$this->render('index');
 	}
-
+	
 	/**
 	 * This is the action to handle external exceptions.
 	 */
@@ -111,5 +111,8 @@ class SiteController extends BaseController
 	{
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
+	}
+	public function actionJoin(){
+		$this->render('join');
 	}
 }
