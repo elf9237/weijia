@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<libraryInfos>
+<libraryInfo home="D:\Program Files" version="1.5.0_11">
+<bootpath>
+<entry path="D:\Program Files\jre\lib\rt.jar"/>
+<entry path="D:\Program Files\jre\lib\i18n.jar"/>
+<entry path="D:\Program Files\jre\lib\sunrsasign.jar"/>
+<entry path="D:\Program Files\jre\lib\jsse.jar"/>
+<entry path="D:\Program Files\jre\lib\jce.jar"/>
+<entry path="D:\Program Files\jre\lib\charsets.jar"/>
+<entry path="D:\Program Files\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="D:\Program Files\jre\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="D:\Program Files\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+</libraryInfos>
