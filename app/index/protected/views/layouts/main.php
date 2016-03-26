@@ -1,59 +1,89 @@
-<?php /* @var $this Controller */ ?>
+<?php
+/**
+商铺出租	加盟流程	包租婆
+
+微家	我要租房	我要出租
+
+ */
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="language" content="en">
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>微家</title>
+	<link rel="stylesheet" href="css/frozen.css">
+	<link href="./public/css/iSlider.css" rel="stylesheet">
+	<link href="css/house.css" rel="stylesheet">
+	<style>
+		/*ul wrapper*/
+		#iSlider-wrapper {
+			height: 90%;
+			width: 100%;
+			overflow: hidden;
+			position: absolute;
+		}
+		#iSlider-wrapper ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			overflow: hidden;
+		}
 
-	<!-- blueprint CSS framework -->
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection">
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print">
-	<!--[if lt IE 8]>
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection">
-	<![endif]-->
+		#iSlider-wrapper li {
+			position: absolute;
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			overflow: hidden;
+			display: -webkit-box;
+			-webkit-box-pack: center;
+			-webkit-box-align: center;
+			list-style: none;
+		}
 
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css">
+		#iSlider-wrapper li img {
+			max-width: 100%;
+			max-height: 100%;
+		}
 
-	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+		.islider-btn-outer {
+			background-color: rgba(0, 0, 0, .5);
+			border-radius: 99px;
+		}
+
+		.islider-btn-inner {
+			height: 30%;
+			width: 30%;
+			margin-top: 34%;
+		}
+	</style>
 </head>
-
-<body>
-
-<div class="container" id="page">
-
-	<div id="header">
-		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
-	</div><!-- header -->
-
-	<div id="mainmenu">
-		<?php $this->widget('zii.widgets.CMenu',array(
-			'items'=>array(
-				array('label'=>'Home', 'url'=>array('/site/index')),
-				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Contact', 'url'=>array('/site/contact')),
-				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-			),
-		)); ?>
-	</div><!-- mainmenu -->
-	<?php if(isset($this->breadcrumbs)):?>
-		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
-			'links'=>$this->breadcrumbs,
-		)); ?><!-- breadcrumbs -->
-	<?php endif?>
-
-	<?php echo $content; ?>
-
-	<div class="clear"></div>
-
-	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
-		All Rights Reserved.<br/>
-		<?php echo Yii::powered(); ?>
-	</div><!-- footer -->
-
-</div><!-- page -->
+<body ontouchstart="">
+<header class="ui-header ui-header-positive ui-border-b ui-header-positive-new">
+	<ul class="ui-tiled ui-border-t">
+		<li data-href="index.html" class="ui-border-r ui-rentflow"><div>租房流程</div></li>
+		<li data-href="ui.html" class="ui-border-r ui-joinflow"><div>加盟流程</div></li>
+		<li data-href="js.html" class="ui-bzpo"><div>包租婆</div></li>
+	</ul>
+</header>
+<footer class="ui-footer ui-footer-btn ui-footer-new">
+	<ul class="ui-tiled ui-border-t">
+		<li data-href="index.html" class="ui-border-r ui-house"><div>微家</div></li>
+		<li data-href="rent.html" class="ui-border-r ui-rent"><div>我要租房</div></li>
+		<li data-href="js.html" class="ui-rentout"><div>我要出租</div></li>
+	</ul>
+</footer>
+<section class="ui-container">
+	<div id="bzpjs2_div" style="" class="ng-scope">
+		<?php echo $content;?>
+	</div>
+</section>
+<script src="lib/zepto.min.js"></script>
+<script src="js/frozen.js"></script>
 
 </body>
 </html>
