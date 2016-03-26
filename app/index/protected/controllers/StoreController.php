@@ -1,7 +1,7 @@
 <?php
 class StoreController extends BaseController
 {
-	
+	public $layout = '//layouts/main2';
 	public function actionJiaMeng(){
 	
 		$this->render('jiameng');	
