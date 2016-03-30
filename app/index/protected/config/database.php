@@ -11,11 +11,11 @@ return array(
 	'password' => '',
 	'charset' => 'utf8',
 	*/
- 			'connectionString' => 'mysql:host=localhost;port=3306; dbname=cyapp',
+ 			'connectionString' => 'mysql:host=114.55.52.110;port=3306; dbname=cyapp',
             'emulatePrepare' => true,
             'enableProfiling' => true,
             'username' => 'root',
-            'password' => '123',
+            'password' => '123456',
             'charset' => 'utf8',
 			'tablePrefix' => 'cy_', 
 );

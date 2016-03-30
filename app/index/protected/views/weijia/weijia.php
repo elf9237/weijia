@@ -64,10 +64,10 @@
         </header>
         <footer id="foot" class="ui-footer ui-footer-btn ui-footer-new">
            <ul class="ui-tiled ui-border-t">
-                <li data-href="./index.php?r=weijia" class="ui-border-r ui-house"><div><a href="./index.php?r=weijia">微家</a></div></li>
-                <li data-href="./index.php?r=lease" class="ui-border-r ui-rent"><div><a href="./index.php?r=weijia">我要租房</a></div></li>
-                <li data-href="./index.php?r=lease/crent" class="ui-rentout"><div><a href="./index.php?r=weijia">我要出租</a></div></li>
-</ul>
+                <li data-href="" class="ui-border-r ui-house"><div><a href="./index.php?r=weijia">微家</a></div></li>
+                <li data-href="" class="ui-border-r ui-rent"><div><a href="./index.php?r=weijia">我要租房</a></div></li>
+                <li data-href="" class="ui-rentout"><div><a href="./index.php?r=weijia">我要出租</a></div></li>
+		</ul>
         </footer>
         <section class="ui-container">
             <div id="bzpjs1_div" style="display: block;" class="ng-scope">
