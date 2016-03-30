@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="28" version="2.0">
+<workbench progressCount="50" version="2.0">
 <workbenchAdvisor/>
-<window height="728" maximized="true" minimized="true" width="1024" x="175" y="0">
+<window height="728" maximized="true" width="1024" x="175" y="0">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
 </perspectiveBar>
 <coolbarLayout locked="0">
 <coolItem id="group.file" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="269" y="22"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="132" y="22"/>
 <coolItem id="additions" itemType="typeGroupMarker"/>
 <coolItem id="com.zend.php.datatools.ui.CreateNewConnectionActionSet" itemType="typeToolBarContribution" x="38" y="22"/>
 <coolItem id="com.zend.php.phpdocumentor.PHPDocumentorActionSet" itemType="typeToolBarContribution" x="38" y="22"/>
 <coolItem id="com.zend.php.zendserver.ui.serveractionset" itemType="typeToolBarContribution" x="55" y="22"/>
 <coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="229" y="22"/>
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="101" y="22"/>
-<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="38" y="22"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="84" y="22"/>
 <coolItem id="org.eclipse.wst.server.ui.internal.webbrowser.actionSet" itemType="typeToolBarContribution" x="38" y="22"/>
 <coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
@@ -64,6 +64,31 @@
 <part id="28"/>
 <part id="29"/>
 <part id="30"/>
+<part id="31"/>
+<part id="32"/>
+<part id="33"/>
+<part id="34"/>
+<part id="35"/>
+<part id="36"/>
+<part id="37"/>
+<part id="38"/>
+<part id="39"/>
+<part id="40"/>
+<part id="41"/>
+<part id="42"/>
+<part id="43"/>
+<part id="44"/>
+<part id="45"/>
+<part id="46"/>
+<part id="47"/>
+<part id="48"/>
+<part id="49"/>
+<part id="50"/>
+<part id="51"/>
+<part id="52"/>
+<part id="53"/>
+<part id="54"/>
+<part id="55"/>
 </presentation>
 </folder>
 </info>
@@ -188,15 +213,114 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/app/themes/default/views/question/index.php"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1121" selectionTopPixel="0"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.php.editor" name="show_post.php" partName="show_post.php" path="E:/workspace/work/weijia/app/themes/default/views/post/show_post.php" title="show_post.php" tooltip="app/themes/default/views/post/show_post.php" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/app/themes/default/views/post/show_post.php"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4330" selectionTopPixel="616"/>
+<editor id="org.eclipse.php.editor" name="main.php" partName="main.php" path="E:/workspace/work/weijia/app/index/protected/views/layouts/main.php" title="main.php" tooltip="app/index/protected/views/layouts/main.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/app/index/protected/views/layouts/main.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2052" selectionTopPixel="939"/>
+</editor>
+<editor id="org.eclipse.php.editor" name="main1.php" partName="main1.php" path="E:/workspace/work/weijia/app/index/protected/views/layouts/main1.php" title="main1.php" tooltip="app/index/protected/views/layouts/main1.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/app/index/protected/views/layouts/main1.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="276"/>
+</editor>
+<editor id="org.eclipse.php.editor" name="main2.php" partName="main2.php" path="E:/workspace/work/weijia/app/index/protected/views/layouts/main2.php" title="main2.php" tooltip="app/index/protected/views/layouts/main2.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/app/index/protected/views/layouts/main2.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="327" selectionOffset="1159" selectionTopPixel="208"/>
+</editor>
+<editor id="org.eclipse.php.editor" name="BzpController.php" partName="BzpController.php" path="E:/workspace/work/weijia/app/index/protected/controllers/BzpController.php" title="BzpController.php" tooltip="app/index/protected/controllers/BzpController.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/app/index/protected/controllers/BzpController.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="45" selectionOffset="7" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.php.editor" name="LeaseController.php" partName="LeaseController.php" path="E:/workspace/work/weijia/app/index/protected/controllers/LeaseController.php" title="LeaseController.php" tooltip="app/index/protected/controllers/LeaseController.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/app/index/protected/controllers/LeaseController.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.php.editor" name="ShowController.php" partName="ShowController.php" path="E:/workspace/work/weijia/app/index/protected/controllers/ShowController.php" title="ShowController.php" tooltip="app/index/protected/controllers/ShowController.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/app/index/protected/controllers/ShowController.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.php.editor" name="SiteController.php" partName="SiteController.php" path="E:/workspace/work/weijia/app/index/protected/controllers/SiteController.php" title="SiteController.php" tooltip="app/index/protected/controllers/SiteController.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/app/index/protected/controllers/SiteController.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.php.editor" name="StoreController.php" partName="StoreController.php" path="E:/workspace/work/weijia/app/index/protected/controllers/StoreController.php" title="StoreController.php" tooltip="app/index/protected/controllers/StoreController.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/app/index/protected/controllers/StoreController.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.php.editor" name="WeiJiaController.php" partName="WeiJiaController.php" path="E:/workspace/work/weijia/app/index/protected/controllers/WeiJiaController.php" title="WeiJiaController.php" tooltip="app/index/protected/controllers/WeiJiaController.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/app/index/protected/controllers/WeiJiaController.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.php.editor" name="detial.php" partName="detial.php" path="E:/workspace/work/weijia/app/index/protected/views/store/detial.php" title="detial.php" tooltip="app/index/protected/views/store/detial.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/app/index/protected/views/store/detial.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="969"/>
+</editor>
+<editor id="org.eclipse.php.editor" name="jiameng.php" partName="jiameng.php" path="E:/workspace/work/weijia/app/index/protected/views/store/jiameng.php" title="jiameng.php" tooltip="app/index/protected/views/store/jiameng.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/app/index/protected/views/store/jiameng.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.php.editor" name="shopstore.php" partName="shopstore.php" path="E:/workspace/work/weijia/app/index/protected/views/store/shopstore.php" title="shopstore.php" tooltip="app/index/protected/views/store/shopstore.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/app/index/protected/views/store/shopstore.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="102"/>
+</editor>
+<editor id="org.eclipse.php.editor" name="contact.php" partName="contact.php" path="E:/workspace/work/weijia/app/index/protected/views/site/contact.php" title="contact.php" tooltip="app/index/protected/views/site/contact.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/app/index/protected/views/site/contact.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="1024"/>
+</editor>
+<editor id="org.eclipse.php.editor" name="index.php" partName="index.php" path="E:/workspace/work/weijia/app/index/protected/views/site/index.php" title="index.php" tooltip="app/index/protected/views/site/index.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/app/index/protected/views/site/index.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="892" selectionTopPixel="255"/>
+</editor>
+<editor id="org.eclipse.php.editor" name="join.php" partName="join.php" path="E:/workspace/work/weijia/app/index/protected/views/site/join.php" title="join.php" tooltip="app/index/protected/views/site/join.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/app/index/protected/views/site/join.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="469" selectionTopPixel="1020"/>
+</editor>
+<editor id="org.eclipse.php.editor" name="login.php" partName="login.php" path="E:/workspace/work/weijia/app/index/protected/views/site/login.php" title="login.php" tooltip="app/index/protected/views/site/login.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/app/index/protected/views/site/login.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.php.editor" name="loginUser.php" partName="loginUser.php" path="E:/workspace/work/weijia/app/index/protected/views/site/loginUser.php" title="loginUser.php" tooltip="app/index/protected/views/site/loginUser.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/app/index/protected/views/site/loginUser.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.php.editor" name="error.php" partName="error.php" path="E:/workspace/work/weijia/app/index/protected/views/site/error.php" title="error.php" tooltip="app/index/protected/views/site/error.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/app/index/protected/views/site/error.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.php.editor" name="console.php" partName="console.php" path="E:/workspace/work/weijia/app/index/protected/config/console.php" title="console.php" tooltip="app/index/protected/config/console.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/app/index/protected/config/console.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.php.editor" name="database.php" partName="database.php" path="E:/workspace/work/weijia/app/index/protected/config/database.php" title="database.php" tooltip="app/index/protected/config/database.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/app/index/protected/config/database.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.php.editor" name="main.php" partName="main.php" path="E:/workspace/work/weijia/app/index/protected/config/main.php" title="main.php" tooltip="app/index/protected/config/main.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/app/index/protected/config/main.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="51"/>
+</editor>
+<editor id="org.eclipse.php.editor" name="test.php" partName="test.php" path="E:/workspace/work/weijia/app/index/protected/config/test.php" title="test.php" tooltip="app/index/protected/config/test.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/app/index/protected/config/test.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.php.editor" name="FootController.php" partName="FootController.php" path="E:/workspace/work/weijia/app/index/protected/controllers/FootController.php" title="FootController.php" tooltip="app/index/protected/controllers/FootController.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/app/index/protected/controllers/FootController.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="7" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.php.editor" name="BaseController.php" partName="BaseController.php" path="E:/workspace/work/weijia/app/index/protected/controllers/BaseController.php" title="BaseController.php" tooltip="app/index/protected/controllers/BaseController.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/app/index/protected/controllers/BaseController.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="14" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.php.editor" name="BaseController.php" partName="BaseController.php" path="E:/workspace/work/weijia/app/index/protected/components/BaseController.php" title="BaseController.php" tooltip="app/index/protected/components/BaseController.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/app/index/protected/components/BaseController.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="523" selectionTopPixel="55"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.php.editor" name="UserIdentity.php" partName="UserIdentity.php" path="E:/workspace/work/weijia/app/index/protected/components/UserIdentity.php" title="UserIdentity.php" tooltip="app/index/protected/components/UserIdentity.php" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/app/index/protected/components/UserIdentity.php"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="540" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
 <view id="org.eclipse.search.ui.views.SearchView" partName="Search">
 <viewState isPinned="false">
-<view IMemento.internal.id="org.eclipse.dltk.ui.DLTKSearchResultPage" org.eclipse.dltk.search.resultpage.grouping="3" org.eclipse.dltk.search.resultpage.limit="1000" org.eclipse.dltk.search.resultpage.limit_enabled="TRUE" org.eclipse.dltk.search.resultpage.sorting="1" org.eclipse.search.lastActivation="1" org.eclipse.search.resultpage.layout="2"/>
 <view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
 </viewState>
 </view>
@@ -243,7 +367,7 @@
 </viewState>
 </view>
 </views>
-<perspectives activePart="org.eclipse.php.editor" activePerspective="org.eclipse.php.perspective">
+<perspectives activePart="org.eclipse.php.ui.explorer" activePerspective="org.eclipse.php.perspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.php.internal.ui.PHPPerspectiveFactory" id="org.eclipse.php.perspective" label="PHP"/>
 <alwaysOnActionSet id="com.zend.php.ui.helpActionSet"/>
@@ -387,186 +511,179 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/protected/config/main.php"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/protected/config/params.php"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/protected/controllers/ErrorController.php"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/protected/controllers/InstallController.php"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/index.php"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/themes/default/views/install/_footer.php"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/themes/default/views/install/_header.php"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/themes/default/views/install/complete.php"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/protected/widget/bagecms/DataList.php"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/protected/modules/admini/controllers/AdminController.php"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/protected/components/XAdminiBase.php"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/protected/components/XAdminiAcl.php"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/protected/components/XCookie.php"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/protected/components/XFrontBase.php"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/protected/components/XParams.php"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/protected/components/XSession.php"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/protected/components/XUtils.php"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/protected/components/XXcache.php"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/protected/controllers/SiteController.php"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/protected/yiic.php"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/protected/modules/admini/controllers/AjaxController.php"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/protected/modules/admini/views/post/create.php"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/protected/modules/admini/views/post/_post_form.php"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/themes/default/views/site/index.php"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/themes/default/views/site/test.php"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/themes/default/views/error/close.php"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/themes/default/views/error/error.php"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/themes/default/views/error/error404.php"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/themes/default/views/error/error500.php"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/themes/default/views/question/index.php"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/themes/default/views/post/show_post.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/index/protected/views/layouts/main.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/index/protected/controllers/BzpController.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/index/protected/controllers/LeaseController.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/index/protected/controllers/ShowController.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/index/protected/controllers/SiteController.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/index/protected/controllers/StoreController.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/index/protected/controllers/WeiJiaController.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/index/protected/views/store/detial.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/index/protected/views/store/jiameng.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/index/protected/views/store/shopstore.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/index/protected/views/site/contact.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/index/protected/views/site/index.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/index/protected/views/site/join.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/index/protected/views/site/login.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/index/protected/views/site/loginUser.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/index/protected/views/site/error.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/index/protected/config/console.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/index/protected/config/database.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/index/protected/config/main.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/index/protected/config/test.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/index/protected/controllers/FootController.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/index/protected/controllers/BaseController.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/index/protected/components/BaseController.php"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" path="/app/index/protected/components/UserIdentity.php"/>
 </editors>
+<item historyLabel="ShowController.php" index="3">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="SiteController.php" index="4">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="StoreController.php" index="5">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="WeiJiaController.php" index="6">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="StoreController.php" index="5">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="SiteController.php" index="4">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="ShowController.php" index="3">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="LeaseController.php" index="2">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="BzpController.php" index="1">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="detial.php" index="7">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="jiameng.php" index="8">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="shopstore.php" index="9">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="jiameng.php" index="8">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="contact.php" index="10">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="index.php" index="11">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="join.php" index="12">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="login.php" index="13">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="loginUser.php" index="14">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="login.php" index="13">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="join.php" index="12">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="index.php" index="11">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="join.php" index="12">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="error.php" index="15">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="contact.php" index="10">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="error.php" index="15">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="BzpController.php" index="1">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="console.php" index="16">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="database.php" index="17">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="main.php" index="18">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="test.php" index="19">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="BzpController.php" index="1">
+<position info="not_deleted" x="0" y="0"/>
+</item>
 <item historyLabel="main.php" index="0">
-<position info="not_deleted" x="431" y="0"/>
+<position info="not_deleted" x="2052" y="0"/>
 </item>
-<item historyLabel="params.php" index="1">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="ErrorController.php" index="2">
-<position info="not_deleted" x="382" y="0"/>
-</item>
-<item historyLabel="InstallController.php" index="3">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="main.php" index="0">
-<position info="not_deleted" x="431" y="0"/>
-</item>
-<item historyLabel="index.php" index="4">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="_footer.php" index="5">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="_header.php" index="6">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="complete.php" index="7">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="DataList.php" index="8">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="AdminController.php" index="9">
-<position info="not_deleted" x="345" y="0"/>
-</item>
-<item historyLabel="XAdminiBase.php" index="10">
-<position info="not_deleted" x="346" y="11"/>
-</item>
-<item historyLabel="XAdminiAcl.php" index="11">
-<position info="not_deleted" x="300" y="0"/>
-</item>
-<item historyLabel="XAdminiBase.php" index="10">
-<position info="not_deleted" x="346" y="11"/>
-</item>
-<item historyLabel="XCookie.php" index="12">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="XFrontBase.php" index="13">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="XParams.php" index="14">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="XSession.php" index="15">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="XUtils.php" index="16">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="XXcache.php" index="17">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="SiteController.php" index="18">
-<position info="not_deleted" x="460" y="5"/>
-</item>
-<item historyLabel="yiic.php" index="19">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="AdminController.php" index="9">
-<position info="not_deleted" x="347" y="0"/>
-</item>
-<item historyLabel="XAdminiBase.php" index="10">
-<position info="not_deleted" x="346" y="11"/>
-</item>
-<item historyLabel="AjaxController.php" index="20">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="create.php" index="21">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="_post_form.php" index="22">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="SiteController.php" index="18">
-<position info="not_deleted" x="344" y="0"/>
-</item>
-<item historyLabel="XFrontBase.php" index="13">
-<position info="not_deleted" x="336" y="10"/>
-</item>
-<item historyLabel="main.php" index="0">
-<position info="not_deleted" x="422" y="7"/>
-</item>
-<item historyLabel="index.php" index="23">
-<position info="not_deleted" x="903" y="0"/>
-</item>
-<item historyLabel="SiteController.php" index="18">
-<position info="not_deleted" x="557" y="0"/>
-</item>
-<item historyLabel="test.php" index="24">
+<item historyLabel="FootController.php" index="20">
 <position/>
 </item>
-<item historyLabel="index.php" index="23">
-<position info="not_deleted" x="903" y="0"/>
+<item historyLabel="BzpController.php" index="1">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="test.php" index="24">
+<item historyLabel="join.php" index="12">
+<position info="not_deleted" x="469" y="0"/>
+</item>
+<item historyLabel="index.php" index="11">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="error.php" index="15">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="contact.php" index="10">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="index.php" index="11">
+<position info="not_deleted" x="892" y="0"/>
+</item>
+<item historyLabel="test.php" index="19">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="main.php" index="18">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="database.php" index="17">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="BzpController.php" index="1">
 <position/>
 </item>
-<item historyLabel="close.php" index="25">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="BaseController.php" index="21">
+<position/>
 </item>
-<item historyLabel="error.php" index="26">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="BzpController.php" index="1">
+<position/>
 </item>
-<item historyLabel="error404.php" index="27">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="BaseController.php" index="21">
+<position/>
 </item>
-<item historyLabel="error500.php" index="28">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="BzpController.php" index="1">
+<position info="not_deleted" x="7" y="45"/>
 </item>
-<item historyLabel="error404.php" index="27">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="BaseController.php" index="21">
+<position/>
 </item>
-<item historyLabel="error.php" index="26">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="BaseController.php" index="22">
+<position info="not_deleted" x="523" y="0"/>
 </item>
-<item historyLabel="SiteController.php" index="18">
-<position info="not_deleted" x="343" y="0"/>
-</item>
-<item historyLabel="XFrontBase.php" index="13">
-<position info="not_deleted" x="336" y="10"/>
-</item>
-<item historyLabel="SiteController.php" index="18">
-<position info="not_deleted" x="343" y="0"/>
-</item>
-<item historyLabel="main.php" index="0">
-<position info="not_deleted" x="422" y="7"/>
-</item>
-<item historyLabel="params.php" index="1">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="main.php" index="0">
-<position info="not_deleted" x="508" y="0"/>
-</item>
-<item historyLabel="AdminController.php" index="9">
-<position info="not_deleted" x="4088" y="0"/>
-</item>
-<item historyLabel="index.php" index="29">
-<position info="not_deleted" x="1121" y="0"/>
-</item>
-<item active="true" historyLabel="show_post.php" index="30">
+<item active="true" historyLabel="UserIdentity.php" index="23">
 <position info="not_deleted" x="0" y="0"/>
 </item>
 </navigationHistory>
@@ -575,13 +692,6 @@
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
-<trimArea IMemento.internal.id="16384">
-<trimItem IMemento.internal.id="topLeft"/>
-</trimArea>
-<trimArea IMemento.internal.id="131072">
-<trimItem IMemento.internal.id="bottom"/>
-<trimItem IMemento.internal.id="right"/>
-</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 </trimArea>
@@ -595,50 +705,50 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="show_post.php" tooltip="app/themes/default/views/post/show_post.php">
-<persistable path="/app/themes/default/views/post/show_post.php"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="UserIdentity.php" tooltip="app/index/protected/components/UserIdentity.php">
+<persistable path="/app/index/protected/components/UserIdentity.php"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="index.php" tooltip="app/themes/default/views/question/index.php">
-<persistable path="/app/themes/default/views/question/index.php"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="BaseController.php" tooltip="app/index/protected/components/BaseController.php">
+<persistable path="/app/index/protected/components/BaseController.php"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="error500.php" tooltip="app/themes/default/views/error/error500.php">
-<persistable path="/app/themes/default/views/error/error500.php"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="BaseController.php" tooltip="app/index/protected/controllers/BaseController.php">
+<persistable path="/app/index/protected/controllers/BaseController.php"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="error404.php" tooltip="app/themes/default/views/error/error404.php">
-<persistable path="/app/themes/default/views/error/error404.php"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="FootController.php" tooltip="app/index/protected/controllers/FootController.php">
+<persistable path="/app/index/protected/controllers/FootController.php"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="error.php" tooltip="app/themes/default/views/error/error.php">
-<persistable path="/app/themes/default/views/error/error.php"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="test.php" tooltip="app/index/protected/config/test.php">
+<persistable path="/app/index/protected/config/test.php"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="close.php" tooltip="app/themes/default/views/error/close.php">
-<persistable path="/app/themes/default/views/error/close.php"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="main.php" tooltip="app/index/protected/config/main.php">
+<persistable path="/app/index/protected/config/main.php"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="test.php" tooltip="app/themes/default/views/site/test.php">
-<persistable path="/app/themes/default/views/site/test.php"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="database.php" tooltip="app/index/protected/config/database.php">
+<persistable path="/app/index/protected/config/database.php"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="index.php" tooltip="app/themes/default/views/site/index.php">
-<persistable path="/app/themes/default/views/site/index.php"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="console.php" tooltip="app/index/protected/config/console.php">
+<persistable path="/app/index/protected/config/console.php"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="_post_form.php" tooltip="app/protected/modules/admini/views/post/_post_form.php">
-<persistable path="/app/protected/modules/admini/views/post/_post_form.php"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="error.php" tooltip="app/index/protected/views/site/error.php">
+<persistable path="/app/index/protected/views/site/error.php"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="create.php" tooltip="app/protected/modules/admini/views/post/create.php">
-<persistable path="/app/protected/modules/admini/views/post/create.php"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="loginUser.php" tooltip="app/index/protected/views/site/loginUser.php">
+<persistable path="/app/index/protected/views/site/loginUser.php"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="AjaxController.php" tooltip="app/protected/modules/admini/controllers/AjaxController.php">
-<persistable path="/app/protected/modules/admini/controllers/AjaxController.php"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="login.php" tooltip="app/index/protected/views/site/login.php">
+<persistable path="/app/index/protected/views/site/login.php"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="yiic.php" tooltip="app/protected/yiic.php">
-<persistable path="/app/protected/yiic.php"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="join.php" tooltip="app/index/protected/views/site/join.php">
+<persistable path="/app/index/protected/views/site/join.php"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="SiteController.php" tooltip="app/protected/controllers/SiteController.php">
-<persistable path="/app/protected/controllers/SiteController.php"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="index.php" tooltip="app/index/protected/views/site/index.php">
+<persistable path="/app/index/protected/views/site/index.php"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="XXcache.php" tooltip="app/protected/components/XXcache.php">
-<persistable path="/app/protected/components/XXcache.php"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="contact.php" tooltip="app/index/protected/views/site/contact.php">
+<persistable path="/app/index/protected/views/site/contact.php"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="XUtils.php" tooltip="app/protected/components/XUtils.php">
-<persistable path="/app/protected/components/XUtils.php"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.php.editor" name="shopstore.php" tooltip="app/index/protected/views/store/shopstore.php">
+<persistable path="/app/index/protected/views/store/shopstore.php"/>
 </file>
 </mruList>
 </workbench>

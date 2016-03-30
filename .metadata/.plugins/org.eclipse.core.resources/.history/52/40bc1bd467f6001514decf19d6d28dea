@@ -1,0 +1,8 @@
+<?php
+class baseController extends BaseController
+{
+	public function actionHeadmenu(){
+	
+		$this->render('headmenu');
+	}
+}

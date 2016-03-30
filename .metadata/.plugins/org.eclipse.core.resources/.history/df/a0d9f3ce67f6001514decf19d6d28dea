@@ -1,0 +1,8 @@
+<?php
+class BzpController extends BaseController
+{
+	public function actionHeadmenu(){
+	
+		$this->render('headmenu');
+	}
+}
