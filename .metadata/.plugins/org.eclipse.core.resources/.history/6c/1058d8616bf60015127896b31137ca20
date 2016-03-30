@@ -1,0 +1,9 @@
+
+<?php
+class BaseController extends BaseController
+{
+	public function actionIndex(){
+		$this->renderPartial('index');
+	}
+ 
+}

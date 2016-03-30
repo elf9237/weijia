@@ -1,0 +1,5 @@
+<ul class="ui-tiled ui-border-t">
+                <li data-href="./index.php?r=weijia" class="ui-border-r ui-house"><div>微家</div></li>
+                <li data-href="./index.php?r=lease" class="ui-border-r ui-rent"><div>我要租房</div></li>
+                <li data-href="./index.php?r=lease/crent" class="ui-rentout"><div>我要出租</div></li>
+            </ul>

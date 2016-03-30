@@ -1,0 +1,17 @@
+<?php
+
+class BaseController extends BaseController
+{
+	public function actionHeadmenu(){
+		$this->render('headmenu');
+	}
+}
+
+<?php
+class BaseController extends BaseController
+{
+	public function actionIndex(){
+		$this->renderPartial('index');
+	}
+ 
+}

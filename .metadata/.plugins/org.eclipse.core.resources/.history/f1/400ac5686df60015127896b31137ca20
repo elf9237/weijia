@@ -1,0 +1,11 @@
+
+<?php
+class BasemenuController extends BaseController
+{
+	public function actionHeadmenu(){
+		$this->renderPartial('headmenu');
+	}
+ 	public function actionFootmenu(){
+ 	
+ 	}
+}

@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <title>我要出租</title>
+        <link rel="stylesheet" href="css/frozen.css">
+        <link href="./public/css/iSlider.css" rel="stylesheet">
+        <link href="css/house.css" rel="stylesheet">
+        <style>
+        /*ul wrapper*/
+        #iSlider-wrapper {
+            height: 90%;
+            width: 100%;
+            overflow: hidden;
+            position: absolute;
+        }
+        #iSlider-wrapper ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #iSlider-wrapper li {
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-pack: center;
+            -webkit-box-align: center;
+            list-style: none;
+        }
+
+        #iSlider-wrapper li img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .islider-btn-outer {
+            background-color: rgba(0, 0, 0, .5);
+            border-radius: 99px;
+        }
+
+        .islider-btn-inner {
+            height: 30%;
+            width: 30%;
+            margin-top: 34%;
+        }
+    </style>
+    </head>
+    <body ontouchstart="">
+        <!-- <header class="ui-header ui-header-positive ui-border-b">
+            <i class="ui-icon-return" onclick="history.back()"></i><h1>微家</h1><button class="ui-btn ui-back-index">账户</button>
+        </header> -->
+        <footer id="foot"class="ui-footer ui-footer-btn ui-footer-new">
+            <ul class="ui-tiled ui-border-t">
+                <li data-href="introduce.html" class="ui-border-r ui-house"><div>微家</div></li>
+                <li data-href="index.html" class="ui-border-r ui-rent"><div>首页</div></li>
+                <li data-href="rent.html" class="ui-rentout"><div>我要租房</div></li>
+            </ul>
+        </footer>
+        <section class="ui-container">
+        <div class="ui-tab">
+    <ul class="ui-tab-nav ui-border-b">
+        <li class="current">住房出租</li>
+        <li data-href="storerent.html">商铺出租</li>
+    </ul>
+</div>
+            <div class="list">
+                <div class="paytoptips">
+                    <span class="payhorns"></span>
+                    <div class="paytips">您今天还可免费发帖<b> 2 </b>条，本月还可免费发帖<b> 3 </b>条。</div>
+                </div>
+                <div class="notNullGroup">
+                <li class="_item" style="height: 75px;"><div class="upload_box" style="height: 74px; line-height: 74px;"><ul class="upload_list clearfix" id="upload_list" style="height: 60px;"><li class="upload_action" style="width: 60px;"><span class="upload_img"></span><input type="file" accept="image/jpg,image/jpeg,image/png,image/gif" id="fileImage" name="img"></li>
+
+                <span id="uploadTip" style="line-height: 60px;">最多可上传<span id="numTip">8</span>张（选填）</span></ul></div></li><li class="splitLine"></li><li class="_item xiaoquInput"><span class="ts_title">小区</span><span class="ts_after"><span></span></span><div tabindex="0" class="ts_itemtext"></div><div id="xiaoqu" class="ts_selectval">请选择<input type="hidden" name="xiaoqu" value=""></div><div class="errorTip xiaoquerror"><div class="errorTipDiv"></div><span>undefined</span></div></li><li class="_item localArea"><span class="tm_title">区域</span><span class="tm_after"><span></span></span><div tabindex="0" class="tm_itemtext"><input type="hidden" name="localArea" value=""><input type="hidden" name="localDiduan" value=""></div><div class="tm_selectval" id="localArea">请选择</div><div class="errorTip localAreaerror"><div class="errorTipDiv"></div><span>undefined</span></div></li><li class="splitLine"></li><li class="_item huxingLabel"><span class="gr_title">户型</span><div class="gr_itemtext"><div class="gr_itemt"><span class="gr_after">室</span><div class="gr_itemt_con"><input type="number" pattern="[0-9]*" id="jushishuru" name="jushishuru" max="100" min="-10"></div></div><div class="gr_itemt"><span class="gr_after">厅</span><div class="gr_itemt_con"><input type="number" pattern="[0-9]*" id="huxingting" name="huxingting" max="100" min="-10"></div></div><div class="gr_itemt"><span class="gr_after">卫</span><div class="gr_itemt_con"><input type="number" pattern="[0-9]*" id="huxingwei" name="huxingwei" max="100" min="-10"></div></div></div><div class="errorTip huxingLabelerror"><div class="errorTipDiv"></div><span></span></div></li><li class="_item priceNumber"><span class="nu_title">租金</span><div class="nu_itemtext"><span class="nu_after">元/月</span><div class="nu_itemtext_con"><input type="number" pattern="[0-9]*" id="MinPrice" name="MinPrice"></div></div><div class="errorTip MinPriceerror"><div class="errorTipDiv"></div><span>undefined</span></div></li><li class="splitLine"></li><li class="_item titleInput"><span class="tx_title">标题</span><div class="tx_itemtext"><input type="text" value="" placeholder="请输入6-30字" id="Title" name="Title"></div><div class="errorTip Titleerror"><div class="errorTipDiv"></div><span></span></div></li><li class="_item phoneMobile"><span class="mb_title">手机</span><div class="mb_itemtext"><input type="tel" placeholder="请输入手机号" id="Phone" name="Phone" maxlength="11"></div><div class="errorTip Phoneerror"><div class="errorTipDiv"></div><span></span></div></li><li class="_item yinsi"><span class="check_box"></span><span class="text">设置隐私保护，隐藏您的真实号码</span><span class="more"></span></li><li class="splitLine"></li><li class="_item canNullSplit canNullSplit1"><span class="canNull_title">选填信息</span><span class="canNull_after"></span></li></div>
+            </div>
+            <form class="exra">
+    
+    <ul class="tglist">
+    <li class="li-subul">
+        <ul>
+                                    <li class="select" id="infotopChangeProject"><input type="checkbox" id="infotop_select" class="roll"><span>置顶<span class="dayprice"><span class="dayprice" id="infotop_pmcAmount">115.72元/3天</span></span></span></li>
+                                    <li class="select" id="infotopChangeProject"><input id="infotop_select" class="roll" type="checkbox"></input><span>佣金<span class="dayprice"><span class="dayprice" id="infotop_pmcAmount"><input type="text" placeholder="100元" class="money"></span></span></span></li>
+                                </ul>
+    </li>
+    </ul>
+    <div class="payable">
+        应付金额：<span class="lastprice"><font id="main_total_pmc" class="lastprice">0</font>元</span>
+        <span id="main_fee_detail_show" style="display:none">
+        (总金额<font id="main_total_fee">0</font>元，已优惠<font id="main_total_coup">0</font>元)
+        </span>
+        <!-- hide -->
+        <input id="main_jz_fee" type="hidden" value="0">
+        <input id="main_jz_coupon" type="hidden" value="0">
+        <input id="main_zn_fee" type="hidden" value="0">
+        <input id="main_zn_coupon" type="hidden" value="0">
+        <input id="main_zd_fee" type="hidden" value="0">
+        <input id="main_zd_coupon" type="hidden" value="0">
+    </div>
+</form>
+<div class="post btnPost"><button class="btn_post" id="btn_post">发布</button></div>
+        </section>
+        <script src="lib/zepto.min.js"></script>
+        <script src="js/frozen.js"></script>
+        <script src="js/house.js"></script>
+        
+		<script>
+		$(document).ready(function() { 
+			$.ajax({
+		　　　　　　url: 'index.php?r=basemenu/footmenu',
+		　　　　　　type: 'POST',
+		　　　　　　//data: { id: idValue },
+		　　　　　　//timeout: 3000,
+		　　　　　　success: function (data) {
+						$("#foot").html(data);
+					 },
+		　　　　　　error: function (data) {
+								 alert('===');},
+　　　　		})
+		}); 
+		</script>
+    </body>
+</html>

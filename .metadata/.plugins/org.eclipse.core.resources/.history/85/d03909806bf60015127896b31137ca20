@@ -1,0 +1,9 @@
+
+<?php
+class BasemenuController extends BaseController
+{
+	public function actionIndex(){
+		$this->renderPartial('headmenu');
+	}
+ 
+}

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <title>租房详情</title>
+        <link rel="stylesheet" href="css/frozen.css">       
+       <!-- <link rel="stylesheet" href="lib/pullTo/pullToRefresh.css"/>
+        <script src="lib/pullTo/iscroll.js"></script>
+        <script src="lib/pullTo/pullToRefresh.js"></script> -->
+        <script type="text/javascript" src="lib/area/jquery-1.9.1.js"></script>
+       <script type="text/javascript" src="js/jquery.bxslider.js"></script>
+       <link href="css/jquery.bxslider.css" rel="stylesheet" type="text/css">
+       <link href="css/house.css" rel="stylesheet">
+    </head>
+    <body ontouchstart="">
+        <!-- <header class="ui-header ui-header-positive ui-border-b">
+            <i class="ui-icon-return" onclick="history.back()"></i><h1>租房详情</h1><button class="ui-btn ui-back-index">回首页</button>
+        </header> -->
+        <footer id="foot"class="ui-footer ui-footer-btn ui-footer-new">
+            <ul class="ui-tiled ui-border-t">
+                <li data-href="index.html" class="ui-border-r ui-house"><div>微家</div></li>
+                <li data-href="ui.html" class="ui-border-r ui-rent"><div>我要租房</div></li>
+                <li data-href="js.html" class="ui-rentout"><div>我要出租</div></li>
+            </ul>
+        </footer>
+        <section class="ui-container">
+            <div class="ui-tab">
+                <ul class="ui-tab-nav ui-border-b">
+                    <li class="current">主卧<span>未租</span></li>
+                   <!--  <li>次卧<span>未租</span></li>
+                    <li>次卧<span>未租</span></li> -->
+                </ul>
+                <ul class="ui-tab-content ui-tab-content-detail" style="width:300%">
+                    <li class="current clearfix">
+                        <div class="slide-wrap">
+                            <h1>房源图片</h1>
+                            <div class="slider6">
+                              <div class="slide"><img src="http://placehold.it/600x200&text=FooBar1"></div>
+                              <div class="slide"><img src="http://placehold.it/600x200&text=FooBar2"></div>
+                              <div class="slide"><img src="http://placehold.it/600x200&text=FooBar3"></div>
+                              <div class="slide"><img src="http://placehold.it/600x200&text=FooBar4"></div> 
+                            </div>
+                        </div>
+                        <div class="slide-wrap">
+                            <h1>公共区域</h1>
+                            <div class="slider6">
+                              <div class="slide"><img src="http://placehold.it/600x200&text=FooBar1"></div>
+                              <div class="slide"><img src="http://placehold.it/600x200&text=FooBar2"></div>
+                              <div class="slide"><img src="http://placehold.it/600x200&text=FooBar3"></div>
+                              <div class="slide"><img src="http://placehold.it/600x200&text=FooBar4"></div> 
+                            </div>
+                        </div>
+                        <h1 class="detail-title">我们为你精心打造</h1>
+                        <h1 class="detail-title">一个<span class="detail-title-b"> “有品质的家”</span></h1>
+                        <div class="area">
+                            
+                        </div>
+                        <div class="title">
+                            <div class="title_text" align="left"><strong><a style="color:#FFFFFF">标准配置</a></strong></div>
+                        </div>
+                        <div class="list_item_div" style="background-color:#303133">
+                          <table style="border:0;border-spacing:2px;" width="90%" align="center">
+                            <tbody>
+                            <tr>
+                              <td align="left"><img src="img/2015010513142700011.png"></td>
+                              <td align="left"><img src="img/2015010513144300011.png"></td>
+                              <td align="left"><img src="img/2015010513145500011.png"></td>
+                              <td align="left"><img src="img/2015010513153400011.png"></td>
+                            </tr>
+                            <tr>
+                              <td align="left"><img src="img/2015010513155200011.png"></td>
+                              <td align="left"><img src="img/2015010513162200011.png"></td>
+                              <td align="left"><img src="img/2015010513163900011.png"></td>
+                              <td align="left"><img src="img/2015010513171000011.png"></td>
+                            </tr>
+                            <tr>
+                              <td align="left"><img src="img/2015010513173600011.png"></td>
+                            </tr>
+                          </tbody>
+                          </table>
+                        </div>
+                        <div class="title">
+                            <div class="title_text" align="left"><strong><a style="color:#FFFFFF">热舞</a></strong></div>
+                        </div>
+                        <div class="detail-container">
+                            <table id="list_detail">
+                                <tbody>
+                                <tr>
+                                    <td class="td_point" align="left"><label>小区</label></td>
+                                    <td><span>九棵树蓝调沙龙</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td_point"><label>户型</label></td>
+                                    <td><span>三室一厅两卫</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td_point"><label>楼层</label></td>
+                                    <td><span>2/6</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td_point"><label style="width:36px">总面积</label></td>
+                                    <td><span>21.3平米/98.0平米</span></td>
+                                </tr>
+                                </tbody>
+                                <tbody>
+                                <tr>
+                                    <td class="td_point"><label>描述</label></td>
+                                    <td><span>设计师以炽烈的红来引燃年轻人心中的梦想与激情。青春的热情似火与英伦风的优雅自然完美的糅合。如同在这城市邂逅另一个自己，低调而张扬，有着不可湮没的个性独然。</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td_point"><label>交通</label></td>
+                                    <td><span>地铁：九棵树城铁<br>公交：582，通4，通12，通11，通15，通35等公交</span></td>
+                                </tr>
+                                </tbody>
+                                <tbody>
+                                  <tr>
+                                    <td class="td_point"><label>购物</label></td>
+                                    <td><span>出门即到大型购物广场家乐福，京通罗斯福购物广场，小区旁边就有个菜市场，方便您的生活等。
+                                    </span></td>
+                                  </tr>
+                                  <tr>
+                                    <td class="td_point"><label>办公</label></td>
+                                    <td><span>瑞都国际写字楼，金成国际写字楼等。</span></td>
+                                  </tr>
+                                  <tr>
+                                    <td class="td_point"><label>银行</label></td>
+                                    <td><span>建行，中行，北京银行，工商，农业，中信等。
+                                </span></td>
+                                  </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="title">
+                            <div class="title_text" align="left"><strong><a style="color:#FFFFFF">价格公式</a></strong></div>
+                        </div>
+                        <div align="center"><img class="images" src="img/price_formula.png"></div>
+                        <div align="center">
+                            <table align="center" class="table"><tbody><tr>
+                            <td width="34px"><img align="right" src="img/eq.png" width="100%"></td>
+                            <td width="4px">&nbsp;</td>
+                            <td width="110px">
+                                <div class="top_price">
+                                    <font id="font_price" class="font_td">
+                                        1700
+                                    </font>
+                                </div>
+                                <img align="left" src="img/price.png" width="100%">
+                            </td>
+                            </tr>
+                            <tr style="color:#FFFFFF;height:30px;font-size:14px;"><td colspan="3">整租优惠价：
+                                5130
+                            </td></tr>
+                            </tbody></table>
+                        </div>
+                        <div class="button_div">
+                            <a href="#"><img class="noborder" src="img/button_detail_contact.gif" width="100%"></a>
+                        </div>
+                        <div class="police">
+                            <a href="#">举报</a>
+                        </div>
+                    </li>
+                    <!-- <li>
+                        <div class="slide-wrap">
+                            <h1>房源图片</h1>
+                            <div class="slider6">
+                              <div class="slide"><img src="http://placehold.it/600x200&text=FooBar1"></div>
+                              <div class="slide"><img src="http://placehold.it/600x200&text=FooBar2"></div>
+                              <div class="slide"><img src="http://placehold.it/600x200&text=FooBar3"></div>
+                              <div class="slide"><img src="http://placehold.it/600x200&text=FooBar4"></div> 
+                            </div>
+                        </div>
+                        <div class="slide-wrap">
+                            <h1>公共区域</h1>
+                            <div class="slider6">
+                              <div class="slide"><img src="http://placehold.it/600x200&text=FooBar1"></div>
+                              <div class="slide"><img src="http://placehold.it/600x200&text=FooBar2"></div>
+                              <div class="slide"><img src="http://placehold.it/600x200&text=FooBar3"></div>
+                              <div class="slide"><img src="http://placehold.it/600x200&text=FooBar4"></div> 
+                            </div>
+                        </div>
+                        <h1 class="detail-title">我们为你精心打造</h1>
+                        <h1 class="detail-title">一个<span class="detail-title-b"> “有品质的家”</span></h1>
+                        <div class="area">
+                            
+                        </div>
+                        <div class="title">
+                            <div class="title_text" align="left"><strong><a style="color:#FFFFFF">标准配置</a></strong></div>
+                        </div>
+                        <div class="list_item_div" style="background-color:#303133">
+                          <table style="border:0;border-spacing:2px;" width="90%" align="center">
+                            <tbody>
+                            <tr>
+                              <td align="left"><img src="img/2015010513142700011.png"></td>
+                              <td align="left"><img src="img/2015010513144300011.png"></td>
+                              <td align="left"><img src="img/2015010513145500011.png"></td>
+                              <td align="left"><img src="img/2015010513153400011.png"></td>
+                            </tr>
+                            <tr>
+                              <td align="left"><img src="img/2015010513155200011.png"></td>
+                              <td align="left"><img src="img/2015010513162200011.png"></td>
+                              <td align="left"><img src="img/2015010513163900011.png"></td>
+                              <td align="left"><img src="img/2015010513171000011.png"></td>
+                            </tr>
+                            <tr>
+                              <td align="left"><img src="img/2015010513173600011.png"></td>
+                            </tr>
+                          </tbody>
+                          </table>
+                        </div>
+                        <div class="title">
+                            <div class="title_text" align="left"><strong><a style="color:#FFFFFF">热舞</a></strong></div>
+                        </div>
+                        <div class="detail-container">
+                            <table id="list_detail">
+                                <tbody>
+                                <tr>
+                                    <td class="td_point" align="left"><label>小区</label></td>
+                                    <td><span>九棵树蓝调沙龙</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td_point"><label>户型</label></td>
+                                    <td><span>三室一厅两卫</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td_point"><label>楼层</label></td>
+                                    <td><span>2/6</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td_point"><label style="width:36px">总面积</label></td>
+                                    <td><span>21.3平米/98.0平米</span></td>
+                                </tr>
+                                </tbody>
+                                <tbody>
+                                <tr>
+                                    <td class="td_point"><label>描述</label></td>
+                                    <td><span>设计师以炽烈的红来引燃年轻人心中的梦想与激情。青春的热情似火与英伦风的优雅自然完美的糅合。如同在这城市邂逅另一个自己，低调而张扬，有着不可湮没的个性独然。</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td_point"><label>交通</label></td>
+                                    <td><span>地铁：九棵树城铁<br>公交：582，通4，通12，通11，通15，通35等公交</span></td>
+                                </tr>
+                                </tbody>
+                                <tbody>
+                                  <tr>
+                                    <td class="td_point"><label>购物</label></td>
+                                    <td><span>出门即到大型购物广场家乐福，京通罗斯福购物广场，小区旁边就有个菜市场，方便您的生活等。
+                                    </span></td>
+                                  </tr>
+                                  <tr>
+                                    <td class="td_point"><label>办公</label></td>
+                                    <td><span>瑞都国际写字楼，金成国际写字楼等。</span></td>
+                                  </tr>
+                                  <tr>
+                                    <td class="td_point"><label>银行</label></td>
+                                    <td><span>建行，中行，北京银行，工商，农业，中信等。
+                                </span></td>
+                                  </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="title">
+                            <div class="title_text" align="left"><strong><a style="color:#FFFFFF">价格公式</a></strong></div>
+                        </div>
+                        <div align="center"><img class="images" src="img/price_formula.png"></div>
+                        <div align="center">
+                            <table align="center" class="table"><tbody><tr>
+                            <td width="34px"><img align="right" src="img/eq.png" width="100%"></td>
+                            <td width="4px">&nbsp;</td>
+                            <td width="110px">
+                                <div class="top_price">
+                                    <font id="font_price" class="font_td">
+                                        1700
+                                    </font>
+                                </div>
+                                <img align="left" src="img/price.png" width="100%">
+                            </td>
+                            </tr>
+                            <tr style="color:#FFFFFF;height:30px;font-size:14px;"><td colspan="3">整租优惠价：
+                                5130
+                            </td></tr>
+                            </tbody></table>
+                        </div>
+                        <div class="button_div">
+                            <a href="#"><img class="noborder" src="img/button_detail_contact.gif" width="100%"></a>
+                        </div>
+                        <div class="police">
+                            <a href="#">举报</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="slide-wrap">
+                            <h1>房源图片</h1>
+                            <div class="slider6">
+                              <div class="slide"><img src="http://placehold.it/600x200&text=FooBar1"></div>
+                              <div class="slide"><img src="http://placehold.it/600x200&text=FooBar2"></div>
+                              <div class="slide"><img src="http://placehold.it/600x200&text=FooBar3"></div>
+                              <div class="slide"><img src="http://placehold.it/600x200&text=FooBar4"></div> 
+                            </div>
+                        </div>
+                        <div class="slide-wrap">
+                            <h1>公共区域</h1>
+                            <div class="slider6">
+                              <div class="slide"><img src="http://placehold.it/600x200&text=FooBar1"></div>
+                              <div class="slide"><img src="http://placehold.it/600x200&text=FooBar2"></div>
+                              <div class="slide"><img src="http://placehold.it/600x200&text=FooBar3"></div>
+                              <div class="slide"><img src="http://placehold.it/600x200&text=FooBar4"></div> 
+                            </div>
+                        </div>
+                        <h1 class="detail-title">我们为你精心打造</h1>
+                        <h1 class="detail-title">一个<span class="detail-title-b"> “有品质的家”</span></h1>
+                        <div class="area">
+                            
+                        </div>
+                        <div class="title">
+                            <div class="title_text" align="left"><strong><a style="color:#FFFFFF">标准配置</a></strong></div>
+                        </div>
+                        <div class="list_item_div" style="background-color:#303133">
+                          <table style="border:0;border-spacing:2px;" width="90%" align="center">
+                            <tbody>
+                            <tr>
+                              <td align="left"><img src="img/2015010513142700011.png"></td>
+                              <td align="left"><img src="img/2015010513144300011.png"></td>
+                              <td align="left"><img src="img/2015010513145500011.png"></td>
+                              <td align="left"><img src="img/2015010513153400011.png"></td>
+                            </tr>
+                            <tr>
+                              <td align="left"><img src="img/2015010513155200011.png"></td>
+                              <td align="left"><img src="img/2015010513162200011.png"></td>
+                              <td align="left"><img src="img/2015010513163900011.png"></td>
+                              <td align="left"><img src="img/2015010513171000011.png"></td>
+                            </tr>
+                            <tr>
+                              <td align="left"><img src="img/2015010513173600011.png"></td>
+                            </tr>
+                          </tbody>
+                          </table>
+                        </div>
+                        <div class="title">
+                            <div class="title_text" align="left"><strong><a style="color:#FFFFFF">热舞</a></strong></div>
+                        </div>
+                        <div class="detail-container">
+                            <table id="list_detail">
+                                <tbody>
+                                <tr>
+                                    <td class="td_point" align="left"><label>小区</label></td>
+                                    <td><span>九棵树蓝调沙龙</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td_point"><label>户型</label></td>
+                                    <td><span>三室一厅两卫</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td_point"><label>楼层</label></td>
+                                    <td><span>2/6</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td_point"><label style="width:36px">总面积</label></td>
+                                    <td><span>21.3平米/98.0平米</span></td>
+                                </tr>
+                                </tbody>
+                                <tbody>
+                                <tr>
+                                    <td class="td_point"><label>描述</label></td>
+                                    <td><span>设计师以炽烈的红来引燃年轻人心中的梦想与激情。青春的热情似火与英伦风的优雅自然完美的糅合。如同在这城市邂逅另一个自己，低调而张扬，有着不可湮没的个性独然。</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td_point"><label>交通</label></td>
+                                    <td><span>地铁：九棵树城铁<br>公交：582，通4，通12，通11，通15，通35等公交</span></td>
+                                </tr>
+                                </tbody>
+                                <tbody>
+                                  <tr>
+                                    <td class="td_point"><label>购物</label></td>
+                                    <td><span>出门即到大型购物广场家乐福，京通罗斯福购物广场，小区旁边就有个菜市场，方便您的生活等。
+                                    </span></td>
+                                  </tr>
+                                  <tr>
+                                    <td class="td_point"><label>办公</label></td>
+                                    <td><span>瑞都国际写字楼，金成国际写字楼等。</span></td>
+                                  </tr>
+                                  <tr>
+                                    <td class="td_point"><label>银行</label></td>
+                                    <td><span>建行，中行，北京银行，工商，农业，中信等。
+                                </span></td>
+                                  </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="title">
+                            <div class="title_text" align="left"><strong><a style="color:#FFFFFF">价格公式</a></strong></div>
+                        </div>
+                        <div align="center"><img class="images" src="img/price_formula.png"></div>
+                        <div align="center">
+                            <table align="center" class="table"><tbody><tr>
+                            <td width="34px"><img align="right" src="img/eq.png" width="100%"></td>
+                            <td width="4px">&nbsp;</td>
+                            <td width="110px">
+                                <div class="top_price">
+                                    <font id="font_price" class="font_td">
+                                        1700
+                                    </font>
+                                </div>
+                                <img align="left" src="img/price.png" width="100%">
+                            </td>
+                            </tr>
+                            <tr style="color:#FFFFFF;height:30px;font-size:14px;"><td colspan="3">整租优惠价：
+                                5130
+                            </td></tr>
+                            </tbody></table>
+                        </div>
+                        <div class="button_div">
+                            <a href="#"><img class="noborder" src="img/button_detail_contact.gif" width="100%"></a>
+                        </div>
+                        <div class="police">
+                            <a href="#">举报</a>
+                        </div>
+                    </li> -->
+                </ul>
+            </div>
+            <div class="ad-btn"><a href="#">佣</a></div>
+        </section>
+        <script src="lib/zepto.min.js"></script>
+        <script src="js/frozen.js"></script>
+         <script>
+        window.addEventListener('load', function(){
+
+            var tab = new fz.Scroll('.ui-tab', {
+                role: 'tab',
+                autoplay: false,
+                interval: 3000
+            });
+
+            /* 滑动开始前 */
+            tab.on('beforeScrollStart', function(from, to) {
+                // from 为当前页，to 为下一页
+            })
+
+            /* 滑动结束 */
+            tab.on('scrollEnd', function(curPage) {
+                // curPage 当前页
+            });
+
+        })
+        </script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+          $('.slider6').bxSlider({
+            mode: 'fade',
+            slideWidth: 600, 
+            slideMargin: 10
+          });
+        });
+    </script>
+    </body>
+
+</html>
