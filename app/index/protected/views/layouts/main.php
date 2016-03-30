@@ -70,7 +70,7 @@
 		<li data-href="js.html" class="ui-bzpo"><div>包租婆</div></li>
 	</ul>
 </header>
-<footer class="ui-footer ui-footer-btn ui-footer-new">
+<footer id="foot"class="ui-footer ui-footer-btn ui-footer-new">
 	<ul class="ui-tiled ui-border-t">
 		<li data-href="index.html" class="ui-border-r ui-house"><div>微家</div></li>
 		<li data-href="rent.html" class="ui-border-r ui-rent"><div>我要租房</div></li>
@@ -84,6 +84,20 @@
 </section>
 <script src="lib/zepto.min.js"></script>
 <script src="js/frozen.js"></script>
-
+		<script>
+		$(document).ready(function() { 
+			$.ajax({
+		　　　　　　url: 'index.php?r=basemenu/footmenu',
+		　　　　　　type: 'POST',
+		　　　　　　//data: { id: idValue },
+		　　　　　　//timeout: 3000,
+		　　　　　　success: function (data) {
+						$("#foot").html(data);
+					 },
+		　　　　　　error: function (data) {
+								 alert('===');},
+　　　　		})
+		}); 
+		</script>
 </body>
 </html>

@@ -16,7 +16,7 @@
         
     </head>
     <body ontouchstart="">
-        <footer class="ui-footer ui-footer-btn ui-footer-new">
+        <footer id="foot"class="ui-footer ui-footer-btn ui-footer-new">
             <ul class="ui-tiled ui-border-t">
                 <li data-href="introduce.html" class="ui-border-r ui-house"><div>微家</div></li>
                 <li data-href="index.html" class="ui-border-r ui-rent"><div>首页</div></li>
@@ -147,6 +147,21 @@
         <script src="lib/zepto.min.js"></script>
         <script src="js/frozen.js"></script>
         <script src="js/house.js"></script>
+        <script>
+		$(document).ready(function() { 
+			$.ajax({
+		　　　　　　url: 'index.php?r=basemenu/footmenu',
+		　　　　　　type: 'POST',
+		　　　　　　//data: { id: idValue },
+		　　　　　　//timeout: 3000,
+		　　　　　　success: function (data) {
+						$("#foot").html(data);
+					 },
+		　　　　　　error: function (data) {
+								 alert('===');},
+　　　　		})
+		}); 
+		</script>
     </body>
 
 </html>

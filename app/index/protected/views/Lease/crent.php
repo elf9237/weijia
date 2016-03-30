@@ -58,12 +58,12 @@
         <!-- <header class="ui-header ui-header-positive ui-border-b">
             <i class="ui-icon-return" onclick="history.back()"></i><h1>微家</h1><button class="ui-btn ui-back-index">账户</button>
         </header> -->
-        <footer class="ui-footer ui-footer-btn ui-footer-new">
-            <ul class="ui-tiled ui-border-t">
-                <li data-href="introduce.html" class="ui-border-r ui-house"><div>微家</div></li>
-                <li data-href="index.html" class="ui-border-r ui-rent"><div>首页</div></li>
-                <li data-href="rent.html" class="ui-rentout"><div>我要租房</div></li>
-            </ul>
+        <footer id="foot"class="ui-footer ui-footer-btn ui-footer-new">
+<!--            <ul class="ui-tiled ui-border-t">-->
+<!--                <li data-href="introduce.html" class="ui-border-r ui-house"><div>微家</div></li>-->
+<!--                <li data-href="index.html" class="ui-border-r ui-rent"><div>首页</div></li>-->
+<!--                <li data-href="rent.html" class="ui-rentout"><div>我要租房</div></li>-->
+<!--            </ul>-->
         </footer>
         <section class="ui-container">
         <div class="ui-tab">
@@ -108,8 +108,25 @@
 </form>
 <div class="post btnPost"><button class="btn_post" id="btn_post">发布</button></div>
         </section>
+        <script>
+		$(document).ready(function() { 
+			$.ajax({
+		　　　　　　url: 'index.php?r=basemenu/footmenu',
+		　　　　　　type: 'POST',
+		　　　　　　//data: { id: idValue },
+		　　　　　　//timeout: 3000,
+		　　　　　　success: function (data) {
+						$("#foot").html(data);
+					 },
+		　　　　　　error: function (data) {
+								 alert('===');},
+　　　　		})
+		}); 
+		</script>
         <script src="lib/zepto.min.js"></script>
         <script src="js/frozen.js"></script>
         <script src="js/house.js"></script>
+        
+		
     </body>
 </html>

@@ -55,14 +55,14 @@
     </style>
     </head>
     <body ontouchstart="">
-        <header class="ui-header ui-header-positive ui-border-b ui-header-positive-new">
+        <header id="head"class="ui-header ui-header-positive ui-border-b ui-header-positive-new">
            <ul class="ui-tiled ui-border-t">
                  <li data-href="shopstore.html" class="ui-border-r ui-rentflow"><div>商铺出租</div></li>
                 <li data-href="add.html" class="ui-border-r ui-joinflow"><div>加盟流程</div></li>
                 <li data-href="bzp.html" class="ui-bzpo"><div>包租婆</div></li>
             </ul>
         </header>
-        <footer class="ui-footer ui-footer-btn ui-footer-new">
+        <footer id="foot" class="ui-footer ui-footer-btn ui-footer-new">
             <ul class="ui-tiled ui-border-t">
                  <li data-href="introduce.html" class="ui-border-r ui-house"><div>微家</div></li>
                 <li data-href="rent.html" class="ui-border-r ui-rent"><div>我要租房</div></li>
@@ -77,5 +77,35 @@
         <script src="lib/zepto.min.js"></script>
         <script src="js/frozen.js"></script>
         <script src="js/house.js"></script>
+        <script>
+		$(document).ready(function() { 
+			$.ajax({
+		　　　　　　url: 'index.php?r=basemenu/headmenu',
+		　　　　　　type: 'POST',
+		　　　　　　//data: { id: idValue },
+		　　　　　　//timeout: 3000,
+		　　　　　　success: function (data) {
+						$("#head").html(data);
+					 },
+		　　　　　　error: function (data) {
+								 alert('===');},
+　　　　		})
+		}); 
+		</script>
+		<script>
+		$(document).ready(function() { 
+			$.ajax({
+		　　　　　　url: 'index.php?r=basemenu/footmenu',
+		　　　　　　type: 'POST',
+		　　　　　　//data: { id: idValue },
+		　　　　　　//timeout: 3000,
+		　　　　　　success: function (data) {
+						$("#foot").html(data);
+					 },
+		　　　　　　error: function (data) {
+								 alert('===');},
+　　　　		})
+		}); 
+		</script>
     </body>
 </html>

@@ -55,19 +55,19 @@
     </style>
     </head>
     <body ontouchstart="">
-        <header class="ui-header ui-header-positive ui-border-b ui-header-positive-new">
-           <ul class="ui-tiled ui-border-t">
-                <li data-href="./index.php?r=store" class="ui-border-r ui-rentflow"><div>商铺出租</div></li>
-                <li data-href="./index.php?r=show/add" class="ui-border-r ui-joinflow"><div>加盟流程</div></li>
-                <li data-href="./index.php?r=bzp" class="ui-bzpo"><div>包租婆</div></li>
-            </ul>
+        <header id="head" class="ui-header ui-header-positive ui-border-b ui-header-positive-new">
+<!--           <ul class="ui-tiled ui-border-t">-->
+<!--                <li data-href="./index.php?r=store" class="ui-border-r ui-rentflow"><div>商铺出租</div></li>-->
+<!--                <li data-href="./index.php?r=show/add" class="ui-border-r ui-joinflow"><div>加盟流程</div></li>-->
+<!--                <li data-href="./index.php?r=bzp" class="ui-bzpo"><div>包租婆</div></li>-->
+<!--            </ul>-->
         </header>
-        <footer class="ui-footer ui-footer-btn ui-footer-new">
-            <ul class="ui-tiled ui-border-t">
-                <li data-href="./index.php?r=weijia" class="ui-border-r ui-house"><div>微家</div></li>
-                <li data-href="./index.php?r=lease" class="ui-border-r ui-rent"><div>我要租房</div></li>
-                <li data-href="./index.php?r=lease/crent" class="ui-rentout"><div>我要出租</div></li>
-            </ul>
+        <footer id="foot"class="ui-footer ui-footer-btn ui-footer-new">
+<!--            <ul class="ui-tiled ui-border-t">-->
+<!--                <li data-href="./index.php?r=weijia" class="ui-border-r ui-house"><div>微家</div></li>-->
+<!--                <li data-href="./index.php?r=lease" class="ui-border-r ui-rent"><div>我要租房</div></li>-->
+<!--                <li data-href="./index.php?r=lease/crent" class="ui-rentout"><div>我要出租</div></li>-->
+<!--            </ul>-->
         </footer>
         <section class="ui-container">
             <div id="iSlider-wrapper"></div>
@@ -116,6 +116,36 @@
 		        animateTime: 800, // ms
 		        plugins: ['dot']
 		    });
+		</script>
+		<script>
+		$(document).ready(function() { 
+			$.ajax({
+		　　　　　　url: 'index.php?r=basemenu/headmenu',
+		　　　　　　type: 'POST',
+		　　　　　　//data: { id: idValue },
+		　　　　　　//timeout: 3000,
+		　　　　　　success: function (data) {
+						$("#head").html(data);
+					 },
+		　　　　　　error: function (data) {
+								 alert('===');},
+　　　　		})
+		}); 
+		</script>
+		<script>
+		$(document).ready(function() { 
+			$.ajax({
+		　　　　　　url: 'index.php?r=basemenu/footmenu',
+		　　　　　　type: 'POST',
+		　　　　　　//data: { id: idValue },
+		　　　　　　//timeout: 3000,
+		　　　　　　success: function (data) {
+						$("#foot").html(data);
+					 },
+		　　　　　　error: function (data) {
+								 alert('===');},
+　　　　		})
+		}); 
 		</script>
     </body>
 </html>
