@@ -342,3 +342,35 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/weijia/app/index/index.php?r=store/detile
 ---
+2016/04/04 15:48:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "creat".' in E:\workspace\work\weijia\app\framework\web\CController.php:483
+Stack trace:
+#0 E:\workspace\work\weijia\app\framework\web\CController.php(270): CController->missingAction('creat')
+#1 E:\workspace\work\weijia\app\framework\web\CWebApplication.php(282): CController->run('creat')
+#2 E:\workspace\work\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('lease/creat')
+#3 E:\workspace\work\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 E:\workspace\work\weijia\app\index\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/weijia/app/index/index.php?r=lease/creat
+---
+2016/04/04 16:03:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rent".' in E:\workspace\work\weijia\app\framework\web\CController.php:483
+Stack trace:
+#0 E:\workspace\work\weijia\app\framework\web\CController.php(270): CController->missingAction('rent')
+#1 E:\workspace\work\weijia\app\framework\web\CWebApplication.php(282): CController->run('rent')
+#2 E:\workspace\work\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('lease/rent')
+#3 E:\workspace\work\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 E:\workspace\work\weijia\app\index\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/weijia/app/index/index.php?r=lease/rent
+HTTP_REFERER=http://localhost/weijia/app/index/index.php?r=lease/storerent
+---
+2016/04/04 16:04:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rent".' in E:\workspace\work\weijia\app\framework\web\CController.php:483
+Stack trace:
+#0 E:\workspace\work\weijia\app\framework\web\CController.php(270): CController->missingAction('rent')
+#1 E:\workspace\work\weijia\app\framework\web\CWebApplication.php(282): CController->run('rent')
+#2 E:\workspace\work\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('lease/rent')
+#3 E:\workspace\work\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 E:\workspace\work\weijia\app\index\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/weijia/app/index/index.php?r=lease/rent
+HTTP_REFERER=http://localhost/weijia/app/index/index.php?r=lease/storerent
+---

@@ -18,11 +18,11 @@
     </head>
     <body ontouchstart="">
         <footer id="foot"class="ui-footer ui-footer-btn ui-footer-new">
-            <ul class="ui-tiled ui-border-t">
-                <li data-href="index.html" class="ui-border-r ui-house"><div>微家</div></li>
-                <li data-href="index.html" class="ui-border-r ui-rent"><div>首页</div></li>
-                <li data-href="crent.html" class="ui-rentout"><div>我要出租</div></li>
-            </ul>
+<!--            <ul class="ui-tiled ui-border-t">-->
+<!--                <li data-href="index.html" class="ui-border-r ui-house"><div>微家</div></li>-->
+<!--                <li data-href="index.html" class="ui-border-r ui-rent"><div>首页</div></li>-->
+<!--                <li data-href="crent.html" class="ui-rentout"><div>我要出租</div></li>-->
+<!--            </ul>-->
         </footer>
         <section class="ui-container">
             <section class="filter-wrap">

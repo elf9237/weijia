@@ -10,7 +10,10 @@ class LeaseController extends BaseController
 		
 		$this->render('crent');
 	}
-	
+	public function actionStorerent(){
+		$this->render('storerent');
+
+	}
 	
 }
 

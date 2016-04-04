@@ -66,11 +66,11 @@
 <!--            </ul>-->
         </footer>
         <section class="ui-container">
-        <div class="ui-tab">
-    <ul class="ui-tab-nav ui-border-b">
-        <li class="current">住房出租</li>
-        <li data-href="storerent.html">商铺出租</li>
-    </ul>
+        <div id="chuzumenu" class="ui-tab">
+            <ul class="ui-tab-nav ui-border-b">
+                <li data-href=""class="current" ><a href="./index.php?r=lease/crent">住房出租</a></li>
+                <li ><a href="./index.php?r=lease/storerent">商铺出租</a></li>
+            </ul>
 </div>
             <div class="list">
                 <div class="paytoptips">
@@ -108,25 +108,26 @@
 </form>
 <div class="post btnPost"><button class="btn_post" id="btn_post">发布</button></div>
         </section>
-        <script>
-		$(document).ready(function() { 
-			$.ajax({
-		　　　　　　url: 'index.php?r=basemenu/footmenu',
-		　　　　　　type: 'POST',
-		　　　　　　//data: { id: idValue },
-		　　　　　　//timeout: 3000,
-		　　　　　　success: function (data) {
-						$("#foot").html(data);
-					 },
-		　　　　　　error: function (data) {
-								 alert('===');},
-　　　　		})
-		}); 
-		</script>
+
         <script src="lib/zepto.min.js"></script>
         <script src="js/frozen.js"></script>
         <script src="js/house.js"></script>
-        
+        <script>
+            $(document).ready(function() {
+                $.ajax({
+                    url: 'index.php?r=basemenu/footmenu',
+                    type: 'POST',
+                    //data: { id: idValue },
+                    //timeout: 3000,
+                    success: function (data) {
+                        $("#foot").html(data);
+                    },
+                    error: function (data) {
+                        alert('===');},
+                })
+            });
+        </script>
+
 		
     </body>
 </html>
