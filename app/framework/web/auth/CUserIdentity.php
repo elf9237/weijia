@@ -65,9 +65,7 @@ class CUserIdentity extends CBaseUserIdentity
 	 */
 	public function getId()
 	{
-		$User = User::model()->find("gender =".$this->username);
-		return $User->type;
-		//return $this->username;
+		return $this->username;
 	}
 
 	/**

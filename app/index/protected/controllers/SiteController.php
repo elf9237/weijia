@@ -115,4 +115,22 @@ class SiteController extends BaseController
 	public function actionJoin(){
 		$this->render('join');
 	}
+	public function actionRegister(){
+		$model=new User();
+		if(isset($_POST['User'])){
+			$model->attributes=$_POST['User'];
+			$model->login_id =$model->cellphone;
+			$password = $model->password;
+			$model->password = md5($password);
+			$model->type =0;
+			if($model->save()){
+				$this->redirect('index.php?r=site/regsuccess');
+			}
+			$model->password = $password;
+		}
+		$this->render('register',array('model'=>$model));
+	}
+	public  function  actionRegSuccess(){
+		$this->render('success');
+	}
 }
