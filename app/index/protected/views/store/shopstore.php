@@ -51,11 +51,14 @@
                                 <dt class="info-title"><strong>【YOU+国际青年社区】向空旷孤独的房间say goodby</strong></dt>
                                 <dd class="info-desc">
                                     <span class="info-desc-detail"><em>一室-宝龙广场</em>-菏泽小区32 </span>
-                                    <span class="info-desc-tag info-desc-tag--right"> <em class="biz">佣金</em> </span>
+                                   <!--  <span class="info-desc-tag info-desc-tag--right"> <em class="biz">佣金</em> </span> -->
                                 </dd>
                                 
                                 <dd class="info-desc">
                                 <span class="info-desc-price"> 1500<em class="priceunit"> 元</em></span><span class="info-desc-tag"><em class="time">今天</em></span><span class="info-desc-tag--right">  <em class="personal">个人</em>    </span>
+                                </dd>
+                                <dd class="info-desc">
+                                <span class="info-desc-tag">返现<em class="time">50</em>元</span><span class="info-desc-tag--right">  <em class="personal">转发得10元</em>    </span>
                                 </dd>
                             </dl>
                         </a>

@@ -33,7 +33,7 @@ html{font-size: 42px;}
 .infoList{display: block;width: 100%;background: #fff;}
 .infoList li.item{border-top: 1px solid #f3f3f3;}
 .infoList li.item:first-child{border-top: 0px;}
-.infoList li.item a{height: 2rem;padding: .3rem .5rem;display: flex;}
+.infoList li.item a{height: 2.5rem;padding: .3rem .5rem;display: flex;}
 .item a .item-thumb{width: 2.8rem;height: 2.1rem;border: 0;}
 .item a .item-info{flex:1;padding-left: .3rem;}
 .info-title{height: 1.125rem;line-height: .5625rem;font-size: .40625rem;overflow: hidden;position: relative;top: -.0625rem;}
@@ -75,6 +75,8 @@ html{font-size: 42px;}
 .noborder{border: 0;}
 .link-text{padding-right: 20px;}
 .ng-scope{margin-bottom: 20px;margin-top: 10px;}
+
+
 
 /*我要出租*/
 .paytoptips {
