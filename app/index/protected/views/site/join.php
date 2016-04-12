@@ -1,15 +1,14 @@
-
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-        <meta name="format-detection" content="telephone=no">
-        <title>提交审核</title>
-        <link rel="stylesheet" href="css/frozen.css">
-        <link href="./public/css/iSlider.css" rel="stylesheet">
-        <link href="css/house.css" rel="stylesheet">
-        <style>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>提交审核</title>
+    <link rel="stylesheet" href="css/frozen.css">
+    <link href="./public/css/iSlider.css" rel="stylesheet">
+    <link href="css/house.css" rel="stylesheet">
+    <style>
         /*ul wrapper*/
         #iSlider-wrapper {
             height: 90%;
@@ -17,6 +16,7 @@
             overflow: hidden;
             position: absolute;
         }
+
         #iSlider-wrapper ul {
             list-style: none;
             margin: 0;
@@ -53,77 +53,93 @@
             margin-top: 34%;
         }
     </style>
-    </head>
-    <body ontouchstart="">
-        <!-- <header class="ui-header ui-header-positive ui-border-b ui-header-positive-new">
-           <ul class="ui-tiled ui-border-t">
-                <li data-href="shopstore.html" class="ui-border-r ui-rentflow"><div>商铺出租</div></li>
-                <li data-href="add.html" class="ui-border-r ui-joinflow"><div>加盟流程</div></li>
-                <li data-href="bzp.html" class="ui-bzpo"><div>包租婆</div></li>
-            </ul>
-        </header> -->
-        <footer id="foot"class="ui-footer ui-footer-btn ui-footer-new">
-            <ul class="ui-tiled ui-border-t">
-                <li data-href="introduce.html" class="ui-border-r ui-house"><div>微家</div></li>
-                <li data-href="rent.html" class="ui-border-r ui-rent"><div>我要租房</div></li>
-                <li data-href="crent.html" class="ui-rentout"><div>我要出租</div></li>
-            </ul>
-        </footer>
-        <section class="ui-container">
-            <div class="ui-form ui-border-t mt30">
-    <form action="#">
+</head>
+<body ontouchstart="">
+<!-- <header class="ui-header ui-header-positive ui-border-b ui-header-positive-new">
+   <ul class="ui-tiled ui-border-t">
+        <li data-href="shopstore.html" class="ui-border-r ui-rentflow"><div>商铺出租</div></li>
+        <li data-href="add.html" class="ui-border-r ui-joinflow"><div>加盟流程</div></li>
+        <li data-href="bzp.html" class="ui-bzpo"><div>包租婆</div></li>
+    </ul>
+</header> -->
+<footer id="foot" class="ui-footer ui-footer-btn ui-footer-new">
+    <ul class="ui-tiled ui-border-t">
+        <li data-href="introduce.html" class="ui-border-r ui-house">
+            <div>微家</div>
+        </li>
+        <li data-href="rent.html" class="ui-border-r ui-rent">
+            <div>我要租房</div>
+        </li>
+        <li data-href="crent.html" class="ui-rentout">
+            <div>我要出租</div>
+        </li>
+    </ul>
+</footer>
+<section class="ui-container">
+    <div class="ui-form ui-border-t mt30">
+
+        <?php $form = $this->beginWidget('CActiveForm', array(
+            'id' => 'agent-form',
+            'enableClientValidation' => false
+        )); ?>
+
         <div class="ui-form-item ui-border-b">
             <label>
-                身份证号码
+                <?php echo $form->label($model, 'user_idno'); ?>
             </label>
-            <input type="text" placeholder="18位身份证号码">
+            <?php echo $form->textField($model, 'user_idno', array('class' => "text", 'placeholder' => "18位身份证号码")); ?>
+
             <a href="#" class="ui-icon-close">
             </a>
         </div>
         <div class="ui-form-item ui-form-item-textarea ui-border-b">
             <label>
-                加盟区域
+                <?php echo $form->label($model, 'jiamengzone'); ?>
             </label>
-            <textarea placeholder="区域地址"></textarea>
+            <?php echo $form->textField($model, 'jiamengzone', array('class' => "textarea", 'placeholder' => "区域地址")); ?>
+
         </div>
         <div class="ui-form-item ui-form-item-l ui-border-b">
             <label class="ui-border-r">
                 中国 +86
             </label>
-            <input type="text" placeholder="请输入手机号码">
+            <?php echo $form->textField($model, 'cellphone', array('class' => "text", 'placeholder' => "请输入手机号码")); ?>
+
             <a href="#" class="ui-icon-close">
             </a>
         </div>
-        <p class="read-w"> 
-    <label class="ui-checkbox-s">
-        <input type="checkbox" name="checkbox" checked>
-    </label>
-     <a href="#">我已阅读协议并同意</a>
-</p>
-<div class="ui-notice-btn">
-        <button class="ui-btn-primary ui-btn-lg link-btn" data-href="sbt-error.html">提交</button>
+        <p class="read-w">
+            <label class="ui-checkbox-s">
+                <input type="checkbox" name="checkbox" checked>
+            </label>
+            <a href="#">我已阅读协议并同意</a>
+        </p>
+        <div class="ui-notice-btn">
+            <?php echo $form->errorSummary($model,'<p>错误如下：</p>');?>
+            <?php echo CHtml::submitButton('提交', array('class' => 'ui-btn-primary ui-btn-lg link-btn', 'data-href' => 'sbt-error.html')); ?>
+        </div>
+        <?php $this->endWidget(); ?>
     </div>
-    </form>
-</div>
-        </section>
-        
-    </body>
-    <script src="lib/zepto.min.js"></script>
-        <script src="js/frozen.js"></script>
-        <script src="js/house.js"></script>
-        <script>
-		$(document).ready(function() { 
-			$.ajax({
-		　　　　　　url: 'index.php?r=basemenu/footmenu',
-		　　　　　　type: 'POST',
-		　　　　　　//data: { id: idValue },
-		　　　　　　//timeout: 3000,
-		　　　　　　success: function (data) {
-						$("#foot").html(data);
-					 },
-		　　　　　　error: function (data) {
-								 alert('===');},
-　　　　		})
-		}); 
-		</script>
+</section>
+
+</body>
+<script src="lib/zepto.min.js"></script>
+<script src="js/frozen.js"></script>
+<script src="js/house.js"></script>
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            url: 'index.php?r=basemenu/footmenu',
+            type: 'POST',
+            //data: { id: idValue },
+            //timeout: 3000,
+            success: function (data) {
+                $("#foot").html(data);
+            },
+            error: function (data) {
+                alert('===');
+            },
+        })
+    });
+</script>
 </html>
