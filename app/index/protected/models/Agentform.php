@@ -34,11 +34,16 @@ class Agentform extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('user_id, user_name, user_idno, province, city, zone', 'required'),
+			array('user_idno', 'required','message'=>'身份证号码不能为空'),
+			array('user_idno', 'length','is'=>18,'message'=>'身份证号码必须是18位'),
 			array('user_id, audit_status', 'numerical', 'integerOnly'=>true),
 			array('user_name, audit_id', 'length', 'max'=>50),
 			array('user_idno, province, city, zone', 'length', 'max'=>18),
 			array('create_time, audit_time', 'length', 'max'=>10),
+			array('create_time, audit_time', 'length', 'max'=>10),
+			array('jiamengzone', 'length', 'max'=>400),
+			array('jiamengzone', 'required', 'message'=>'请输入加盟区域'),
+			array('cellphone','match', 'pattern'=>"/^1[3-5,8]{1}[0-9]{9}$/",'message'=>'电话格式不正确'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, user_id, user_name, user_idno, province, city, zone, create_time, audit_time, audit_status, audit_id', 'safe', 'on'=>'search'),
@@ -65,10 +70,12 @@ class Agentform extends CActiveRecord
 			'id' => 'ID',
 			'user_id' => 'User',
 			'user_name' => 'User Name',
-			'user_idno' => 'User Idno',
-			'province' => 'Province',
-			'city' => 'City',
-			'zone' => 'Zone',
+			'user_idno' => '身份证号',
+			'jiamengzone' => '加盟区域',
+			'cellphone' => '手机号码',
+			'province' => '省',
+			'city' => '城市',
+			'zone' => '区',
 			'create_time' => 'Create Time',
 			'audit_time' => 'Audit Time',
 			'audit_status' => 'Audit Status',
@@ -101,6 +108,8 @@ class Agentform extends CActiveRecord
 		$criteria->compare('province',$this->province,true);
 		$criteria->compare('city',$this->city,true);
 		$criteria->compare('zone',$this->zone,true);
+		$criteria->compare('jiamentzone',$this->jiamentzone,true);
+		$criteria->compare('cellphone',$this->cellphone,true);
 		$criteria->compare('create_time',$this->create_time,true);
 		$criteria->compare('audit_time',$this->audit_time,true);
 		$criteria->compare('audit_status',$this->audit_status);
