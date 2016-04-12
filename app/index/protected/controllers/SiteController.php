@@ -113,7 +113,18 @@ class SiteController extends BaseController
 		$this->redirect(Yii::app()->homeUrl);
 	}
 	public function actionJoin(){
-		$this->render('join');
+		$model=new Agentform();
+		if(isset($_POST['Agentform'])){
+			$model->attributes=$_POST['Agentform'];
+
+			if($model->save()){
+				$this->redirect('index.php?r=site/joinsuccess');
+			}
+		}
+		$this->render('join',array('model'=>$model));
+	}
+	public function actionJoinSuccess(){
+		$this->render('joinsuc');
 	}
 	public function actionRegister(){
 		$model=new User();
