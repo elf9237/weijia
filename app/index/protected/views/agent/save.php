@@ -72,8 +72,8 @@
 </footer> -->
 <section class="ui-notice ui-notice-success">
     <span class="ui-icon-emo"></span>
-    <p class="success-title">恭喜你，审核通过</p>
-    <p class="success-money">费用说明，区域代理费用说明,费用说明，区域代理费用说明费用说明，区域代理费用说明费用说明，区域代理费用说明</p>
+    <p class="success-title">恭喜你，成功提交</p>
+    <p class="success-money">耐心等待审核，审核后支付费用即可成为代理。。费用说明，区域代理费用说明,费用说明，区域代理费用说明费用说明，区域代理费用说明费用说明，区域代理费用说明</p>
     <div class="ui-notice-btn">
         <button class="ui-btn-primary ui-btn-lg">支付费用</button>
     </div>
