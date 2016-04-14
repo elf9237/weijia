@@ -39,7 +39,7 @@ class AgentController extends BaseController
             $model->city = $_POST['city'];
             $model->zone = $_POST['zone'];
             $model->audit_time = time();
-            $model->audit_status = 1;
+            $model->audit_status =  $_POST['audit_status'];
             $model->audit_id = Yii::app()->user->userdetail->id;
             if ($model->save())
             {
@@ -59,7 +59,16 @@ class AgentController extends BaseController
     public function actionAuditList()
     {
         //待审核列表
-        $this->render('index');
+
+//        $user = Yii::app()->db->createCommand()
+//            ->select('id, username, profile')
+//            ->from('tbl_user u')
+//            ->join('tbl_profile p', 'u.id=p.user_id')
+//            ->where('id=:id', array(':id'=>$id))
+//            ->queryRow();
+        $agentform = Agentform::model()->findAll(
+            'audit_status=:a',array('a'=>0));
+       echo  CJSON::encode($agentform);
     }
     public function actionJoin()
     {
