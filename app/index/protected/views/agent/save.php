@@ -1,12 +1,11 @@
 
-
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
-    <title>审核通过</title>
+    <title>微家</title>
     <link rel="stylesheet" href="css/frozen.css">
     <link href="./public/css/iSlider.css" rel="stylesheet">
     <link href="css/house.css" rel="stylesheet">
@@ -56,26 +55,12 @@
     </style>
 </head>
 <body ontouchstart="">
-<!-- <header class="ui-header ui-header-positive ui-border-b ui-header-positive-new">
-   <ul class="ui-tiled ui-border-t">
-        <li data-href="shopstore.html" class="ui-border-r ui-rentflow"><div>商铺出租</div></li>
-        <li data-href="add.html" class="ui-border-r ui-joinflow"><div>加盟流程</div></li>
-        <li data-href="bzp.html" class="ui-bzpo"><div>包租婆</div></li>
-    </ul>
-</header> -->
-<!-- <footer class="ui-footer ui-footer-btn ui-footer-new">
-    <ul class="ui-tiled ui-border-t">
-        <li data-href="introduce.html" class="ui-border-r ui-house"><div>微家</div></li>
-        <li data-href="rent.html" class="ui-border-r ui-rent"><div>我要租房</div></li>
-        <li data-href="crent.html" class="ui-rentout"><div>我要出租</div></li>
-    </ul>
-</footer> -->
-<section class="ui-notice ui-notice-success">
-    <span class="ui-icon-emo"></span>
-    <p class="success-title">恭喜你，成功提交</p>
-    <p class="success-money">耐心等待审核，审核后支付费用即可成为代理。。费用说明，区域代理费用说明,费用说明，区域代理费用说明费用说明，区域代理费用说明费用说明，区域代理费用说明</p>
+
+<section class="ui-notice">
+    <i></i>
+    <p>资料已提交审核</p>
     <div class="ui-notice-btn">
-        <button class="ui-btn-primary ui-btn-lg">支付费用</button>
+        <button class="ui-btn-primary ui-btn-lg">返回</button>
     </div>
 </section>
 <script src="lib/zepto.min.js"></script>
