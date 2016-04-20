@@ -112,23 +112,26 @@ class SiteController extends BaseController
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
-	public function actionJoin(){
-		$model=new Agentform();
+	public function actionKanfang(){
+		$model=new Message();
 		$user_info =  Yii::app()->user->userdetail;
 		$model->cellphone = $user_info->cellphone;
-		if(isset($_POST['Agentform'])){
-			$model->attributes=$_POST['Agentform'];
+		$model->user_id = $user_info->id;
+		$model->user_name = $user_info->user_name;
+		if(isset($_POST['Message'])){
+			$model->attributes=$_POST['Message'];
+			$model->cellphone = $user_info->cellphone;
 			$model->user_id = $user_info->id;
 			$model->user_name = $user_info->user_name;
 
 			if($model->save()){
-				$this->redirect('index.php?r=site/joinsuccess');
+				$this->redirect('index.php?r=site/kanfangsave');
 			}
 		}
-		$this->render('join',array('model'=>$model));
+		$this->render('kanfang',array('model'=>$model));
 	}
-	public function actionJoinSuccess(){
-		$this->render('joinsuc');
+	public function actionKanfangsave(){
+		$this->render('kanfangsave');
 	}
 	public function actionRegister(){
 		$model=new User();
