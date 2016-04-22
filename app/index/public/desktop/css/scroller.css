@@ -1,0 +1,14 @@
+.slide_container {
+	position: absolute;
+	z-index: 1;
+	overflow: hidden;
+	left: 0;
+	right: 0;
+	top:0;
+}
+.scrollerImage {
+	position:relative;
+	margin:0;
+	padding:0;
+	float:left;
+}
