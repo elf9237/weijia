@@ -3,8 +3,11 @@ class BaseController extends CController
 {
 	
 	public $layout=null;
+	public $wechat = null;
 
-//	public function beforeAction() {
+	public function beforeAction()
+	{
+		setWechat();
 //		
 //		//权限配置规则 modul /controller/action
 //		$name = '';
@@ -20,9 +23,14 @@ class BaseController extends CController
 //			return true;
 //		}
 //		
-//	}
+	}
 	public function init(){
 		
 		return  true;
+	}
+
+	private function setWechat()
+	{
+		$this->wechat = !(strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') === false);
 	}
 }	
