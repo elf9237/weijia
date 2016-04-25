@@ -27,9 +27,63 @@ class SiteController extends BaseController
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('index');
+		if( $this->wechat){
+			$this->render('index');
+		}else{
+			$this->render('desktop/index');
+		}
 	}
-	
+	public function actionAbout()
+	{
+		// renders the view file 'protected/views/site/index.php'
+		// using the default layout 'protected/views/layouts/main.php'
+		if( $this->wechat){
+			$this->render('index');
+		}else{
+			$this->render('desktop/aboutus');
+		}
+	}
+	public function actionJiameng()
+	{
+		// renders the view file 'protected/views/site/index.php'
+		// using the default layout 'protected/views/layouts/main.php'
+		if( $this->wechat){
+			$this->render('index');
+		}else{
+			$this->render('desktop/fangdongjiameng');
+		}
+	}
+	public function actionMyinfo()
+	{
+		// renders the view file 'protected/views/site/index.php'
+		// using the default layout 'protected/views/layouts/main.php'
+		if( $this->wechat){
+			$this->render('index');
+		}else{
+			$this->render('desktop/myinfo');
+		}
+	}
+	public function actionGuanjia()
+	{
+		// renders the view file 'protected/views/site/index.php'
+		// using the default layout 'protected/views/layouts/main.php'
+		if( $this->wechat){
+			$this->render('index');
+		}else{
+			$this->render('desktop/guanjiafuwu');
+		}
+	}
+	public function actionZufang()
+	{
+		// renders the view file 'protected/views/site/index.php'
+		// using the default layout 'protected/views/layouts/main.php'
+		if( $this->wechat){
+			$this->render('index');
+		}else{
+			$this->render('desktop/woyaozufang');
+		}
+	}
+
 	/**
 	 * This is the action to handle external exceptions.
 	 */
@@ -93,7 +147,12 @@ class SiteController extends BaseController
 				$this->redirect(Yii::app()->user->returnUrl);
 		}
 		// display the login form
-		$this->render('login',array('model'=>$model));
+		if( $this->wechat)
+		{
+			$this->render('login', array('model' => $model));
+		}else{
+			$this->render('desktop/login', array('model' => $model));
+		}
 	}
 	public function actionLoginUser(){
 		$model = new User("login");
@@ -146,7 +205,12 @@ class SiteController extends BaseController
 			}
 			$model->password = $password;
 		}
-		$this->render('register',array('model'=>$model));
+		if( $this->wechat)
+		{
+			$this->render('register', array('model' => $model));
+		}else{
+			$this->render('desktop/register', array('model' => $model));
+		}
 	}
 	public  function  actionRegSuccess(){
 		$this->render('success');
