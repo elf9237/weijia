@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)http://www.baozupo.com/baozupo/web.do#1459342081216 -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>预约找房</title>
+  
+  <meta name="description" content="">
+  <meta name="sogou_site_verification" content="DvDFbTLWNb">
+  <link rel="icon" href="http://www.baozupo.com/baozupo/images/ico.ico">
+  <link rel="shortcut icon" href="http://www.baozupo.com/baozupo/images/ico.ico">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/webCommon.js"></script>
+  <script type="text/javascript" src="js/scroller.js"></script>
+  <script type="text/javascript" src="js/picEffect.js"></script>
+  <script type="text/javascript" src="js/topbananer.js"></script>
+  <script src="js/validate.js"></script>
+  <script type="text/javascript" src="js/jquery.history.js"></script>
+  <script src="js/WdatePicker.js"></script>
+  <script src="js/style.js"></script>
+  <link href="css/WdatePicker.css" rel="stylesheet" type="text/css">
+  <script src="css/jquery.autogrowtextarea.min.js"></script>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/mainweb.css">
+  <link rel="stylesheet" href="css/comment.css">
+  <link rel="stylesheet" href="css/scroller.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="body-web" style="Overflow-y:scroll"><div style="position: absolute; z-index: 19700; top: -1970px; left: -1970px; display: none;"><iframe src="My97DatePicker.html" frameborder="0" border="0" scrolling="no" style="width: 186px; height: 199px;"></iframe></div>
+    <div class="header">
+    <div class="logo"><img src="images/logo.png" alt=""></div>
+    <div class="nav">
+      <ul>
+        <li><a href="index.php" class="active">首页</a></li>
+        <li><a href="woyaozufang.php">我要租房</a></li>
+        <li><a href="guanjiafuwu.php">管家服务</a></li>
+        <li><a href="myinfo.php">会员中心</a></li>
+        <li><a href="fangdongjiameng.php">房东加盟</a></li>
+        <li><a href="aboutus.php">关于我们</a></li>
+      </ul>
+    </div>
+    <div class="login">
+      <span><a href="login.php">登入</a></span>
+      <span>|</span>
+      <span><a href="注册.html">注册</a></span>
+    </div>
+  </div>
+  <div style="overflow:hidden;width:100%;height:2px;background:url(/baozupo/images/topline.gif);"></div>
+  
+  
+
+
+  <div style="display: none; background-color: rgb(255, 255, 255);" id="divbananer">
+    <div style="height: 400px; width: 100%; opacity: 0.96;" id="divbananerBg">
+    	<table class="table" cellpadding="0" cellspacing="0" width="100%">
+    		<tbody><tr>
+    			<td width="50%" id="tdbananerBg1" style="background-color: rgb(245, 209, 177);" onmousemove="showObj(&#39;leftpicTop&#39;)" onmouseout="hiddenObj(&#39;leftpicTop&#39;)" onclick="bananerFade(-1)" align="right">
+					<div style="position:relative;">
+						<img class="images_nobord" style="display:none;position:absolute;right:10px;top:-30px;" id="leftpicTop" src="images/slideleft.png">
+					</div>
+				</td>
+    			<td width="1000px" height="400px">
+	    			<img class="images_nobord" width="1000px" onmouseover="bananerStop()" onmouseout="bananerStart()" id="imgbananer" src="images/bananer3.jpg">
+	    		</td>
+    			<td width="50%" id="tdbananerBg2" style="background-color: rgb(245, 209, 177);" onmousemove="showObj(&#39;rightpictop&#39;)" onmouseout="hiddenObj(&#39;rightpictop&#39;)" onclick="bananerFade(1)" align="left">
+					<div style="position:relative;">
+						<img class="images_nobord" style="display:none;position:absolute;left:10px;top:-30px;" id="rightpictop" src="images/slideright.png">
+					</div>
+				</td>
+    		</tr>
+    	</tbody></table>
+  	</div>
+  	<div style="text-align:center;margin-top:2px;">
+	  <img id="banyuan1" src="images/yuan10_hui.png" class="handpoint" onclick="bananerFade(11)">
+	  <img id="banyuan2" src="images/yuan10_hui.png" class="handpoint" onclick="bananerFade(12)">
+	  <img id="banyuan3" src="images/yuan10_he.png" class="handpoint" onclick="bananerFade(13)">
+	  <img id="banyuan4" src="images/yuan10_hui.png" class="handpoint" onclick="bananerFade(14)">
+    </div>
+  </div>
+<script type="text/javascript">
+  function showBananer(){
+  	$("#divbananer").show();
+  }
+  function hideBananer(){
+  	$("#divbananer").hide();
+  }
+  var topBananObj=null;
+  function bananerStart(){
+  	if(topBananObj){
+  		topBananObj.start();
+  	}
+  }
+  function bananerStop(){
+  	if(topBananObj){
+  		topBananObj.stop();
+  	}
+  }
+  function bananerFade(index){
+  	if(topBananObj){
+  		topBananObj.banFade(index);
+  	}
+  }
+  $(function(){
+	var bananer_color1=["#e6006d","#f50c1e","#f5d1b1","-1"];
+	var bananer_color2=["#e6006d","#f50c1e","#f5d1b1","-1"];
+	var bananer_pici=[1,9,3,5];
+	var imgtype=["jpg","png","jpg","jpg"];
+	topBananObj=new topBananer(bananer_color1,bananer_color2,bananer_pici,imgtype,"bananer","banbg");
+	bananerStart();
+  });
+</script>
+  
+  <div style="height:2px;overflow:hidden;" width="100%"></div>
+  
+  <div id="contentpar" style="width:100%">
+  <div class="div-box" style="min-height: 300px; height: 928px; background-color: rgb(255, 255, 255);" id="content">
+
+
+
+
+<div class="div_main" style="position:relative;">
+ <div>
+    <table class="table_hs">
+      <tbody><tr>
+        <td><div class="td_hsTitle">所在区域：</div></td>
+        <td class="td_hsCon" colspan="2">
+          <a id="district" class="font_sel" ">不限</a>&nbsp;&nbsp;
+          
+          <a id="district1" class="font_nom" ">朝阳</a>&nbsp;&nbsp;
+          
+          <a id="district2" class="font_nom" ">通州</a>&nbsp;&nbsp;
+          
+          <a id="district3" class="font_nom"">丰台</a>&nbsp;&nbsp;
+          
+          <a id="district4" class="font_nom" ">海淀</a>&nbsp;&nbsp;
+          
+          <a id="district5" class="font_nom" ">东城</a>&nbsp;&nbsp;
+          
+          <a id="district6" class="font_nom" ">西城</a>&nbsp;&nbsp;
+          
+          <a id="district7" class="font_nom" ">崇文</a>&nbsp;&nbsp;
+          
+          <a id="district8" class="font_nom" ">宣武</a>&nbsp;&nbsp;
+          
+          <a id="district9" class="font_nom" ">石景山</a>&nbsp;&nbsp;
+          
+          <a id="district10" class="font_nom" ">昌平</a>&nbsp;&nbsp;
+          
+          <a id="district12" class="font_nom" ">大兴</a>&nbsp;&nbsp;
+          
+        </td>
+      </tr>
+      <tr id="tddistrict" style="display:none">
+        <td colspan="3">
+          <a id="street">不限</a>
+        </td>
+      </tr>
+      
+        <tr id="tddistrict1" style="display:none">
+        <td></td>
+        <td class="td_hsCon" colspan="2">
+        <a id="street1" class="font_nom" onclick="selStreet(&#39;1&#39;)">四惠</a>&nbsp;&nbsp;<a id="street2" class="font_nom" onclick="selStreet(&#39;2&#39;)">高碑店</a>&nbsp;&nbsp;<a id="street3" class="font_nom" onclick="selStreet(&#39;3&#39;)">大望路</a>&nbsp;&nbsp;<a id="street4" class="font_nom" onclick="selStreet(&#39;4&#39;)">朝阳路</a>&nbsp;&nbsp;<a id="street7" class="font_nom" onclick="selStreet(&#39;7&#39;)">林萃路</a>&nbsp;&nbsp;<a id="street8" class="font_nom" onclick="selStreet(&#39;8&#39;)">建国路</a>&nbsp;&nbsp;<a id="street10" class="font_nom" onclick="selStreet(&#39;10&#39;)">酒仙桥</a>&nbsp;&nbsp;<a id="street15" class="font_nom" onclick="selStreet(&#39;15&#39;)">姚家园</a>&nbsp;&nbsp;<a id="street17" class="font_nom" onclick="selStreet(&#39;17&#39;)">望京</a>&nbsp;&nbsp;<a id="street18" class="font_nom" onclick="selStreet(&#39;18&#39;)">常营</a>&nbsp;&nbsp;<a id="street19" class="font_nom" onclick="selStreet(&#39;19&#39;)">潘家园</a>&nbsp;&nbsp;<a id="street22" class="font_nom" onclick="selStreet(&#39;22&#39;)">团结湖</a>&nbsp;&nbsp;<a id="street23" class="font_nom" onclick="selStreet(&#39;23&#39;)">四惠东</a>&nbsp;&nbsp;<a id="street29" class="font_nom" onclick="selStreet(&#39;29&#39;)">百子湾</a>&nbsp;&nbsp;<a id="street31" class="font_nom" onclick="selStreet(&#39;31&#39;)">六里屯</a>&nbsp;&nbsp;<a id="street32" class="font_nom" onclick="selStreet(&#39;32&#39;)">立水桥</a>&nbsp;&nbsp;<a id="street36" class="font_nom" onclick="selStreet(&#39;36&#39;)">奥林匹克公园</a>&nbsp;&nbsp;<a id="street43" class="font_nom" onclick="selStreet(&#39;43&#39;)">建国门</a>&nbsp;&nbsp;<a id="street44" class="font_nom" onclick="selStreet(&#39;44&#39;)">青年路</a>&nbsp;&nbsp;<a id="street46" class="font_nom" onclick="selStreet(&#39;46&#39;)">十里堡</a>&nbsp;&nbsp;<a id="street47" class="font_nom" onclick="selStreet(&#39;47&#39;)">健德门</a>&nbsp;&nbsp;<a id="street51" class="font_nom" onclick="selStreet(&#39;51&#39;)">劲松</a>&nbsp;&nbsp;<a id="street52" class="font_nom" onclick="selStreet(&#39;52&#39;)">双井</a>&nbsp;&nbsp;<a id="street67" class="font_nom" onclick="selStreet(&#39;67&#39;)">大郊亭</a>&nbsp;&nbsp;<a id="street68" class="font_nom" onclick="selStreet(&#39;68&#39;)">农业展览馆</a>&nbsp;&nbsp;<a id="street70" class="font_nom" onclick="selStreet(&#39;70&#39;)">北苑路北</a>&nbsp;&nbsp;<a id="street71" class="font_nom" onclick="selStreet(&#39;71&#39;)">传媒大学</a>&nbsp;&nbsp;<a id="street76" class="font_nom" onclick="selStreet(&#39;76&#39;)">和平西桥</a>&nbsp;&nbsp;<a id="street82" class="font_nom" onclick="selStreet(&#39;82&#39;)">草房</a>&nbsp;&nbsp;</td></tr>
+        <tr id="tddistrict2" style="display:none">
+        <td></td>
+        <td class="td_hsCon" colspan="2">
+        <a id="street5" class="font_nom" onclick="selStreet(&#39;5&#39;)">九棵树</a>&nbsp;&nbsp;<a id="street6" class="font_nom" onclick="selStreet(&#39;6&#39;)">梨园</a>&nbsp;&nbsp;<a id="street9" class="font_nom" onclick="selStreet(&#39;9&#39;)">临河里</a>&nbsp;&nbsp;<a id="street38" class="font_nom" onclick="selStreet(&#39;38&#39;)">北运河西</a>&nbsp;&nbsp;<a id="street41" class="font_nom" onclick="selStreet(&#39;41&#39;)">土桥</a>&nbsp;&nbsp;<a id="street53" class="font_nom" onclick="selStreet(&#39;53&#39;)">果园</a>&nbsp;&nbsp;<a id="street65" class="font_nom" onclick="selStreet(&#39;65&#39;)">经海路</a>&nbsp;&nbsp;<a id="street73" class="font_nom" onclick="selStreet(&#39;73&#39;)">新华大街</a>&nbsp;&nbsp;<a id="street81" class="font_nom" onclick="selStreet(&#39;81&#39;)">通州北苑</a>&nbsp;&nbsp;</td></tr>
+        <tr id="tddistrict3" style="display:none">
+        <td></td>
+        <td class="td_hsCon" colspan="2">
+        <a id="street11" class="font_nom" onclick="selStreet(&#39;11&#39;)">玉泉路</a>&nbsp;&nbsp;<a id="street13" class="font_nom" onclick="selStreet(&#39;13&#39;)">宋庄路</a>&nbsp;&nbsp;<a id="street16" class="font_nom" onclick="selStreet(&#39;16&#39;)">成寿寺</a>&nbsp;&nbsp;<a id="street20" class="font_nom" onclick="selStreet(&#39;20&#39;)">刘家窑</a>&nbsp;&nbsp;<a id="street30" class="font_nom" onclick="selStreet(&#39;30&#39;)">永定门</a>&nbsp;&nbsp;<a id="street35" class="font_nom" onclick="selStreet(&#39;35&#39;)">角门西</a>&nbsp;&nbsp;<a id="street37" class="font_nom" onclick="selStreet(&#39;37&#39;)">大井</a>&nbsp;&nbsp;<a id="street40" class="font_nom" onclick="selStreet(&#39;40&#39;)">丰台南路</a>&nbsp;&nbsp;<a id="street42" class="font_nom" onclick="selStreet(&#39;42&#39;)">景泰站</a>&nbsp;&nbsp;<a id="street54" class="font_nom" onclick="selStreet(&#39;54&#39;)">石榴庄</a>&nbsp;&nbsp;<a id="street55" class="font_nom" onclick="selStreet(&#39;55&#39;)">陶然亭</a>&nbsp;&nbsp;<a id="street62" class="font_nom" onclick="selStreet(&#39;62&#39;)">永定门外</a>&nbsp;&nbsp;<a id="street64" class="font_nom" onclick="selStreet(&#39;64&#39;)">纪家庙</a>&nbsp;&nbsp;<a id="street77" class="font_nom" onclick="selStreet(&#39;77&#39;)">科怡路</a>&nbsp;&nbsp;</td></tr>
+        <tr id="tddistrict4" style="display:none">
+        <td></td>
+        <td class="td_hsCon" colspan="2">
+        <a id="street12" class="font_nom" onclick="selStreet(&#39;12&#39;)">学清路</a>&nbsp;&nbsp;<a id="street14" class="font_nom" onclick="selStreet(&#39;14&#39;)">五棵松</a>&nbsp;&nbsp;<a id="street28" class="font_nom" onclick="selStreet(&#39;28&#39;)">中关村</a>&nbsp;&nbsp;<a id="street39" class="font_nom" onclick="selStreet(&#39;39&#39;)">五路居</a>&nbsp;&nbsp;<a id="street48" class="font_nom" onclick="selStreet(&#39;48&#39;)">苏州街</a>&nbsp;&nbsp;<a id="street56" class="font_nom" onclick="selStreet(&#39;56&#39;)">积水潭</a>&nbsp;&nbsp;<a id="street63" class="font_nom" onclick="selStreet(&#39;63&#39;)">车道沟</a>&nbsp;&nbsp;<a id="street79" class="font_nom" onclick="selStreet(&#39;79&#39;)">花园桥</a>&nbsp;&nbsp;</td></tr>
+        <tr id="tddistrict5" style="display:none">
+        <td></td>
+        <td class="td_hsCon" colspan="2">
+        <a id="street34" class="font_nom" onclick="selStreet(&#39;34&#39;)">安定门外</a>&nbsp;&nbsp;<a id="street50" class="font_nom" onclick="selStreet(&#39;50&#39;)">东单</a>&nbsp;&nbsp;<a id="street59" class="font_nom" onclick="selStreet(&#39;59&#39;)">崇文门</a>&nbsp;&nbsp;<a id="street61" class="font_nom" onclick="selStreet(&#39;61&#39;)">王府井</a>&nbsp;&nbsp;<a id="street74" class="font_nom" onclick="selStreet(&#39;74&#39;)">天坛东门</a>&nbsp;&nbsp;</td></tr>
+        <tr id="tddistrict6" style="display:none">
+        <td></td>
+        <td class="td_hsCon" colspan="2">
+        <a id="street72" class="font_nom" onclick="selStreet(&#39;72&#39;)">西单</a>&nbsp;&nbsp;</td></tr>
+        <tr id="tddistrict7" style="display:none">
+        <td></td>
+        <td class="td_hsCon" colspan="2">
+        <a id="street24" class="font_nom" onclick="selStreet(&#39;24&#39;)">广渠门</a>&nbsp;&nbsp;<a id="street69" class="font_nom" onclick="selStreet(&#39;69&#39;)">广渠门外</a>&nbsp;&nbsp;</td></tr>
+        <tr id="tddistrict8" style="display:none">
+        <td></td>
+        <td class="td_hsCon" colspan="2">
+        <a id="street27" class="font_nom" onclick="selStreet(&#39;27&#39;)">广安门</a>&nbsp;&nbsp;<a id="street75" class="font_nom" onclick="selStreet(&#39;75&#39;)">湾子</a>&nbsp;&nbsp;</td></tr>
+        <tr id="tddistrict9" style="display:none">
+        <td></td>
+        <td class="td_hsCon" colspan="2">
+        <a id="street25" class="font_nom" onclick="selStreet(&#39;25&#39;)">八宝山</a>&nbsp;&nbsp;<a id="street45" class="font_nom" onclick="selStreet(&#39;45&#39;)">八角游乐园</a>&nbsp;&nbsp;<a id="street57" class="font_nom" onclick="selStreet(&#39;57&#39;)">鲁谷</a>&nbsp;&nbsp;</td></tr>
+        <tr id="tddistrict10" style="display:none">
+        <td></td>
+        <td class="td_hsCon" colspan="2">
+        <a id="street60" class="font_nom" onclick="selStreet(&#39;60&#39;)">回龙观</a>&nbsp;&nbsp;<a id="street78" class="font_nom" onclick="selStreet(&#39;78&#39;)">龙泽</a>&nbsp;&nbsp;</td></tr>
+        <tr id="tddistrict12" style="display:none">
+        <td></td>
+        <td class="td_hsCon" colspan="2">
+        <a id="street66" class="font_nom" onclick="selStreet(&#39;66&#39;)">枣园</a>&nbsp;&nbsp;<a id="street80" class="font_nom" onclick="selStreet(&#39;80&#39;)">团结路</a>&nbsp;&nbsp;</td></tr>
+      <tr class="td_hsline"><td colspan="3"></td></tr>
+      <tr>
+        <td><div class="td_hsTitle">房租价格：</div></td>
+        <td class="td_hsCon" colspan="2">
+          <a id="prices" class="font_sel" onclick="selPrices(&#39;&#39;,&#39;&#39;)">不限</a>&nbsp;&nbsp;
+          <a id="prices0" class="font_nom" onclick="selPrices(&#39;0&#39;,&#39;2000&#39;)">2000元/月以下</a>&nbsp;&nbsp;
+          <a id="prices2000" class="font_nom" onclick="selPrices(&#39;2000&#39;,&#39;2500&#39;)">2000~2500元/月</a>&nbsp;&nbsp;
+          <a id="prices2500" class="font_nom" onclick="selPrices(&#39;2500&#39;,&#39;3000&#39;)">2500~3000元/月</a>&nbsp;&nbsp;
+          <a id="prices3000" class="font_nom" onclick="selPrices(&#39;3000&#39;,&#39;3500&#39;)">3000~3500元/月</a>&nbsp;&nbsp;
+          <a id="prices3500" class="font_nom" onclick="selPrices(&#39;3500&#39;,&#39;4000&#39;)">3500~4000元/月</a>&nbsp;&nbsp;
+          <a id="prices4000" class="font_nom" onclick="selPrices(&#39;4000&#39;,&#39;&#39;)">4000元/月以上</a>&nbsp;&nbsp;
+           自定义：<input type="text" onblur="checkPosFloat(this)" id="pricesst" value="" class="input_hs">-<input type="text" onblur="checkPosFloat(this)" id="pricesed" value="" class="input_hs">&nbsp;&nbsp;
+           <input type="button" value="确定" onclick="selPrices(&#39;-1&#39;,&#39;-1&#39;)" class="button_hs">
+        </td>
+      </tr>
+      <tr class="td_hsline"><td colspan="3"></td></tr>
+     
+      <tr class="td_hsline"><td colspan="2"></td></tr>
+      <tr>
+        <td><div class="td_hsTitle">方式：</div></td>
+        <td class="td_hsCon">
+          <a id="flag" class="font_sel" >不限</a>&nbsp;&nbsp;
+          <a id="flag1" class="font_nom" >整租</a>&nbsp;&nbsp;
+          <a id="flag2" class="font_nom" >合租</a>&nbsp;&nbsp;
+          <a id="flag2" class="font_nom" >单间</a>&nbsp;&nbsp;
+          <a id="flag2" class="font_nom" >商铺</a>&nbsp;&nbsp;
+        </td>
+      </tr>
+      <tr class="td_hsline"><td colspan="2"></td></tr>
+      <tr>
+        <td><div class="td_hsTitle">居室：</div></td>
+        <td class="td_hsCon">
+          <a id="hold" class="font_sel" onclick="selHold(&#39;&#39;)">不限</a>&nbsp;&nbsp;
+          <a id="hold1" class="font_nom" onclick="selHold(&#39;1&#39;)">一居</a>&nbsp;&nbsp;
+          <a id="hold2" class="font_nom" onclick="selHold(&#39;2&#39;)">二居</a>&nbsp;&nbsp;
+          <a id="hold3" class="font_nom" onclick="selHold(&#39;3&#39;)">三居</a>&nbsp;&nbsp;
+          <a id="hold4" class="font_nom" onclick="selHold(&#39;4&#39;)">四居</a>&nbsp;&nbsp;
+          <a id="hold5" class="font_nom" onclick="selHold(&#39;5&#39;)">五居及以上</a>&nbsp;&nbsp;
+        </td>
+      </tr>
+      <tr class="td_hsline"><td colspan="3"></td></tr>
+    </tbody></table>
+  </div>
+  
+  <div class="table" style="width:99%;">
+    <table class="table" width="100%">
+      <tbody><tr>
+        <td width="810px" align="left">
+        <div class="color_def">共有 468 套符合要求的房源</div>
+      </td>
+      <td align="left"><img src="images/right_tri.gif"></td>
+      </tr>
+    </tbody></table>
+  </div>
+  <div class="div-split"></div>
+  
+  <div id="divSerachMain" class="table" style="width:99%;">
+
+<div style="position:relative;">
+  <div style="position:absolute;"><img src="images/prefind.png"></div>
+  <div style="position:absolute;left:111px;top:79px;"><img src="images/dline1_r.gif"></div>
+  
+  <div style="position:absolute;left:186px;top:102px;">
+    <table class="table">
+      <tbody><tr><td></td><td class="td_cont_find">&nbsp;&nbsp;&nbsp;&nbsp;区域/小区：</td></tr>
+      <tr>
+        <td id="place_td" class="num_reg">1</td>
+        <td><input type="text" id="place" name="place" title="请输入区域/小区" onkeyup="limitInputLen(this,20)" onblur="changeInput(&#39;place&#39;,&#39;&#39;)" value="" class="input_reg"></td>
+      </tr>
+    </tbody></table>
+  </div>
+  <div id="place_car" style="position:absolute;left:500px;top:107px;display:none;"><img src="images/cartooninput_r.gif"></div>
+  <div style="position:absolute;left:200px;top:163px;"><img id="place_img" src="images/dline1_h.gif"></div>
+  
+  <div style="position:absolute;left:275px;top:185px;">
+  	<input type="hidden" id="id" name="id" value="">
+    <input type="hidden" id="usid" name="usid" value="">
+    <table class="table">
+      <tbody><tr><td></td><td class="td_cont_find">&nbsp;&nbsp;&nbsp;&nbsp;姓名：</td></tr>
+      <tr>
+        <td id="name_td" class="num_reg">2</td>
+        <td><input type="text" id="name" name="name" onkeyup="limitInputLen(this,20)" title="请输入您的姓名" onblur="changeInput(&#39;name&#39;,&#39;&#39;)" value="" class="input_reg"></td>
+      </tr>
+    </tbody></table>
+  </div>
+  <div id="name_car" style="position:absolute;left:590px;top:189px;display:none;"><img src="images/cartooninput_r.gif"></div>
+  <div style="position:absolute;left:200px;top:235px;"><img id="name_img" src="images/dline2_h.gif"></div>
+  
+  <div style="position:absolute;left:180px;top:264px;">
+    <table class="table">
+      <tbody><tr><td></td><td class="td_cont_find">&nbsp;&nbsp;&nbsp;&nbsp;手机号：</td></tr>
+      <tr>
+        <td id="phone_td" class="num_reg">3</td>
+        <td>
+          <input type="text" id="phone" name="phone" maxlength="20" onkeypress="return checkInputNumber(event)" title="请输入您的手机号" onblur="changeInput(&#39;phone&#39;,&#39;&#39;)" value="" class="input_reg">
+        </td>
+      </tr>
+    </tbody></table>
+  </div>
+  <div id="phone_car" style="position:absolute;left:490px;top:268px;display:none;"><img src="images/cartooninput_r.gif"></div>
+  <div style="position:absolute;left:200px;top:323px;"><img id="phone_img" src="images/dline1_h.gif"></div>
+  
+  ﻿<div style="position:absolute;left:275px;top:347px;">
+    <table class="table">
+      <tbody><tr><td></td><td class="td_cont_find">&nbsp;&nbsp;&nbsp;&nbsp;预计入住日期：</td></tr>
+      <tr>
+        <td id="time_td" class="num_reg">4</td>
+        <td><input type="text" id="time" name="time" maxlength="20" title="请输入预计入住日期" value="" onchange="changeInput(&#39;time&#39;,&#39;&#39;)" onblur="changeInput(&#39;time&#39;,&#39;&#39;)" class="input_reg" onclick="WdatePicker({dateFmt:&#39;yyyy-MM-dd&#39;})"></td>
+      </tr>
+    </tbody></table>
+  </div>
+  <div id="time_car" style="position:absolute;left:590px;top:351px;display:none;"><img src="images/cartooninput_r.gif"></div>
+  <div style="position:absolute;left:289px;top:407px;"><img id="time_img" src="images/dline3_h.gif"></div>
+  
+  <div id="divbut" style="position:absolute;left:295px;top:480px;">
+    <input id="but" onclick="saveClick()" onmousemove="changeClass(&#39;but&#39;,&#39;button2_reg&#39;)" onmouseout="changeClass(&#39;but&#39;,&#39;button_reg&#39;)" class="button_reg" type="button" value="提交">
+  </div>
+  
+  <div id="tmpdiv" style="display:none;"></div>
+</div>
+
+
+</div>
+  
+  <div class="div-split"></div>
+  <div id="divtoolhs" style="display: none;">
+  <div class="div-bottomline"></div>
+  <div class="div-split"></div>
+  <div>
+	<div class="div-align-right">
+		
+
+
+
+
+<div style="height:32px;text-align:right;" id="turnPageBar">
+	<table border="0" cellspacing="0" cellpadding="0">
+		<input type="hidden" id="pageSize" name="pageSize" value="5">
+		<input type="hidden" id="totalPage" name="totalPage" value="94">
+		<tbody><tr>
+			<td>
+				<div>
+					<table border="0" cellpadding="1" cellspacing="0" align="right">
+						<tbody><tr>
+							<td>
+								<input type="button" class="button-page" id="firstBtn" value="首页" onclick="goFirstPage()">
+							</td>
+							<td>
+								<input type="button" class="button-page" id="prevBtn" value="上一页" onclick="goPrevPage()">
+							</td>
+							<td>
+								<input type="button" class="button-page" id="nextBtn" value="下一页" onclick="goNextPage()">
+							</td>
+							<td>
+								<input type="button" class="button-page" id="lastBtn" value="尾页" onclick="goLastPage()">
+							</td>
+							<td>
+								<input id="curPage" name="curPage" class="input_page nomargin" type="text" value="" onkeypress="return checkInputNumber(event)">
+							</td>
+							<td>
+								<input type="button" class="button-page" id="gotoBtn" value="跳转" onclick="gotoPage()">
+							</td>
+							<td id="trCurPage" class="font_tool">1/94</td>
+						</tr>
+					</tbody></table>
+				</div>
+			</td>
+		</tr>
+	</tbody></table>
+</div>
+
+	</div>
+  </div>
+  </div>
+</div>
+
+
+
+</div>
+  </div>
+  
+<div class="content" id="bottom">
+    
+<table class="table" cellpadding="0" cellspacing="0" width="100%">
+  <tbody><tr style="background:url(/baozupo/images/bottom.png);height:4px;"><td colspan="10"></td></tr>
+  <tr style="height:20px;"><td colspan="10"></td></tr>
+  <tr style="height:86px;color:#FFF">
+  <td>&nbsp;</td>
+  <td align="center" width="500px">
+     <table>
+        <tbody><tr height="30px">
+           <td style="font-size:14px;width:70px;"><a class="font_a" >关于我们</a>
+           </td><td style="font-size:14px;width:70px;"><a class="font_a" >联系我们</a></td>
+           <td style="font-size:14px;width:70px;"><a class="font_a" >版权声明</a></td>
+           <td style="font-size:14px;width:70px;"><a class="font_a" >加入我们</a></td>
+          
+         </tr>
+         <tr>
+           <td colspan="5">
+            <a target="_blank" href="#" style="display:inline-block;text-decoration:none;height:20px;line-height:20px; color:#FFF;">
+          <p style="float:left;height:20px;line-height:20px;margin: 0px;">京ICP备14031269号</p>
+          <img src="images/gongan.png" style="float:left;margin: 0px 0px 0px 26px;">
+          <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px;">京公网安备 11010502030270号</p>
+        </a>
+           </td>
+         </tr>
+         <tr>
+           <td colspan="5">微家租房（福建）房地产经纪有限公司   版权所有</td>
+         </tr>
+     </tbody></table>
+  </td>
+  <td width="50px"></td>
+
+  <td width="10px"></td>
+  <td width="120px">
+    <img src="images/phonebottom.png">
+  </td>
+  <td width="10px"></td>
+  <td width="120px">
+    <img src="images/weixin.jpg" width="86px">
+  </td>
+  <td width="70px"></td>
+  <td>&nbsp;</td>
+  </tr>
+  <tr style="height:20px;color:#FFFFFF">
+  <td colspan="3"></td>
+  <td></td>
+  <td>400-678-3666</td>
+  <td></td>
+  <td>微信扫一扫</td>
+  <td colspan="2"></td>
+  </tr>
+  <tr style="height:5px;"><td colspan="10"></td></tr>
+</tbody></table>
+  </div>
+  <div style="position:fixed;top:200px;right:20px;z-index:18000;"><img class="handpoint" onclick="prefindTop()" src="images/flowright.png"></div>
+
+
+<script type="text/javascript">
+  function setContentHeight(height,color){
+    $("#content").css("height",height);
+    if(color){
+    	$("#content").css("background-color",color);
+    	$("#contentpar").css("background-color",color);
+    }else{
+    	$("#content").css("background-color","#FFFFFF");
+    	$("#contentpar").css("background-color","");
+    }
+  }
+  function prefindTop(bz){
+  	var url="/web/houseDispatcher.do?method=showPrefind2";
+   	showLogDiv(($(window).width()-502)/2,($(window).height()-380)/2);
+   	$("#div_Log_Top").load(webroot+url);
+  }
+  
+  var url= "";
+  var openId="";
+  
+  
+  if(openId==""){
+	openId="firstpage";
+  	url="null";
+  }
+  $(function(){
+  	$.history.init(function (hash) {
+  		if(historyFlag){
+  			historyFlag=false;
+  			return;
+  		}
+		var hisurl=url;
+		var hisid=openId;
+		if (hash){
+			var obj=getHistory(hash);
+			if(obj!=null){
+				hisid=obj.id;
+				hisurl=obj.url;
+			}
+		}
+		changeTopTitle(hisid,hisurl,"false");
+	});
+  });
+</script></body></html>
