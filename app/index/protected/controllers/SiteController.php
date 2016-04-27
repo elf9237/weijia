@@ -63,6 +63,26 @@ class SiteController extends BaseController
 			$this->render('desktop/myinfo');
 		}
 	}
+	public function actionYuyue()
+	{
+		// renders the view file 'protected/views/site/index.php'
+		// using the default layout 'protected/views/layouts/main.php'
+		if( $this->wechat){
+			$this->render('index');
+		}else{
+			$this->render('desktop/yuyue');
+		}
+	}
+	public function actionZufangdetail()
+	{
+		// renders the view file 'protected/views/site/index.php'
+		// using the default layout 'protected/views/layouts/main.php'
+		if( $this->wechat){
+			$this->render('index');
+		}else{
+			$this->render('desktop/zufangdetail');
+		}
+	}
 	public function actionGuanjia()
 	{
 		// renders the view file 'protected/views/site/index.php'

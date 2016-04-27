@@ -805,3 +805,284 @@ Stack trace:
 REQUEST_URI=/index.php?r=site/guanjia
 HTTP_REFERER=http://weijia.com/index.php?r=site/zufang
 ---
+2016/04/26 22:23:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/default/index".' in D:\weijia\app\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/default/i...')
+#1 D:\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\weijia\app\index\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=admin/default/index
+---
+2016/04/26 22:23:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/".' in D:\weijia\app\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/')
+#1 D:\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\weijia\app\index\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=admin/
+---
+2016/04/26 22:24:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/default".' in D:\weijia\app\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/default')
+#1 D:\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\weijia\app\index\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=admin/default
+---
+2016/04/26 22:24:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/default/index".' in D:\weijia\app\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/default/i...')
+#1 D:\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\weijia\app\index\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=admin/default/index
+---
+2016/04/26 22:26:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin".' in D:\weijia\app\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('admin')
+#1 D:\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 D:\weijia\app\index\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=admin
+---
+2016/04/27 19:23:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "web".' in D:\weijia\app\framework\web\CController.php:483
+Stack trace:
+#0 D:\weijia\app\framework\web\CController.php(270): CController->missingAction('web')
+#1 D:\weijia\app\framework\web\CWebApplication.php(282): CController->run('web')
+#2 D:\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('site/web/houseD...')
+#3 D:\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\weijia\app\index\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/web/houseDispatcher.do?method=showPrecontract&flag=&rmid=226&t=146168145
+HTTP_REFERER=http://weijia.com/index.php?r=site/yuyue
+---
+2016/04/27 19:23:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in D:\weijia\app\framework\web\CController.php:483
+Stack trace:
+#0 D:\weijia\app\framework\web\CController.php(270): CController->missingAction('images')
+#1 D:\weijia\app\framework\web\CWebApplication.php(282): CController->run('images')
+#2 D:\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/yua...')
+#3 D:\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\weijia\app\index\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/images/yuan10_hui.png
+HTTP_REFERER=http://weijia.com/index.php?r=site/yuyue
+---
+2016/04/27 19:23:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in D:\weijia\app\framework\web\CController.php:483
+Stack trace:
+#0 D:\weijia\app\framework\web\CController.php(270): CController->missingAction('images')
+#1 D:\weijia\app\framework\web\CWebApplication.php(282): CController->run('images')
+#2 D:\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/ban...')
+#3 D:\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\weijia\app\index\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/images/bananer3.jpg
+HTTP_REFERER=http://weijia.com/index.php?r=site/yuyue
+---
+2016/04/27 19:23:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in D:\weijia\app\framework\web\CController.php:483
+Stack trace:
+#0 D:\weijia\app\framework\web\CController.php(270): CController->missingAction('images')
+#1 D:\weijia\app\framework\web\CWebApplication.php(282): CController->run('images')
+#2 D:\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/yua...')
+#3 D:\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\weijia\app\index\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/images/yuan10_he.png
+HTTP_REFERER=http://weijia.com/index.php?r=site/yuyue
+---
+2016/04/27 19:23:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in D:\weijia\app\framework\web\CController.php:483
+Stack trace:
+#0 D:\weijia\app\framework\web\CController.php(270): CController->missingAction('images')
+#1 D:\weijia\app\framework\web\CWebApplication.php(282): CController->run('images')
+#2 D:\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/yua...')
+#3 D:\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\weijia\app\index\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/images/yuan10_he.png
+HTTP_REFERER=http://weijia.com/index.php?r=site/yuyue
+---
+2016/04/27 19:23:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in D:\weijia\app\framework\web\CController.php:483
+Stack trace:
+#0 D:\weijia\app\framework\web\CController.php(270): CController->missingAction('images')
+#1 D:\weijia\app\framework\web\CWebApplication.php(282): CController->run('images')
+#2 D:\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/ban...')
+#3 D:\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\weijia\app\index\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/images/bananer3.jpg
+HTTP_REFERER=http://weijia.com/index.php?r=site/yuyue
+---
+2016/04/27 19:23:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in D:\weijia\app\framework\web\CController.php:483
+Stack trace:
+#0 D:\weijia\app\framework\web\CController.php(270): CController->missingAction('images')
+#1 D:\weijia\app\framework\web\CWebApplication.php(282): CController->run('images')
+#2 D:\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/yua...')
+#3 D:\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\weijia\app\index\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/images/yuan10_hui.png
+HTTP_REFERER=http://weijia.com/index.php?r=site/yuyue
+---
+2016/04/27 19:23:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in D:\weijia\app\framework\web\CController.php:483
+Stack trace:
+#0 D:\weijia\app\framework\web\CController.php(270): CController->missingAction('images')
+#1 D:\weijia\app\framework\web\CWebApplication.php(282): CController->run('images')
+#2 D:\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/ban...')
+#3 D:\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\weijia\app\index\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/images/bananer5.jpg
+HTTP_REFERER=http://weijia.com/index.php?r=site/yuyue
+---
+2016/04/27 19:23:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in D:\weijia\app\framework\web\CController.php:483
+Stack trace:
+#0 D:\weijia\app\framework\web\CController.php(270): CController->missingAction('images')
+#1 D:\weijia\app\framework\web\CWebApplication.php(282): CController->run('images')
+#2 D:\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/yua...')
+#3 D:\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\weijia\app\index\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/images/yuan10_he.png
+HTTP_REFERER=http://weijia.com/index.php?r=site/yuyue
+---
+2016/04/27 19:23:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in D:\weijia\app\framework\web\CController.php:483
+Stack trace:
+#0 D:\weijia\app\framework\web\CController.php(270): CController->missingAction('images')
+#1 D:\weijia\app\framework\web\CWebApplication.php(282): CController->run('images')
+#2 D:\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/yua...')
+#3 D:\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\weijia\app\index\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/images/yuan10_hui.png
+HTTP_REFERER=http://weijia.com/index.php?r=site/yuyue
+---
+2016/04/27 19:23:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in D:\weijia\app\framework\web\CController.php:483
+Stack trace:
+#0 D:\weijia\app\framework\web\CController.php(270): CController->missingAction('images')
+#1 D:\weijia\app\framework\web\CWebApplication.php(282): CController->run('images')
+#2 D:\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/yua...')
+#3 D:\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\weijia\app\index\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/images/yuan10_he.png
+HTTP_REFERER=http://weijia.com/index.php?r=site/yuyue
+---
+2016/04/27 19:23:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in D:\weijia\app\framework\web\CController.php:483
+Stack trace:
+#0 D:\weijia\app\framework\web\CController.php(270): CController->missingAction('images')
+#1 D:\weijia\app\framework\web\CWebApplication.php(282): CController->run('images')
+#2 D:\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/ban...')
+#3 D:\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\weijia\app\index\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/images/bananer1.jpg
+HTTP_REFERER=http://weijia.com/index.php?r=site/yuyue
+---
+2016/04/27 19:23:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in D:\weijia\app\framework\web\CController.php:483
+Stack trace:
+#0 D:\weijia\app\framework\web\CController.php(270): CController->missingAction('images')
+#1 D:\weijia\app\framework\web\CWebApplication.php(282): CController->run('images')
+#2 D:\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/yua...')
+#3 D:\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\weijia\app\index\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/images/yuan10_hui.png
+HTTP_REFERER=http://weijia.com/index.php?r=site/yuyue
+---
+2016/04/27 19:23:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in D:\weijia\app\framework\web\CController.php:483
+Stack trace:
+#0 D:\weijia\app\framework\web\CController.php(270): CController->missingAction('images')
+#1 D:\weijia\app\framework\web\CWebApplication.php(282): CController->run('images')
+#2 D:\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/ban...')
+#3 D:\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\weijia\app\index\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/images/bananer9.png
+HTTP_REFERER=http://weijia.com/index.php?r=site/yuyue
+---
+2016/04/27 19:23:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in D:\weijia\app\framework\web\CController.php:483
+Stack trace:
+#0 D:\weijia\app\framework\web\CController.php(270): CController->missingAction('images')
+#1 D:\weijia\app\framework\web\CWebApplication.php(282): CController->run('images')
+#2 D:\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/yua...')
+#3 D:\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\weijia\app\index\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/images/yuan10_he.png
+HTTP_REFERER=http://weijia.com/index.php?r=site/yuyue
+---
+2016/04/27 19:23:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in D:\weijia\app\framework\web\CController.php:483
+Stack trace:
+#0 D:\weijia\app\framework\web\CController.php(270): CController->missingAction('images')
+#1 D:\weijia\app\framework\web\CWebApplication.php(282): CController->run('images')
+#2 D:\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/yua...')
+#3 D:\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\weijia\app\index\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/images/yuan10_he.png
+HTTP_REFERER=http://weijia.com/index.php?r=site/yuyue
+---
+2016/04/27 19:23:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in D:\weijia\app\framework\web\CController.php:483
+Stack trace:
+#0 D:\weijia\app\framework\web\CController.php(270): CController->missingAction('images')
+#1 D:\weijia\app\framework\web\CWebApplication.php(282): CController->run('images')
+#2 D:\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/yua...')
+#3 D:\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\weijia\app\index\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/images/yuan10_hui.png
+HTTP_REFERER=http://weijia.com/index.php?r=site/yuyue
+---
+2016/04/27 19:23:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in D:\weijia\app\framework\web\CController.php:483
+Stack trace:
+#0 D:\weijia\app\framework\web\CController.php(270): CController->missingAction('images')
+#1 D:\weijia\app\framework\web\CWebApplication.php(282): CController->run('images')
+#2 D:\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/ban...')
+#3 D:\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\weijia\app\index\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/images/bananer3.jpg
+HTTP_REFERER=http://weijia.com/index.php?r=site/yuyue
+---
+2016/04/27 19:23:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "zufangdetail.php".' in D:\weijia\app\framework\web\CController.php:483
+Stack trace:
+#0 D:\weijia\app\framework\web\CController.php(270): CController->missingAction('zufangdetail.ph...')
+#1 D:\weijia\app\framework\web\CWebApplication.php(282): CController->run('zufangdetail.ph...')
+#2 D:\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('site/zufangdeta...')
+#3 D:\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\weijia\app\index\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/zufangdetail.php
+---
+2016/04/27 19:23:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in D:\weijia\app\framework\web\CController.php:483
+Stack trace:
+#0 D:\weijia\app\framework\web\CController.php(270): CController->missingAction('images')
+#1 D:\weijia\app\framework\web\CWebApplication.php(282): CController->run('images')
+#2 D:\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/yua...')
+#3 D:\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\weijia\app\index\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/images/yuan10_hui.png
+HTTP_REFERER=http://weijia.com/index.php?r=site/yuyue
+---
+2016/04/27 19:23:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in D:\weijia\app\framework\web\CController.php:483
+Stack trace:
+#0 D:\weijia\app\framework\web\CController.php(270): CController->missingAction('images')
+#1 D:\weijia\app\framework\web\CWebApplication.php(282): CController->run('images')
+#2 D:\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/ban...')
+#3 D:\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\weijia\app\index\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/images/bananer5.jpg
+HTTP_REFERER=http://weijia.com/index.php?r=site/yuyue
+---
+2016/04/27 19:23:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in D:\weijia\app\framework\web\CController.php:483
+Stack trace:
+#0 D:\weijia\app\framework\web\CController.php(270): CController->missingAction('images')
+#1 D:\weijia\app\framework\web\CWebApplication.php(282): CController->run('images')
+#2 D:\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/yua...')
+#3 D:\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 D:\weijia\app\index\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/images/yuan10_he.png
+HTTP_REFERER=http://weijia.com/index.php?r=site/yuyue
+---
