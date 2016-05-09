@@ -32,6 +32,7 @@
  * @property string $audit_id
  * @property string $audit_content
  * @property string $delete_time
+ * @property string $info_name
  */
 class Info extends CActiveRecord
 {
@@ -51,14 +52,14 @@ class Info extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('province, city, zone, style, lend_type, house_type, district, detail, map, bus, market, public_url, audit_content', 'required'),
+			array('province, city, zone, style, lend_type, house_type, district, detail, map, bus, market, public_url, audit_content,info_name', 'required'),
 			array('price, lend_status, audit_status', 'numerical', 'integerOnly'=>true),
 			array('province, city, district, user_id, audit_id', 'length', 'max'=>50),
 			array('zone, detail, map, bus, market, public_url, audit_content', 'length', 'max'=>255),
 			array('style, lend_type, rooms, area, floors, nfloor, direction, house_type, create_time, update_time, audit_time, delete_time', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, province, city, zone, price, style, lend_type, rooms, area, floors, nfloor, direction, house_type, district, detail, map, bus, market, public_url, create_time, update_time, user_id, lend_status, audit_time, audit_status, audit_id, audit_content, delete_time', 'safe', 'on'=>'search'),
+			array('id, province, city, zone, price, style, lend_type, rooms, area, floors, nfloor, direction, house_type, district, detail, map, bus, market, public_url, create_time, update_time, user_id, lend_status, audit_time, audit_status, audit_id, audit_content, delete_time,info_name', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -107,6 +108,7 @@ class Info extends CActiveRecord
 			'audit_id' => 'Audit',
 			'audit_content' => 'Audit Content',
 			'delete_time' => 'Delete Time',
+                       'info_name' => 'Info Name',
 		);
 	}
 
@@ -156,6 +158,7 @@ class Info extends CActiveRecord
 		$criteria->compare('audit_id',$this->audit_id,true);
 		$criteria->compare('audit_content',$this->audit_content,true);
 		$criteria->compare('delete_time',$this->delete_time,true);
+                $criteria->compare('info_name',$this->info_name,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -101,6 +101,7 @@
 .ui_tb_h30 {
     height: 30px;
     overflow: auto;
+    float: right;
 }
 
 #box_border {

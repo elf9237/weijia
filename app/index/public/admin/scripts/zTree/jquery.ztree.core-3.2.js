@@ -1171,7 +1171,7 @@
                 return "button level" + node.level + " switch ";
             },
             makeNodeTarget: function (node) {
-                return (node.target || "_blank");
+                return (node.target || "right");
             },
             makeNodeUrl: function (setting, node) {
                 var urlKey = setting.data.key.url;
