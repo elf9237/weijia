@@ -33,7 +33,7 @@
                     <div id="box_top">搜索</div>
                     <div id="box_center">
                         已租未租
-                        <select name="lend_status" id="lend_status" class="ui_select01"
+                        <select name="audit_status" id="audit_status" class="ui_select01"
                                 >
                             <option value=""
                             >--请选择--
@@ -48,7 +48,7 @@
                       
                     </div>
                     <div id="box_bottom">
-                        <input type="button" value="查询" class="ui_input_btn01" onclick="queryHouses(1);"/>
+                        <input type="button" value="查询" class="ui_input_btn01" onclick="queryDls(1);"/>
 <!--                        <input type="button" value="新增" class="ui_input_btn01" id="addBtn" onclick="add()"/>-->
                     </div>
                 </div>
@@ -84,12 +84,12 @@
     <script>
           function queryDls(page){
           
-              var lend_status=$("#lend_status option:selected").val();
+              var audit_status=$("#audit_status option:selected").val();
              
             
               var pagearr=$("#pagearr");
             $.ajax({
-               url:"index.php?r=admin/admin/queryhouse",
+               url:"index.php?r=admin/admin/Querydls",
                data:{
                    page:page
 
@@ -105,41 +105,44 @@
                         innerHtml.push("<td>"+value.user_name+"</td>");
                          innerHtml.push("<td>"+value.user_idno+"</td>");
                           innerHtml.push("<td>"+value.cellphone+"</td>");
-                          innerHtml.push("<td>"+value.jiamengzone"</td>");
-                          innerHtml.push("<td>"+value.price"</td>");
+                          innerHtml.push("<td>"+value.jiamengzone+"</td>");
+                          innerHtml.push("<td>"+value.price+"</td>");
                         var status="待审核";
-                        if(value.audit_status=="1")
+                        if(value.audit_status=="2")
                           status="通过"; 
-                       if(value.audit_status=="2")
+                       if(value.audit_status=="1")
                           status="驳回";
-                      
-                      if(value.audit_status=="0")
-                           innerHtml.push("<td><a onclick='pass("+value.id+","+value.audit_status+")'>通过</a>|<a onclick='bohui("+value.id+")'>驳回</a></td>");
-                    })else{
+                      innerHtml.push("<td>"+status+"</td>");
+                      if(value.audit_status=="0"){
+                           innerHtml.push("<td><a onclick='pass("+value.id+",2)'>通过</a>|<a onclick='pass("+value.id+",1)'>驳回</a></td>");
+                    }else{
                           innerHtml.push("<td><a onclick='yichu("+value.id+")'>移除</a></td>");
                     }
                    
                        
-                   }
-                    $("#userbody").html(innerHtml.join(""));
-                   pageding(pagearr,"queryHouses",data);
-               }
+                 
+                  
             })
+              $("#userbody").html(innerHtml.join(""));
+                   pageding(pagearr,"queryDls",data);
+               
             
-        }
+            }
+            
+        }})}
         
-        function jinyong(id,audit_status){
+        function yichu(id){
         $.ajax({
             type:"POST",
             data:{
                 id:id,
-                audit_status:audit_status
+               
             },
             dataType:"json",
-            url:"index.php?r=admin/admin/xiajia",
+            url:"index.php?r=admin/admin/delagent",
             success:function(data){
                 if(data.status){
-                     queryUsers(1);
+                     queryDls(1);
                 }
             }
         })
@@ -155,12 +158,12 @@
           
 //layer.msg("hehe");
         }
-          function tixing(id){
+          function pass(id,type){
                  layer.open({
                 type:1,
                 content:'<div style="text-align:center;display:inline-block;padding-top:10px"><span>消息内容：</span><textarea id="message"></textarea></div>',
                 area:["300px","300px"],
-                title:"添加提醒",
+                title:"审核",
                 btn:["发送","取消"],
                  yes:function(index){
                      if($("#message").val()==""){
@@ -172,14 +175,16 @@
             data:{
                 message:$("#message").val(),
                 id:id,
+                type:type
             },
             dataType:"json",
-            url:"index.php?r=admin/admin/tixing",
+            url:"index.php?r=admin/admin/shenhe",
             success:function(data){
                 if(data.status){
                     layer.close(index);
+                    queryDls(1);
                 }else{
-                    layer.msg("发送异常！！");
+                    layer.msg("失败！！");
                 }
             }
         })
@@ -192,7 +197,7 @@
             })
             }
     $(function(){
-    queryHouses(1);
+    queryDls(1);
         
     })
     </script>

@@ -209,11 +209,62 @@ if(!empty($_POST['username'])){
         
     }
      /**
-     * 跳转至房源管理
+     * 跳转至代理商
      */
     public function actionTodls(){
-        $this->render("house_list");
+        $this->render("dls_list");
     }
+     /**
+     * 查询代理商信息
+     */
+     public  function actionQuerydls(){
+         $page=$_POST['page'];
+  
+       $sql="select t.* from cy_agentform t  where 1=1 " ;
+
+       if(!empty($_POST['audit_status'])){
+          $sql.=" and t.audit_status = ".$_POST['audit_status']." ";
+      }
+ $pagelist=new PageList($sql, $page, 2);
+ 
+       echo json_encode($pagelist->pageAjax);
+        
+    }
+    public function actionShenhe(){
+          $ar=new AjaxReturn();
+          $ar->status=false;
+        $type=$_POST['type'];
+        $id=$_POST['id'];
+        $mes=$_POST['message'];
+        $agentModel=  Agentform::model();
+        $agentInfo = $agentModel->findByPk($id);
+        $agentInfo->audit_status=$type;
+         $message=new Message();
+        $message->info_id=-1;
+        $message->sender=1;
+        $message->receiver=$agentInfo->user_id;
+        $message->message_type=2;
+        if($type==2)
+        $message->message='你的代理申请已通过，审批意见：'.$mes.'.具体事务请联系管理人员进行确认！！';
+         if($type==1)
+        $message->message='你的代理申请已驳回，审批意见：'.$mes;
+        
     
+    if($agentInfo->save()&&$message->save()){
+              $ar->status=true;
+    }
+    echo json_encode($ar);
+    }
+    public function actionDelagent(){
+          $ar=new AjaxReturn();
+          $ar->status=false;
+        $id=$_POST['id'];
+         $agentModel=  Agentform::model();
+        $agentInfo = $agentModel->findByPk($id);
+        if($agentInfo->delete()){
+            $ar->status=true; 
+        }
+        echo $ar;
+    }
     
 }

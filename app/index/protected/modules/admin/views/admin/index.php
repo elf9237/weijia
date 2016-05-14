@@ -294,6 +294,19 @@
                     "resourceOrder": 0,
                     "resourceType": ""
                 },
+                  {
+                    "accessPath": "index.php?r=admin/admin/Todls",
+                    "checked": false,
+                    "delFlag": 0,
+                    "parentID": 3,
+                    "resourceCode": "",
+                    "resourceDesc": "",
+                    "resourceGrade": 3,
+                    "resourceID": 9,
+                    "resourceName": "代理商管理",
+                    "resourceOrder": 0,
+                    "resourceType": ""
+                },
                 {
                     "accessPath": "index.php?r=admin/admin/user",
                     "checked": false,
