@@ -151,6 +151,7 @@ if(!empty($_POST['username'])){
         $ar=new AjaxReturn();
         $id=$_POST['id'];
         $type=$_POST['audit_status'];
+        
         if(empty($id)){
           $ar->status=false;
           $ar->content="参数不完整！";
@@ -164,14 +165,14 @@ if(!empty($_POST['username'])){
        $fangzi->audit_id=1;
        $fangzi->audit_status=1;
        $fangzi->audit_content='经平台验证本房源为虚假房源';
-       echo json_encode($fangzi);
+//       echo json_encode($fangzi);
        $message=new Message();
         $message->info_id=-1;
         $message->sender=1;
         $message->receiver=$fangzi->user_id;
         $message->message_type=2;
         $message->message='你所上传的房源系虚假房源已被下架，房源名称：'.$fangzi->info_name;
-        if($message->save()&&$fangzi->save()){
+        if($fangzi->save()&&$message.save()){
         $ar->status=true;
         
         }else{
@@ -187,7 +188,6 @@ if(!empty($_POST['username'])){
        $fangzi->audit_id=1;
        $fangzi->audit_status=0;
        $fangzi->audit_content='经复核你的房源已复核平台要求';
-      echo $fangzi->user_id;
        $message=new Message();
         $message->info_id=-1;
         $message->sender=1;
@@ -204,9 +204,16 @@ if(!empty($_POST['username'])){
        
               
                 
-            }
+            } 
         }
         
     }
+     /**
+     * 跳转至房源管理
+     */
+    public function actionTodls(){
+        $this->render("house_list");
+    }
+    
     
 }
