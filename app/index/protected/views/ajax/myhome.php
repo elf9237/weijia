@@ -341,7 +341,7 @@
                             infoStatus="商铺";
                         }
                     innerHtml.push('<tr>'+
-                      '<td><img src="public/desktop/images/4.jpg" alt="" width="200px" height="100px"></td>'+
+                      '<td><img src="upload/'+value.mian_url+'" alt="" width="200px" height="100px"></td>'+
                       '<td>'+value.info_name+'</td>'+
                            '<td>'+value.zone+'</td>'+
                               '<td>'+value.lend_type+'</td>'+

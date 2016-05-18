@@ -9,7 +9,7 @@
   <link rel="shortcut icon" href="public/desktop/http://www.baozupo.com/baozupo/images/ico.ico">
   
   
-  <script src="public/desktop/public/desktop/js/jquery.min.js"></script>
+  <script src="public/desktop/js/jquery.min.js"></script>
   <script src="public/desktop/js/common.js"></script>
   <script src="public/desktop/js/webCommon.js"></script>
   <script type="text/javascript" src="public/desktop/js/scroller.js"></script>
@@ -18,15 +18,17 @@
   <script src="public/desktop/js/validate.js"></script>
   <script type="text/javascript" src="public/desktop/js/jquery.history.js"></script>
   <script src="public/desktop/js/WdatePicker.js"></script>
-  <script src="public/desktop/js/style.js"></script>
+<!--  <script src="public/desktop/js/style.js"></script>-->
   <script src="public/desktop/js/myjs.js"></script>
-  <link href="public/desktop/public/desktop/css/WdatePicker.css" rel="stylesheet" type="text/css">
+  <link href="public/desktop/css/WdatePicker.css" rel="stylesheet" type="text/css">
   <script src="public/desktop/css/jquery.autogrowtextarea.min.js"></script>
   <link rel="stylesheet" href="public/desktop/css/main.css">
   <link rel="stylesheet" href="public/desktop/css/mainweb.css">
   <link rel="stylesheet" href="public/desktop/css/comment.css">
   <link rel="stylesheet" href="public/desktop/css/scroller.css">
   <link rel="stylesheet" href="public/desktop/css/style.css">
+  <script type="text/javascript" src="public/admin/scripts/utils/util.js"></script>
+     <script type="text/javascript" src="public/admin/scripts/layer/layer.js"></script>
 </head>
 <body class="body-web" style="Overflow-y:scroll"><div style="position: absolute; z-index: 19700; top: -1970px; left: -1970px; display: none;"><iframe src="public/desktop/My97DatePicker.html" frameborder="0" border="0" scrolling="no" style="width: 186px; height: 199px;"></iframe></div>
   <div class="header">
@@ -79,43 +81,10 @@
 	  <img id="banyuan4" src="public/desktop/images/yuan10_hui.png" class="handpoint" onclick="bananerFade(14)">
     </div>
   </div>
-<script type="text/javascript">
-  function showBananer(){
-  	$("#divbananer").show();
-  }
-  function hideBananer(){
-  	$("#divbananer").hide();
-  }
-  var topBananObj=null;
-  function bananerStart(){
-  	if(topBananObj){
-  		topBananObj.start();
-  	}
-  }
-  function bananerStop(){
-  	if(topBananObj){
-  		topBananObj.stop();
-  	}
-  }
-  function bananerFade(index){
-  	if(topBananObj){
-  		topBananObj.banFade(index);
-  	}
-  }
-  $(function(){
-	var bananer_color1=["#e6006d","#f50c1e","#f5d1b1","-1"];
-	var bananer_color2=["#e6006d","#f50c1e","#f5d1b1","-1"];
-	var bananer_pici=[1,9,3,5];
-	var imgtype=["jpg","png","jpg","jpg"];
-	topBananObj=new topBananer(bananer_color1,bananer_color2,bananer_pici,imgtype,"bananer","banbg");
-	bananerStart();
-  });
-</script>
-  
   <div style="height:2px;overflow:hidden;" width="100%"></div>
   
   <div id="contentpar" style="width:100%">
-  <div class="div-box" style="min-height: 300px; height: 461px; background-color: rgb(255, 255, 255);" id="content">
+  <div class="div-box" style="min-height: 300px; background-color: rgb(255, 255, 255);" id="content">
 
 <div style="position:relative;background-color:#FFFFFF;">
   <table cellpadding="0" cellspacing="0" class="table" width="100%">
@@ -152,27 +121,13 @@
                         <input type="button" class="button-page delete-all" value="清空消息" ></td>
                     </tr>
                     <tr>
-                      <th></th>
+                      <th>消息类别</th>
                       <th colspan="2">内容</th>
                       <th>状态</th>
                     </tr>
                   </thead>
-                  <tbody class="listCheckbox">
-                    <tr>
-                      <td><input type="checkbox"></td>
-                      <td colspan="2" class="innerP">这是列表消息，这是列表消息，这是列表消息，这是列表消息，这是列表消息，这是列表消息，这是列表消息，这是列表消息，这是列表消息，这是列表消息这是列表消息，这是列表消息，这是列表消息，这是列表消息，这是列表消息这是列表消息，这是列表消息，这是列表消息，这是列表消息，这是列表消息这是列表消息，这是列表消息，这是列表消息，这是列表消息，这是列表消息</td>
-                      <td class="innerL">未读</td>
-                    </tr>
-                    <tr>
-                      <td><input type="checkbox"></td>
-                      <td colspan="2" class="innerP">这是列表消息，这是列表消息，这是列表消息，这是列表消息，这是列表消息，</td>
-                      <td class="innerL innerR">已读</td>
-                    </tr>
-                    <tr>
-                      <td><input type="checkbox"></td>
-                      <td colspan="2" class="innerP">这是列表消息，这是列表消息，这是列表消息，这是列表消息，这是列表消息，</td>
-                      <td class="innerL">未读</td>
-                    </tr>
+                  <tbody class="listCheckbox" id="mymess">
+                    
                   </tbody>
                 </table>
                 <div class="clear"></div>
@@ -190,7 +145,7 @@
 
 
 
-<div style="height:32px;text-align:right;" id="turnPageBar">
+<div style="height:32px;text-align:right;" id="turnPageBarmess">
 	
 </div>
 
@@ -276,36 +231,59 @@
     	$("#contentpar").css("background-color","");
     }
   }
-  function prefindTop(bz){
-  	var url="/web/houseDispatcher.do?method=showPrefind2";
-   	showLogDiv(($(window).width()-502)/2,($(window).height()-380)/2);
-   	$("#div_Log_Top").load(webroot+url);
-  }
+  function queryMymess(page){
+            $.ajax({
+               url:"index.php?r=ajax/querymymess",
+               data:{page:page},
+               type:"POST",
+               dataType:"json",
+               success:function(data){
+                   var innerHtml=[];
+                   if(data.pageList.length>0){
+                    $.each(data.pageList,function(n,value){ 
+                        var status='系统消息';
+                        var message=value.message;
+                        if(value.message_type==0){
+                            status='预约消息';
+                            message="我对你发布的--"+value.info_name+"感兴趣--"+message;
+                        }
+                        var infoStatus="<a onclick='biaoji(this,"+value.id+")'>标记已读</a>";
+                        if(value.read_time!=0){
+                            infoStatus="已读";
+                        }
+                        
+                         
+                    innerHtml.push('<tr>'+
+                      '<td><input type="checkbox" name="id" value="'+value.id+'"></td>'+
+                      '<td>'+status+'</td>'+
+                           '<td>'+message+'</td>'+
+                              '<td>'+infoStatus+'</td>'); 
+                  }); 
+                   }
+                    $("#mymess").html(innerHtml.join(""));
+                   pageding($("#turnPageBarmess"),"queryMymess",data);
+              
+            }})
+            }
+        function biaoji(th,id){
+        $.ajax({
+            url:"index.php?r=ajax/biaoji/",
+               data:{id:id},
+               type:"POST",
+               dataType:"json",
+               success:function(data){
+                   if(data.status){
+                       $(th).parent().text("已读");
+                   }
+                   
+               }
+        })
+        
+        
+        }    
+            $(function(){
+            queryMymess(1);
+            
+            })
   
-  var url= "";
-  var openId="";
-  
-  
-  if(openId==""){
-	openId="firstpage";
-  	url="null";
-  }
-  $(function(){
-  	$.history.init(function (hash) {
-  		if(historyFlag){
-  			historyFlag=false;
-  			return;
-  		}
-		var hisurl=url;
-		var hisid=openId;
-		if (hash){
-			var obj=getHistory(hash);
-			if(obj!=null){
-				hisid=obj.id;
-				hisurl=obj.url;
-			}
-		}
-		changeTopTitle(hisid,hisurl,"false");
-	});
-  });
 </script></body></html>

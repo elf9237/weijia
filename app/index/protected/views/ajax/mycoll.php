@@ -278,12 +278,12 @@
                     $.each(data.pageList,function(n,value){ 
                     innerHtml.push('<tr>'+
 	'<td width="600px" height="370px" class="handpoint" onclick="showRoom('+value.id+');" style="background-color:#00FF00">'+
-	  '<div style="width:370px;height:370px;float:left;"><img width="370px" height="370px" src="public/desktop/images/main.jpg"></div>'+
-//  	  '<div style="width:230px;height:230px;float:left;"><img width="230px" height="230px" src="public/desktop/images/2015010416480700011.jpg"></div>'+
-//     ' <div style="width:230px;height:140px;float:left;background-color:#FFCC00;color:#FFFFFF;font-size:20px;">'+
-//      	'<div class="priceseaname">岁月静好</div>'+
-//	    '<div class="priceseaeng">Sunshine Time</div>'+
-//     '</div>'+
+	  '<div style="width:370px;height:370px;float:left;"><img width="370px" height="370px" src="upload/'+value.mian_url+'"></div>'+
+  	  '<div style="width:230px;height:230px;float:left;"><img width="230px" height="230px" src="public/desktop/images/2015010416480700011.jpg"></div>'+
+     ' <div style="width:230px;height:140px;float:left;background-color:#FFCC00;color:#FFFFFF;font-size:20px;">'+
+      	'<div class="priceseaname">微家租房</div>'+
+	    '<div class="priceseaeng">Sunshine Time</div>'+
+     '</div>'+
 	'</td>'+
 	'<td width="20px">&nbsp;</td>'+
 	'<td valign="top">'+

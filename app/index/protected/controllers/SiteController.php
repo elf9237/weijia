@@ -210,7 +210,12 @@ class SiteController extends BaseController
 				$this->redirect('index.php?r=site/kanfangsave');
 			}
 		}
-		$this->render('kanfang',array('model'=>$model));
+                if( $this->wechat){
+                $this->render('kanfang',array('model'=>$model));
+                
+                }else{
+                    $this->render('yuyue');
+                }
 	}
 	public function actionKanfangsave(){
 		$this->render('kanfangsave');

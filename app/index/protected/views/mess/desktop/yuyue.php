@@ -136,7 +136,7 @@
   <tr><td colspan="3">&nbsp;</td></tr>
   <tr>
   <td width="600px" height="370px" style="background-color:#00FF00">
-      <div style="width:370px;height:370px;float:left;"><img width="370px" height="370px" src="upload/<?php echo $cyinfo->main_url ?>"></div>
+      <div style="width:370px;height:370px;float:left;"><img width="370px" height="370px" src="upload/<?php echo $cyinfo->mian_url ?>"></div>
       <div style="width:230px;height:230px;float:left;"><img width="230px" height="230px" src="public/desktop/images/2015010416480700011.jpg"></div>
       <div style="width:230px;height:140px;float:left;background-color:#FFCC00;color:#FFFFFF;font-size:20px;">
       <div class="priceseaname">微家租房</div>
@@ -238,7 +238,7 @@
       <tr>
         <td id="name_td" class="num_reg">2</td>
         <td>
-          <input type="text" id="name" name="name" onkeyup="limitInputLen(this,20)" title="请输入您的姓名" onblur="changeInput(&#39;name&#39;,&#39;&#39;)" value="" class="input_reg"> 
+          <input type="text" id="name" name="username" onkeyup="limitInputLen(this,20)" title="请输入您的姓名" onblur="changeInput(&#39;name&#39;,&#39;&#39;)" value="" class="input_reg"> 
         </td>
       </tr>
     </tbody></table>
@@ -259,7 +259,7 @@
   <div style="position:absolute;left:275px;top:241px;"><img id="phone_img" src="public/desktop/images/dline1_h.gif"></div>
   
   <div id="divbut" style="position:absolute;left:370px;top:320px;">
-    <input id="but" onclick="saveClick()" onmousemove="changeClass(&#39;but&#39;,&#39;button2_reg&#39;)" onmouseout="changeClass(&#39;but&#39;,&#39;button_reg&#39;)" class="button_reg" type="button" value="提交">
+    <input id="but" onclick="saveYu()" onmousemove="changeClass(&#39;but&#39;,&#39;button2_reg&#39;)" onmouseout="changeClass(&#39;but&#39;,&#39;button_reg&#39;)" class="button_reg" type="button" value="提交">
   </div>
 </div>
 <div id="tmpdiv"></div>
@@ -335,36 +335,32 @@
       $("#contentpar").css("background-color","");
     }
   }
-  function prefindTop(bz){
-    var url="/web/houseDispatcher.do?method=showPrefind2";
-    showLogDiv(($(window).width()-502)/2,($(window).height()-380)/2);
-    $("#div_Log_Top").load(webroot+url);
-  }
-  
-  var url= "/web/houseDispatcher.do?method=showPrecontract&flag=&rmid=226&t=146168145";
-  var openId="housefind";
-  
-  
-  if(openId==""){
-  openId="firstpage";
-    url="null";
-  }
-  $(function(){
-    $.history.init(function (hash) {
-      if(historyFlag){
-        historyFlag=false;
-        return;
-      }
-    var hisurl=url;
-    var hisid=openId;
-    if (hash){
-      var obj=getHistory(hash);
-      if(obj!=null){
-        hisid=obj.id;
-        hisurl=obj.url;
-      }
-    }
-    changeTopTitle(hisid,hisurl,"false");
-  });
-  });
+  function saveYu(){
+            if($("input[name='username']").val()==""||$("input[name='phone']").val()=="")
+                return;
+             $.ajax({
+               url:"index.php?r=mess/saveyu&userid="+ <?php echo $userid ; ?>+"&infoid="+<?php echo $infoid ; ?>,
+               data:{
+                   real_name:$("input[name='username']").val(),
+                    phone_no:$("input[name='phone']").val(),
+               },
+               dataType: "json", 
+               type:"POST",
+               success:function(data){
+                   if(data.status)
+                       location.href="index.php?r=ajax/myyuyue";
+                   else
+                       alert(data.content);
+
+                   
+               },
+                error:function(data){
+                    alert("异常");
+                }       
+               
+           })
+            
+        }
+
+ 
 </script></body></html>

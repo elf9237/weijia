@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="public/desktop/css/scroller.css">
   <link href="public/desktop/css/jquery.bxslider.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="public/desktop/css/style.css">
-  
+  <script type="text/javascript" src="public/admin/scripts/layer/layer.js"></script>
 	<link href="public/desktop/css/video-js.css" rel="stylesheet" type="text/css">
 	<!--[if lt IE 9]>
 	<script src="/baozupo/lib/html5shiv.js"></script>
@@ -85,7 +85,7 @@
 	      		 <?php echo $cyinfo->price ?>元
 	        	</strong>
 	        </td>
-	        <td width="90px"><img class="handpoint" onclick="collectRoom(&#39;226&#39;);" src="public/desktop/images/collect.gif"></td>
+	        <td width="90px"><img class="handpoint" onclick="saveFav();" src="public/desktop/images/collect.gif"></td>
 	      </tr>
 	      <tr><td>&nbsp;</td>
 	      
@@ -93,7 +93,7 @@
 	      <tr class="td_line_hsinfo"><td colspan="3"></td></tr>
 	      <tr>
 	        <td colspan="3">
-	          <input type="button" class="button_hsinfo handpoint" value="预约看房" onclick="precontract(&#39;226&#39;,&#39;&#39;)">
+	          <input type="button" class="button_hsinfo handpoint" value="预约看房" onclick="yuyue()">
 	        </td>
 	      </tr>
 	    </tbody></table>
@@ -468,6 +468,62 @@
    	showLogDiv(($(window).width()-502)/2,($(window).height()-380)/2);
    	$("#div_Log_Top").load(webroot+url);
   }
+  
+  var info_id='<?php echo $cyinfo->id ?>';
+  var user_id='<?php echo $cyinfo->user_id ?>';
+  
+  
+  function yuyue(){
+      
+      window.location.href="index.php?r=mess/yu/&infoid="+info_id+"&userid="+user_id;
+  }
+  function saveCkick(){
+      var message=$("#dsc").val();
+      if(message==""){
+          layer.msg("请输入内容在提交");
+          return;
+      }
+       $.ajax({
+               url:"index.php?r=mess/savejubao/&infoid="+info_id+"&userid="+user_id,
+               data:{
+                   message:message,
+                   phone_no:' '
+
+               },
+               type:"POST",
+               dataType:"json",
+               success:function(data){
+                   if(data.status){
+                       layer.msg("意见提交成功");
+                   }else{
+                       layer.msg("意见提失败"); 
+                   }
+            
+        }})
+      
+  }
+  function saveFav(){
+      
+       $.ajax({
+               url:"index.php?r=ajax/Coll/",
+               data:{
+                   id:info_id
+
+               },
+               type:"POST",
+               dataType:"json",
+               success:function(data){
+                   if(data.status){
+                       layer.msg("收藏成功");
+                   }else{
+                       layer.msg("收藏失败"); 
+                   }
+            
+        }})
+      
+  }
+  
+  
     function initBaiDuMap(){
     var map= '<?php echo $cyinfo->map ?>';
  var jin='0';
@@ -593,17 +649,9 @@
 		 setTimeout(parCallFun,100);
 	  }
   };
-  function showRoom(hsid,rmid){
-  	var url="/web/houseDispatcher.do?method=showHouse&hsid="+hsid+"&rmid="+rmid+"&t="+getRandom();
-  	window.open(webroot + url,"_self");
-  }
-  function collectRoom(rmid){
-  	$("#tmpdiv").load(webroot+"/web/houseDispatcher.do?method=collectHouse&rmid="+rmid+"&t="+getRandom());
-  }
-  function precontract(rmid,flag){
-  	var url="/web/houseDispatcher.do?method=showPrecontract&flag="+flag+"&rmid="+rmid+"&t="+getRandom();
-  	openTopTitle("housefind",url);
-  }
+ 
+ 
+ 
   window.onscroll = winScroll;
   function winScroll(){//左边导航
   	var top=document.documentElement.scrollTop || document.body.scrollTop;
@@ -614,17 +662,9 @@
   	}
   }
 
-  function saveClick(){
-		var dsc=$("#dsc").val();
-		if($.trim(dsc)==""){
-			alert("请输入建议内容。");
-			return;
-		}
-		var id=$("#id").val();
-		var url="/web/serviceDispatcher.do?method=saveSuggest&f=1&id="+id+"&dsc="+encodeURIComponent(dsc);
-		$("#tmpdiv").load(webroot+url);
-  }
+  
   $(function(){
+     
     loadBaiDuMapAsy("initBaiDuMap");
   	//加载滑屏事件
   	roomPicObj=new roomPicSlide(rPicArray,"roomPicDiv","rpic","imgrpic");

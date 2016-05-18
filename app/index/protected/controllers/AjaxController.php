@@ -45,6 +45,25 @@ class AjaxController extends BaseController {
          $this->render('mymess');
          
      }
+      public function actionQuerymymess(){
+         $page=$_POST['page'];
+       $sql="select t.info_name,t1.* from cy_info t right join cy_message t1 on(t1.info_id=t.id) where 1=1 and t1.message_type in(0,2) and t1.receiver=123 " ;
+   
+ $pagelist=new PageList($sql, $page, 2);
+
+       echo json_encode($pagelist->pageAjax);
+         
+     }
+     public function actionBiaoji(){
+         $id=$_POST['id'];
+         $messModel=  Message::model();
+         $messsinfo=$messModel->findByPk($id);
+         $messsinfo->order_time=time();
+         $ar=new AjaxReturn();
+         $ar->status=$messsinfo->save();
+         echo json_encode($ar);
+         
+     }
      public function actionMyyuyue(){
          $this->render('myyuyue');
          
@@ -148,6 +167,16 @@ $roomeqip->info_id=$info->id;
 }
        $ar->status=$isSuccess;
        echo json_encode($ar);
+     }
+     public function actionColl(){
+         $favorite=new Favorite();
+         $favorite->info_id=$_POST['id'];
+         $favorite->user_id=2;
+         $favorite->create_time=time();
+         $ar=new AjaxReturn();
+         $ar->status=$favorite->save();
+         echo json_encode($ar);
+         
      }
     
 }

@@ -10,8 +10,15 @@ class MessController extends BaseController
      * @param type $infoid
      */
 	public function actionYu($userid,$infoid) {
+            	// using the default layout 'protected/views/layouts/main.php'
+            $infoModel=  Info::model();
+            $cyinfo=$infoModel->findByPk($infoid);
+          if( $this->wechat){
+          $this->render('yuyue',array("userid"=>$userid,"infoid"=>$infoid));
           
-		$this->render('yuyue',array("userid"=>$userid,"infoid"=>$infoid));
+          }else{
+              $this->render('desktop/yuyue',array("userid"=>$userid,"infoid"=>$infoid,"cyinfo"=>$cyinfo));
+          }
 	}
         
 	public function actionSaveyu($userid,$infoid) {
