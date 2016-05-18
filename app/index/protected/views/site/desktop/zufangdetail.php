@@ -82,17 +82,13 @@
 	        <td class="td_title_hsinfo" style="font-size:14px;"><strong>
 	        	
 	      		
-	      		1300元/月
+	      		 <?php echo $cyinfo->price ?>元
 	        	</strong>
 	        </td>
 	        <td width="90px"><img class="handpoint" onclick="collectRoom(&#39;226&#39;);" src="public/desktop/images/collect.gif"></td>
 	      </tr>
 	      <tr><td>&nbsp;</td>
-	      	<td class="td_cont_hsinfo_l" colspan="2">整租优惠价：
-	      		
-	      		
-	      		5000元/月
-	      	</td>
+	      
 	      </tr>
 	      <tr class="td_line_hsinfo"><td colspan="3"></td></tr>
 	      <tr>
@@ -105,16 +101,15 @@
 	  <tr class="td_line_hsinfo"><td></td></tr>
 	  <tr><td>
 	    <table class="table_hsinfo" width="100%">
-	      <tbody><tr><td width="50px" class="td_cont_hsinfo_c">面积：</td><td class="td_cont_hsinfo_l">8.0平米/80.0平米</td></tr>
-	      <tr><td class="td_cont_hsinfo_c">楼层：</td><td class="td_cont_hsinfo_l"></td></tr>
-	      <tr><td class="td_cont_hsinfo_c">朝向：</td><td class="td_cont_hsinfo_l">北</td></tr>
-	      <tr><td class="td_cont_hsinfo_c">户型：</td><td class="td_cont_hsinfo_l">三室一厅一卫</td></tr>
-	      <tr><td class="td_cont_hsinfo_c">小区：</td><td class="td_cont_hsinfo_l">高丽园小区 </td></tr>
-	      <tr><td class="td_cont_hsinfo_c">公交：</td><td class="td_cont_hsinfo_l">591.805.810.823.910.924</td></tr>
-	      <tr><td class="td_cont_hsinfo_c">地铁：</td><td class="td_cont_hsinfo_l">土桥</td></tr>
-	      <tr><td class="td_cont_hsinfo_c">购物：</td><td class="td_cont_hsinfo_l">京客隆，物美，蓝岛大厦</td></tr>
-	      <tr><td class="td_cont_hsinfo_c">办公：</td><td class="td_cont_hsinfo_l"></td></tr>
-	      <tr><td class="td_cont_hsinfo_c">银行：</td><td class="td_cont_hsinfo_l">华夏银行、建设银行、农业银行、</td></tr>
+	      <tbody><tr><td width="50px" class="td_cont_hsinfo_c">面积：</td><td class="td_cont_hsinfo_l"> <?php echo $cyinfo->area ?></td></tr>
+	      <tr><td class="td_cont_hsinfo_c">楼层：</td><td class="td_cont_hsinfo_l"> <?php echo $cyinfo->nfloor?>/ <?php echo $cyinfo->floors ?></td></tr>
+	      <tr><td class="td_cont_hsinfo_c">朝向：</td><td class="td_cont_hsinfo_l"> <?php echo $cyinfo->direction ?></td></tr>
+	      <tr><td class="td_cont_hsinfo_c">户型：</td><td class="td_cont_hsinfo_l"> <?php echo $cyinfo->rooms ?></td></tr>
+	      <tr><td class="td_cont_hsinfo_c">小区：</td><td class="td_cont_hsinfo_l"> <?php echo $cyinfo->district ?> </td></tr>
+	      <tr><td class="td_cont_hsinfo_c">公交：</td><td class="td_cont_hsinfo_l"> <?php echo $cyinfo->bus ?></td></tr>
+	      <tr><td class="td_cont_hsinfo_c">地铁：</td><td class="td_cont_hsinfo_l">--</td></tr>
+	      <tr><td class="td_cont_hsinfo_c">购物：</td><td class="td_cont_hsinfo_l"> <?php echo $cyinfo->market ?></td></tr>
+	      
 	      <tr class="td_line_hsinfo"><td></td></tr>
 	    </tbody></table>
 	  </td></tr>
@@ -176,7 +171,7 @@
   <div id="dRight" class="div-right4 div-overflow">
     <table class="table_hsinfo" width="100%">
       <tbody><tr>
-        <td class="td_title_find"><strong>卡普里清酒B</strong></td>
+        <td class="td_title_find"><strong> <?php echo $cyinfo->info_name ?></strong></td>
         <td class="td_cont_find" width="90px">&nbsp;</td>
       </tr>
       <tr height="4px"><td colspan="2"></td></tr>
@@ -272,8 +267,22 @@
       <div id="roomPicDiv" class="div_slide" style="cursor: pointer;">
         <div style="position:absolute;width:690px;height:388px;overflow:hidden;">
         	<div style="position:relative">
-	        	<img id="imgrpic" style="position:absolute;left:0px;width:690px;height:388px" src="public/desktop/images/room.jpg">
-	        	<img id="imgrpic_bk" style="position:absolute;left:690px;width:690px;height:388px" src="public/desktop/images/grey.gif">
+	        	 <?php 
+        $roomima= $cyinfo->public_url;
+        $imgs=explode(',',$roomima);
+         for($index=0;$index<count($imgs);$index++)
+{
+            
+                if($index==0){ echo '<img id="imgrpic" style="position:absolute;left:0px;width:690px;height:388px" src="upload/'.$imgs[$index].'">';
+                }else{
+                    
+                   echo '<img id="imgrpic_bk" style="position:absolute;left:'.($index*690).'px;width:690px;height:388px" src="upload/'.$imgs[$index].'">'; 
+                }
+
+} 
+        
+        
+        ?>
         	</div>
         </div>
         
@@ -283,11 +292,22 @@
         <img class="img_slideRight div_top" style="display: none;" id="rightrpic" src="public/desktop/images/slideright.png">
         <div class="div_slideRight" onmousemove="showObj(&#39;rightrpic&#39;)" onmouseout="hiddenObj(&#39;rightrpic&#39;)" onclick="roomPicObj.loadRoomPic(1,1,&#39;cls&#39;)"></div>
       </div>
-      <div style="float:right;margin-top:5px;">
-      	<img id="rpic0" src="public/desktop/images/yuan15_hs.png" class="handpoint" onclick="roomPicObj.loadRoomPic(0,0,&#39;cls&#39;)">
+      <div style="float:right;margin-top:5px;" id="publicimg">
+      	   <?php 
+        $roomima= $cyinfo->public_url;
+        $imgs=explode(',',$roomima);
+         for($index=0;$index<count($imgs);$index++)
+{
+             if($index==0){
+                 echo '<img id="rpic0" src="public/desktop/images/yuan15_hs.png" class="handpoint" onclick="roomPicObj.loadRoomPic(0,0,&#39;cls&#39;)">';
+             }else{
+                 echo '<img id="rpic'.$index.'" src="public/desktop/images/yuan15_ls.png" class="handpoint" onclick="roomPicObj.loadRoomPic('.$index.','.$index.',&#39;cls&#39;)">';
+             }
+
+} 
         
-          <img id="rpic1" src="public/desktop/images/yuan15_ls.png" class="handpoint" onclick="roomPicObj.loadRoomPic(1,0,&#39;cls&#39;)">
-		
+        
+        ?>
       </div>
     </div>
     
@@ -301,8 +321,24 @@
       <div id="surroundPicDiv" class="div_slide" style="cursor: pointer;">
          <div style="position:absolute;width:690px;height:388px;overflow:hidden;">
         	<div style="position:relative">
-	        	<img id="imgapic" style="position:absolute;left:0px;width:690px;height:388px" src="public/desktop/images/picurl0.jpg">
-	        	<img id="imgapic_bk" style="position:absolute;left:690px;width:690px;height:388px" src="public/desktop/images/grey.gif">
+                     <?php 
+        $roomima= $cyinfo->room_url;
+        $imgs=explode(',',$roomima);
+         for($index=0;$index<count($imgs);$index++)
+{
+            
+                if($index==0){ echo '<img id="imgapic" style="position:absolute;left:0px;width:690px;height:388px" src="upload/'.$imgs[$index].'">';
+                }else{
+                    
+                   echo '<img id="imgapic_bk" style="position:absolute;left:'.($index*690).'px;width:690px;height:388px" src="upload/'.$imgs[$index].'">'; 
+                }
+
+} 
+        
+        
+        ?>
+                    
+	        	
         	</div>
         </div>
         
@@ -312,13 +348,27 @@
         <img class="img_slideRight div_top" style="display:none" id="rightapic" src="public/desktop/images/slideright.png">
         <div class="div_slideRight" onmousemove="showObj(&#39;rightapic&#39;)" onmouseout="hiddenObj(&#39;rightapic&#39;)" onclick="surPicObj.loadRoomPic(1,1,&#39;cls&#39;)"></div>
       </div>
-      <div style="float:right;margin-top:5px;">
+      <div id="roomimg" style="float:right;margin-top:5px;">
+        <?php 
+        $roomima= $cyinfo->room_url;
+        $imgs=explode(',',$roomima);
+         for($index=0;$index<count($imgs);$index++)
+{
+             if($index==0){
+                 echo '<img id="apic0" src="public/desktop/images/yuan15_hs.png" class="handpoint" onclick="surPicObj.loadRoomPic(0,0,&#39;cls&#39;)">';
+             }else{
+                 echo '<img id="apic'.$index.'" src="public/desktop/images/yuan15_ls.png" class="handpoint" onclick="surPicObj.loadRoomPic('.$index.','.$index.',&#39;cls&#39;)">';
+             }
+
+} 
         
-          <img id="apic0" src="public/desktop/images/yuan15_hs.png" class="handpoint" onclick="surPicObj.loadRoomPic(0,0,&#39;cls&#39;)">
+        
+        ?>
+<!--          <img id="apic0" src="public/desktop/images/yuan15_hs.png" class="handpoint" onclick="surPicObj.loadRoomPic(0,0,&#39;cls&#39;)">
 		
           <img id="apic1" src="public/desktop/images/yuan15_ls.png" class="handpoint" onclick="surPicObj.loadRoomPic(1,0,&#39;cls&#39;)">
 		
-          <img id="apic2" src="public/desktop/images/yuan15_ls.png" class="handpoint" onclick="surPicObj.loadRoomPic(2,0,&#39;cls&#39;)">
+          <img id="apic2" src="public/desktop/images/yuan15_ls.png" class="handpoint" onclick="surPicObj.loadRoomPic(2,0,&#39;cls&#39;)">-->
 		
       </div>
     </div>
@@ -418,21 +468,52 @@
    	showLogDiv(($(window).width()-502)/2,($(window).height()-380)/2);
    	$("#div_Log_Top").load(webroot+url);
   }
-  
+    function initBaiDuMap(){
+    var map= '<?php echo $cyinfo->map ?>';
+ var jin='0';
+ var wei='0';
+ if(map!=null&&map!=''){
+ var maps=map.split(',');
+ if(maps.length>1){
+    jin=maps[0];
+    wei=maps[1];
+    
+ }
+ }
+  	loadBaiDuMap("baidudiv",jin,wei);
+  }
   //房间图片
   var rPicArray=new Array();
-  rPicArray.push("public/desktop/images/room.jpg");
-  
-  rPicArray.push("public/desktop/images/picurl0.jpg");
+//  rPicArray.push("public/desktop/images/room.jpg");
+//  
+//  rPicArray.push("public/desktop/images/picurl0.jpg");
   
   //社区图片
   var aPicArray=new Array();
   
-  aPicArray.push("public/desktop/images/picurl0.jpg");
+   var roomimags='<?php 
+        echo $cyinfo->room_url;
+        ?>';
+   var roomis=roomimags.split(",");
+   for(var i=0;i<roomis.length;i++){
+        aPicArray.push('upload/'+roomis[i]); 
+   }
+   
+   
+   var publicimags='<?php 
+        echo $cyinfo->public_url;
+        ?>';
+   var roompb=publicimags.split(",");
+   for(var i=0;i<roompb.length;i++){
+        rPicArray.push('upload/'+roompb[i]); 
+   }
+           
   
-  aPicArray.push("public/desktop/images/picurl1.jpg");
-  
-  aPicArray.push("public/desktop/images/picurl2.jpg");
+//  aPicArray.push("public/desktop/images/picurl0.jpg");
+//  
+//  aPicArray.push("public/desktop/images/3.jpg");
+//  
+//  aPicArray.push("public/desktop/images/4.jpg");
   
   var roomPicObj;
   var surPicObj;
@@ -532,9 +613,7 @@
   		$("#dLeft").css("position","absolute");
   	}
   }
-  function initBaiDuMap(){
-  	loadBaiDuMap("baidudiv","116.688134","39.874072");
-  }
+
   function saveClick(){
 		var dsc=$("#dsc").val();
 		if($.trim(dsc)==""){
@@ -546,12 +625,13 @@
 		$("#tmpdiv").load(webroot+url);
   }
   $(function(){
+    loadBaiDuMapAsy("initBaiDuMap");
   	//加载滑屏事件
   	roomPicObj=new roomPicSlide(rPicArray,"roomPicDiv","rpic","imgrpic");
     surPicObj=new roomPicSlide(aPicArray,"surroundPicDiv","apic","imgapic");
 	clearIntervalFun();//清空已有的定时器--暂时不加自动滚屏
 	
-    loadBaiDuMapAsy("initBaiDuMap");
+   
     parCallFun();
     changeTopTitle("housefind","");
   });

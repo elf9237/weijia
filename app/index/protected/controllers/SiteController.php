@@ -73,14 +73,17 @@ class SiteController extends BaseController
 			$this->render('desktop/yuyue');
 		}
 	}
-	public function actionZufangdetail()
+	public function actionZufangdetail($id)
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
+            $infoModel=  Info::model();
+            $cyinfo=$infoModel->findByPk($id);
+            
 		if( $this->wechat){
 			$this->render('index');
 		}else{
-			$this->render('desktop/zufangdetail');
+			$this->render('desktop/zufangdetail',array('cyinfo'=>$cyinfo));
 		}
 	}
 	public function actionGuanjia()

@@ -20,6 +20,7 @@
   <script type="text/javascript" src="public/desktop/js/jquery.history.js"></script>
   <script src="public/desktop/js/WdatePicker.js"></script>
   <script src="public/desktop/js/style.js"></script>
+  <script src="public/desktop/js/myjs.js"></script>
   <link href="public/desktop/css/WdatePicker.css" rel="stylesheet" type="text/css">
   <script src="public/desktop/css/jquery.autogrowtextarea.min.js"></script>
   <link rel="stylesheet" href="public/desktop/css/main.css">
@@ -123,11 +124,11 @@
   		<td colspan="8" style="background-color:#1ABC9C;" align="left">&nbsp;&nbsp;<img src="public/desktop/images/member_top.png"></td>
   	</tr>
   	<tr height="125px">
-  		<td width="200px" class="tdbord_ser0 handpoint" onclick="changeSerBk(&#39;mycoll&#39;)" id="mycolltd" style="background-color: rgb(255, 255, 255);"><img id="mycollimg" src="public/desktop/images/mycoll_y.png"></td>
-  		<td width="200px" class="tdbord_ser1 handpoint" onclick="changeSerBk(&#39;mybook&#39;)" id="mybooktd" style="background-color: rgb(255, 255, 255);"><img id="mybookimg" src="public/desktop/images/mybook_y.png"></td>
-  		<td width="200px" class="tdbord_ser1 handpoint" onclick="changeSerBk(&#39;myhome&#39;)" id="myhometd" style="background-color: rgb(255, 255, 255);"><img id="myhomeimg" src="public/desktop/images/myhome_y.png"></td>
-  		<td width="200px" class="tdbord_ser1 handpoint" onclick="changeSerBk(&#39;mydata&#39;)" id="mydatatd" style="background-color: rgb(26, 188, 156);"><img id="mydataimg" src="public/desktop/images/mydata_b.png"></td>
-  		<td width="200px" class="tdbord_ser1 handpoint" onclick="changeSerBk(&#39;myletter&#39;)" id="mylettertd" style="background-color: rgb(255, 255, 255);"><img id="myletterimg" src="public/desktop/images/myletter_y.png"></td>
+  		<td width="200px" class="tdbord_ser0 handpoint" onclick="changeSerBk(0)" id="mycolltd" style="background-color: rgb(255, 255, 255);"><img id="mycollimg" src="public/desktop/images/mycoll_y.png"></td>
+  		<td width="200px" class="tdbord_ser1 handpoint" onclick="changeSerBk(1)" id="mybooktd" style="background-color: rgb(255, 255, 255);"><img id="mybookimg" src="public/desktop/images/mybook_y.png"></td>
+  		<td width="200px" class="tdbord_ser1 handpoint" onclick="changeSerBk(2)" id="myhometd" style="background-color: rgb(255, 255, 255);"><img id="myhomeimg" src="public/desktop/images/myhome_y.png"></td>
+  		<td width="200px" class="tdbord_ser1 handpoint" onclick="changeSerBk(3)" id="mydatatd" style="background-color: rgb(26, 188, 156);"><img id="mydataimg" src="public/desktop/images/mydata_b.png"></td>
+  		<td width="200px" class="tdbord_ser1 handpoint" onclick="changeSerBk(4)" id="mylettertd" style="background-color: rgb(255, 255, 255);"><img id="myletterimg" src="public/desktop/images/myletter_y.png"></td>
   	</tr>
   </tbody></table>
   <div style="height:40px"></div>

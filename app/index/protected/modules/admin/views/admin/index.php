@@ -434,8 +434,7 @@
     <span id="here_area">当前位置：系统&nbsp;>&nbsp;系统介绍</span>
 </div>
 <div id="main">
-    <iframe name="right" id="rightMain" src="index.php?r=admin/admin/introduce" frameborder="no" scrolling="auto"
-            width="100%" height="100%" allowtransparency="true"></iframe>
+    
    
 </div>
 <div style="display:none">

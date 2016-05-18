@@ -34,7 +34,7 @@
         <li><a href="index.php?r=site/zufang">我要租房</a></li>
         <li><a href="index.php?r=site/guanjia">管家服务</a></li>
         <li><a href="index.php?r=site/myinfo">会员中心</a></li>
-        <li><a href="index.php?r=site/jiameng">房东加盟</a></li>
+        <li><a href="index.php?r=site/jiameng">代理商加盟</a></li>
         <li><a href="index.php?r=site/about">关于我们</a></li>
       </ul>
     </div>
