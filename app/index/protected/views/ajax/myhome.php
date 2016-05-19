@@ -2,7 +2,7 @@
 <!-- saved from url=(0051)http://www.baozupo.com/baozupo/web.do#1459344318433 -->
 <html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>我的房源</title>
-  
+    <meta name="toTop" content="true">
   <meta name="description" content="">
   <meta name="sogou_site_verification" content="DvDFbTLWNb">
   <link rel="icon" href="public/desktop/http://www.baozupo.com/baozupo/images/ico.ico">
@@ -10,6 +10,7 @@
   
   
   <script src="public/desktop/js/jquery.min.js"></script>
+    <script type="text/javascript" src="public/desktop/js/toTop.js"></script>
   <script src="public/desktop/js/common.js"></script>
   <script src="public/desktop/js/webCommon.js"></script>
   <script type="text/javascript" src="public/desktop/js/scroller.js"></script>
@@ -35,10 +36,10 @@
     <div class="logo"><img src="public/desktop/images/logo.png" alt=""></div>
     <div class="nav">
        <ul>
-            <li><a href="index.php" class="active">首页</a></li>
+            <li><a href="index.php">首页</a></li>
             <li><a href="index.php?r=site/zufang">我要租房</a></li>
             <li><a href="index.php?r=site/guanjia">管家服务</a></li>
-            <li><a href="index.php?r=site/myinfo">会员中心</a></li>
+            <li><a href="index.php?r=site/myinfo" class="active">会员中心</a></li>
             <li><a href="index.php?r=site/jiameng">代理商加盟</a></li>
             <li><a href="index.php?r=site/about">关于我们</a></li>
         </ul>
@@ -96,7 +97,7 @@
   	<tr height="125px">
   		<td width="200px" class="tdbord_ser0 handpoint" onclick="changeSerBk(0)" id="mycolltd" style="background-color: rgb(255, 255, 255);"><img id="mycollimg" src="public/desktop/images/mycoll_y.png"></td>
   		<td width="200px" class="tdbord_ser1 handpoint" onclick="changeSerBk(1)" id="mybooktd" style="background-color: rgb(255, 255, 255);"><img id="mybookimg" src="public/desktop/images/mybook_y.png"></td>
-  		<td width="200px" class="tdbord_ser1 handpoint" onclick="changeSerBk(2)" id="myhometd" style="background-color: rgb(26, 188, 156);"><img id="myhomeimg" src="public/desktop/images/myhome_y.png"></td>
+  		<td width="200px" class="tdbord_ser1 handpoint" onclick="changeSerBk(2)" id="myhometd" style="background-color: rgb(26, 188, 156);"><img id="myhomeimg" src="public/desktop/images/myhome_b.png"></td>
   		<td width="200px" class="tdbord_ser1 handpoint" onclick="changeSerBk(3)" id="mydatatd" style="background-color: rgb(255, 255, 255);"><img id="mydataimg" src="public/desktop/images/mydata_y.png"></td>
   		<td width="200px" class="tdbord_ser1 handpoint" onclick="changeSerBk(4)" id="mylettertd" style="background-color: rgb(255, 255, 255);"><img id="myletterimg" src="public/desktop/images/myletter_y.png"></td>
   	</tr>
@@ -125,7 +126,6 @@
                     </tr>
                   </thead>
                   <tbody id="myhome">
-                   
                     <tr>
                       <th scope="row">2</th>
                       <td><img src="images/leaser32.jpg" alt="" width="200px" height="100px"></td>
@@ -157,7 +157,7 @@
                 <table class="table">
                   <thead>
                     <tr>
-                     
+                        <th>序列号</th>
                       <th width="25%">图片</th>
                       <th>名称</th>
                       <th>状态</th>
@@ -169,6 +169,7 @@
                     <tr>
                       <th scope="row">1</th>
                       <td><img src="images/leaser32.jpg" alt="" width="200px" height="100px"></td>
+                        <td>审核中</td>
                       <td>审核中</td>
                       <td><span>800</span>元/月</td>
                       <td>福州</td>
@@ -178,6 +179,7 @@
                       <th scope="row">2</th>
                       <td><img src="images/leaser32.jpg" alt="" width="200px" height="100px"></td>
                       <td>审核中</td>
+                        <td>审核中</td>
                       <td><span>800</span>元/月</td>
                       <td>福州</td>
                       
@@ -186,6 +188,7 @@
                       <th scope="row">3</th>
                       <td><img src="images/leaser32.jpg" alt="" width="200px" height="100px"></td>
                       <td>审核中</td>
+                        <td>审核中</td>
                       <td><span>800</span>元/月</td>
                       <td>福州</td>
                     
@@ -273,8 +276,6 @@
   <tr style="height:5px;"><td colspan="10"></td></tr>
 </tbody></table>
   </div>
-  <div style="position:fixed;top:200px;right:20px;z-index:18000;"><img class="handpoint" onclick="prefindTop()" src="public/desktop/images/flowright.png"></div>
-
 
 <script type="text/javascript">
   function setContentHeight(height,color){

@@ -2,7 +2,7 @@
 <!-- saved from url=(0037)http://www.baozupo.com/baozupo/web.do -->
 <html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>包租婆</title>
- 
+    <meta name="toTop" content="true">
   <script src="public/desktop/js/jquery.min.js"></script>
   <script src="public/desktop/js/common.js"></script>
   <script src="public/desktop/js/webCommon.js"></script>
@@ -11,7 +11,7 @@
   <script type="text/javascript" src="public/desktop/js/topbananer.js"></script>
   <script src="public/desktop/js/validate.js"></script>
   <script type="text/javascript" src="public/desktop/js/jquery.history.js"></script>
-  <script src="public/desktop/js/WdatePicker.js"></script>
+<!--  <script src="public/desktop/js/WdatePicker.js"></script>-->
   <script type="text/javascript" src="public/desktop/js/jquery.bxslider.js"></script>
   <script src="public/desktop/js/style.js"></script>
   <link href="public/desktop/css/WdatePicker.css" rel="stylesheet" type="text/css">
@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="public/desktop/css/scroller.css">
   <link href="public/desktop/css/jquery.bxslider.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="public/desktop/css/style.css">
+    <link rel="stylesheet" href="public/desktop/css/focusStyle.css">
 
 </head>
 <body class="body-web" style="Overflow-y:scroll">
@@ -44,87 +45,45 @@
       <span><a href="index.php?r=site/register">注册</a></span>
     </div>
   </div>
-  <div class="banner">
-            <div class="index_b_hero">
-                <div class="hero-wrap">
-                    <ul class="heros">
-                        <li class="hero">
-                            <a href="#">
-                                <img class="thumb" src="public/desktop/images/img01.jpg" />
-                            </a>
-                        </li>
-                        <li class="hero">
-                            <a href="#">
-                                <img class="thumb" src="public/desktop/images/img02.jpg" />
-                            </a>
-                        </li>
-                        <li class="hero">
-                            <a href="#">
-                                <img class="thumb" src="public/desktop/images/img03.jpg" />
-                            </a>
-                        </li>
-                        <li class="hero">
-                            <a href="#">
-                                <img class="thumb" src="public/desktop/images/img04.jpg" />
-                            </a>
-                        </li>
-                        <li class="hero">
-                            <a href="#">
-                                <img class="thumb" src="public/desktop/images/img05.jpg" />
-                            </a>
-                        </li>
-                        <li class="hero">
-                            <a href="#">
-                                <img class="thumb" src="public/desktop/images/img06.jpg" />
-                            </a>
-                        </li>
-                        <li class="hero">
-                            <a href="#">
-                                <img class="thumb" src="public/desktop/images/img07.jpg" />
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="helper">
-                    <div class="mask-left"></div>
-                    <div class="mask-right"></div>
-                    <a href="javascript:;" class="page_btn prev"></a>
-                    <a href="javascript:;" class="page_btn next"></a>
-                </div>
-            </div>
-            <div id="lt_ss_tus" class="little_img">
-                <ul class="small_list">
-                    <li class="on">
-                        <img id="0" src="public/desktop/images/img01.jpg" height="65" width="162">
-                        <div class="bg"></div>
-                    </li>
-                    <li>
-                        <img id="1" src="public/desktop/images/img02.jpg" height="65" width="162">
-                        <div class="bg"></div>
-                    </li>
-                    <li>
-                        <img id="2" src="public/desktop/images/img03.jpg" height="65" width="162">
-                        <div class="bg"></div>
-                    </li>
-                    <li>
-                        <img id="3" src="public/desktop/images/img04.jpg" height="65" width="162">
-                        <div class="bg"></div>
-                    </li>
-                    <li>
-                        <img id="4" src="public/desktop/images/img05.jpg" height="65" width="162">
-                        <div class="bg"></div>
-                    </li>
-                    <li>
-                        <img id="5" src="public/desktop/images/img06.jpg" height="65" width="162">
-                        <div class="bg"></div>
-                    </li>
-                    <li class="last">
-                        <img id="6" src="public/desktop/images/img07.jpg" height="65" width="162">
-                        <div class="bg"></div>
-                    </li>
-                </ul>
-            </div>
-        </div>
+<div id="focus-banner">
+    <ul id="focus-banner-list">
+        <li>
+            <a href="#" class="focus-banner-img">
+                <img src="public/desktop/images/img01.jpg" alt="">
+            </a>
+<!--            <div class="focus-banner-text">-->
+<!--                <p>这是一句广告语</p>-->
+<!--            </div>-->
+        </li>
+        <li>
+            <a href="#" class="focus-banner-img">
+                <img src="public/desktop/images/img02.jpg" alt="">
+            </a>
+<!--            <div class="focus-banner-text">-->
+<!--                <p>这是二句广告语</p>-->
+<!--            </div>-->
+        </li>
+        <li>
+            <a href="#" class="focus-banner-img">
+                <img src="public/desktop/images/img03.jpg" alt="">
+            </a>
+<!--            <div class="focus-banner-text">-->
+<!--                <p>这是三句广告语</p>-->
+<!--            </div>-->
+        </li>
+        <li>
+            <a href="#" class="focus-banner-img">
+                <img src="public/desktop/images/img04.jpg" alt="">
+            </a>
+<!--            <div class="focus-banner-text">-->
+<!--                <p>这是四句广告语</p>-->
+<!--            </div>-->
+        </li>
+    </ul>
+    <a href="javascript:;" id="next-img" class="focus-handle"></a>
+    <a href="javascript:;" id="prev-img" class="focus-handle"></a>
+    <ul id="focus-bubble"></ul>
+</div>
   
   <div id="contentpar" style="width:100%">
   <div class="div-box" style="min-height: 300px; height: 2180px; background-color: rgb(255, 255, 255);" id="content">
@@ -377,9 +336,76 @@
   <tr style="height:5px;"><td colspan="10"></td></tr>
 </tbody></table>
   </div>
-  <div style="position:fixed;top:200px;right:20px;z-index:18000;"><img class="handpoint" onclick="prefindTop()" src="public/desktop/images/flowright.png"></div>
 
  <script src="public/desktop/js/carousel_focus.min.js" type="text/javascript"></script>
+<script>
+    $(function(){
+        var focusBanner=function(){
+            var $focusBanner=$("#focus-banner"),
+                $bannerList=$("#focus-banner-list li"),
+                $focusHandle=$(".focus-handle"),
+                $bannerImg=$(".focus-banner-img"),
+                $nextBnt=$("#next-img"),
+                $prevBnt=$("#prev-img"),
+                $focusBubble=$("#focus-bubble"),
+                bannerLength=$bannerList.length,
+                _index=0,
+                _timer="";
+
+            var _height=$(".focus-banner-img").find("img").height();
+            $focusBanner.height(_height);
+            $bannerImg.height(_height);
+
+            $(window).resize(function(){
+                window.location.reload()
+            });
+
+            for(var i=0; i<bannerLength; i++){
+                $bannerList.eq(i).css("zIndex",bannerLength-i);
+                $focusBubble.append("<li></li>");
+            }
+            $focusBubble.find("li").eq(0).addClass("current");
+            var bubbleLength=$focusBubble.find("li").length;
+            $focusBubble.css({
+                "width":bubbleLength*22,
+                "marginLeft":-bubbleLength*11
+            });//初始化
+
+            $focusBubble.on("click","li",function(){
+                $(this).addClass("current").siblings().removeClass("current");
+                _index=$(this).index();
+                changeImg(_index);
+            });//点击轮换
+
+            $nextBnt.on("click",function(){
+                _index++
+                if(_index>bannerLength-1){
+                    _index=0;
+                }
+                changeImg(_index);
+            });//下一张
+
+            $prevBnt.on("click",function(){
+                _index--
+                if(_index<0){
+                    _index=bannerLength-1;
+                }
+                changeImg(_index);
+            });//上一张
+
+            function changeImg(_index){
+                $bannerList.eq(_index).fadeIn(250);
+                $bannerList.eq(_index).siblings().fadeOut(200);
+                $focusBubble.find("li").removeClass("current");
+                $focusBubble.find("li").eq(_index).addClass("current");
+                clearInterval(_timer);
+                _timer=setInterval(function(){$nextBnt.click()},5000)
+            }//切换主函数
+            _timer=setInterval(function(){$nextBnt.click()},5000)
+        }();
+    })
+</script>
+<script type="text/javascript" src="public/desktop/js/toTop.js"></script>
 <script type="text/javascript">
   function setContentHeight(height,color){
     $("#content").css("height",height);

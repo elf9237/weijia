@@ -188,7 +188,7 @@ function pageding(pagearr,fun_name,data){
                             var xia = data.currentPage+1;
                             var mo =data.totaPage;
                             html1.push("<input type='button' value='下一页' class='ui_input_btn01' onclick='"+fun_name+"("+xia+")'/>");
-                            html1.push("<a input type='button' value='末页' class='ui_input_btn01' onclick='"+fun_name+"("+mo+")'/>");
+                            html1.push("<input type='button' value='末页' class='ui_input_btn01' onclick='"+fun_name+"("+mo+")'/>");
                            
                         }
                         pagearr.html("");pagearr.append(html1.join(""));

@@ -5,12 +5,14 @@
   
   
   <meta name="description" content="">
+    <meta name="toTop" content="true">
   <meta name="sogou_site_verification" content="DvDFbTLWNb">
   <link rel="icon" href="http://www.baozupo.com/baozupo/images/ico.ico">
   <link rel="shortcut icon" href="http://www.baozupo.com/baozupo/images/ico.ico">
   
   
   <script src="public/desktop/js/jquery.min.js"></script>
+    <script type="text/javascript" src="public/desktop/js/toTop.js"></script>
   <script src="public/desktop/js/common.js"></script>
   <script src="public/desktop/js/webCommon.js"></script>
   <script type="text/javascript" src="public/desktop/js/scroller.js"></script>
@@ -34,11 +36,11 @@
     <div class="logo"><img src="public/desktop/images/logo.png" alt=""></div>
     <div class="nav">
         <ul>
-            <li><a href="index.php" class="active">首页</a></li>
+            <li><a href="index.php">首页</a></li>
             <li><a href="index.php?r=site/zufang">我要租房</a></li>
             <li><a href="index.php?r=site/guanjia">管家服务</a></li>
-            <li><a href="index.php?r=site/myinfo">会员中心</a></li>
-            <li><a href="index.php?r=site/jiameng">房东加盟</a></li>
+            <li><a href="index.php?r=site/myinfo" class="active">会员中心</a></li>
+            <li><a href="index.php?r=site/jiameng">代理商加盟</a></li>
             <li><a href="index.php?r=site/about">关于我们</a></li>
         </ul>
     </div>
@@ -425,7 +427,7 @@
   <tr style="height:5px;"><td colspan="10"></td></tr>
 </tbody></table>
   </div>
-  <div style="position:fixed;top:200px;right:20px;z-index:18000;"><img class="handpoint" onclick="prefindTop()" src="public/desktop/images/flowright.png"></div>
+
 
 
 <script type="text/javascript">

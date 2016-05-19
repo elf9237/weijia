@@ -2,8 +2,8 @@
 <!-- saved from url=(0051)http://www.baozupo.com/baozupo/web.do#1459343044548 -->
 <html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>房东加盟</title>
-  
-  
+
+	<meta name="toTop" content="true">
   <meta name="description" content="">
   <meta name="sogou_site_verification" content="DvDFbTLWNb">
   <link rel="icon" href="http://www.baozupo.com/baozupo/images/ico.ico">
@@ -11,6 +11,7 @@
   
   
   <script src="public/desktop/js/jquery.min.js"></script>
+	<script type="text/javascript" src="public/desktop/js/toTop.js"></script>
   <script src="public/desktop/js/common.js"></script>
   <script src="public/desktop/js/webCommon.js"></script>
   <script type="text/javascript" src="public/desktop/js/scroller.js"></script>
@@ -33,11 +34,11 @@
 	<div class="logo"><img src="public/desktop/images/logo.png" alt=""></div>
 	<div class="nav">
 		<ul>
-			<li><a href="index.php" class="active">首页</a></li>
+			<li><a href="index.php">首页</a></li>
 			<li><a href="index.php?r=site/zufang">我要租房</a></li>
 			<li><a href="index.php?r=site/guanjia">管家服务</a></li>
 			<li><a href="index.php?r=site/myinfo">会员中心</a></li>
-			<li><a href="index.php?r=site/jiameng">房东加盟</a></li>
+			<li><a href="index.php?r=site/jiameng" class="active">代理商加盟</a></li>
 			<li><a href="index.php?r=site/about">关于我们</a></li>
 		</ul>
 	</div>
@@ -119,24 +120,7 @@
 <div style="background-color:#FFFFFF;">
   <table cellpadding="0" cellspacing="0" class="table" width="100%">
   	<tbody><tr style="background-color:#ea6060;height:200px;"><td colspan="5" align="left">&nbsp;&nbsp;<img src="public/desktop/images/subroom.png"></td></tr>
-  	<tr>
-  		<td width="25%" height="170px" id="sub1td" onmouseover="changeSerBk(&#39;sub1&#39;)" style="border-bottom:1px solid #F1F1F1;cursor:pointer;" class="td_ser5" align="center">
-  			<img id="sub1img" src="public/desktop/images/subroom1_b.png"><br><br>
-  			<div id="sub1div" style="width:110px;text-align:left;">专业设计我准备<br>时尚装修全免费</div>
-  		</td>
-  		<td width="25%" height="170px" id="sub2td" onmouseover="changeSerBk(&#39;sub2&#39;)" style="border-left:1px solid #F1F1F1;border-bottom:1px solid #F1F1F1;cursor:pointer;" class="td_ser6" align="center">
-  			<img id="sub2img" src="public/desktop/images/subroom2_h.png"><br><br>
-  			<div id="sub2div" style="width:140px;text-align:left;">定期保洁，房屋维护<br>我来操心，让您省心</div>
-  		</td>
-  		<td width="25%" height="170px" id="sub3td" onmouseover="changeSerBk(&#39;sub3&#39;)" style="border-left:1px solid #F1F1F1;border-bottom:1px solid #F1F1F1;cursor:pointer;" class="td_ser6" align="center">
-  			<img id="sub3img" src="public/desktop/images/subroom3_h.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
-  			<div id="sub3div" style="width:156px;text-align:left;">您只需稳坐家中按时收租<br>微家勇担房屋空置风险</div>
-  		</td>
-  		<td width="25%" height="170px" id="sub4td" onmouseover="changeSerBk(&#39;sub4&#39;)" style="border-left:1px solid #F1F1F1;border-bottom:1px solid #F1F1F1;cursor:pointer;" class="td_ser6" align="center">
-  			<img id="sub4img" src="public/desktop/images/subroom4_h.png"><br><br>
-  			<div id="sub4div" style="width:90px;text-align:left;">您放心托付<br>我用心保护</div>
-  		</td>
-  	</tr>
+
   	  </tbody></table>
 </div>
 <div id="regdiv" style="position:relative;margin-top:30px;">
@@ -378,7 +362,7 @@
   <tr style="height:5px;"><td colspan="10"></td></tr>
 </tbody></table>
   </div>
-  <div style="position:fixed;top:200px;right:20px;z-index:18000;"><img class="handpoint" onclick="prefindTop()" src="public/desktop/images/flowright.png"></div>
+
 
 
 <script type="text/javascript">

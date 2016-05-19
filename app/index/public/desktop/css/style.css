@@ -77,7 +77,8 @@ img{border:0;}
 .nav ul{list-style: none;}
 .nav ul li{float: left;}
 .nav ul li a{color: #fff;padding: 30px 30px;display: inline-block;font-size: 20px;text-decoration: none;}
-.nav ul li a:hover,.nav ul li a:active,.nav ul li a.active{background: #fff;color:#FF7E00; }
+.nav ul li.active a,.nav ul li a:hover,.nav ul li a:active,.nav ul li a.active{background: #fff;color:#FF7E00; }
+
 .login span{display: inline-block;padding: 0 2px;}
 .login span a{color: #fff;text-decoration: none;}
 .login{float: left;margin-top: 35px;margin-left: 20px;}
@@ -93,7 +94,9 @@ img{border:0;}
 .onCao a{display: inline-block;padding: 0 5px;}
 
 /*我的消息*/
-.newsTable tbody tr td{text-align: left;}
+.newsTable tbody tr td:first-child{text-align: left}
+.newsTable thead tr th{ padding-top:20px;padding-bottom: 10px;}
+.newsTable tbody tr td{text-align: center;padding: 5px 2px;}
 .newsTable .innerL{text-align: center;}
 .newsTable .innerR{color: red;}
 .newsTable .innerP{padding: 5px 10px;}
