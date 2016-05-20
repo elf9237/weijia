@@ -57,19 +57,19 @@
   <table cellpadding="0" cellspacing="0" class="table" width="100%">
   	<tbody><tr style="background-color:#FEC500;height:200px;"><td colspan="4" align="left">&nbsp;&nbsp;<img src="public/desktop/images/service.png"></td></tr>
   	<tr>
-  		<td width="25%" height="170px" id="maintd" onmouseover="changeSerBk(&#39;main&#39;)" onclick="maintainclick()" style="border-right:1px solid #F1F1F1;border-bottom:1px solid #F1F1F1;cursor:pointer;" class="td_ser1" align="center">
-  			<img id="mainimg" src="public/desktop/images/maintain_h.png"><br><br>
+  		<td width="25%" height="170px" id="maintd"   style="border-right:1px solid #F1F1F1;border-bottom:1px solid #F1F1F1;cursor:pointer;" class="td_ser1" align="center">
+            <a href="#"><img id="mainimg" src="public/desktop/images/maintain_h.png"></a><br><br>
   			<div id="maindiv" class="div_ser1"></div>
   		</td>
-  		<td width="25%" id="cleantd" onmouseover="changeSerBk(&#39;clean&#39;)" onclick="cleanclick()" class="td_ser2" style="border-right:1px solid #F1F1F1;border-bottom:1px solid #F1F1F1;cursor:pointer;" align="center">
-  			<img id="cleanimg" src="http://www.baozupo.com/baozupo/images/clean_b.png"><br><br>
+  		<td width="25%" id="cleantd"  class="td_ser2" style="border-right:1px solid #F1F1F1;border-bottom:1px solid #F1F1F1;cursor:pointer;" align="center">
+  			<img id="cleanimg" src="public/desktop/images/clean_b.png"><br><br>
   			<div id="cleandiv" class="div_ser1"></div>
   		</td>
-  		<td width="25%" id="suggesttd" onmouseover="changeSerBk(&#39;suggest&#39;)" onclick="suggestclick()" class="td_ser1" style="border-right:1px solid #F1F1F1;border-bottom:1px solid #F1F1F1;cursor:pointer;" align="center">
-  			<img id="suggestimg" src="http://www.baozupo.com/baozupo/images/suggest_h.png"><br><br>
+  		<td width="25%" id="suggesttd"   class="td_ser1" style="border-right:1px solid #F1F1F1;border-bottom:1px solid #F1F1F1;cursor:pointer;" align="center">
+  			<img id="suggestimg" src="public/desktop/images/suggest_h.png"><br><br>
   			<div id="suggestdiv" class="div_ser1"></div>
   		</td>
-  		<td width="25%" id="paytd" onmouseover="changeSerBk(&#39;pay&#39;)" onclick="questclick()" class="td_ser1" style="border-bottom:1px solid #F1F1F1;cursor:pointer;" align="center">
+  		<td width="25%" id="paytd"   class="td_ser1" style="border-bottom:1px solid #F1F1F1;cursor:pointer;" align="center">
   			<img id="payimg" src="public/desktop/images/problem_h.png"><br><br>
   			<div id="paydiv" class="div_ser1"></div>
   		</td>
@@ -144,7 +144,7 @@
   <tr style="height:20px;color:#FFFFFF">
   <td colspan="3"></td>
   <td></td>
-  <td>400-678-3666</td>
+  <td>8855-5353</td>
   <td></td>
   <td>微信扫一扫</td>
   <td colspan="2"></td>

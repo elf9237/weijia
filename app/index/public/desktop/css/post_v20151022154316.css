@@ -120,23 +120,7 @@ input:-webkit-autofill,textarea:-webkit-autofill,select:-webkit-autofill {
 #propbarthree {
 	margin-right:0
 }
-.active {
-	font-size:12px;
-	width:325px;
-	float:left;
-	padding-bottom:5px;
-	border-bottom:2px solid #ed6d06;
-	margin-right:10px;
-	margin-bottom:20px
-}
-.active {
-	color:#ed6d06
-}
-.active a {
-	font-size:12px;
-	color:#ed6d06;
-	font-weight:700
-}
+
 .progcontrl {
 	margin-top:19px;
 	width:1000px;
@@ -166,19 +150,7 @@ input:-webkit-autofill,textarea:-webkit-autofill,select:-webkit-autofill {
 	clear:both;
 	overflow:hidden
 }
-.content {
-	background:#fff;
-	clear:both;
-	padding:0;
-	*margin-top:20px;
-	_height:10px;
-	position:relative;
-	width:1000px;
-	margin-left:auto;
-	margin-right:auto;
-	clear:both;
-	z-index:998
-}
+
 .minheight {
 	min-height:300px;
 	_height:300px

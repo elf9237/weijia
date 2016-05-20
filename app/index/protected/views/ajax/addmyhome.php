@@ -2,7 +2,7 @@
 <!-- saved from url=(0051)http://www.baozupo.com/baozupo/web.do#1459344318433 -->
 <html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>我的房源</title>
-  
+    <meta name="toTop" content="true">
   <meta name="description" content="">
   <meta name="sogou_site_verification" content="DvDFbTLWNb">
   <link rel="icon" href="public/desktop/http://www.baozupo.com/baozupo/images/ico.ico">
@@ -10,6 +10,7 @@
   
   
   <script src="public/desktop/js/jquery.min.js"></script>
+    <script type="text/javascript" src="public/desktop/js/toTop.js"></script>
   <script src="public/desktop/js/common.js"></script>
   <script src="public/desktop/js/webCommon.js"></script>
   <script type="text/javascript" src="public/desktop/js/scroller.js"></script>
@@ -70,7 +71,7 @@
   	<tr height="125px">
   		<td width="200px" class="tdbord_ser0 handpoint" onclick="changeSerBk(0)" id="mycolltd" style="background-color: rgb(255, 255, 255);"><img id="mycollimg" src="public/desktop/images/mycoll_y.png"></td>
   		<td width="200px" class="tdbord_ser1 handpoint" onclick="changeSerBk(1)" id="mybooktd" style="background-color: rgb(255, 255, 255);"><img id="mybookimg" src="public/desktop/images/mybook_y.png"></td>
-  		<td width="200px" class="tdbord_ser1 handpoint" onclick="changeSerBk(2)" id="myhometd" style="background-color: rgb(26, 188, 156);"><img id="myhomeimg" src="public/desktop/images/myhome_y.png"></td>
+  		<td width="200px" class="tdbord_ser1 handpoint" onclick="changeSerBk(2)" id="myhometd" style="background-color: rgb(26, 188, 156);"><img id="myhomeimg" src="public/desktop/images/myhome_b.png"></td>
   		<td width="200px" class="tdbord_ser1 handpoint" onclick="changeSerBk(3)" id="mydatatd" style="background-color: rgb(255, 255, 255);"><img id="mydataimg" src="public/desktop/images/mydata_y.png"></td>
   		<td width="200px" class="tdbord_ser1 handpoint" onclick="changeSerBk(4)" id="mylettertd" style="background-color: rgb(255, 255, 255);"><img id="myletterimg" src="public/desktop/images/myletter_y.png"></td>
   	</tr>
@@ -310,7 +311,7 @@
               <div class="upload">
                         <div class="localUpload_wrap">
                          
-                          <div class="localUpload" style="width:540px;height:400px;background:#CF9">
+                          <div class="localUpload" style="width:540px;min-height:230px;background:#fff">
                             <div id="imgUploadf">
                               
                             </div>
@@ -330,7 +331,7 @@
                 <div class="upload">
                         <div class="localUpload_wrap">
                          
-                          <div class="localUpload" style="width:540px;height:400px;background:#CF9">
+                          <div class="localUpload" style="width:540px;min-height:230px;background:#fff">
                             <div id="imgUploadp">
                               
                             </div>
@@ -348,7 +349,7 @@
                   <div class="upload">
                         <div class="localUpload_wrap">
                          
-                          <div class="localUpload" style="width:540px;height:400px;background:#CF9">
+                          <div class="localUpload" style="width:540px;min-height:230px;background:#fff">
                             <div id="imgUpload1">
                               
                             </div>
@@ -382,7 +383,7 @@
           </div>
         </form>
       </div>
-      <
+
     
     </div>
     <input type="hidden" id="xxzl_lsid" value="lsid%3D1-14628009659998130062820207%23%231m-748591088m38084675970319m1463395153537">
@@ -415,7 +416,6 @@
 </div>
   </div>
   <input type="hidden" id="map" value=""/>
-  
 <div class="content" id="bottom">
     
 <table class="table" cellpadding="0" cellspacing="0" width="100%">
@@ -462,7 +462,7 @@
   <tr style="height:20px;color:#FFFFFF">
   <td colspan="3"></td>
   <td></td>
-  <td>400-678-3666</td>
+  <td>8855-5353</td>
   <td></td>
   <td>微信扫一扫</td>
   <td colspan="2"></td>
@@ -470,7 +470,7 @@
   <tr style="height:5px;"><td colspan="10"></td></tr>
 </tbody></table>
   </div>
-  <div style="position:fixed;top:200px;right:20px;z-index:18000;"><img class="handpoint" onclick="prefindTop()" src="public/desktop/images/flowright.png"></div>
+
 
 <script type="text/javascript" src="public/desktop/js/skill/jquery.cityselect.js"></script>
  <link rel="stylesheet" type="text/css" href="public/desktop/diyUpload/css/webuploader.css">
