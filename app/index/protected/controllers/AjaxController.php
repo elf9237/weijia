@@ -178,5 +178,19 @@ $roomeqip->info_id=$info->id;
          echo json_encode($ar);
          
      }
+     
+     
+      public function actionZhuangxiu(){
+         $this->render('zhuangxiu');
+         
+     }
+     public function actionBanjia(){
+         $this->render('banjia');
+         
+     }
+     public function actionKanfang(){
+         $this->render('kanfang');
+         
+     }
     
 }

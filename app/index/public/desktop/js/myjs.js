@@ -20,3 +20,18 @@ function changeSerBk(type){
         window.location.href="index.php?r=ajax/mymess";
     }
 }
+function changeGuanJia(type){
+    if(type==0){
+        window.location.href="index.php?r=ajax/banjia";
+    }
+     if(type==1){
+        window.location.href="index.php?r=site/guanjia";
+    }
+     if(type==2){
+        window.location.href="index.php?r=ajax/zhuangxiu";
+    }
+     if(type==3){
+        window.location.href="index.php?r=ajax/kanfang";
+    }
+    
+}
