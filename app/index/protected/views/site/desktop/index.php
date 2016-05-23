@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<!-- saved from url=(0037)http://www.baozupo.com/baozupo/web.do -->
 <html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>包租婆</title>
     <meta name="toTop" content="true">
@@ -12,9 +10,8 @@
   <script src="public/desktop/js/validate.js"></script>
   <script type="text/javascript" src="public/desktop/js/jquery.history.js"></script>
 <!--  <script src="public/desktop/js/WdatePicker.js"></script>-->
-  <script type="text/javascript" src="public/desktop/js/jquery.bxslider.js"></script>
-  <script src="public/desktop/js/style.js"></script>
-  <link href="public/desktop/css/WdatePicker.css" rel="stylesheet" type="text/css">
+
+ 
   <script src="public/desktop/js/jquery.autogrowtextarea.min.js"></script>
   <link rel="stylesheet" href="public/desktop/css/main.css">
   <link rel="stylesheet" href="public/desktop/css/mainweb.css">
@@ -94,28 +91,28 @@
   <div style="width:100%">
     <table cellpadding="0" cellspacing="0" class="table" width="100%">
 	     <tbody><tr height="250px">
-	         <td width="250px"><img onclick="showRoomByID(&#39;14&#39;,&#39;42&#39;)" class="images handpoint" style="width:250px;height:250px;" src="public/desktop/images/main.jpg"></td>
+	         <td width="250px"><img onclick="" class="images handpoint" style="width:250px;height:250px;" src="public/desktop/images/main.jpg"></td>
 	         <td width="250px" align="center" style="position:relative;">
 	         	<img id="realmainimg" width="250px" height="250px" class="images_nobord" src="public/desktop/images/realmain_q.png" style="width: 250px; height: 250px;">
-	         	<div class="div_over" style="width:250px;height:250px;top:0" onmouseover="picTurnOver(&#39;realmainimg&#39;,&#39;realmain_h.png&#39;)" onmouseout="picTurnOver(&#39;realmainimg&#39;,&#39;realmain_q.png&#39;)"></div>
+	         	<div class="div_over" style="width:250px;height:250px;top:0" onmouseover="" onmouseout=""></div>
 	         </td>
-	         <td width="250px"><img onclick="showRoomByID(&#39;25&#39;,&#39;81&#39;)" class="images handpoint" style="width:250px;height:250px;" src="public/desktop/images/main(1).jpg"></td>
+	         <td width="250px"><img onclick="" class="images handpoint" style="width:250px;height:250px;" src="public/desktop/images/main(1).jpg"></td>
 	         <td width="250px" align="center" style="position:relative;">
 	         	<img id="freemainimg" width="250px" height="250px" class="images_nobord" src="public/desktop/images/freemain_q.png" style="width: 250px;">
-	         	<div class="div_over" style="width:250px;height:250px;top:0" onmouseover="picTurnOver(&#39;freemainimg&#39;,&#39;freemain_h.png&#39;)" onmouseout="picTurnOver(&#39;freemainimg&#39;,&#39;freemain_q.png&#39;)"></div>
+	         	<div class="div_over" style="width:250px;height:250px;top:0" onmouseover="" onmouseout=""></div>
 	         </td>
 	      </tr>
 	      <tr height="250px">
 	         <td width="250px" align="center" style="position:relative;">
 	         	<img id="24hmainimg" width="250px" height="250px" class="images_nobord" src="public/desktop/images/24hmain_q.png" style="width: 250px;">
-	         	<div class="div_over" style="width:250px;height:250px;top:0" onmouseover="picTurnOver(&#39;24hmainimg&#39;,&#39;24hmain_h.png&#39;)" onmouseout="picTurnOver(&#39;24hmainimg&#39;,&#39;24hmain_q.png&#39;)"></div>
+	         	<div class="div_over" style="width:250px;height:250px;top:0" onmouseover="" onmouseout=""></div>
 	         </td>
-	         <td><img onclick="showRoomByID(&#39;8&#39;,&#39;24&#39;)" class="images handpoint" style="width:250px;height:250px;" src="public/desktop/images/main(2).jpg"></td>
+	         <td><img onclick="" class="images handpoint" style="width:250px;height:250px;" src="public/desktop/images/main(2).jpg"></td>
 	         <td width="250px" align="center" style="position:relative;">
 	         	<img id="wifimainimg" width="250px" height="250px" class="images_nobord" src="public/desktop/images/wifimain_q.png" style="width: 250px;">
-	         	<div class="div_over" style="width:250px;height:250px;top:0" onmouseover="picTurnOver(&#39;wifimainimg&#39;,&#39;wifimain_h.png&#39;)" onmouseout="picTurnOver(&#39;wifimainimg&#39;,&#39;wifimain_q.png&#39;)"></div>
+	         	<div class="div_over" style="width:250px;height:250px;top:0" onmouseover="" onmouseout=""></div>
 	         </td>
-	         <td><img onclick="showRoomByID(&#39;5&#39;,&#39;15&#39;)" class="images handpoint" style="width:250px;height:250px;" src="public/desktop/images/main(3).jpg"></td>
+	         <td><img onclick="" class="images handpoint" style="width:250px;height:250px;" src="public/desktop/images/main(3).jpg"></td>
 	      </tr>
 	</tbody></table>
   </div>
@@ -125,26 +122,26 @@
   <!-- 精品房源 -->
   <div id="importantRoom">
       <?php
-                    //遍历传递过来的商品变量值$goods_infos
-                    $i=1;
+                 
+                   
                     foreach($starInfos as $_v){
                     ?>
     <div class="divtxt_left" style="float: left; list-style: none; position: relative; width: 1000px; margin-right: 10px;">
     	<div class="div-align-left" style="width:750px;height:421px;">
 	      <div style="position:relative;width:750px;height:421px;">
 	        <div style="position:absolute">
-	          <img class="images handpoint" style="width: 750px; height: 421px; cursor: pointer;" src="upload/<?php echo $_v->mian_url ?>">
+	          <img class="images handpoint" style="width: 750px; height: 421px; cursor: pointer;" src="upload/<?php echo $_v->mian_url; ?>">
 	        </div>
 	        <div style="position:absolute;margin-top:371px;line-height:50px;" class="div_eaves">
-	        	<div id="roomdiv" style="position:absolute;left:10px;"><?php echo $_v->province.'-'.$_v->city.'-'.$_v->zone  ?>&nbsp;&nbsp;<?php echo $_v->info_name ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $_v->house_type ?>&nbsp;&nbsp;|&nbsp;&nbsp;<?php echo $_v->area ?>平米&nbsp;&nbsp;|&nbsp;&nbsp;<?php echo $_v->nfloor ?>/<?php echo $_v->floors ?>&nbsp;&nbsp;|&nbsp;&nbsp;<?php echo $_v->direction ?></div>
-	        	<div id="pricediv" class="div_priceMain" style="width:100px;height:30px;line-height:30px;">￥<?php echo $_v->price ?></div>
+	        	<div id="roomdiv" style="position:absolute;left:10px;"><?php echo $_v->province.'-'.$_v->city.'-'.$_v->zone;  ?>&nbsp;&nbsp;<?php echo $_v->info_name; ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $_v->house_type; ?>&nbsp;&nbsp;|&nbsp;&nbsp;<?php echo $_v->area; ?>平米&nbsp;&nbsp;|&nbsp;&nbsp;<?php echo $_v->nfloor; ?>/<?php echo $_v->floors; ?>&nbsp;&nbsp;|&nbsp;&nbsp;<?php echo $_v->direction; ?></div>
+	        	<div id="pricediv" class="div_priceMain" style="width:100px;height:30px;line-height:30px;">￥<?php echo $_v->price; ?></div>
 	        </div>
 	        
 	        <img class="img_slideLeft div_top" style="display: none;" id="leftroom" src="public/desktop/images/slideleft.png">
-	        <div class="div_slideLeft" onmousemove="showObj('leftroom')" style="height:388px" onmouseout="hiddenObj('leftroom')" onclick="loadRoomPicClk(-1,1)"></div>
+	        <div class="div_slideLeft" onmousemove="" style="height:388px" onmouseout="" onclick="loadRoomPicClk(-1,1)"></div>
 	        
 	        <img class="img_slideRight2 div_top" style="display: none;" id="rightroom" src="public/desktop/images/slideright.png">
-	        <div class="div_slideRight2" onmousemove="showObj('rightroom')" style="height:388px" onmouseout="hiddenObj('rightroom')" onclick="loadRoomPicClk(1,1)"></div>
+	        <div class="div_slideRight2" onmousemove="" style="height:388px" onmouseout="" onclick="loadRoomPicClk(1,1)"></div>
 	      </div>
 	    </div>
 	    <div class="div-align-right" style="height:421px;width:250px">
@@ -158,7 +155,7 @@
 	</div>
 	 <?php  
                       
-                    }
+                    };
                     ?>
 	
 
@@ -174,22 +171,22 @@
     <div style="width:100%;overflow:hidden;height:240px;overflow:hidden;position:relative;">
 		<div id="slide_container" class="slide_container">
                     <?php
-                    //遍历传递过来的商品变量值$goods_infos
-                    $i=1;
-                    foreach($newInfos as $_v){
+                    
+                  
+                    foreach($newInfos as $_t){
                     ?>
 				<div class="scrollerImage handpoint" style="margin-left: 5px; margin-right: 5px; width: 240px; height: 240px; display: block;">
 					<div style="position:absolute">
-						<img class="images_nobord" onclick="slideClickNew(&#39;21&#39;,&#39;67&#39;)" src="upload/<?php echo $_v->mian_url  ?>" width="240px" height="240px">
+						<img class="images_nobord" onclick="" src="upload/<?php echo $_t->mian_url;  ?>" width="240px" height="240px">
 					</div>
 					<div class="div_eaves" style="margin-top:200px;height:40px;position:absolute;">
-				  		<div style="position:absolute;left:10px;line-height:40px;"><?php echo $_v->province.'-'.$_v->city.'-'.$_v->zone  ?></div>
-	        			<div class="div_priceMain" style="width:62px;height:20px;line-height:20px;"><?php echo $_v->price  ?></div>
+				  		<div style="position:absolute;left:10px;line-height:40px;"><?php echo $_t->province.'-'.$_t->city.'-'.$_t->zone;?></div>
+	        			<div class="div_priceMain" style="width:62px;height:20px;line-height:20px;"><?php echo $_t->price;  ?></div>
 				  	</div>
 				</div>
 			 <?php  
                       
-                    }
+                    };
                     ?>
 			</div>
 	</div>
@@ -284,7 +281,7 @@
   <div class="content" id="bottom">
     
 <table class="table" cellpadding="0" cellspacing="0" width="100%">
-  <tbody><tr style="background:url(/baozupo/public/desktop/images/bottom.png);height:4px;"><td colspan="10"></td></tr>
+  <tbody><tr style="height:4px;"><td colspan="10"></td></tr>
   <tr style="height:20px;"><td colspan="10"></td></tr>
   <tr style="height:86px;color:#FFF">
   <td>&nbsp;</td>
@@ -337,8 +334,32 @@
   </div>
 
  <script src="public/desktop/js/carousel_focus.min.js" type="text/javascript"></script>
+   <script type="text/javascript" src="public/desktop/js/jquery.bxslider.js"></script>
+  <script src="public/desktop/js/style.js"></script>
 <script>
+      $('#slide_container').bxSlider({ 
+            slideWidth: 200,
+			minSlides: 3,
+			maxSlides: 3,
+			ticker: true,
+			speed: 100000,
+			startSlides: 0, 
+            slideMargin: 10
+          });
+           $('#importantRoom').bxSlider({ 
+            slideWidth: 1024, 
+			infiniteLoop: false,
+			hideControlOnEnd: true,
+            slideMargin: 10
+          });
+           var nav=$(".nav ul li a");
+  $(nav).click(function(){
+    $(this).addClass("active").parent().siblings().find("a").removeClass("active");
+  });
+    
     $(function(){
+      
+        
         var focusBanner=function(){
             var $focusBanner=$("#focus-banner"),
                 $bannerList=$("#focus-banner-list li"),
@@ -401,51 +422,9 @@
                 _timer=setInterval(function(){$nextBnt.click()},5000)
             }//切换主函数
             _timer=setInterval(function(){$nextBnt.click()},5000)
-        }();
+        };
+        focusBanner(); 
     })
 </script>
 <script type="text/javascript" src="public/desktop/js/toTop.js"></script>
-<script type="text/javascript">
-  function setContentHeight(height,color){
-    $("#content").css("height",height);
-    if(color){
-    	$("#content").css("background-color",color);
-    	$("#contentpar").css("background-color",color);
-    }else{
-    	$("#content").css("background-color","#FFFFFF");
-    	$("#contentpar").css("background-color","");
-    }
-  }
-  function prefindTop(bz){
-  	var url="/web/houseDispatcher.do?method=showPrefind2";
-   	showLogDiv(($(window).width()-502)/2,($(window).height()-380)/2);
-   	$("#div_Log_Top").load(webroot+url);
-  }
-  
-  var url= "";
-  var openId="";
-  
-  
-  if(openId==""){
-	openId="firstpage";
-  	url="null";
-  }
-  $(function(){
-  	$.history.init(function (hash) {
-  		if(historyFlag){
-  			historyFlag=false;
-  			return;
-  		}
-		var hisurl=url;
-		var hisid=openId;
-		if (hash){
-			var obj=getHistory(hash);
-			if(obj!=null){
-				hisid=obj.id;
-				hisurl=obj.url;
-			}
-		}
-		changeTopTitle(hisid,hisurl,"false");
-	});
-  });
-</script></body></html>
+</body></html>

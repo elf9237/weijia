@@ -486,7 +486,11 @@ var localSearch = new BMap.LocalSearch(map);
 function searchlnlg(keyword){
 localSearch.setSearchCompleteCallback(function (searchResult) {
         var poi = searchResult.getPoi(0);
+        if(poi==null){
+             $("#map").val("119.240072,26.065315");
+        }else{
         $("#map").val(poi.point.lng + "," + poi.point.lat);
+    }
      submitmyhome();
        
     });

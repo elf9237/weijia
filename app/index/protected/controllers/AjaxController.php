@@ -117,7 +117,7 @@ class AjaxController extends BaseController {
      $info->area=$_POST['area'];
      $info->bus=$_POST['bus'];
      $info->city=$_POST['city'];
-//     $info->create_time=time();
+     $info->create_time=time();
      $info->detail=$_POST['detail'];
      $info->direction=$_POST['direction'];
      $info->district=$_POST['district'];
