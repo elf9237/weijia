@@ -36,7 +36,7 @@ class AjaxController extends BaseController {
       }
       
           $sql.=" and t.price >= ".$_POST['sprice']." and t.price<=".$_POST['eprice']." ";
- $pagelist=new PageList($sql, $page, 2);
+ $pagelist=new PageList($sql, $page, 10);
 
        echo json_encode($pagelist->pageAjax);
         

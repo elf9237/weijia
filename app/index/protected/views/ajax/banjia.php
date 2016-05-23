@@ -58,12 +58,12 @@
   <table cellpadding="0" cellspacing="0" class="table" width="100%">
   	<tbody><tr style="background-color:#FEC500;height:200px;"><td colspan="4" align="left">&nbsp;&nbsp;<img src="public/desktop/images/service.png"></td></tr>
   	<tr>
-  		<td width="25%" height="170px" id="maintd"   style="border-right:1px solid #F1F1F1;border-bottom:1px solid #F1F1F1;cursor:pointer;" class="td_ser1" align="center">
-                    <a  onclick="changeGuanJia(0)"><img id="mainimg" src="public/desktop/images/maintain_h.png"></a><br><br>
+  		<td width="25%" height="170px" id="maintd"   style="border-right:1px solid #F1F1F1;border-bottom:1px solid #F1F1F1;cursor:pointer;" class="td_ser2" align="center">
+                    <a  ><img id="mainimg" src="public/desktop/images/maintain_b.png"></a><br><br>
   			<div id="maindiv" class="div_ser1"></div>
   		</td>
-  		<td width="25%" id="cleantd"  class="td_ser2" style="border-right:1px solid #F1F1F1;border-bottom:1px solid #F1F1F1;cursor:pointer;" align="center">
-  			 <a  onclick="changeGuanJia(1)"><img id="cleanimg" src="public/desktop/images/clean_b.png"></a><br><br>
+  		<td width="25%" id="cleantd"  class="td_ser1" style="border-right:1px solid #F1F1F1;border-bottom:1px solid #F1F1F1;cursor:pointer;" align="center">
+  			 <a  onclick="changeGuanJia(1)"><img id="cleanimg" src="public/desktop/images/clean_h.png"></a><br><br>
   			<div id="cleandiv" class="div_ser1"></div>
   		</td>
   		<td width="25%" id="suggesttd"   class="td_ser1" style="border-right:1px solid #F1F1F1;border-bottom:1px solid #F1F1F1;cursor:pointer;" align="center">
@@ -81,7 +81,7 @@
   		<td colspan="2" rowspan="2" style="background:url(public/desktop/images/serrm.jpg)">&nbsp;</td>
   	</tr>
   	<tr>
-  		<td height="250px"><img src="public/desktop/images/day7.png"></td>
+  		<td height="250px"><img src="public/desktop/images/day7-01.png"></td>
   		<td style="background-color:#55A3FF;"><img src="public/desktop/images/724.png"></td>
   	</tr>
   	<tr>

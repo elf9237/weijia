@@ -26,7 +26,6 @@
 
 </head>
 <body class="body-web" style="Overflow-y:scroll">
-<div style="position: absolute; z-index: 19700; top: -1970px; left: -1970px;"><iframe src="My97DatePicker.html" frameborder="0" border="0" scrolling="no" style="width: 186px; height: 199px;"></iframe></div>
 <div class="header">
     <div class="logo"><img src="public/desktop/images/logo.png" alt=""></div>
     <div class="nav">
@@ -82,7 +81,7 @@
     </ul>
     <a href="javascript:;" id="next-img" class="focus-handle"></a>
     <a href="javascript:;" id="prev-img" class="focus-handle"></a>
-    <ul id="focus-bubble"></ul>
+    <ul id="focus-bubble" style="width: 100%;min-width: 100px;"></ul>
 </div>
   
   <div id="contentpar" style="width:100%">

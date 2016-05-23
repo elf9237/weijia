@@ -80,7 +80,7 @@
     <ul id="focus-bubble"></ul>
 </div>
   <div id="contentpar" style="width:100%">
-  <div class="div-box" style="min-height: 300px; height: 2370px; background-color: rgb(255, 255, 255);" id="content">
+  <div class="div-box" style="min-height: 300px;" id="content">
 
 
 
@@ -502,6 +502,11 @@
 	    	'<td><img src="public/desktop/images/hs_dt.png"></td>'+
 	    	'<td class="td_cont_find">'+value.bus+'</td>'+
 	    '</tr>'+
+      '<tr height="8px"><td></td></tr>'+
+          '<tr>'+
+             '<td><img src="public/desktop/images/top.png"></td>'+
+               '  <td class="td_cont_find"></td>'+
+            '</tr>'+
 	  '</tbody></table>'+
 	'</td>'+
   '</tr>'+
