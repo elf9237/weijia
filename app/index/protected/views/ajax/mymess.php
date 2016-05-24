@@ -55,33 +55,7 @@
   
 
 
-  <div style="display: none; background-color: rgb(255, 255, 255);" id="divbananer">
-    <div style="height: 400px; width: 100%; opacity: 1;" id="divbananerBg">
-    	<table class="table" cellpadding="0" cellspacing="0" width="100%">
-    		<tbody><tr>
-    			<td width="50%" id="tdbananerBg1" style="background-color: rgb(230, 0, 109);" onmousemove="showObj(&#39;leftpicTop&#39;)" onmouseout="hiddenObj(&#39;leftpicTop&#39;)" onclick="bananerFade(-1)" align="right">
-					<div style="position:relative;">
-						<img class="images_nobord" style="display:none;position:absolute;right:10px;top:-30px;" id="leftpicTop" src="public/desktop/images/slideleft.png">
-					</div>
-				</td>
-    			<td width="1000px" height="400px">
-	    			<img class="images_nobord" width="1000px" onmouseover="bananerStop()" onmouseout="bananerStart()" id="imgbananer" src="public/desktop/http://www.baozupo.com/baozupo/images/bananer1.jpg">
-	    		</td>
-    			<td width="50%" id="tdbananerBg2" style="background-color: rgb(230, 0, 109);" onmousemove="showObj(&#39;rightpictop&#39;)" onmouseout="hiddenObj(&#39;rightpictop&#39;)" onclick="bananerFade(1)" align="left">
-					<div style="position:relative;">
-						<img class="images_nobord" style="display:none;position:absolute;left:10px;top:-30px;" id="rightpictop" src="public/desktop/images/slideright.png">
-					</div>
-				</td>
-    		</tr>
-    	</tbody></table>
-  	</div>
-  	<div style="text-align:center;margin-top:2px;">
-	  <img id="banyuan1" src="public/desktop/images/yuan10_he.png" class="handpoint" onclick="bananerFade(11)">
-	  <img id="banyuan2" src="public/desktop/images/yuan10_hui.png" class="handpoint" onclick="bananerFade(12)">
-	  <img id="banyuan3" src="public/desktop/images/yuan10_hui.png" class="handpoint" onclick="bananerFade(13)">
-	  <img id="banyuan4" src="public/desktop/images/yuan10_hui.png" class="handpoint" onclick="bananerFade(14)">
-    </div>
-  </div>
+  
   <div style="height:2px;overflow:hidden;" width="100%"></div>
   
   <div id="contentpar" style="width:100%">
@@ -119,8 +93,8 @@
                       <td  align="left">
                         </td>
                       <td>
-                          <input type="button" class="button-page delete-sel" value="批量删除"  style="margin-left: 10px;">
-                        <input type="button" class="button-page delete-all" value="清空消息" ></td>
+                          <input type="button" onclick="del()" class="button-page delete-sel" value="批量删除"  style="margin-left: 10px;">
+<!--                        <input type="button" class="button-page delete-all" value="清空消息" ></td>-->
                     </tr>
                     <tr>
                         <th></th>
@@ -281,9 +255,46 @@
                    
                }
         })
-        }    
+        }
+        function del(){
+            var ids=[];
+            $("input[name='id']:checked").each(function(){
+                ids.push($(this).val());
+                
+            })
+            if(ids.length<=0){
+                layer.msg("请选取删除的内容！");
+            }else{
+                $.ajax({
+            url:"index.php?r=ajax/delMess/",
+               data:{ids:ids.join(",")},
+               type:"POST",
+               dataType:"json",
+               success:function(data){
+                   if(data.status){
+                       queryMymess(1);
+                   }else{
+                     layer.msg("删除失败");  
+                   }
+                   
+               }
+        })
+                
+            }
+            
+        }
             $(function(){
             queryMymess(1);
+            $("#checkAll").click(function(){
+                
+                if($(this).attr("checked")=="checked"){
+                      $('input[name="id"]').attr("checked","checked");
+                   
+                }else{
+                     $('input[name="id"]').prop("checked","");
+                    
+                }
+            })
             
             })
   
