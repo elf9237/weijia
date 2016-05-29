@@ -115,7 +115,14 @@ class AjaxController extends BaseController {
      }
      public function actionQuerymyrent(){
           $page=$_POST['page'];
-       $sql="select t.* from cy_info t join cy_rentinfo t1 on(t1.info_id=t.id)  where 1=1  and t1.sender=123" ;
+       $sql="select t.*,t1.status as rstatus from cy_info t join cy_rentinfo t1 on(t1.info_id=t.id)  where 1=1  and t1.sender=123" ;
+   
+ $pagelist=new PageList($sql, $page, 5);
+  echo json_encode($pagelist->pageAjax);
+     }
+         public function actionQuerymyShen(){
+          $page=$_POST['page'];
+       $sql="select t.*,t1.id as rid from cy_info t join cy_rentinfo t1 on(t1.info_id=t.id)  where 1=1  and t.user_id=123 and t1.status=0" ;
    
  $pagelist=new PageList($sql, $page, 5);
   echo json_encode($pagelist->pageAjax);

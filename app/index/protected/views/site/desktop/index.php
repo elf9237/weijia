@@ -130,7 +130,7 @@
     	<div class="div-align-left" style="width:750px;height:421px;">
 	      <div style="position:relative;width:750px;height:421px;">
 	        <div style="position:absolute">
-	          <img class="images handpoint" style="width: 750px; height: 421px; cursor: pointer;" src="upload/<?php echo $_v->mian_url; ?>">
+                    <img class="images handpoint" onclick="showRoom(<?php echo $_v->id; ?>)" style="width: 750px; height: 421px; cursor: pointer;" src="upload/<?php echo $_v->mian_url; ?>">
 	        </div>
 	        <div style="position:absolute;margin-top:371px;line-height:50px;" class="div_eaves">
 	        	<div id="roomdiv" style="position:absolute;left:10px;"><?php echo $_v->province.'-'.$_v->city.'-'.$_v->zone;  ?>&nbsp;&nbsp;<?php echo $_v->info_name; ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $_v->house_type; ?>&nbsp;&nbsp;|&nbsp;&nbsp;<?php echo $_v->area; ?>平米&nbsp;&nbsp;|&nbsp;&nbsp;<?php echo $_v->nfloor; ?>/<?php echo $_v->floors; ?>&nbsp;&nbsp;|&nbsp;&nbsp;<?php echo $_v->direction; ?></div>
@@ -177,7 +177,7 @@
                     ?>
 				<div class="scrollerImage handpoint" style="margin-left: 5px; margin-right: 5px; width: 240px; height: 240px; display: block;">
 					<div style="position:absolute">
-						<img class="images_nobord" onclick="" src="upload/<?php echo $_t->mian_url;  ?>" width="240px" height="240px">
+						<img class="images_nobord" onclick="showRoom(<?php echo $_t->id; ?>)" src="upload/<?php echo $_t->mian_url;  ?>" width="240px" height="240px">
 					</div>
 					<div class="div_eaves" style="margin-top:200px;height:40px;position:absolute;">
 				  		<div style="position:absolute;left:10px;line-height:40px;"><?php echo $_t->province.'-'.$_t->city.'-'.$_t->zone;?></div>
@@ -337,6 +337,9 @@
    <script type="text/javascript" src="public/desktop/js/jquery.bxslider.js"></script>
   <script src="public/desktop/js/style.js"></script>
 <script>
+    function showRoom(id){
+  window.location.href='index.php?r=site/zufangdetail&id='+id;
+  }
       $('#slide_container').bxSlider({ 
             slideWidth: 200,
 			minSlides: 3,
