@@ -48,70 +48,8 @@
 		<span><a href="index.php?r=site/register">注册</a></span>
 	</div>
 </div>
-  <div style="overflow:hidden;width:100%;height:2px;background:url(/baozupo/images/topline.gif);"></div>
-  
-  
 
 
-  <div style="display: none; background-color: rgb(255, 255, 255);" id="divbananer">
-    <div style="height: 400px; width: 100%; opacity: 0.92;" id="divbananerBg">
-    	<table class="table" cellpadding="0" cellspacing="0" width="100%">
-    		<tbody><tr>
-    			<td width="50%" id="tdbananerBg1" style="background-color: rgb(245, 12, 30);" onmousemove="showObj(&#39;leftpicTop&#39;)" onmouseout="hiddenObj(&#39;leftpicTop&#39;)" onclick="bananerFade(-1)" align="right">
-					<div style="position:relative;">
-						<img class="images_nobord" style="display:none;position:absolute;right:10px;top:-30px;" id="leftpicTop" src="public/desktop/images/slideleft.png">
-					</div>
-				</td>
-    			<td width="1000px" height="400px">
-	    			<img class="images_nobord" width="1000px" onmouseover="bananerStop()" onmouseout="bananerStart()" id="imgbananer" src="http://www.baozupo.com/baozupo/images/bananer9.png">
-	    		</td>
-    			<td width="50%" id="tdbananerBg2" style="background-color: rgb(245, 12, 30);" onmousemove="showObj(&#39;rightpictop&#39;)" onmouseout="hiddenObj(&#39;rightpictop&#39;)" onclick="bananerFade(1)" align="left">
-					<div style="position:relative;">
-						<img class="images_nobord" style="display:none;position:absolute;left:10px;top:-30px;" id="rightpictop" src="public/desktop/images/slideright.png">
-					</div>
-				</td>
-    		</tr>
-    	</tbody></table>
-  	</div>
-  	<div style="text-align:center;margin-top:2px;">
-	  <img id="banyuan1" src="public/desktop/images/yuan10_hui.png" class="handpoint" onclick="bananerFade(11)">
-	  <img id="banyuan2" src="public/desktop/images/yuan10_he.png" class="handpoint" onclick="bananerFade(12)">
-	  <img id="banyuan3" src="public/desktop/images/yuan10_hui.png" class="handpoint" onclick="bananerFade(13)">
-	  <img id="banyuan4" src="public/desktop/images/yuan10_hui.png" class="handpoint" onclick="bananerFade(14)">
-    </div>
-  </div>
-<script type="text/javascript">
-  function showBananer(){
-  	$("#divbananer").show();
-  }
-  function hideBananer(){
-  	$("#divbananer").hide();
-  }
-  var topBananObj=null;
-  function bananerStart(){
-  	if(topBananObj){
-  		topBananObj.start();
-  	}
-  }
-  function bananerStop(){
-  	if(topBananObj){
-  		topBananObj.stop();
-  	}
-  }
-  function bananerFade(index){
-  	if(topBananObj){
-  		topBananObj.banFade(index);
-  	}
-  }
-  $(function(){
-	var bananer_color1=["#e6006d","#f50c1e","#f5d1b1","-1"];
-	var bananer_color2=["#e6006d","#f50c1e","#f5d1b1","-1"];
-	var bananer_pici=[1,9,3,5];
-	var imgtype=["jpg","png","jpg","jpg"];
-	topBananObj=new topBananer(bananer_color1,bananer_color2,bananer_pici,imgtype,"bananer","banbg");
-	bananerStart();
-  });
-</script>
   
   <div style="height:2px;overflow:hidden;" width="100%"></div>
   
