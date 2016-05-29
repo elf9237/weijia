@@ -49,7 +49,7 @@ class AjaxController extends BaseController {
          $page=$_POST['page'];
        $sql="select t.info_name,t1.* from cy_info t right join cy_message t1 on(t1.info_id=t.id) where 1=1 and t1.message_type in(0,2) and t1.receiver=123 " ;
    
- $pagelist=new PageList($sql, $page, 2);
+ $pagelist=new PageList($sql, $page, 10);
 
        echo json_encode($pagelist->pageAjax);
          
@@ -58,9 +58,23 @@ class AjaxController extends BaseController {
          $id=$_POST['id'];
          $messModel=  Message::model();
          $messsinfo=$messModel->findByPk($id);
-         $messsinfo->order_time=time();
+         $messsinfo->read_time=time();
          $ar=new AjaxReturn();
          $ar->status=$messsinfo->save();
+         echo json_encode($ar);
+         
+     }
+     public function actionDelMess(){
+         $id=$_POST['ids'];
+         $messModel=  Message::model();
+         $count=$messModel->deleteAll('id in('.$id.')');
+       
+         $ar=new AjaxReturn();
+         if($count>0)
+         $ar->status=true;
+         else
+                 $ar->status=false;    
+             
          echo json_encode($ar);
          
      }
@@ -72,7 +86,7 @@ class AjaxController extends BaseController {
          $page=$_POST['page'];
        $sql="select t.*,t1.order_time from cy_info t join cy_message t1 on(t1.info_id=t.id) where 1=1 and t1.message_type=0 and t1.sender=2 " ;
    
- $pagelist=new PageList($sql, $page, 2);
+ $pagelist=new PageList($sql, $page, 5);
 
        echo json_encode($pagelist->pageAjax);
          
@@ -85,7 +99,7 @@ class AjaxController extends BaseController {
           $page=$_POST['page'];
        $sql="select t.* from cy_info t join cy_favorite t1 on(t1.info_id=t.id) where 1=1  and t1.user_id=2 " ;
    
- $pagelist=new PageList($sql, $page, 2);
+ $pagelist=new PageList($sql, $page, 5);
 
        echo json_encode($pagelist->pageAjax);
      }
@@ -96,14 +110,21 @@ class AjaxController extends BaseController {
      public function actionQuerymyhome(){
           $page=$_POST['page'];
        $sql="select t.* from cy_info t  where 1=1  and t.user_id=123 " ;
- $pagelist=new PageList($sql, $page, 2);
+ $pagelist=new PageList($sql, $page, 5);
   echo json_encode($pagelist->pageAjax);
      }
      public function actionQuerymyrent(){
           $page=$_POST['page'];
-       $sql="select t.* from cy_info t join cy_rentinfo t1 on(t1.info_id=t.id)  where 1=1  and t1.sender=123" ;
+       $sql="select t.*,t1.status as rstatus from cy_info t join cy_rentinfo t1 on(t1.info_id=t.id)  where 1=1  and t1.sender=123" ;
    
- $pagelist=new PageList($sql, $page, 2);
+ $pagelist=new PageList($sql, $page, 5);
+  echo json_encode($pagelist->pageAjax);
+     }
+         public function actionQuerymyShen(){
+          $page=$_POST['page'];
+       $sql="select t.*,t1.id as rid from cy_info t join cy_rentinfo t1 on(t1.info_id=t.id)  where 1=1  and t.user_id=123 and t1.status=0" ;
+   
+ $pagelist=new PageList($sql, $page, 5);
   echo json_encode($pagelist->pageAjax);
      }
      
@@ -117,7 +138,7 @@ class AjaxController extends BaseController {
      $info->area=$_POST['area'];
      $info->bus=$_POST['bus'];
      $info->city=$_POST['city'];
-//     $info->create_time=time();
+     $info->create_time=time();
      $info->detail=$_POST['detail'];
      $info->direction=$_POST['direction'];
      $info->district=$_POST['district'];

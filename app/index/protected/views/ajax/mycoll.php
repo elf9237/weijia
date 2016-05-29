@@ -352,6 +352,9 @@
           
       
   };
+  function showRoom(id){
+  window.location.href='index.php?r=site/zufangdetail&id='+id;
+  }
   $(function(){
   queryColl(1);
   })

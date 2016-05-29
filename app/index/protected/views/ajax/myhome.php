@@ -157,7 +157,7 @@
                 <table class="table">
                   <thead>
                     <tr>
-                        <th>序列号</th>
+                       
                       <th width="25%">图片</th>
                       <th>名称</th>
                       <th>状态</th>
@@ -166,33 +166,7 @@
                     </tr>
                   </thead>
                   <tbody id="myrent">
-                    <tr>
-                      <th scope="row">1</th>
-                      <td><img src="images/leaser32.jpg" alt="" width="200px" height="100px"></td>
-                        <td>审核中</td>
-                      <td>审核中</td>
-                      <td><span>800</span>元/月</td>
-                      <td>福州</td>
                     
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td><img src="images/leaser32.jpg" alt="" width="200px" height="100px"></td>
-                      <td>审核中</td>
-                        <td>审核中</td>
-                      <td><span>800</span>元/月</td>
-                      <td>福州</td>
-                      
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td><img src="images/leaser32.jpg" alt="" width="200px" height="100px"></td>
-                      <td>审核中</td>
-                        <td>审核中</td>
-                      <td><span>800</span>元/月</td>
-                      <td>福州</td>
-                    
-                    </tr>
                   </tbody>
                 </table>
               </div>
@@ -205,7 +179,39 @@
 
 <hr>
 <div class="div-align-right">
-<div style="height:32px;text-align:right;" id="turnPageBar">
+<div style="height:32px;text-align:right;" id="turnPageBarrent">
+</div>
+
+</div>
+
+    <h3 class="myHouse-title">待确认租房</h3>
+              <div class="myHouse">
+                <table class="table">
+                  <thead>
+                    <tr>
+                       
+                      <th width="25%">图片</th>
+                      <th>名称</th>
+                      <th>类别</th>
+                      <th>租金</th>
+                      <th>地区</th>
+                      <th>审核</th>
+                    </tr>
+                  </thead>
+                  <tbody id="myshen">
+                  </tbody>
+                </table>
+              </div>
+
+<div class="div-split2"></div>
+
+
+
+
+
+<hr>
+<div class="div-align-right">
+<div style="height:32px;text-align:right;" id="turnPageBarshen">
 </div>
 
 </div>
@@ -358,6 +364,80 @@
               
             }})
             }
+            function queryMyrent(page){
+            $.ajax({
+               url:"index.php?r=ajax/querymyhome",
+               data:{page:page},
+               type:"POST",
+               dataType:"json",
+               success:function(data){
+                   var innerHtml=[];
+                   if(data.pageList.length>0){
+                    $.each(data.pageList,function(n,value){ 
+                        var rstatus='待审核';
+                        if(value.rstatus==1)
+                            rstatus='通过';
+                         if(value.rstatus==1)
+                            rstatus='驳回';
+                        var infoStatus="月租房";
+                        if(value.info_type==1){
+                            infoStatus="日租房";
+                        }
+                         if(value.info_type==2){
+                            infoStatus="商铺";
+                        }
+                    innerHtml.push('<tr>'+
+                      '<td><img src="upload/'+value.mian_url+'" alt="" width="200px" height="100px"></td>'+
+                      '<td>'+value.info_name+'</td>'+
+                        '<td>'+rstatus+'</td>'+
+                               '<td>'+value.price+'</td>'+
+                           '<td>'+value.zone+'</td>'
+            );   }); 
+                   }
+                    $("#myrent").html(innerHtml.join(""));
+                   pageding($("#turnPageBarrent"),"queryMyrent",data);
+              
+            }})
+            }
+            
+            function queryMyShen(page){
+            $.ajax({
+               url:"index.php?r=ajax/querymyhome",
+               data:{page:page},
+               type:"POST",
+               dataType:"json",
+               success:function(data){
+                   var innerHtml=[];
+                   if(data.pageList.length>0){
+                    $.each(data.pageList,function(n,value){ 
+                      
+                        var infoStatus="月租房";
+                        if(value.info_type==1){
+                            infoStatus="日租房";
+                        }
+                         if(value.info_type==2){
+                            infoStatus="商铺";
+                        }
+                    innerHtml.push('<tr>'+
+                      '<td><img src="upload/'+value.mian_url+'" alt="" width="200px" height="100px"></td>'+
+                      '<td>'+value.info_name+'</td>'+
+                        '<td>'+infoStatus+'</td>'+
+                         '<td>'+value.price+'</td>'+
+                           '<td>'+value.zone+'</td>'+
+//                              '<td>'+value.lend_type+'</td>'+
+                             
+                               '<td>'+status+'</td>'+
+                       
+                       '<td class="onCao"><a href="#">出租</a><a href="#">驳回</a></td></tr>'
+                                   
+            );   }); 
+                   }
+                    $("#myshen").html(innerHtml.join(""));
+                   pageding($("#turnPageBarshen"),"queryMyShen",data);
+              
+            }})
+            }
+            
             $(function(){
             queryMyhome(1);
             })
