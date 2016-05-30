@@ -3,7 +3,7 @@ class BaseController extends CController
 {
 	
 	public $layout=null;
-	public $wechat = null;
+	public $wechat = true;
 
 //	public function beforeAction()
 //	{
@@ -25,8 +25,9 @@ class BaseController extends CController
 //		
 //	}
 	public function init(){
-		$this->wechat = !(strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') == false);
-		//return  true;
+//		$this->wechat = !(strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') == false);
+//		return  true;
+            $this->wechat==true;
 	}
 
 	 

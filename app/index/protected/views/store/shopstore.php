@@ -44,113 +44,20 @@
             <section>
             	<div id="wrapper">
                   <ul class="infoList">
-                    <li class="item">
-                        <a href="./index.php?r=store/detial">
-                            <img src="img/01.jpg" alt="" class="item-thumb">
-                            <dl class="item-info">
-                                <dt class="info-title"><strong>【YOU+国际青年社区】向空旷孤独的房间say goodby</strong></dt>
-                                <dd class="info-desc">
-                                    <span class="info-desc-detail"><em>一室-宝龙广场</em>-菏泽小区32 </span>
-                                   <!--  <span class="info-desc-tag info-desc-tag--right"> <em class="biz">佣金</em> </span> -->
-                                </dd>
-                                
-                                <dd class="info-desc">
-                                <span class="info-desc-price"> 1500<em class="priceunit"> 元</em></span><span class="info-desc-tag"><em class="time">今天</em></span><span class="info-desc-tag--right">  <em class="personal">个人</em>    </span>
-                                </dd>
-                                <dd class="info-desc">
-                                <span class="info-desc-tag">返现<em class="time">50</em>元</span><span class="info-desc-tag--right">  <em class="personal">转发得10元</em>    </span>
-                                </dd>
-                            </dl>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="./index.php?r=store/detial">
-                            <img src="img/01.jpg" alt="" class="item-thumb">
-                            <dl class="item-info">
-                                <dt class="info-title"><strong>【YOU+国际青年社区】向空旷孤独的房间say goodby</strong></dt>
-                                <dd class="info-desc">
-                                    <span class="info-desc-detail"><em>一室-宝龙广场</em>-菏泽小区32 </span>
-                                    <span class="info-desc-tag info-desc-tag--right"> <em class="biz">佣金</em> </span>
-                                </dd>
-                                
-                                <dd class="info-desc">
-                                <span class="info-desc-price"> 1500<em class="priceunit"> 元</em></span><span class="info-desc-tag"><em class="time">今天</em></span><span class="info-desc-tag--right">  <em class="personal">个人</em>    </span>
-                                </dd>
-                            </dl>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="./index.php?r=store/detial">
-                            <img src="img/01.jpg" alt="" class="item-thumb">
-                            <dl class="item-info">
-                                <dt class="info-title"><strong>【YOU+国际青年社区】向空旷孤独的房间say goodby</strong></dt>
-                                <dd class="info-desc">
-                                    <span class="info-desc-detail"><em>一室-宝龙广场</em>-菏泽小区32 </span>
-                                    <span class="info-desc-tag info-desc-tag--right"> <em class="biz">置顶</em> </span>
-                                </dd>
-                                
-                                <dd class="info-desc">
-                                <span class="info-desc-price"> 1500<em class="priceunit"> 元</em></span><span class="info-desc-tag"><em class="time">今天</em></span><span class="info-desc-tag--right">  <em class="personal">个人</em>    </span>
-                                </dd>
-                            </dl>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="./index.php?r=store/detial">
-                            <img src="img/01.jpg" alt="" class="item-thumb">
-                            <dl class="item-info">
-                                <dt class="info-title"><strong>【YOU+国际青年社区】向空旷孤独的房间say goodby</strong></dt>
-                                <dd class="info-desc">
-                                    <span class="info-desc-detail"><em>一室-宝龙广场</em>-菏泽小区32 </span>
-                                    <span class="info-desc-tag info-desc-tag--right"> <em class="biz">置顶</em> </span>
-                                </dd>
-                                
-                                <dd class="info-desc">
-                                <span class="info-desc-price"> 1500<em class="priceunit"> 元</em></span><span class="info-desc-tag"><em class="time">今天</em></span><span class="info-desc-tag--right">  <em class="personal">个人</em>    </span>
-                                </dd>
-                            </dl>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="./index.php?r=store/detial">
-                            <img src="img/01.jpg" alt="" class="item-thumb">
-                            <dl class="item-info">
-                                <dt class="info-title"><strong>【YOU+国际青年社区】向空旷孤独的房间say goodby</strong></dt>
-                                <dd class="info-desc">
-                                    <span class="info-desc-detail"><em>一室-宝龙广场</em>-菏泽小区32 </span>
-                                    <span class="info-desc-tag info-desc-tag--right"> <em class="biz">置顶</em> </span>
-                                </dd>
-                                
-                                <dd class="info-desc">
-                                <span class="info-desc-price"> 1500<em class="priceunit"> 元</em></span><span class="info-desc-tag"><em class="time">今天</em></span><span class="info-desc-tag--right">  <em class="personal">个人</em>    </span>
-                                </dd>
-                            </dl>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="./index.php?r=store/detial">
-                            <img src="img/01.jpg" alt="" class="item-thumb">
-                            <dl class="item-info">
-                                <dt class="info-title"><strong>【YOU+国际青年社区】向空旷孤独的房间say goodby</strong></dt>
-                                <dd class="info-desc">
-                                    <span class="info-desc-detail"><em>一室-宝龙广场</em>-菏泽小区32 </span>
-                                    <span class="info-desc-tag info-desc-tag--right"> <em class="biz">置顶</em> </span>
-                                </dd>
-                                
-                                <dd class="info-desc">
-                                <span class="info-desc-price"> 1500<em class="priceunit"> 元</em></span><span class="info-desc-tag"><em class="time">今天</em></span><span class="info-desc-tag--right">  <em class="personal">个人</em>    </span>
-                                </dd>
-                            </dl>
-                        </a>
-                    </li>
                   </ul>
                 </div>
             </section>
         </section>
         <script src="lib/zepto.min.js"></script>
+         <script src="lib/dropload.min.js"></script>
         <script src="js/frozen.js"></script>
+        
         <script src="js/house.js"></script>
         <script>
+            function getLocalTime(nS) {     
+   return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d{1,2}$/,' ');     
+}
+  query();
 		$(document).ready(function() { 
 			$.ajax({
 		　　　　　　url: 'index.php?r=basemenu/footmenu',
@@ -162,8 +69,78 @@
 					 },
 		　　　　　　error: function (data) {
 								 alert('===');},
-　　　　		})
+　　　　		});
+                
+                query();
 		}); 
+//                 var page=1;//当前页
+//    var pages=5;//总页数
+    var ajax=!1;//是否加载中
+     var param={
+      rooms:-1,
+      sprice:0,
+      eprice:10000,
+      info_type:-1,
+      prov: "福建",
+      city: "福州",
+      dist: "仓山区",
+      page:0,
+      totalPage:1,
+  };
+                
+                 function query(){   Zepto(function($){
+        $(window).scroll(function(){
+       
+            if(($(window).scrollTop() + $(window).height() > $(document).height()-30) && !ajax && param.totalPage >= param.page){
+                //滚动条拉到离底40像素内，而且没ajax中，而且没超过总页数
+                //json_ajax(cla,++page);
+                param.page++;//当前页增加1
+                ajax=!0;//注明开始ajax加载中
+                $("#wrapper").append('<div class="loading"><img src="/template/mobile/loading.gif" alt="" /></div> ');//出现加载图片
+                $.ajax({
+                    type: 'POST',
+                    url: "index.php?r=ajax/queryFangyu",
+               data:param,
+                    dataType: 'json',
+                    success: function(data){
+                        param.totalPage=data.totaPage;//更新总页数
+                        param.page=data.currentPage;//更新当前页（js不太可靠）
+                         var innerHtml=[];
+                         $.each(data.pageList,function(n,value){
+                             
+                                 innerHtml.push('<li class="item">'+
+                        '<a onclick="showRoom('+value.id+')>'+
+                            '<img src="upload/'+value.mian_url+'" alt="" class="item-thumb">'+
+                            '<dl class="item-info">'+
+                               ' <dt class="info-title"><strong>'+value.info_name+'</strong></dt>'+
+                               ' <dd class="info-desc">'+
+                                    '<span class="info-desc-detail"><em>'+value.house_type+'</em>'+value.city+'-'+value.zone+'-'+value.district+' </span>'+
+                                    '<span class="info-desc-tag info-desc-tag--right"> <em class="biz">置顶</em> </span>'+
+                                '</dd>'+
+                                
+                                '<dd class="info-desc">'+
+                                '<span class="info-desc-price"> '+value.price+'<em class="priceunit"> 元</em></span><span class="info-desc-tag"><em class="time">'+getLocalTime(value.create_time)+'</em></span><span class="info-desc-tag--right">  <em class="personal">个人</em>    </span>'+
+                                '</dd></dl> </a>  </li>');
+                            
+                       
+                  
+                             
+                         
+    });
+    $(".infoList").append(innerHtml.join(""));
+                        $(".loading").remove();//删除加载图片
+                        ajax=!1;//注明已经完成ajax加载
+                    },
+                    error: function(xhr, type){
+                        $(".loading").html("暂无内容！");
+                    }
+                });
+            }
+        }).scroll();
+    })}
+    
+    
+   
 		</script>
     </body>
 
