@@ -54,7 +54,7 @@
   <div style="height:2px;overflow:hidden;" width="100%"></div>
   
   <div id="contentpar" style="width:100%">
-  <div class="div-box" style="min-height: 300px; height: 2840px; background-color: rgb(255, 255, 255);" id="content">
+  <div class="div-box" style="min-height: 300px;margin-bottom:200px;" id="content">
 <div style="background-color:#FFFFFF;">
   <table cellpadding="0" cellspacing="0" class="table" width="100%">
   	<tbody><tr style="background-color:#ea6060;height:200px;"><td colspan="5" align="left">&nbsp;&nbsp;<img src="public/desktop/images/subroom.png"></td></tr>
@@ -175,68 +175,8 @@
   		</td>
   	</tr>
   	
-  	<tr>
-  		<td><img src="public/desktop/images/leasel5.png"></td>
-  		<td>&nbsp;</td>
-  		<td>
-  			<table cellpadding="0" cellspacing="0" class="table" width="100%">
-  				<tbody><tr><td class="color_def break font_lease">微家的专业设计师将为您进行房屋设计，并由专业施工团队为您的房子重新<br>装修。微家承担所有装修费用，不花一分钱房子变漂亮。</td></tr>
-  				<tr class="td_hsline"><td></td></tr>
-  			</tbody></table>
-  		</td>
-  	</tr>
-  	<tr>
-  		<td colspan="2"></td>
-  		<td align="left">
-  			<table cellpadding="0" cellspacing="0" class="table">
-  				<tbody><tr>
-  					<td><img src="public/desktop/images/leaser51.jpg"></td>
-  					<td width="10px"></td>
-  					<td><img src="public/desktop/images/leaser52.jpg"></td>
-  				</tr>
-  			</tbody></table>
-  		</td>
-  	</tr>
-  	
-  	<tr>
-  		<td><img src="public/desktop/images/leasel6.png"></td>
-  		<td>&nbsp;</td>
-  		<td>
-  			<table cellpadding="0" cellspacing="0" class="table" width="100%">
-  				<tbody><tr><td class="color_def break font_lease">焕然一新的房屋正式在微家网站上线出租，微家将会对房客身份进行核实。<br>您的房子将成为“北漂”温暖的家。</td></tr>
-  				<tr class="td_hsline"><td></td></tr>
-  			</tbody></table>
-  		</td>
-  	</tr>
-  	<tr>
-  		<td colspan="2"></td>
-  		<td align="left">
-  			<img src="public/desktop/images/leaser61.jpg">
-  		</td>
-  	</tr>
-  	
-  	<tr>
-  		<td><img src="public/desktop/images/leasel7.png"></td>
-  		<td>&nbsp;</td>
-  		<td>
-  			<table cellpadding="0" cellspacing="0" class="table" width="100%">
-  				<tbody><tr><td class="color_def break font_lease">微家定期为您的房子进行保洁，定期对家具家电进行检修，保证房子的整洁和<br>品质。租期满后，您可以选择是否继续把房子交给微家。</td></tr>
-  				<tr class="td_hsline"><td></td></tr>
-  			</tbody></table>
-  		</td>
-  	</tr>
-  	<tr>
-  		<td colspan="2"></td>
-  		<td align="left">
-  			<table cellpadding="0" cellspacing="0" class="table">
-  				<tbody><tr>
-  					<td><img src="public/desktop/images/leaser71.jpg"></td>
-  					<td width="10px"></td>
-  					<td><img src="public/desktop/images/leaser72.jpg"></td>
-  				</tr>
-  			</tbody></table>
-  		</td>
-  	</tr>
+
+
   </tbody></table>
   
   <div id="tmpdiv" style="display:none;"></div>
@@ -292,7 +232,7 @@
   <tr style="height:20px;color:#FFFFFF">
   <td colspan="3"></td>
   <td></td>
-  <td>8855-5353</td>
+  <td>0591-8855-5353</td>
   <td></td>
   <td>微信扫一扫</td>
   <td colspan="2"></td>
