@@ -192,72 +192,24 @@
                     <div class="picMarquee-left">
                         <div class="bd">
                             <ul class="picList">
+                                <?php
+                                foreach($newInfos as $_t){
+                                ?>
                                 <li>
                                     <div class="scrollerImage handpoint" style="margin-left: 5px; margin-right: 5px; width: 240px; height: 240px; display: block;">
                                         <div style="position:absolute">
-                                            <img class="images_nobord"  src="public/desktop/images/main(4).jpg" width="240px" height="240px">
+                                            <img class="images_nobord"  src="upload/<?php echo $_t->mian_url;  ?>" width="240px" height="240px">
                                         </div>
                                         <div class="div_eaves" style="margin-top:200px;height:40px;position:absolute;">
-                                            <div style="position:absolute;left:10px;line-height:40px;">四惠·白领家园</div>
-                                            <div class="div_priceMain" style="width:62px;height:20px;line-height:20px;">￥2840</div>
+                                            <div style="position:absolute;left:10px;line-height:40px;"><?php echo $_t->province.'-'.$_t->city.'-'.$_t->zone;?></div>
+                                            <div class="div_priceMain" style="width:62px;height:20px;line-height:20px;"> <?php echo $_t->price; ?></div>
                                         </div>
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="scrollerImage handpoint" style="margin-left: 5px; margin-right: 5px; width: 240px; height: 240px; display: block;">
-                                        <div style="position:absolute">
-                                            <img class="images_nobord"  src="public/desktop/images/main(5).jpg" width="240px" height="240px">
-                                        </div>
-                                        <div class="div_eaves" style="margin-top:200px;height:40px;position:absolute;">
-                                            <div style="position:absolute;left:10px;line-height:40px;">建国路·兴隆家园</div>
-                                            <div class="div_priceMain" style="width:62px;height:20px;line-height:20px;">￥2100</div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="scrollerImage handpoint" style="margin-left: 5px; margin-right: 5px; width: 240px; height: 240px; display: block;">
-                                        <div style="position:absolute">
-                                            <img class="images_nobord"  src="public/desktop/images/main(5).jpg" width="240px" height="240px">
-                                        </div>
-                                        <div class="div_eaves" style="margin-top:200px;height:40px;position:absolute;">
-                                            <div style="position:absolute;left:10px;line-height:40px;">建国路·兴隆家园</div>
-                                            <div class="div_priceMain" style="width:62px;height:20px;line-height:20px;">￥2100</div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="scrollerImage handpoint" style="margin-left: 5px; margin-right: 5px; width: 240px; height: 240px; display: block;">
-                                        <div style="position:absolute">
-                                            <img class="images_nobord"  src="public/desktop/images/main(5).jpg" width="240px" height="240px">
-                                        </div>
-                                        <div class="div_eaves" style="margin-top:200px;height:40px;position:absolute;">
-                                            <div style="position:absolute;left:10px;line-height:40px;">建国路·兴隆家园</div>
-                                            <div class="div_priceMain" style="width:62px;height:20px;line-height:20px;">￥2100</div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="scrollerImage handpoint" style="margin-left: 5px; margin-right: 5px; width: 240px; height: 240px; display: block;">
-                                        <div style="position:absolute">
-                                            <img class="images_nobord"  src="public/desktop/images/main(5).jpg" width="240px" height="240px">
-                                        </div>
-                                        <div class="div_eaves" style="margin-top:200px;height:40px;position:absolute;">
-                                            <div style="position:absolute;left:10px;line-height:40px;">建国路·兴隆家园</div>
-                                            <div class="div_priceMain" style="width:62px;height:20px;line-height:20px;">￥2100</div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="scrollerImage handpoint" style="margin-left: 5px; margin-right: 5px; width: 240px; height: 240px; display: block;">
-                                        <div style="position:absolute">
-                                            <img class="images_nobord"  src="public/desktop/images/main(5).jpg" width="240px" height="240px">
-                                        </div>
-                                        <div class="div_eaves" style="margin-top:200px;height:40px;position:absolute;">
-                                            <div style="position:absolute;left:10px;line-height:40px;">建国路·兴隆家园</div>
-                                            <div class="div_priceMain" style="width:62px;height:20px;line-height:20px;">￥2100</div>
-                                        </div>
-                                    </div>
-                                </li>
+                                    <?php
+
+                                };
+                                ?>
                             </ul>
                         </div>
                     </div>
