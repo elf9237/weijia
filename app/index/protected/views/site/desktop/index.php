@@ -86,15 +86,25 @@
             </div>
             <div class="bannerTest">
                 <ul>
+                     <?php
+                  foreach($starInfos as $_v){
+                              ?>
                     <li><div class="divtxt_left" style="float: left; list-style: none; position: relative; width: 1000px; margin-right: 10px;">
                             <div class="div-align-left" style="width:750px;height:421px;">
                                 <div style="position:relative;width:750px;height:421px;">
                                     <div style="position:absolute">
-                                        <img class="images handpoint" style="width: 750px; height: 421px; cursor: pointer;" src="public/desktop/images/room.jpg">
+                                        <img class="images handpoint" onclick="showRoom(<?php echo $_v->id; ?>)" style="width: 750px; height: 421px; cursor: pointer;" src="upload/<?php echo $_v->mian_url; ?>">
                                     </div>
                                     <div style="position:absolute;margin-top:371px;line-height:50px;" class="div_eaves">
-                                        <div id="roomdiv" style="position:absolute;left:10px;">朝阳·大望路·阳光100&nbsp;&nbsp;海伦彼岸&nbsp;&nbsp;&nbsp;&nbsp;三室两厅&nbsp;&nbsp;|&nbsp;&nbsp;45平米&nbsp;&nbsp;|&nbsp;&nbsp;11/32&nbsp;&nbsp;|&nbsp;&nbsp;西南</div>
-                                        <div id="pricediv" class="div_priceMain" style="width:100px;height:30px;line-height:30px;">￥5900</div>
+                                        <div id="roomdiv" style="position:absolute;left:10px;">
+                                             <?php echo $_v->province.'-'.$_v->city.'-'.$_v->zone; ?>;&nbsp;&nbsp;
+                                    <?php echo $_v->info_name; ?>;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <?php echo $_v->house_type; ?>;&nbsp;&nbsp;|&nbsp;&nbsp;
+                                    <?php echo $_v->area; ?>平米&nbsp;&nbsp;|&nbsp;&nbsp;
+                                    <?php echo $_v->nfloor; ?>/<?php echo $_v->floors; ?>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                    <?php echo $_v->direction; ?>
+                                        </div>
+                                        <div id="pricediv" class="div_priceMain" style="width:100px;height:30px;line-height:30px;">￥  <?php echo $_v->price; ?> </div>
                                     </div>
 
                                     <img class="img_slideLeft div_top" style="display: block;" id="leftroom" src="public/desktop/images/slideleft.png">
@@ -113,142 +123,40 @@
                             </div>
                             <div class="clear"></div>
                         </div></li>
-                    <li><div class="divtxt_left" style="float: left; list-style: none; position: relative; width: 1000px; margin-right: 10px;">
-                            <div class="div-align-left" style="width:750px;height:421px;">
-                                <div style="position:relative;width:750px;height:421px;">
-                                    <div style="position:absolute">
-                                        <img class="images handpoint" style="width: 750px; height: 421px; cursor: pointer;" src="public/desktop/images/room.jpg">
-                                    </div>
-                                    <div style="position:absolute;margin-top:371px;line-height:50px;" class="div_eaves">
-                                        <div id="roomdiv" style="position:absolute;left:10px;">朝阳·大望路·阳光100&nbsp;&nbsp;海伦彼岸&nbsp;&nbsp;&nbsp;&nbsp;三室两厅&nbsp;&nbsp;|&nbsp;&nbsp;45平米&nbsp;&nbsp;|&nbsp;&nbsp;11/32&nbsp;&nbsp;|&nbsp;&nbsp;西南</div>
-                                        <div id="pricediv" class="div_priceMain" style="width:100px;height:30px;line-height:30px;">￥5900</div>
-                                    </div>
+                     <?php
 
-                                    <img class="img_slideLeft div_top" style="display: block;" id="leftroom" src="public/desktop/images/slideleft.png">
-
-
-                                    <img class="img_slideRight2 div_top" style="display: none;" id="rightroom" src="public/desktop/images/slideright.png">
-                                    <div class="div_slideRight2" style="height:388px"  ></div>
-                                </div>
-                            </div>
-                            <div class="div-align-right" style="height:421px;width:250px">
-                                <div style="width:250px;height:250px;"><img id="sortimg" onclick="showRoom()" class="images handpoint" style="width:250px;height:250px;" src="public/desktop/images/2015010515554000011.jpg"></div>
-                                <div id="sortdiv" style="width: 250px; height: 171px; background-color: rgb(14, 186, 236);" onclick="showRoom()" class="handpoint">
-                                    <div id="sortnamediv" style="text-align:right;font-size:28px;padding-top:100px;padding-right:20px;color:#FFFFFF;font-weight:bold;">蔚蓝天际</div>
-                                    <div id="sortdscdiv" style="text-align:right;font-size:12px;padding-right:20px;color:#FFFFFF;">Blue Sky</div>
-                                </div>
-                            </div>
-                            <div class="clear"></div>
-                        </div></li>
-                    <li><div class="divtxt_left" style="float: left; list-style: none; position: relative; width: 1000px; margin-right: 10px;">
-                            <div class="div-align-left" style="width:750px;height:421px;">
-                                <div style="position:relative;width:750px;height:421px;">
-                                    <div style="position:absolute">
-                                        <img class="images handpoint" style="width: 750px; height: 421px; cursor: pointer;" src="public/desktop/images/room.jpg">
-                                    </div>
-                                    <div style="position:absolute;margin-top:371px;line-height:50px;" class="div_eaves">
-                                        <div id="roomdiv" style="position:absolute;left:10px;">朝阳·大望路·阳光100&nbsp;&nbsp;海伦彼岸&nbsp;&nbsp;&nbsp;&nbsp;三室两厅&nbsp;&nbsp;|&nbsp;&nbsp;45平米&nbsp;&nbsp;|&nbsp;&nbsp;11/32&nbsp;&nbsp;|&nbsp;&nbsp;西南</div>
-                                        <div id="pricediv" class="div_priceMain" style="width:100px;height:30px;line-height:30px;">￥5900</div>
-                                    </div>
-
-                                    <img class="img_slideLeft div_top" style="display: block;" id="leftroom" src="public/desktop/images/slideleft.png">
-
-
-                                    <img class="img_slideRight2 div_top" style="display: none;" id="rightroom" src="public/desktop/images/slideright.png">
-                                    <div class="div_slideRight2" style="height:388px"  ></div>
-                                </div>
-                            </div>
-                            <div class="div-align-right" style="height:421px;width:250px">
-                                <div style="width:250px;height:250px;"><img id="sortimg" onclick="showRoom()" class="images handpoint" style="width:250px;height:250px;" src="public/desktop/images/2015010515554000011.jpg"></div>
-                                <div id="sortdiv" style="width: 250px; height: 171px; background-color: rgb(14, 186, 236);" onclick="showRoom()" class="handpoint">
-                                    <div id="sortnamediv" style="text-align:right;font-size:28px;padding-top:100px;padding-right:20px;color:#FFFFFF;font-weight:bold;">蔚蓝天际</div>
-                                    <div id="sortdscdiv" style="text-align:right;font-size:12px;padding-right:20px;color:#FFFFFF;">Blue Sky</div>
-                                </div>
-                            </div>
-                            <div class="clear"></div>
-                        </div></li>
-                    <li><div class="divtxt_left" style="float: left; list-style: none; position: relative; width: 1000px; margin-right: 10px;">
-                            <div class="div-align-left" style="width:750px;height:421px;">
-                                <div style="position:relative;width:750px;height:421px;">
-                                    <div style="position:absolute">
-                                        <img class="images handpoint" style="width: 750px; height: 421px; cursor: pointer;" src="public/desktop/images/room.jpg">
-                                    </div>
-                                    <div style="position:absolute;margin-top:371px;line-height:50px;" class="div_eaves">
-                                        <div id="roomdiv" style="position:absolute;left:10px;">朝阳·大望路·阳光100&nbsp;&nbsp;海伦彼岸&nbsp;&nbsp;&nbsp;&nbsp;三室两厅&nbsp;&nbsp;|&nbsp;&nbsp;45平米&nbsp;&nbsp;|&nbsp;&nbsp;11/32&nbsp;&nbsp;|&nbsp;&nbsp;西南</div>
-                                        <div id="pricediv" class="div_priceMain" style="width:100px;height:30px;line-height:30px;">￥5900</div>
-                                    </div>
-
-                                    <img class="img_slideLeft div_top" style="display: block;" id="leftroom" src="public/desktop/images/slideleft.png">
-
-
-                                    <img class="img_slideRight2 div_top" style="display: none;" id="rightroom" src="public/desktop/images/slideright.png">
-                                    <div class="div_slideRight2" style="height:388px"  ></div>
-                                </div>
-                            </div>
-                            <div class="div-align-right" style="height:421px;width:250px">
-                                <div style="width:250px;height:250px;"><img id="sortimg" onclick="showRoom()" class="images handpoint" style="width:250px;height:250px;" src="public/desktop/images/2015010515554000011.jpg"></div>
-                                <div id="sortdiv" style="width: 250px; height: 171px; background-color: rgb(14, 186, 236);" onclick="showRoom()" class="handpoint">
-                                    <div id="sortnamediv" style="text-align:right;font-size:28px;padding-top:100px;padding-right:20px;color:#FFFFFF;font-weight:bold;">蔚蓝天际</div>
-                                    <div id="sortdscdiv" style="text-align:right;font-size:12px;padding-right:20px;color:#FFFFFF;">Blue Sky</div>
-                                </div>
-                            </div>
-                            <div class="clear"></div>
-                        </div></li>
-                    <li><div class="divtxt_left" style="float: left; list-style: none; position: relative; width: 1000px; margin-right: 10px;">
-                            <div class="div-align-left" style="width:750px;height:421px;">
-                                <div style="position:relative;width:750px;height:421px;">
-                                    <div style="position:absolute">
-                                        <img class="images handpoint" style="width: 750px; height: 421px; cursor: pointer;" src="public/desktop/images/room.jpg">
-                                    </div>
-                                    <div style="position:absolute;margin-top:371px;line-height:50px;" class="div_eaves">
-                                        <div id="roomdiv" style="position:absolute;left:10px;">朝阳·大望路·阳光100&nbsp;&nbsp;海伦彼岸&nbsp;&nbsp;&nbsp;&nbsp;三室两厅&nbsp;&nbsp;|&nbsp;&nbsp;45平米&nbsp;&nbsp;|&nbsp;&nbsp;11/32&nbsp;&nbsp;|&nbsp;&nbsp;西南</div>
-                                        <div id="pricediv" class="div_priceMain" style="width:100px;height:30px;line-height:30px;">￥5900</div>
-                                    </div>
-
-                                    <img class="img_slideLeft div_top" style="display: block;" id="leftroom" src="public/desktop/images/slideleft.png">
-
-
-                                    <img class="img_slideRight2 div_top" style="display: none;" id="rightroom" src="public/desktop/images/slideright.png">
-                                    <div class="div_slideRight2" style="height:388px"  ></div>
-                                </div>
-                            </div>
-                            <div class="div-align-right" style="height:421px;width:250px">
-                                <div style="width:250px;height:250px;"><img id="sortimg" onclick="showRoom()" class="images handpoint" style="width:250px;height:250px;" src="public/desktop/images/2015010515554000011.jpg"></div>
-                                <div id="sortdiv" style="width: 250px; height: 171px; background-color: rgb(14, 186, 236);" onclick="showRoom()" class="handpoint">
-                                    <div id="sortnamediv" style="text-align:right;font-size:28px;padding-top:100px;padding-right:20px;color:#FFFFFF;font-weight:bold;">蔚蓝天际</div>
-                                    <div id="sortdscdiv" style="text-align:right;font-size:12px;padding-right:20px;color:#FFFFFF;">Blue Sky</div>
-                                </div>
-                            </div>
-                            <div class="clear"></div>
-                        </div></li>
+                              };
+                              ?>
+                    
+                   
+                   
                 </ul>
             </div>
 
             <div class="div-split30"></div>
             <!-- 精品房源 -->
-            <div id="importantRoom">
-                <!--?php
+<!--            <div id="importantRoom">
+                <?php
                   foreach($starInfos as $_v){
-                              ?-->
+                              ?>
                 <div class="divtxt_left" style="float: left; list-style: none; position: relative; width: 1000px; margin-right: 10px;">
                     <div class="div-align-left" style="width:750px;height:421px;">
                         <div style="position:relative;width:750px;height:421px;">
                             <div style="position:absolute">
-                                <img class="images handpoint" onclick="showRoom(&lt;?php echo $_v-&gt;id; ?&gt;)" style="width: 750px; height: 421px; cursor: pointer;" src="upload/&lt;?php echo $_v-&gt;mian_url; ?&gt;" />
+                                <img class="images handpoint" onclick="showRoom(<?php echo $_v->id; ?>)" style="width: 750px; height: 421px; cursor: pointer;" src="upload/<?php echo $_v->mian_url; ?>" />
                             </div>
                             <div style="position:absolute;margin-top:371px;line-height:50px;" class="div_eaves">
                                 <div id="roomdiv" style="position:absolute;left:10px;">
-                                    <!--?php echo $_v--->province.'-'.$_v-&gt;city.'-'.$_v-&gt;zone; ?&gt;&nbsp;&nbsp;
-                                    <!--?php echo $_v--->info_name; ?&gt;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <!--?php echo $_v--->house_type; ?&gt;&nbsp;&nbsp;|&nbsp;&nbsp;
-                                    <!--?php echo $_v--->area; ?&gt;平米&nbsp;&nbsp;|&nbsp;&nbsp;
-                                    <!--?php echo $_v--->nfloor; ?&gt;/
-                                    <!--?php echo $_v--->floors; ?&gt;&nbsp;&nbsp;|&nbsp;&nbsp;
-                                    <!--?php echo $_v--->direction; ?&gt;
+                                    <?php echo $_v->province.'-'.$_v->city.'-'.$_v->zone; ?>;&nbsp;&nbsp;
+                                    <?php echo $_v->info_name; ?>;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <?php echo $_v->house_type; ?>;&nbsp;&nbsp;|&nbsp;&nbsp;
+                                    <?php echo $_v->area; ?>平米&nbsp;&nbsp;|&nbsp;&nbsp;
+                                    <?php echo $_v->nfloor; ?>/<?php echo $_v->floors; ?>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                    <?php echo $_v->direction; ?>
                                 </div>
                                 <div id="pricediv" class="div_priceMain" style="width:100px;height:30px;line-height:30px;">
                                     ￥
-                                    <!--?php echo $_v--->price; ?&gt;
+                                    <?php echo $_v->price; ?> 
                                 </div>
                             </div>
                             <img class="img_slideLeft div_top" style="display: none;" id="leftroom" src="public/desktop/images/slideleft.png" />
@@ -272,11 +180,11 @@
                     </div>
                     <div class="clear"></div>
                 </div>
-                <!--?php
+                <?php
 
                               };
-                              ?-->
-            </div>
+                              ?>
+            </div>-->
             <div class="div-split30"></div>
             <!-- 最近房源-->
             <div style="width:100%">
@@ -285,28 +193,28 @@
                 </div>
                 <div style="width:100%;overflow:hidden;height:240px;overflow:hidden;position:relative;">
                     <div id="slide_container" class="slide_container">
-                        <!--?php
+                        <?php
 
 
                                     foreach($newInfos as $_t){
-                                    ?-->
+                                    ?>
                         <div class="scrollerImage handpoint" style="margin-left: 5px; margin-right: 5px; width: 240px; height: 240px; display: block;">
                             <div style="position:absolute">
-                                <img class="images_nobord" onclick="showRoom(&lt;?php echo $_t-&gt;id; ?&gt;)" src="upload/&lt;?php echo $_t-&gt;mian_url;  ?&gt;" width="240px" height="240px" />
+                                <img class="images_nobord" onclick="showRoom(&lt;?php echo $_t-&gt;id; ?&gt;)" src="upload/<?php echo $_t->mian_url;  ?>" width="240px" height="240px" />
                             </div>
                             <div class="div_eaves" style="margin-top:200px;height:40px;position:absolute;">
                                 <div style="position:absolute;left:10px;line-height:40px;">
-                                    <!--?php echo $_t--->province.'-'.$_t-&gt;city.'-'.$_t-&gt;zone;?&gt;
+                                    <?php echo $_t->province.'-'.$_t->city.'-'.$_t->zone;?>;
                                 </div>
                                 <div class="div_priceMain" style="width:62px;height:20px;line-height:20px;">
-                                    <!--?php echo $_t--->price; ?&gt;
+                                    <?php echo $_t->price; ?>
                                 </div>
                             </div>
                         </div>
-                        <!--?php
+                        <?php
 
                                     };
-                                    ?-->
+                                    ?>
                     </div>
                 </div>
             </div>
