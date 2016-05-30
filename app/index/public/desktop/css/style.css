@@ -100,3 +100,15 @@ img{border:0;}
 .newsTable .innerL{text-align: center;}
 .newsTable .innerR{color: red;}
 .newsTable .innerP{padding: 5px 10px;}
+
+/*首页-最新房源*/
+.picMarquee-left{ overflow:hidden; position:relative;margin-top:10px;}
+.picMarquee-left .bd ul{ overflow:hidden; zoom:1; }
+.picMarquee-left .bd ul li{ margin:0 8px; float:left; _display:inline; overflow:hidden; text-align:center;  }
+.picMarquee-left .bd ul li .pic{ text-align:center; }
+.picMarquee-left .bd ul li .pic img{ width:120px; height:90px; display:block; padding:2px; border:1px solid #ccc; }
+.picMarquee-left .bd ul li .pic a:hover img{ border-color:#999;  }
+.picMarquee-left .bd ul li .title{ line-height:24px;   }
+.tempWrap{width:990px!important;}
+.unslider-arrow{display: none!important;}
+.bannerTest{margin-top:30px;}

@@ -133,7 +133,7 @@
                 </ul>
             </div>
 
-            <div class="div-split30"></div>
+
             <!-- 精品房源 -->
 <!--            <div id="importantRoom">
                 <?php
@@ -186,37 +186,81 @@
                               ?>
             </div>-->
             <div class="div-split30"></div>
-            <!-- 最近房源-->
+<!--            最新房源-轮播新-->
             <div style="width:100%">
-                <div class="divtxt_left">
-                    <img src="public/desktop/images/roomnew.png" />
-                </div>
-                <div style="width:100%;overflow:hidden;height:240px;overflow:hidden;position:relative;">
-                    <div id="slide_container" class="slide_container">
-                        <?php
-
-
-                                    foreach($newInfos as $_t){
-                                    ?>
-                        <div class="scrollerImage handpoint" style="margin-left: 5px; margin-right: 5px; width: 240px; height: 240px; display: block;">
-                            <div style="position:absolute">
-                                <img class="images_nobord" onclick="showRoom(&lt;?php echo $_t-&gt;id; ?&gt;)" src="upload/<?php echo $_t->mian_url;  ?>" width="240px" height="240px" />
-                            </div>
-                            <div class="div_eaves" style="margin-top:200px;height:40px;position:absolute;">
-                                <div style="position:absolute;left:10px;line-height:40px;">
-                                    <?php echo $_t->province.'-'.$_t->city.'-'.$_t->zone;?>;
-                                </div>
-                                <div class="div_priceMain" style="width:62px;height:20px;line-height:20px;">
-                                    <?php echo $_t->price; ?>
-                                </div>
-                            </div>
+                    <div class="divtxt_left"><img src="public/desktop/images/roomnew.png"></div>
+                    <div class="picMarquee-left">
+                        <div class="bd">
+                            <ul class="picList">
+                                <li>
+                                    <div class="scrollerImage handpoint" style="margin-left: 5px; margin-right: 5px; width: 240px; height: 240px; display: block;">
+                                        <div style="position:absolute">
+                                            <img class="images_nobord"  src="public/desktop/images/main(4).jpg" width="240px" height="240px">
+                                        </div>
+                                        <div class="div_eaves" style="margin-top:200px;height:40px;position:absolute;">
+                                            <div style="position:absolute;left:10px;line-height:40px;">四惠·白领家园</div>
+                                            <div class="div_priceMain" style="width:62px;height:20px;line-height:20px;">￥2840</div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="scrollerImage handpoint" style="margin-left: 5px; margin-right: 5px; width: 240px; height: 240px; display: block;">
+                                        <div style="position:absolute">
+                                            <img class="images_nobord"  src="public/desktop/images/main(5).jpg" width="240px" height="240px">
+                                        </div>
+                                        <div class="div_eaves" style="margin-top:200px;height:40px;position:absolute;">
+                                            <div style="position:absolute;left:10px;line-height:40px;">建国路·兴隆家园</div>
+                                            <div class="div_priceMain" style="width:62px;height:20px;line-height:20px;">￥2100</div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="scrollerImage handpoint" style="margin-left: 5px; margin-right: 5px; width: 240px; height: 240px; display: block;">
+                                        <div style="position:absolute">
+                                            <img class="images_nobord"  src="public/desktop/images/main(5).jpg" width="240px" height="240px">
+                                        </div>
+                                        <div class="div_eaves" style="margin-top:200px;height:40px;position:absolute;">
+                                            <div style="position:absolute;left:10px;line-height:40px;">建国路·兴隆家园</div>
+                                            <div class="div_priceMain" style="width:62px;height:20px;line-height:20px;">￥2100</div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="scrollerImage handpoint" style="margin-left: 5px; margin-right: 5px; width: 240px; height: 240px; display: block;">
+                                        <div style="position:absolute">
+                                            <img class="images_nobord"  src="public/desktop/images/main(5).jpg" width="240px" height="240px">
+                                        </div>
+                                        <div class="div_eaves" style="margin-top:200px;height:40px;position:absolute;">
+                                            <div style="position:absolute;left:10px;line-height:40px;">建国路·兴隆家园</div>
+                                            <div class="div_priceMain" style="width:62px;height:20px;line-height:20px;">￥2100</div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="scrollerImage handpoint" style="margin-left: 5px; margin-right: 5px; width: 240px; height: 240px; display: block;">
+                                        <div style="position:absolute">
+                                            <img class="images_nobord"  src="public/desktop/images/main(5).jpg" width="240px" height="240px">
+                                        </div>
+                                        <div class="div_eaves" style="margin-top:200px;height:40px;position:absolute;">
+                                            <div style="position:absolute;left:10px;line-height:40px;">建国路·兴隆家园</div>
+                                            <div class="div_priceMain" style="width:62px;height:20px;line-height:20px;">￥2100</div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="scrollerImage handpoint" style="margin-left: 5px; margin-right: 5px; width: 240px; height: 240px; display: block;">
+                                        <div style="position:absolute">
+                                            <img class="images_nobord"  src="public/desktop/images/main(5).jpg" width="240px" height="240px">
+                                        </div>
+                                        <div class="div_eaves" style="margin-top:200px;height:40px;position:absolute;">
+                                            <div style="position:absolute;left:10px;line-height:40px;">建国路·兴隆家园</div>
+                                            <div class="div_priceMain" style="width:62px;height:20px;line-height:20px;">￥2100</div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
-                        <?php
-
-                                    };
-                                    ?>
                     </div>
-                </div>
             </div>
             <div class="div-split30"></div>
             <div>
@@ -294,7 +338,7 @@
         <tr style="height:20px;color:#FFFFFF">
             <td colspan="3"></td>
             <td></td>
-            <td>0591-0591-8855-5353</td>
+            <td>0591-8855-5353</td>
             <td></td>
             <td>微信扫一扫</td>
             <td colspan="2"></td>
@@ -316,6 +360,12 @@
 <script src="public/desktop/js/carousel_focus.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="public/desktop/js/jquery.bxslider.js"></script>
 <script src="public/desktop/js/style.js"></script>
+<script type="text/javascript" src="public/desktop/js/jquery.SuperSlide.2.1.1.js"></script>
+<script>
+    $(function(){
+        jQuery(".picMarquee-left").slide({mainCell:".bd ul",autoPlay:true,effect:"leftMarquee",vis:3,interTime:50,trigger:"click"});
+    })
+</script>
 <script>
     function showRoom(id){
         window.location.href='index.php?r=site/zufangdetail&id='+id;
