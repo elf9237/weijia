@@ -9,7 +9,9 @@ class StoreController extends BaseController
 	public function actionIndex(){
 		$this->render('shopstore');
 	}
-	public function actionDetial(){
-		$this->render('detial');
+	public function actionDetial($id){
+             $infoModel=  Info::model();
+            $cyinfo=$infoModel->findByPk($id);
+		$this->render('detial',array('cyinfo'=>$cyinfo));
 	}
 }
