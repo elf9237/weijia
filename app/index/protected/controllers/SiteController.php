@@ -30,9 +30,11 @@ class SiteController extends BaseController
             $cyinfoModel=  Info::model();
             $newInfos=$cyinfoModel->findAllBySql("select * from {{info}} order by create_time desc limit 10");
             $starInfos=$cyinfoModel->findAllBySql("select * from {{info}} order by create_time desc limit 5");
-            
+
+
 		if( $this->wechat){
 			$this->render('index');
+            //$this->render('desktop/index',array("starInfos"=>$starInfos,"newInfos"=>$newInfos));
 		}else{
 			$this->render('desktop/index',array("starInfos"=>$starInfos,"newInfos"=>$newInfos));
 		}
@@ -182,6 +184,7 @@ class SiteController extends BaseController
 		}
 	}
 	public function actionLoginUser(){
+
 		$model = new User("login");
 		if($_POST['User']){
 			$model->attributes = $_POST['User'];
