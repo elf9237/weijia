@@ -193,10 +193,11 @@
                             </tbody></table>
                         </div>
                         <div class="button_div">
-                            <a href="#"><img class="noborder" src="img/button_detail_contact.gif" width="100%"></a>
+                            <a href="index.php?r=mess/yu&userid=<?php echo $cyinfo->user_id;?>&infoid=<?php echo $cyinfo->id;?>"><img class="noborder" src="img/button_detail_contact.gif" width="100%"></a>
+                            <a href="javascript:zufang()" class="mt10"><img class="noborder" src="img/crent.png" width="100%"></a>
                         </div>
                         <div class="police">
-                            <a href="#">举报</a>
+                            <a href="index.php?r=mess/jubao&userid=<?php echo $cyinfo->user_id;?>&infoid=<?php echo $cyinfo->id;?>">举报</a>
                         </div>
                     </li>
                     <!-- <li>
@@ -462,6 +463,20 @@
         <script src="lib/zepto.min.js"></script>
         <script src="js/frozen.js"></script>
          <script>
+             function zufang(){
+                 var infoid="<?php echo $cyinfo->id;?>";
+                 var userid="<?php echo $cyinfo->user_id;?>";
+                 var userType="<?php echo $useinfo->type;?>";
+                 if(userType=="1"||userType=="2"){
+                    
+                 }else{
+                    window.location.href="index.php?r=store/toFuKuang&infoid="+infoid; 
+                     
+                 }
+                 
+             }
+             
+             
               function initBaiDuMap(){
     var map= '<?php echo $cyinfo->map ?>';
  var jin='0';

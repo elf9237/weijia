@@ -109,7 +109,7 @@
                          $.each(data.pageList,function(n,value){
                              
                                  innerHtml.push('<li class="item">'+
-                        '<a onclick="showRoom('+value.id+')">'+
+                        '<a onclick="showRoom('+value.id+','+value.user_id+')">'+
                             '<img src="upload/'+value.mian_url+'" alt="" class="item-thumb">'+
                             '<dl class="item-info">'+
                                ' <dt class="info-title"><strong>'+value.info_name+'</strong></dt>'+
@@ -151,7 +151,7 @@
                          var innerHtml=[];
                          $.each(data.pageList,function(n,value){
                              
-                                 innerHtml.push('<li class="item"><a onclick="showRoom('+value.id+')">'+
+                                 innerHtml.push('<li class="item"><a onclick="showRoom('+value.id+','+value.user_id+')">'+
                             '<img src="upload/'+value.mian_url+'" alt="" class="item-thumb"/>'+
                             '<dl class="item-info">'+
                                ' <dt class="info-title"><strong>'+value.info_name+'</strong></dt>'+
@@ -178,8 +178,8 @@
                     }
                 });
     }
-    function showRoom(id){
-     window.location.href='index.php?r=store/detial&id='+id;
+    function showRoom(id,userid){
+     window.location.href='index.php?r=store/detial&id='+id+'&userid='+userid;
     
     }
     
