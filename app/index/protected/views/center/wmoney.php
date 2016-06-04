@@ -97,47 +97,47 @@
                     <table cellpadding="0" cellspacing="0" width="100%" style="color:#fff;margin-top:10px;">
                         <tbody><tr>
                             <td><div class="bzp_title_num">1</div></td>
-                            <td><div class="bzp_title_con">获取专属二维码</div></td>
+                            <td><div class="bzp_title_con">获取专属链接</div></td>
                         </tr>
                         <tr>
                             <td class="bzp_dot"></td>
                             <td class="bzp_content">
-                                关注“微家在线”微信服务号，<br>点击“包租婆”，获取你的专属二维码。
+                                关注“微家在线”微信服务号，<br>点击“微家在线”，获取你的专属链接。
                             </td>
                         </tr>
                         <tr>
                             <td><div class="bzp_title_num">2</div></td>
-                            <td><div class="bzp_title_con">转发获取包租客</div></td>
+                            <td><div class="bzp_title_con">转发获取租客</div></td>
                         </tr>
                         <tr>
-                            <td class="bzp_dot"></td>
+                            <td ></td>
                             <td class="bzp_content">
-                                转发你的专属二维码，任何经你转发而关注微家的用户，成为你的包租客。<br>
-                                你的包租客签约包租婆(房源设置了佣金)，你即得现金回报。
+                                转发你的专属链接，任何经你转发而关注微家的用户，成为你的租客。<br>
+                                你的租客成功签约微家房源(房源设置了佣金)，你即得佣金回报。
                             </td>
                         </tr>
-                        <tr>
-                            <td><div class="bzp_title_num">3</div></td>
-                            <td><div class="bzp_title_con">现金奖励</div></td>
-                        </tr>
-                        <tr>
-                            <td class="bzp_dot"></td>
-                            <td class="bzp_content">
-                                房东签约一套房，你即得<font class="imbzp_price2">1000元</font>现金。<br>
-                                租客签约一间房，你即得<font class="imbzp_price2">500元</font>现金。
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><div class="bzp_title_num">4</div></td>
-                            <td><div class="bzp_title_con">更多奖励</div></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td class="bzp_content">
-                                房东签约每满10套，额外奖励<font class="imbzp_price2">1000元</font>。<br>
-                                租客签约每满10间，额外奖励<font class="imbzp_price2">500元</font>。
-                            </td>
-                        </tr>
+<!--                        <tr>-->
+<!--                            <td><div class="bzp_title_num">3</div></td>-->
+<!--                            <td><div class="bzp_title_con">现金奖励</div></td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td class="bzp_dot"></td>-->
+<!--                            <td class="bzp_content">-->
+<!--                                房东签约一套房，你即得<font class="imbzp_price2">1000元</font>现金。<br>-->
+<!--                                租客签约一间房，你即得<font class="imbzp_price2">500元</font>现金。-->
+<!--                            </td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td><div class="bzp_title_num">4</div></td>-->
+<!--                            <td><div class="bzp_title_con">更多奖励</div></td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td></td>-->
+<!--                            <td class="bzp_content">-->
+<!--                                房东签约每满10套，额外奖励<font class="imbzp_price2">1000元</font>。<br>-->
+<!--                                租客签约每满10间，额外奖励<font class="imbzp_price2">500元</font>。-->
+<!--                            </td>-->
+<!--                        </tr>-->
                         </tbody></table>
                 </div>
             </div>
@@ -159,7 +159,7 @@
                 <div class="div-center0 radius6" style="overflow:hidden;width:40%;margin-top:16px;">
 
 
-                    <img src="https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=gQEB8ToAAAAAAAAAASxodHRwOi8vd2VpeGluLnFxLmNvbS9xL3RVeGJiOWZtZUFRQjUyeW5ibUtyAAIE0aPqVgMEAI0nAA==" class="images">
+                    <img src="img/weijia.jpg" class="images">
 
                 </div>
                 <div class="bzp_content" style="padding-top:16px;padding-bottom:100px;">

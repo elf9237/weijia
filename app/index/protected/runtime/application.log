@@ -1160,3 +1160,35 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/weijia/app/index/index.php?r=center/centerIndex
 ---
+2016/06/04 14:40:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "center".' in E:\xampp\htdocs\weijia\app\framework\web\CController.php:483
+Stack trace:
+#0 E:\xampp\htdocs\weijia\app\framework\web\CController.php(270): CController->missingAction('center')
+#1 E:\xampp\htdocs\weijia\app\framework\web\CWebApplication.php(282): CController->run('center')
+#2 E:\xampp\htdocs\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('center/center')
+#3 E:\xampp\htdocs\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 E:\xampp\htdocs\weijia\app\index\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/weijia/app/index/index.php?r=center/center
+---
+2016/06/04 15:16:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "join".' in E:\xampp\htdocs\weijia\app\framework\web\CController.php:483
+Stack trace:
+#0 E:\xampp\htdocs\weijia\app\framework\web\CController.php(270): CController->missingAction('join')
+#1 E:\xampp\htdocs\weijia\app\framework\web\CWebApplication.php(282): CController->run('join')
+#2 E:\xampp\htdocs\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('site/join')
+#3 E:\xampp\htdocs\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 E:\xampp\htdocs\weijia\app\index\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/weijia/app/index/index.php?r=site/join
+HTTP_REFERER=http://localhost/weijia/app/index/index.php?r=show/add
+---
+2016/06/04 15:16:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "join".' in E:\xampp\htdocs\weijia\app\framework\web\CController.php:483
+Stack trace:
+#0 E:\xampp\htdocs\weijia\app\framework\web\CController.php(270): CController->missingAction('join')
+#1 E:\xampp\htdocs\weijia\app\framework\web\CWebApplication.php(282): CController->run('join')
+#2 E:\xampp\htdocs\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('site/join')
+#3 E:\xampp\htdocs\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 E:\xampp\htdocs\weijia\app\index\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/weijia/app/index/index.php?r=site/join
+HTTP_REFERER=http://localhost/weijia/app/index/index.php?r=show/add
+---
