@@ -35,6 +35,7 @@
  * @property string $info_name
  *  @property string $mian_url
  * @property string $room_url
+ * @property string $yong_jin
  */
 class Info extends CActiveRecord
 {
@@ -61,7 +62,7 @@ class Info extends CActiveRecord
 			array('style, lend_type, rooms, area, floors, nfloor, direction, house_type, create_time, update_time, audit_time, delete_time', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, province, city, zone, price, style, lend_type, rooms, area, floors, nfloor, direction, house_type, district, detail, map, bus, market, public_url, create_time, update_time, user_id, lend_status, audit_time, audit_status, audit_id, audit_content, delete_time,info_name,room_url,mian_url', 'safe', 'on'=>'search'),
+			array('id, province, city, zone, price, style, lend_type, rooms, area, floors, nfloor, direction, house_type, district, detail, map, bus, market, public_url, create_time, update_time, user_id, lend_status, audit_time, audit_status, audit_id, audit_content, delete_time,info_name,room_url,mian_url,yong_jin', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -103,6 +104,7 @@ class Info extends CActiveRecord
 			'public_url' => 'Public Url',
                     'room_url' => 'Room Url',
                     'mian_url' => 'Mian Url',
+                     'yong_jin' => 'Yong_jin',
 			'create_time' => 'Create Time',
 			'update_time' => 'Update Time',
 			'user_id' => 'User',
@@ -164,6 +166,7 @@ class Info extends CActiveRecord
 		$criteria->compare('delete_time',$this->delete_time,true);
                 $criteria->compare('info_name',$this->info_name,true);
                 $criteria->compare('room_url',$this->room_url,true);
+                $criteria->compare('yong_jin',$this->yong_jin,true);
                 $criteria->compare('mianc_url',$this->mian_url,true);
 
 		return new CActiveDataProvider($this, array(

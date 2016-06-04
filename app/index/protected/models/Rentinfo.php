@@ -30,7 +30,7 @@ class Rentinfo extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id', 'required'),
+//			array('id', 'required'),
 			array('id, info_id, status, apply_time, sender, start_time, end_time', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
