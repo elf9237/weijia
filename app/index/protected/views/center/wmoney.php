@@ -87,7 +87,7 @@
 
         <div>
             <div><img id="updown" src="img/up.png" class="images"></div>
-            <div style="background-color:#fe2c55">
+            <div style="background-color:#FF7E00">
                 <div class="div-center">
                     <div style="height:20px"></div>
                     <div class="bzp_title" style="font-size:16px">奖励规则&nbsp;&nbsp;<font style="font-size:10px">INCENTIVE RULES</font></div>
@@ -141,7 +141,7 @@
                         </tbody></table>
                 </div>
             </div>
-            <div id="rulediv2" style="background-color:#fe2c55">
+            <div id="rulediv2" style="background-color:#FF7E00">
                 <img src="img/qrbzp2.png?v=1" class="images" style="padding-top:50px;padding-bottom:30px;">
             </div>
             <div class="div-center0">
@@ -150,7 +150,7 @@
                 <div style="position:absolute;bottom:0;"><img src="img/chulai2.png" class="images"></div>
             </div>
 
-            <div class="div-center0" style="background-color:#FE2C55">
+            <div class="div-center0" style="background-color:#FF7E00">
                 <div class="div-center0" style="font-size:18px;color:#fff;font-weight:bold;padding-top:40px;">
 
                     扫描微信二维码关注微家
@@ -162,9 +162,13 @@
                     <img src="img/weijia.jpg" class="images">
 
                 </div>
-                <div class="bzp_content" style="padding-top:16px;padding-bottom:100px;">
+                <div class="bzp_content" style="padding-top:16px;padding-bottom:50px;">
                     <div class="div-center0">
-
+                        <div class="ui-btn-wrap">
+                            <button class="ui-btn-lg ui-btn-danger" style="background: #eb0028;">
+                               获取专属链接
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="bzp_content" style="padding-bottom:10px;">

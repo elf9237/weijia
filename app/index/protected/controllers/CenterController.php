@@ -16,6 +16,7 @@ class CenterController extends Controller{
     }
 //    我的收藏
     public function actionCollect(){
+        
         $this -> renderPartial('collect');
     }
 //    我的预定
@@ -38,6 +39,7 @@ class CenterController extends Controller{
     public function actionForward(){
         $this -> renderPartial('forward');
     }
+//    我要佣金
     public function actionWmoney(){
         $this -> renderPartial('wmoney');
     }
