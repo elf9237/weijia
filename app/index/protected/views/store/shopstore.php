@@ -107,6 +107,16 @@
                         param.page=data.currentPage;//更新当前页（js不太可靠）
                          var innerHtml=[];
                          $.each(data.pageList,function(n,value){
+                              var type="个人";
+                             if(value.type==0)
+                                 type="微家";
+                              var ding="";
+                             if(value.orderno!=null)
+                                 ding="置顶";
+                              var yong="";
+                             if(value.yong_jin!=0)
+                                 yong="佣";
+                             
                              
                                  innerHtml.push('<li class="item">'+
                         '<a onclick="showRoom('+value.id+')">'+
@@ -115,11 +125,12 @@
                                ' <dt class="info-title"><strong>'+value.info_name+'</strong></dt>'+
                                ' <dd class="info-desc">'+
                                     '<span class="info-desc-detail"><em>'+value.house_type+'</em>'+value.city+'-'+value.zone+'-'+value.district+' </span>'+
-                                    '<span class="info-desc-tag info-desc-tag--right"> <em class="biz">置顶</em> </span>'+
+                                    '<span class="info-desc-tag info-desc-tag--right"> <em class="biz">'+ding+'</em> </span>'+
+                                     '<span class="info-desc-tag info-desc-tag--right"> <em class="biz">'+yong+'</em> </span>'+
                                 '</dd>'+
                                 
                                 '<dd class="info-desc">'+
-                                '<span class="info-desc-price"> '+value.price+'<em class="priceunit"> 元</em></span><span class="info-desc-tag"><em class="time">'+getLocalTime(value.create_time)+'</em></span><span class="info-desc-tag--right">  <em class="personal">个人</em>    </span>'+
+                                '<span class="info-desc-price"> '+value.price+'<em class="priceunit"> 元</em></span><span class="info-desc-tag"><em class="time">'+getLocalTime(value.create_time)+'</em></span><span class="info-desc-tag--right">  <em class="personal">'+type+'</em>    </span>'+
                                 '</dd></dl> </a>  </li>');
                             
                        
@@ -150,6 +161,17 @@
                         param.page=data.currentPage;//更新当前页（js不太可靠）
                          var innerHtml=[];
                          $.each(data.pageList,function(n,value){
+                             var type="个人";
+                             if(value.type==0)
+                                 type="微家";
+                              var ding="";
+                             if(value.orderno!=null)
+                                 ding="置顶";
+                              var yong="";
+                             if(value.yong_jin!=0)
+                                 yong="佣";
+                             
+                              
                              
                                  innerHtml.push('<li class="item"><a onclick="showRoom('+value.id+')">'+
                             '<img src="upload/'+value.mian_url+'" alt="" class="item-thumb"/>'+
@@ -157,11 +179,12 @@
                                ' <dt class="info-title"><strong>'+value.info_name+'</strong></dt>'+
                                ' <dd class="info-desc">'+
                                     '<span class="info-desc-detail"><em>'+value.house_type+'</em>'+value.city+'-'+value.zone+'-'+value.district+' </span>'+
-                                    '<span class="info-desc-tag info-desc-tag--right"> <em class="biz">置顶</em> </span>'+
+                                    '<span class="info-desc-tag info-desc-tag--right"> <em class="biz">'+ding+'</em> </span>'+
+                                    '<span class="info-desc-tag info-desc-tag--right"> <em class="biz">'+yong+'</em> </span>'+
                                 '</dd>'+
                                 
                                 '<dd class="info-desc">'+
-                                '<span class="info-desc-price"> '+value.price+'<em class="priceunit"> 元</em></span><span class="info-desc-tag"><em class="time">'+getLocalTime(value.create_time)+'</em></span><span class="info-desc-tag--right">  <em class="personal">个人</em>    </span>'+
+                                '<span class="info-desc-price"> '+value.price+'<em class="priceunit"> 元</em></span><span class="info-desc-tag"><em class="time">'+getLocalTime(value.create_time)+'</em></span><span class="info-desc-tag--right">  <em class="personal">'+type+'</em>    </span>'+
                                 '</dd></dl> </a>  </li>');
                             
                        

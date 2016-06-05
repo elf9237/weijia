@@ -70,5 +70,27 @@ class CenterController extends BaseController{
         $strshareUrl = Yii::app()->request->hostInfo.$this->createUrl($strBaseUri, $arrUrlParam);
         $this -> renderPartial('wmoney', array('package' => $signPackage, 'shareurl' => $strshareUrl));
     }
-
+//    出租审核
+    public function actionShenhe(){
+        $this -> renderPartial('shenhe');
+    }
+    //    我的消息
+    public function actionMessage(){
+        $this -> renderPartial('message');
+    }
+    //    我的消息详情
+//    public function actionMessagedetail(){
+//        $this -> renderPartial('messagedetail');
+//    }
+//消息详情展示
+    public function showDetail(){
+    $id=$_POST['id'];
+    $msgModel=Message::model();
+    $msgInfo=$msgModel->findByPk($id);
+    $msgInfo->read_time=time();
+    $ar=new AjaxReturn();
+    $ar->status=$msgInfo->save();
+    echo json_encode($msgInfo->msgDetail);
+//    $this->renderPartial('message',array('msgInfo'=>$msgInfo));
+}
 }
