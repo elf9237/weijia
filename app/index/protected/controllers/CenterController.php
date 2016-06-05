@@ -43,5 +43,8 @@ class CenterController extends Controller{
     public function actionWmoney(){
         $this -> renderPartial('wmoney');
     }
-
+//    出租审核
+    public function actionShenhe(){
+        $this -> renderPartial('shenhe');
+    }
 }
