@@ -64,6 +64,7 @@ class AjaxController extends BaseController {
          echo json_encode($ar);
          
      }
+    
      public function actionDelMess(){
          $id=$_POST['ids'];
          $messModel=  Message::model();

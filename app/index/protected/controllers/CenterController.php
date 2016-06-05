@@ -49,6 +49,7 @@ class CenterController extends BaseController{
     }
     //    我的消息
     public function actionMessage(){
+
         $this -> renderPartial('message');
     }
     //    我的消息详情
@@ -56,14 +57,21 @@ class CenterController extends BaseController{
 //        $this -> renderPartial('messagedetail');
 //    }
 //消息详情展示
-    public function showDetail(){
-    $id=$_POST['id'];
-    $msgModel=Message::model();
-    $msgInfo=$msgModel->findByPk($id);
-    $msgInfo->read_time=time();
-    $ar=new AjaxReturn();
-    $ar->status=$msgInfo->save();
-    echo json_encode($msgInfo->msgDetail);
-//    $this->renderPartial('message',array('msgInfo'=>$msgInfo));
-}
+    public function actionShowdetail(){
+        $id=$_POST['id'];
+        $sql="select t.* from cy_message t where t.id=".$id ." ";
+
+        $pagelist=new PageList($sql, 1, 1);
+
+        echo json_encode($pagelist->pageAjax);
+       /* $msgModel=Message::model();
+        $msgInfo=$msgModel->findByPk($id);
+        $msgInfo->read_time=time();
+        $ar=new AjaxReturn();
+        $ar->status=$msgInfo->save();
+        $ar->params=array('msginfo'=>$msgInfo->message);
+        echo json_encode($ar);*/
+
+
+    }
 }

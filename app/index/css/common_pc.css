@@ -3108,26 +3108,7 @@ body,html {
 	border: 0 none
 }
 
-.ui-dialog {
-	*zoom: 1;
-	_float: left;
-	position: relative;
-	background: #efefef;
-	outline: 0;
-	background-clip: padding-box;
-	font-size: 14px;
-	line-height: 1.428571429;
-	color: #333;
-	opacity: 0;
-	-moz-transform: scale(0);
-	-ms-transform: scale(0);
-	-webkit-transform: scale(0);
-	transform: scale(0);
-	-moz-transition: -moz-transform .15s ease-in-out,opacity .15s ease-in-out;
-	-o-transition: -o-transform .15s ease-in-out,opacity .15s ease-in-out;
-	-webkit-transition: -webkit-transform .15s ease-in-out,opacity .15s ease-in-out;
-	transition: transform .15s ease-in-out,opacity .15s ease-in-out
-}
+
 
 .ui-popup-show .ui-dialog {
 	opacity: 1;
