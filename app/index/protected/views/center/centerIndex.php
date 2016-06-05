@@ -68,7 +68,7 @@
                 </dt>
                 <dd>
                     <!--  <a href="#"><i class="i-my-account"></i>我的账户</a> -->
-                    <a href="index.php?r=center/mytenant"><i class="i-my-account"></i>我的租客</a>
+                    <a href="index.php?r=center/mytenant"><i class="i-my-account"></i>提现记录</a>
                     <a href="index.php?r=center/mybroker"><i class="i-my-account"></i>我的佣金</a>
                 </dd>
             </dl>
