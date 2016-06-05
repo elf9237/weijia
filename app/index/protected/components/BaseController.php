@@ -67,7 +67,7 @@ class BaseController extends CController
 		$jsoninfo = json_decode($output, true);
 		$access_token = $jsoninfo["access_token"];
 		Yii::app()->cache->set('WxAccessToken', $access_token, 7000);
-		return $access_token;
+		return $access_token; 
 	}
 
 	public function getJsApiTicket(){
