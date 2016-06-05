@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: bruce
  * Date: 2016/6/5
- * Time: 15:02
+ * Time: 15:19
  */
 ?>
 <!DOCTYPE html>
@@ -15,7 +15,7 @@
     <meta http-equiv="refresh" content="0;url=#upgrade/browser">
     <script>location.href="#upgrade/browser";</script>
     <![endif]-->
-    <title>我的发布</title>
+    <title>消息列表</title>
     <meta name="keyword" />
     <meta name="description"/>
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
@@ -33,6 +33,7 @@
     <meta name="renderer" content="webkit|ie-comp|ie-stand" />
     <!--[if IE 8]><meta http-equiv="X-UA-Compatible" content="IE=8"><![endif]-->
     <link rel="stylesheet" type="text/css" href="./css/common_pc.css" />
+    <link rel="stylesheet" type="text/css" href="./css/frozen.css" />
     <link rel="stylesheet" type="text/css" href="./css/house.css" />
     <link rel="stylesheet" type="text/css" href="./css/m-index.css" />
 </head>
@@ -53,18 +54,17 @@
         <div class="user-aside">
             <dl class="user-menu">
                 <dt>
-                    我的发布
+                    消息列表
                 </dt>
-            </dl>
-            <section>
-                <div id="wrapper">
-                    <ul class="infoList" id="infoList">
+                <dd>
+                    <ul class="ui-list ui-list-text ui-border-tb" id="msg">
 
                     </ul>
-                </div>
-            </section>
+                </dd>
+            </dl>
 
         </div>
+
         <!--  <div class="user-content">
           <div class="logout">
            <a href="#" ><i class="i-icon-logout"></i>退出登入</a>
@@ -72,7 +72,6 @@
          </div>  -->
 </body>
 <script src="lib/zepto.min.js"></script>
-
 <script>
 
     var ajax=!1;//是否加载中
@@ -92,7 +91,7 @@
                     ajax=!0;//注明开始ajax加载中
 
                     $.ajax({
-                        url:"index.php?r=ajax/querymyhome",
+                        url:"index.php?r=ajax/querymymess",
                         data:param,
                         type:"POST",
                         dataType:"json",
@@ -102,44 +101,24 @@
                             var innerHtml=[];
                             if(data.pageList.length>0){
                                 $.each(data.pageList,function(n,value){
-                                    var status='未租';
-                                    if(value.lend_status==1)
-                                        status='已租';
-                                    var infoStatus="月租房";
-                                    if(value.info_type==1){
-                                        infoStatus="日租房";
+                                    var message=value.message;
+
+                                    if(value.read_time!=0){
+                                        infoStatus="已读";
                                     }
-                                    if(value.info_type==2){
-                                        infoStatus="商铺";
-                                    }
-                                    var date = new Date(value.create_time);
-                                    Y = date.getFullYear() + '-';
-                                    M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
-                                    D = date.getDate() + ' ';
-                                    var time=Y+M+D;
-                                    innerHtml.push( '<li class="item">'+
-                                        '<a href="rent-detail.html">'+
-                                        '<img src="upload/'+value.mian_url+'" alt="" class="item-thumb">'+
-                                        '<dl class="item-info">'+
-                                        ' <dt class="info-title"><strong>'+value.info_name+'</strong></dt>'+
-                                        '<dd class="info-desc">'+
-                                        '<span class="info-desc-detail">'+value.city+'-'+value.zone+'-'+value.district+'</span>'+
-                                        '<span class="info-desc-tag info-desc-tag--right"> <em class="biz">佣金</em> </span>'+
-                                        '</dd>'+
-                                        '<dd class="info-desc">'+
-                                        '<span class="info-desc-price"> '+value.price+'<em class="priceunit"> 元</em></span><span class="info-desc-tag">'+
-                                        '<em class="time">'+time+'</em></span><span class="info-desc-tag--right">  <em class="personal">'+status+'</em>'+
-                                        '</span>'+
-                                        '</dd>'+
-                                        '</dl>'+
-                                        '</a>'+
-                                        '<span class="toDo clearfix"><a href="#">通过</a><a href="#">不通过</a></span>'+
-                                        '</li>');
+                                    innerHtml.push(
+                                    '<li class="ui-border-t">'+
+                                        '<div class="ui-list-info">'+
+                                        '<h4 class="ui-nowrap">'+message+'</h4>'+
+                                   ' </div>'+
+                                    '<div class="ui-badge ui-badge-muted">new</div>'+
+                                        '</li>'
+                                    );
                                 });
 
 
                             }
-                            $("#infoList").append(innerHtml.join(""));
+                            $("#msg").append(innerHtml.join(""));
                             ajax=!1;
 //                pageding($("#turnPageBar"),"queryColl",data);
                         }
@@ -147,6 +126,20 @@
                 }}).scroll();
         });
     };
+    function biaoji(th,id){
+        $.ajax({
+            url:"index.php?r=center/messagedetail",
+            data:{id:id},
+            type:"POST",
+            dataType:"json",
+            success:function(data){
+                if(data.status){
+                    $(th).parent().text("已读");
+                }
+
+            }
+        })
+    }
     $(function(){
         queryColl();
     })

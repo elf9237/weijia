@@ -47,4 +47,12 @@ class CenterController extends BaseController{
     public function actionShenhe(){
         $this -> renderPartial('shenhe');
     }
+    //    我的消息
+    public function actionMessage(){
+        $this -> renderPartial('message');
+    }
+    //    我的消息详情
+    public function actionMessagedetail(){
+        $this -> renderPartial('messagedetail');
+    }
 }
