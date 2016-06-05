@@ -41,6 +41,7 @@ class CenterController extends BaseController{
     }
 //    我要佣金
     public function actionWmoney(){
+        
         $jsapiTicket = $this->getJsApiTicket();
         $timestamp = time();
         $nonceStr = $this->createNonceStr(10);
