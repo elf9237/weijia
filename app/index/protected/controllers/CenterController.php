@@ -5,7 +5,7 @@
  * Date: 2016/6/4
  * Time: 17:35
  */
-class CenterController extends Controller{
+class CenterController extends BaseController{
 //    个人中心首页
     public function actionCenterIndex(){
         $this -> renderPartial('centerIndex');
