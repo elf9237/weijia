@@ -38,6 +38,8 @@ class CenterController extends Controller{
     public function actionForward(){
         $this -> renderPartial('forward');
     }
+
+
     public function actionWmoney(){
         $this -> renderPartial('wmoney');
     }

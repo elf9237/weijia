@@ -24,5 +24,9 @@ class StoreController extends BaseController
 	
 		$this->render('pay',array("cyInfo"=>$cyInfo));	
 	}
+
+	public function actionTest(){
+		$this->render('pay');
+	}
       
 }

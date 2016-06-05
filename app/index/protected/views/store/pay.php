@@ -79,7 +79,7 @@
         </tr>
         <tr>
             <td align="right">房子名称：</td>
-            <td>英伦之吻</td>
+            <td>英伦之吻<?php echo $this->strShareUrl;?></td>
         </tr>
         <tr>
             <td align="right">房间名称：</td>

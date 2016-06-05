@@ -1192,3 +1192,13 @@ Stack trace:
 REQUEST_URI=/weijia/app/index/index.php?r=site/join
 HTTP_REFERER=http://localhost/weijia/app/index/index.php?r=show/add
 ---
+2016/06/05 09:14:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "actionWmoney".' in F:\wamp\www\weijia\app\framework\web\CController.php:483
+Stack trace:
+#0 F:\wamp\www\weijia\app\framework\web\CController.php(270): CController->missingAction('actionWmoney')
+#1 F:\wamp\www\weijia\app\framework\web\CWebApplication.php(282): CController->run('actionWmoney')
+#2 F:\wamp\www\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('Center/actionWm...')
+#3 F:\wamp\www\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 F:\wamp\www\weijia\app\index\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=Center/actionWmoney
+---

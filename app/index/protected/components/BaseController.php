@@ -5,6 +5,9 @@ class BaseController extends CController
 	public $layout=null;
 	public $wechat = true;
 
+	//分享链接
+	public $strShareUrl = '';
+
 //	public function beforeAction()
 //	{
 //		setWechat();
@@ -28,6 +31,37 @@ class BaseController extends CController
 //		$this->wechat = !(strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') == false);
 //		return  true;
             $this->wechat==true;
+
+		$this->strShareUrl = 'fdsfdsfds';
+	}
+
+	protected function getShareUrl(){
+
+	}
+
+	/**
+	 * 获取当前用户OpenId
+	 */
+	public function getOpenID(){
+		return '123';
+	}
+
+	/**
+	 * 获取当前用户ID
+	 */
+	public function getUserId(){
+		return 1;
+	}
+
+	/**
+	 * 从URL中获取父级用户ID
+	 */
+	public function getParentUserIdFromUrl(){
+
+	}
+
+	public function getaa(){
+
 	}
 
 	 
