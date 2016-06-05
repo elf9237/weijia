@@ -74,7 +74,7 @@
                 <img src="img/sumlist.png" width="100%">
             </div>
             <div class="ui-btn-wrap">
-    <button class="ui-btn-lg ui-btn-danger link-btn" data-href="./index.php?r=site/join">
+    <button class="ui-btn-lg ui-btn-danger link-btn" data-href="./index.php?r=agent/join">
         我要加盟
     </button>
 </div>
