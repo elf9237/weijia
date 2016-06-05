@@ -158,6 +158,7 @@ class AjaxController extends BaseController {
       $info->zone=$_POST['zone'];
       $info->audit_content="通过";
       $info->market="无";
+      $info->yong_jin=0;
      
       $isSuccess=$info->save();
      

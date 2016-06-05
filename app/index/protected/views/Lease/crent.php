@@ -79,7 +79,7 @@
                 <div class="notNullGroup"> 
                    <li class="_item priceNumber"><span class="nu_title">类别</span>
                         <div class="nu_itemtext">
-                            <span style="display:inline-block;margin-right: 10px;width:28%"><input type="radio" name="info_type" id="inlineRadio1" value="0" style="width:30%;appearance:radio;-webkit-appearance:radio;display: inline-block" > 月租房</span>
+                            <span checked="checked" style="display:inline-block;margin-right: 10px;width:28%"><input type="radio" name="info_type" id="inlineRadio1" value="0" style="width:30%;appearance:radio;-webkit-appearance:radio;display: inline-block" > 月租房</span>
                             <span style="display:inline-block;margin-right: 10px;width:28%"><input type="radio" name="info_type" id="inlineRadio2" value="1" style="width:30%;appearance:radio;-webkit-appearance:radio;display: inline-block"> 日租房</span>
                             <span style="display:inline-block;margin-right: 10px;width:28%"> <input type="radio" name="info_type" id="inlineRadio2" value="2" style="width:30%;appearance:radio;-webkit-appearance:radio;display: inline-block"> 商铺 </span>  
                         </div>
@@ -349,26 +349,27 @@
 
             <div class="post btnPost"><button class="btn_post" id="btn_post" onclick="queryMap()">发布</button></div>
         </section>
+        <div id="baidumap" style="display:none"></div>
 
-        <script src="lib/zepto.min.js"></script>
+<!--        <script src="lib/zepto.min.js"></script>
         <script src="js/frozen.js"></script>
-        <script src="js/house.js"></script>
+        <script src="js/house.js"></script>-->
           <script src="public/desktop/js/jquery.min.js"></script>
         <script type="text/javascript" src="public/desktop/js/skill/jquery.cityselect.js"></script>
  <link rel="stylesheet" type="text/css" href="public/desktop/diyUpload/css/webuploader.css">
 <link rel="stylesheet" type="text/css" href="public/desktop/diyUpload/css/diyUpload.css">
 <script type="text/javascript" src="public/desktop/diyUpload/js/webuploader.html5only.min.js"></script>
 <script type="text/javascript" src="public/desktop/diyUpload/js/diyUpload.js"></script>
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.3"></script>
  <script type="text/javascript" src="public/admin/scripts/layer/layer.js"></script>
         
         <script type="text/javascript">
   var map = new BMap.Map("baidumap");
 var localSearch = new BMap.LocalSearch(map);
 function searchlnlg(keyword){
-    alert(keyword);
+    
 localSearch.setSearchCompleteCallback(function (searchResult) {
-      alert(1);
+   
         var poi = searchResult.getPoi(0);
       
         if(poi==null){
@@ -377,6 +378,7 @@ localSearch.setSearchCompleteCallback(function (searchResult) {
         $("#map").val(poi.point.lng + "," + poi.point.lat);
     }
      submitmyhome();
+
        
     });
    var searchResult= localSearch.search(keyword.trim());
