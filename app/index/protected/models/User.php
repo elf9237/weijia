@@ -17,6 +17,7 @@
  * @property string $inviter
  * @property string $status
  * @property string $openid
+ * @property string $yue
  */
 class User extends CActiveRecord
 {
@@ -129,6 +130,7 @@ class User extends CActiveRecord
 		$criteria->compare('inviter',$this->inviter,true);
 		$criteria->compare('status',$this->status,true);
 		$criteria->compare('openid',$this->openid,true);
+                $criteria->compare('yue',$this->yue,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

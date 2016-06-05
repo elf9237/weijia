@@ -11,7 +11,7 @@
 <!--<![endif]-->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>个人中心</title>
+    <title>提现记录</title>
     <meta name="keyword" />
     <meta name="description"/>
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
@@ -51,13 +51,13 @@
     <div class="user-bd">
         <div class="user-aside">
             <dl class="user-menu">
-                <dt>
-                    我的租客
-                </dt>
+<!--                <dt>-->
+<!--                    提现记录-->
+<!--                </dt>-->
                 <div class="ui-tab">
                     <ul class="ui-tab-nav ui-border-b">
-                        <li class="current">全部</li>
-                        <li>已签约</li>
+                        <li class="current">全部提现记录</li>
+
                     </ul>
                     <ul class="ui-tab-content" style="width:300%">
                         <li class="current">
@@ -66,44 +66,23 @@
                                     <div class="ui-avatar-s">
                                         <span style="background-image:url(../img/ava1.png)"></span>
                                     </div>
-                                    <div class="ui-list-info ui-border-t"><h4><span class="fl">飞翔的企鹅</span> <span class="fr">2016-02-03 05:52</span></h4></div>
+                                    <div class="ui-list-info ui-border-t"><h4><span class="fl"><span class="red">300</span>元</span> <span class="fr">2016-02-03 05:52</span></h4></div>
                                 </li>
                                 <li>
                                     <div class="ui-avatar-s">
                                         <span style="background-image:url(../img/ava1.png)"></span>
                                     </div>
-                                    <div class="ui-list-info ui-border-t"><h4><span class="fl">飞翔的企鹅</span> <span class="fr">2016-02-03 05:52</span></h4></div>
+                                    <div class="ui-list-info ui-border-t"><h4><span class="fl"><span class="red">300</span>元</span> <span class="fr">2016-02-03 05:52</span></h4></div>
                                 </li>
                                 <li>
                                     <div class="ui-avatar-s">
                                         <span style="background-image:url(../img/ava1.png)"></span>
                                     </div>
-                                    <div class="ui-list-info ui-border-t"><h4><span class="fl">飞翔的企鹅</span> <span class="fr">2016-02-03 05:52</span></h4></div>
+                                    <div class="ui-list-info ui-border-t"><h4><span class="fl"><span class="red">300</span>元</span> <span class="fr">2016-02-03 05:52</span></h4></div>
                                 </li>
                             </ul>
                         </li>
-                        <li>
-                            <ul class="ui-list ui-border-b">
-                                <li>
-                                    <div class="ui-avatar-s">
-                                        <span style="background-image:url(../img/ava1.png)"></span>
-                                    </div>
-                                    <div class="ui-list-info ui-border-t"><h4><span class="fl">飞翔的企鹅</span> <span class="fr">2016-02-03 05:52</span></h4></div>
-                                </li>
-                                <li>
-                                    <div class="ui-avatar-s">
-                                        <span style="background-image:url(../img/ava1.png)"></span>
-                                    </div>
-                                    <div class="ui-list-info ui-border-t"><h4><span class="fl">飞翔的企鹅</span> <span class="fr">2016-02-03 05:52</span></h4></div>
-                                </li>
-                                <li>
-                                    <div class="ui-avatar-s">
-                                        <span style="background-image:url(../img/ava1.png)"></span>
-                                    </div>
-                                    <div class="ui-list-info ui-border-t"><h4><span class="fl">飞翔的企鹅</span> <span class="fr">2016-02-03 05:52</span></h4></div>
-                                </li>
-                            </ul>
-                        </li>
+
                     </ul>
                 </div>
 

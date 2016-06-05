@@ -700,3 +700,6 @@ em{color: #000;}
 .fl{float: left;}
 .fr{float: right;}
 .tiMoney{font-size: 20px;display: block;padding: 0 10px;text-align: center;}
+.infoList li.item span.toDo{display: inline-block;width: 100%;height: 20px;line-height: 20px;}
+.infoList li.item span a{display: inline-block;height: 10px;font-size: 14px;padding: 0px 30px 10px 0;float: right;color:#1d84ad;}
+.cl:after,.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}.cl,.clearfix{zoom:1}

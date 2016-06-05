@@ -87,7 +87,7 @@
 
         <div>
             <div><img id="updown" src="img/up.png" class="images"></div>
-            <div style="background-color:#fe2c55">
+            <div style="background-color:#FF7E00">
                 <div class="div-center">
                     <div style="height:20px"></div>
                     <div class="bzp_title" style="font-size:16px">奖励规则&nbsp;&nbsp;<font style="font-size:10px">INCENTIVE RULES</font></div>
@@ -141,7 +141,7 @@
                         </tbody></table>
                 </div>
             </div>
-            <div id="rulediv2" style="background-color:#fe2c55">
+            <div id="rulediv2" style="background-color:#FF7E00">
                 <img src="img/qrbzp2.png?v=1" class="images" style="padding-top:50px;padding-bottom:30px;">
             </div>
             <div class="div-center0">
@@ -150,7 +150,7 @@
                 <div style="position:absolute;bottom:0;"><img src="img/chulai2.png" class="images"></div>
             </div>
 
-            <div class="div-center0" style="background-color:#FE2C55">
+            <div class="div-center0" style="background-color:#FF7E00">
                 <div class="div-center0" style="font-size:18px;color:#fff;font-weight:bold;padding-top:40px;">
 
                     扫描微信二维码关注微家
@@ -162,9 +162,13 @@
                     <img src="img/weijia.jpg" class="images">
 
                 </div>
-                <div class="bzp_content" style="padding-top:16px;padding-bottom:100px;">
+                <div class="bzp_content" style="padding-top:16px;padding-bottom:50px;">
                     <div class="div-center0">
-
+                        <div class="ui-btn-wrap">
+                            <button class="ui-btn-lg ui-btn-danger" style="background: #eb0028;">
+                               获取专属链接
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="bzp_content" style="padding-bottom:10px;">
@@ -182,11 +186,40 @@
 <script>
     wx.config({
         debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
-        appId: 'wx10b693027f09c60e', // 必填，公众号的唯一标识
-        timestamp: '', // 必填，生成签名的时间戳
-        nonceStr: '', // 必填，生成签名的随机串
-        signature: '',// 必填，签名，见附录1
+        appId: '<?php echo $package['appId'] ?>', // 必填，公众号的唯一标识
+        timestamp: '<?php echo $package['timestamp'] ?>', // 必填，生成签名的时间戳
+        nonceStr: '<?php echo $package['nonceStr'] ?>', // 必填，生成签名的随机串
+        signature: '<?php echo $package['signature'] ?>',// 必填，签名，见附录1
         jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+    });
+    wx.ready(function(){
+        wx.onMenuShareAppMessage({
+            title: '人人都是包租婆', // 分享标题
+            desc: '没房也能收房租', // 分享描述
+            link: '<?php echo $shareurl ?>', // 分享链接
+            imgUrl: '', // 分享图标
+            type: 'link', // 分享类型,music、video或link，不填默认为link
+            dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+            success: function () {
+                // 用户确认分享后执行的回调函数
+
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+
+            }
+        });
+        wx.onMenuShareTimeline({
+            title: '人人都是包租婆', // 分享标题
+            link: '<?php echo $shareurl ?>', // 分享链接
+            imgUrl: '', // 分享图标
+            success: function () {
+                // 用户确认分享后执行的回调函数
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+            }
+        });
     });
 </script>
 

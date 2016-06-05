@@ -56,9 +56,6 @@
                     <a href="index.php?r=center/collect"><i class="i-my-order"></i>我的收藏</a>
                 </dd>
                 <dd>
-                    <a href="index.php?r=center/reverse"><i class="i-my-cunpon"></i>我的预定</a>
-                </dd>
-                <dd>
                     <a href="index.php?r=center/issue"><i class="i-my-address"></i>我的发布</a>
                 </dd>
                 <dd>
@@ -71,7 +68,7 @@
                 </dt>
                 <dd>
                     <!--  <a href="#"><i class="i-my-account"></i>我的账户</a> -->
-                    <a href="index.php?r=center/mytenant"><i class="i-my-account"></i>我的租客</a>
+                    <a href="index.php?r=center/mytenant"><i class="i-my-account"></i>提现记录</a>
                     <a href="index.php?r=center/mybroker"><i class="i-my-account"></i>我的佣金</a>
                 </dd>
             </dl>

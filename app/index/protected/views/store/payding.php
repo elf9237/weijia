@@ -79,18 +79,22 @@
         </tr>
         <tr>
             <td align="right">房子名称：</td>
-            <td><?php echo $cyInfo->info_name; ?></td>
+            <td>英伦之吻</td>
+        </tr>
+        <tr>
+            <td align="right">房间名称：</td>
+            <td>魅力</td>
         </tr>
         <tr>
             <td align="right">月租金(元)：</td>
-            <td id='yuezu'><?php echo $cyInfo->price; ?></td>
+            <td>2200</td>
         </tr>
         <tr>
             <td align="right">支付方式：</td>
             <td>
                 <select id="style" name="style" onchange="heji()">
                     <option value="y">月付</option>
-                    <option selected value="j">季付</option>
+                    <option selected="" value="j">季付</option>
                     <option value="b">半年付</option>
                     <option value="n">年付</option>
                 </select>
@@ -98,7 +102,7 @@
         </tr>
         <tr>
             <td align="right">押金(元)：</td>
-            <td id="yj"><?php echo $cyInfo->price*2; ?></td>
+            <td id="yj">2200</td>
         </tr>
         <tr>
             <td align="right">折扣(%)：</td>
@@ -125,36 +129,6 @@
 </section>
 <script src="lib/zepto.min.js"></script>
 <script src="js/frozen.js"></script>
-<script >
-function heji(){
-   var type= $("#style option:selected").val();
-   if(type=="y"){
-       $("#zk").text("100%");
-       $("#hj").text(parseFloat($("#yj").text())+$("#yuezu").text()*1);
-       
-   }
-    if(type=="j"){
-       $("#zk").text("98%");
-       $("#hj").text(parseFloat($("#yj").text())+$("#yuezu").text()*3*0.98);
-       
-   }
-    if(type=="b"){
-       $("#zk").text("95%");
-       $("#hj").text(parseFloat($("#yj").text())+$("#yuezu").text()*6*0.95);
-       
-   }
-    if(type=="n"){
-       $("#zk").text("90%");
-       $("#hj").text(parseFloat($("#yj").text())+$("#yuezu").text()*12*0.9);
-       
-   }
-    
-}
-$(function(){
-    heji();
-    
-})
-</script>
 
 </body>
 </html>

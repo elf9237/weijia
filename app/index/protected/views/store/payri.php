@@ -81,29 +81,28 @@
             <td align="right">房子名称：</td>
             <td><?php echo $cyInfo->info_name; ?></td>
         </tr>
+       
         <tr>
-            <td align="right">月租金(元)：</td>
-            <td id='yuezu'><?php echo $cyInfo->price; ?></td>
+            <td align="right">日租金(元)：</td>
+            <td id="yuezu"><?php echo $cyInfo->price; ?></td>
         </tr>
         <tr>
-            <td align="right">支付方式：</td>
+            <td align="right">租房天数：</td>
             <td>
-                <select id="style" name="style" onchange="heji()">
-                    <option value="y">月付</option>
-                    <option selected value="j">季付</option>
-                    <option value="b">半年付</option>
-                    <option value="n">年付</option>
+                <select id="tianshu" name="style" onchange="heji()">
+                    <option value="1">一天</option>
+                    <option selected="" value="2">二天</option>
+                    <option value="3">三天</option>
+                    <option value="4">四天</option>
+                    <option value="5">五天</option>
+                    <option value="7">一星期</option>
+                     <option value="30">一个月</option>
+                    
                 </select>
             </td>
         </tr>
-        <tr>
-            <td align="right">押金(元)：</td>
-            <td id="yj"><?php echo $cyInfo->price*2; ?></td>
-        </tr>
-        <tr>
-            <td align="right">折扣(%)：</td>
-            <td id="zk">100</td>
-        </tr>
+       
+        
         <tr>
             <td align="right">合计(元)：</td>
             <td id="hj">8800</td>
@@ -127,27 +126,8 @@
 <script src="js/frozen.js"></script>
 <script >
 function heji(){
-   var type= $("#style option:selected").val();
-   if(type=="y"){
-       $("#zk").text("100%");
-       $("#hj").text(parseFloat($("#yj").text())+$("#yuezu").text()*1);
-       
-   }
-    if(type=="j"){
-       $("#zk").text("98%");
-       $("#hj").text(parseFloat($("#yj").text())+$("#yuezu").text()*3*0.98);
-       
-   }
-    if(type=="b"){
-       $("#zk").text("95%");
-       $("#hj").text(parseFloat($("#yj").text())+$("#yuezu").text()*6*0.95);
-       
-   }
-    if(type=="n"){
-       $("#zk").text("90%");
-       $("#hj").text(parseFloat($("#yj").text())+$("#yuezu").text()*12*0.9);
-       
-   }
+   var type= $("#tianshu option:selected").val();
+  $("#hj").val(type*$("#yuezu").val());
     
 }
 $(function(){
@@ -155,6 +135,5 @@ $(function(){
     
 })
 </script>
-
 </body>
 </html>

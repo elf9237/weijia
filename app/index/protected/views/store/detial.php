@@ -466,12 +466,29 @@
              function zufang(){
                  var infoid="<?php echo $cyinfo->id;?>";
                  var userid="<?php echo $cyinfo->user_id;?>";
+                 var infoType="<?php echo $cyinfo->info_type;?>";
                  var userType="<?php echo $useinfo->type;?>";
                  if(userType=="1"||userType=="2"){
-                    
+                    $.ajax({
+                        url:"index.php?r=store/rentFang&infoid="+infoid,
+                        dataType:"json",
+                        type:"POST",
+                        success:function(data){
+                            if(data.status){
+                                alert("租房信息提交成功！");
+                            }else{
+                                alert("信息提交失败！");
+                                
+                            }
+                        }
+                        
+                    })
                  }else{
+                     if(infoType==1){
+                          window.location.href="index.php?r=store/toFuKuangRi&infoid="+infoid; 
+                     }else{
                     window.location.href="index.php?r=store/toFuKuang&infoid="+infoid; 
-                     
+                }
                  }
                  
              }

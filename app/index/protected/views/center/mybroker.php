@@ -58,12 +58,12 @@
             <dl class="user-menu">
                 <dd>
                     <section class="ui-container ui-center">
-                        <span class="tiMoney">您的佣金为100，可以申请申请提现</span>
+                        <span class="tiMoney">您的佣金为<span class="red">100</span> ，可以申请申请提现</span>
 
                     </section>
                     <div class="ui-btn-wrap">
                         <button class="ui-btn-lg ui-btn-primary">
-                            确定
+                            申请提现
                         </button>
                     </div>
                 </dd>

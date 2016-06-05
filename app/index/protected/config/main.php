@@ -44,6 +44,10 @@ return array(
             'assignmentTable' => 'authassignment',//��֤�Ȩ��ϵ 
 	   'connectionID'=>'db'
 ),
+		'cache'=>array(
+			'class'=>'system.caching.CFileCache',
+			'directoryLevel' => 2
+		),
 
 		// uncomment the following to enable URLs in path-format
 		/*
@@ -88,5 +92,5 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'webmaster@example.com',
-	),
+	)
 );

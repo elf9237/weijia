@@ -56,108 +56,13 @@
         <div class="user-aside">
             <dl class="user-menu">
                 <dt>
-                    我的收藏
+                    已租房子
                 </dt>
             </dl>
             <section>
                 <div id="wrapper">
-                    <ul class="infoList">
-                        <li class="item">
-                            <a href="rent-detail.html">
-                                <img src="img/01.jpg" alt="" class="item-thumb">
-                                <dl class="item-info">
-                                    <dt class="info-title"><strong>【YOU+国际青年社区】向空旷孤独的房间say goodby</strong></dt>
-                                    <dd class="info-desc">
-                                        <span class="info-desc-detail"><em>一室-宝龙广场</em>-菏泽小区32 </span>
-                                        <span class="info-desc-tag info-desc-tag--right"> <em class="biz">佣金</em> </span>
-                                    </dd>
+                    <ul class="infoList" id="infoList">
 
-                                    <dd class="info-desc">
-                                        <span class="info-desc-price"> 1500<em class="priceunit"> 元</em></span><span class="info-desc-tag"><em class="time">今天</em></span><span class="info-desc-tag--right">  <em class="personal">个人</em>    </span>
-                                    </dd>
-                                </dl>
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="rent-detail.html">
-                                <img src="img/01.jpg" alt="" class="item-thumb">
-                                <dl class="item-info">
-                                    <dt class="info-title"><strong>【YOU+国际青年社区】向空旷孤独的房间say goodby</strong></dt>
-                                    <dd class="info-desc">
-                                        <span class="info-desc-detail"><em>一室-宝龙广场</em>-菏泽小区32 </span>
-                                        <span class="info-desc-tag info-desc-tag--right"> <em class="biz">佣金</em> </span>
-                                    </dd>
-
-                                    <dd class="info-desc">
-                                        <span class="info-desc-price"> 1500<em class="priceunit"> 元</em></span><span class="info-desc-tag"><em class="time">今天</em></span><span class="info-desc-tag--right">  <em class="personal">个人</em>    </span>
-                                    </dd>
-                                </dl>
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="rent-detail.html">
-                                <img src="img/01.jpg" alt="" class="item-thumb">
-                                <dl class="item-info">
-                                    <dt class="info-title"><strong>【YOU+国际青年社区】向空旷孤独的房间say goodby</strong></dt>
-                                    <dd class="info-desc">
-                                        <span class="info-desc-detail"><em>一室-宝龙广场</em>-菏泽小区32 </span>
-                                        <span class="info-desc-tag info-desc-tag--right"> <em class="biz">置顶</em> </span>
-                                    </dd>
-
-                                    <dd class="info-desc">
-                                        <span class="info-desc-price"> 1500<em class="priceunit"> 元</em></span><span class="info-desc-tag"><em class="time">今天</em></span><span class="info-desc-tag--right">  <em class="personal">个人</em>    </span>
-                                    </dd>
-                                </dl>
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="rent-detail.html">
-                                <img src="img/01.jpg" alt="" class="item-thumb">
-                                <dl class="item-info">
-                                    <dt class="info-title"><strong>【YOU+国际青年社区】向空旷孤独的房间say goodby</strong></dt>
-                                    <dd class="info-desc">
-                                        <span class="info-desc-detail"><em>一室-宝龙广场</em>-菏泽小区32 </span>
-                                        <span class="info-desc-tag info-desc-tag--right"> <em class="biz">置顶</em> </span>
-                                    </dd>
-
-                                    <dd class="info-desc">
-                                        <span class="info-desc-price"> 1500<em class="priceunit"> 元</em></span><span class="info-desc-tag"><em class="time">今天</em></span><span class="info-desc-tag--right">  <em class="personal">个人</em>    </span>
-                                    </dd>
-                                </dl>
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="rent-detail.html">
-                                <img src="img/01.jpg" alt="" class="item-thumb">
-                                <dl class="item-info">
-                                    <dt class="info-title"><strong>【YOU+国际青年社区】向空旷孤独的房间say goodby</strong></dt>
-                                    <dd class="info-desc">
-                                        <span class="info-desc-detail"><em>一室-宝龙广场</em>-菏泽小区32 </span>
-                                        <span class="info-desc-tag info-desc-tag--right"> <em class="biz">置顶</em> </span>
-                                    </dd>
-
-                                    <dd class="info-desc">
-                                        <span class="info-desc-price"> 1500<em class="priceunit"> 元</em></span><span class="info-desc-tag"><em class="time">今天</em></span><span class="info-desc-tag--right">  <em class="personal">个人</em>    </span>
-                                    </dd>
-                                </dl>
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="rent-detail.html">
-                                <img src="img/01.jpg" alt="" class="item-thumb">
-                                <dl class="item-info">
-                                    <dt class="info-title"><strong>【YOU+国际青年社区】向空旷孤独的房间say goodby</strong></dt>
-                                    <dd class="info-desc">
-                                        <span class="info-desc-detail"><em>一室-宝龙广场</em>-菏泽小区32 </span>
-                                        <span class="info-desc-tag info-desc-tag--right"> <em class="biz">置顶</em> </span>
-                                    </dd>
-
-                                    <dd class="info-desc">
-                                        <span class="info-desc-price"> 1500<em class="priceunit"> 元</em></span><span class="info-desc-tag"><em class="time">今天</em></span><span class="info-desc-tag--right">  <em class="personal">个人</em>    </span>
-                                    </dd>
-                                </dl>
-                            </a>
-                        </li>
                     </ul>
                 </div>
             </section>
@@ -168,4 +73,73 @@
            <a href="#" ><i class="i-icon-logout"></i>退出登入</a>
           </div>
          </div>  -->
-</body></html>
+</body>
+<script src="lib/zepto.min.js"></script>
+
+<script>
+
+    var ajax=!1;//是否加载中
+    var param={
+
+        page:0,
+        totalPage:1,
+    };
+    function queryColl(){
+
+        Zepto(function($){
+            $(window).scroll(function(){
+                if(($(window).scrollTop() + $(window).height() > $(document).height()-30) && !ajax && param.totalPage >= param.page){
+                    //滚动条拉到离底40像素内，而且没ajax中，而且没超过总页数
+                    //json_ajax(cla,++page);
+                    param.page++;//当前页增加1
+                    ajax=!0;//注明开始ajax加载中
+
+                    $.ajax({
+                        url:"index.php?r=ajax/querymyhome",
+                        data:param,
+                        type:"POST",
+                        dataType:"json",
+                        success:function(data){
+                            param.totalPage=data.totaPage;//更新总页数
+                            param.page=data.currentPage;//更新当前页（js不太可靠）
+                            var innerHtml=[];
+                            if(data.pageList.length>0){
+                                $.each(data.pageList,function(n,value){
+                                    var date = new Date(value.create_time);
+                                    Y = date.getFullYear() + '-';
+                                    M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+                                    D = date.getDate() + ' ';
+                                    var time=Y+M+D;
+                                    innerHtml.push( '<li class="item">'+
+                                        '<a href="rent-detail.html">'+
+                                        '<img src="upload/'+value.mian_url+'" alt="" class="item-thumb">'+
+                                        '<dl class="item-info">'+
+                                        ' <dt class="info-title"><strong>'+value.info_name+'</strong></dt>'+
+                                        '<dd class="info-desc">'+
+                                        '<span class="info-desc-detail">'+value.city+'-'+value.zone+'-'+value.district+'</span>'+
+                                        '</dd>'+
+                                        '<dd class="info-desc">'+
+                                        '<span class="info-desc-price"> '+value.price+'<em class="priceunit"> 元</em></span><span class="info-desc-tag">'+
+                                        '<em class="time">'+time+'</em></span><span class="info-desc-tag--right">  <em class="personal">个人</em>'+
+                                        '</span>'+
+                                        '</dd>'+
+                                        '</dl>'+
+                                        '</a>'+
+                                        '</li>');
+                                });
+
+
+                            }
+                            $("#infoList").append(innerHtml.join(""));
+                            ajax=!1;
+//                pageding($("#turnPageBar"),"queryColl",data);
+                        }
+                    })
+                }}).scroll();
+        });
+    };
+    $(function(){
+        queryColl();
+    })
+</script>
+</html>
