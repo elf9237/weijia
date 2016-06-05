@@ -56,7 +56,7 @@
         <div class="user-aside">
             <dl class="user-menu">
                 <dt>
-                    我的收藏
+                    已租房子
                 </dt>
             </dl>
             <section>
@@ -95,7 +95,7 @@
                     ajax=!0;//注明开始ajax加载中
 
                     $.ajax({
-                        url:"index.php?r=ajax/querycoll",
+                        url:"index.php?r=ajax/querymyhome",
                         data:param,
                         type:"POST",
                         dataType:"json",
@@ -105,6 +105,11 @@
                             var innerHtml=[];
                             if(data.pageList.length>0){
                                 $.each(data.pageList,function(n,value){
+                                    var date = new Date(value.create_time);
+                                    Y = date.getFullYear() + '-';
+                                    M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+                                    D = date.getDate() + ' ';
+                                    var time=Y+M+D;
                                     innerHtml.push( '<li class="item">'+
                                         '<a href="rent-detail.html">'+
                                         '<img src="upload/'+value.mian_url+'" alt="" class="item-thumb">'+
@@ -115,7 +120,7 @@
                                         '</dd>'+
                                         '<dd class="info-desc">'+
                                         '<span class="info-desc-price"> '+value.price+'<em class="priceunit"> 元</em></span><span class="info-desc-tag">'+
-                                        '<em class="time">今天</em></span><span class="info-desc-tag--right">  <em class="personal">个人</em>'+
+                                        '<em class="time">'+time+'</em></span><span class="info-desc-tag--right">  <em class="personal">个人</em>'+
                                         '</span>'+
                                         '</dd>'+
                                         '</dl>'+

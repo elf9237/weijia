@@ -101,6 +101,11 @@
                 var innerHtml=[];
                 if(data.pageList.length>0){
                     $.each(data.pageList,function(n,value){
+                        var date = new Date(value.create_time);
+                        Y = date.getFullYear() + '-';
+                        M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+                        D = date.getDate() + ' ';
+                        var time=Y+M+D;
                         innerHtml.push( '<li class="item">'+
                            '<a href="rent-detail.html">'+
                             '<img src="upload/'+value.mian_url+'" alt="" class="item-thumb">'+
@@ -111,7 +116,7 @@
                             '</dd>'+
                             '<dd class="info-desc">'+
                             '<span class="info-desc-price"> '+value.price+'<em class="priceunit"> 元</em></span><span class="info-desc-tag">'+
-                            '<em class="time">今天</em></span><span class="info-desc-tag--right">  <em class="personal">个人</em>'+
+                            '<em class="time">'+time+'</em></span><span class="info-desc-tag--right">  <em class="personal">个人</em>'+
                             '</span>'+
                             '</dd>'+
                             '</dl>'+

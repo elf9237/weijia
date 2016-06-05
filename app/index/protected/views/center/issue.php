@@ -59,7 +59,7 @@
             <section>
                 <div id="wrapper">
                     <ul class="infoList" id="infoList">
-                        
+
                     </ul>
                 </div>
             </section>
@@ -92,7 +92,7 @@
                     ajax=!0;//注明开始ajax加载中
 
                     $.ajax({
-                        url:"index.php?r=ajax/querycoll",
+                        url:"index.php?r=ajax/querymyhome",
                         data:param,
                         type:"POST",
                         dataType:"json",
@@ -102,6 +102,21 @@
                             var innerHtml=[];
                             if(data.pageList.length>0){
                                 $.each(data.pageList,function(n,value){
+                                    var status='未租';
+                                    if(value.lend_status==1)
+                                        status='已租';
+                                    var infoStatus="月租房";
+                                    if(value.info_type==1){
+                                        infoStatus="日租房";
+                                    }
+                                    if(value.info_type==2){
+                                        infoStatus="商铺";
+                                    }
+                                    var date = new Date(value.create_time);
+                                    Y = date.getFullYear() + '-';
+                                    M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+                                    D = date.getDate() + ' ';
+                                    var time=Y+M+D;
                                     innerHtml.push( '<li class="item">'+
                                         '<a href="rent-detail.html">'+
                                         '<img src="upload/'+value.mian_url+'" alt="" class="item-thumb">'+
@@ -113,7 +128,7 @@
                                         '</dd>'+
                                         '<dd class="info-desc">'+
                                         '<span class="info-desc-price"> '+value.price+'<em class="priceunit"> 元</em></span><span class="info-desc-tag">'+
-                                        '<em class="time">今天</em></span><span class="info-desc-tag--right">  <em class="personal">个人</em>'+
+                                        '<em class="time">'+time+'</em></span><span class="info-desc-tag--right">  <em class="personal">'+status+'</em>'+
                                         '</span>'+
                                         '</dd>'+
                                         '</dl>'+
