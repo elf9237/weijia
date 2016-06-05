@@ -18,9 +18,9 @@ class BaseController extends CController
 //		}
 //		$name.=  $this->getId().'/'. $this->getAction()->id;  
 //		if(Yii::app()->user->isGuest){
-//			echo '未登录';
+//			echo '未登�?;
 //		}elseif(!Yii::app()->user->checkAccess($name)){
-//			echo '无权限';
+//			echo '无权�?;
 //		}else{
 //			return true;
 //		}
@@ -108,7 +108,7 @@ class BaseController extends CController
 		}
 		$arrTrans = array_change_key_case(array_filter($arrInput, function($arrInput){return $arrInput !== '';}), CASE_LOWER);
 		$strTrans = '';
-		// 按key值升序排序
+		// 按key值升序排�?
 		if (ksort($arrTrans)) {
 			foreach ($arrTrans as $key => $value) {
 				if ($key == 'sign') {
@@ -126,9 +126,14 @@ class BaseController extends CController
 	 * @param array $arrParam
 	 * @return int
 	 */
-	public function getUserIdByShareUrl($arrParam = []){
+	public function getUserIdByShareUrl($arrParam = array()){
 		if(empty($arrParam)){
-			$arrParam = $_GET;
+			$arrParam = array(
+				'r' => $_GET['r'],
+				'timestamp' => $_GET['timestamp'],
+				'pid' => $_GET['pid'],
+				'sign' => $_GET['sign']
+			);
 		}
 
 		$sign = $this->getAuthSignStr($arrParam);
