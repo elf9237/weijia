@@ -62,7 +62,9 @@
                     </ul>
                 </dd>
             </dl>
+            <div class="ui-dialog" id="msgDetail">
 
+            </div>
         </div>
 
         <!--  <div class="user-content">
@@ -102,16 +104,18 @@
                             if(data.pageList.length>0){
                                 $.each(data.pageList,function(n,value){
                                     var message=value.message;
-
+                                    var infoStatus='new';
+                                    var yifuClass="ui-badge";
                                     if(value.read_time!=0){
                                         infoStatus="已读";
+                                        yifuClass='ui-badge-muted'
                                     }
                                     innerHtml.push(
                                     '<li class="ui-border-t">'+
-                                        '<div class="ui-list-info">'+
+                                        '<div class="ui-list-info" onclick="showDetail('+value.id+')">'+
                                         '<h4 class="ui-nowrap">'+message+'</h4>'+
                                    ' </div>'+
-                                    '<div class="ui-badge ui-badge-muted">new</div>'+
+                                    '<div class="'+yifuClass+'" id="readStade" onclick="biaoji(this,'+value.id+')">'+infoStatus+'</div>'+
                                         '</li>'
                                     );
                                 });
@@ -128,15 +132,51 @@
     };
     function biaoji(th,id){
         $.ajax({
-            url:"index.php?r=center/messagedetail",
+            url:"index.php?r=ajax/biaoji/",
             data:{id:id},
             type:"POST",
             dataType:"json",
             success:function(data){
                 if(data.status){
-                    $(th).parent().text("已读");
+                    $(th).text("已读");
+                    $(th).addClass('ui-badge-muted').removeClass('ui-badge');
                 }
-
+            }
+        })
+    }
+    function showDetail(id) {
+        $.ajax({
+            url:"index.php?r=center/showDetail/",
+            data:{id:id},
+            type:"POST",
+            dataType:"json",
+            success:function(data){
+                var innerHtml=[];
+                if(data.msgDetail.length>0){
+                    var status='系统消息';
+                    var value=data.msgDetail;
+                    var message=value.message;
+                    if(value.message_type==0){
+                        status='预约消息';
+                        message="我对你发布的--"+value.info_name+"感兴趣--"+message;
+                    }
+                    innerHtml.push('<div class="ui-dialog-cnt">'+
+                        '<header class="ui-dialog-hd ui-border-b">'+
+                        '<h3>消息详情</h3>'+
+                        '<i class="ui-dialog-close" data-role="button"></i>'+
+                        '</header>'+
+                        '<div class="ui-dialog-bd">'+
+                        '<h4>'+status+'</h4>'+
+                        '<div>'+message+'</div>'+
+                        '</div>'+
+                        '<div class="ui-dialog-ft">'+
+                        '<button type="button" data-role="button">取消</button>'+
+                        '<button type="button" data-role="button">确定</button>'+
+                        '</div>'+
+                        '</div>');
+                    $(".ui-dialog").dialog("show");
+                    $("#msgDetail").append(innerHtml.join(""));
+                }
             }
         })
     }

@@ -52,7 +52,18 @@ class CenterController extends BaseController{
         $this -> renderPartial('message');
     }
     //    我的消息详情
-    public function actionMessagedetail(){
-        $this -> renderPartial('messagedetail');
-    }
+//    public function actionMessagedetail(){
+//        $this -> renderPartial('messagedetail');
+//    }
+//消息详情展示
+    public function showDetail(){
+    $id=$_POST['id'];
+    $msgModel=Message::model();
+    $msgInfo=$msgModel->findByPk($id);
+    $msgInfo->read_time=time();
+    $ar=new AjaxReturn();
+    $ar->status=$msgInfo->save();
+    echo json_encode($msgInfo->msgDetail);
+//    $this->renderPartial('message',array('msgInfo'=>$msgInfo));
+}
 }
