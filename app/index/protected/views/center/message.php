@@ -54,6 +54,7 @@
         <div class="user-aside">
             <dl class="user-menu">
                 <dt>
+
                     消息列表
                 </dt>
                 <dd>
@@ -63,8 +64,8 @@
                 </dd>
             </dl>
 
-            <div class="ui-dialog" id="msgDetail">
-            </div>
+<!--            <div class="ui-dialog" id="msgDetail">-->
+<!--            </div>-->
 
         </div>
 
@@ -76,6 +77,7 @@
 </body>
 <script src="lib/zepto.min.js"></script>
 <script src="js/frozen.js"></script>
+<script src="lib/layer/layer.js"></script>
 <script>
 
     var ajax=!1;//是否加载中
@@ -162,21 +164,12 @@
                     if(value.message_type==0){
                         status='预约消息';
                     }
-                    innerHtml.push( '<div class="ui-dialog-cnt">'+
-                       '<div class="ui-dialog-bd">'+
-                        '<div>'+
-                        '<h4>'+status+'</h4>'+
-                        '<div>'+message+'</div></div>'+
-                        '</div>'+
-                        '<div class="ui-dialog-ft ui-btn-group">'+
-                        '<button type="button" data-role="dismiss"  class="select">关闭</button>'+
-                        '</div>'+
-                       ' </div>');
-                    $("#msgDetail").append(innerHtml.join(""));
-                    var dia2=$(".ui-dialog").dialog("show");
-                    dia2.on("dialog:action",function(e){
-                        console.log(e.index)
+                    layer.open({
+                        title:status,
+                        content:message
                     });
+                    $(th).siblings().text("已读");
+                    $(th).siblings().addClass('ui-badge-muted').removeClass('ui-badge');
                     biaoji(th,id);
                 }
             }
@@ -184,6 +177,7 @@
     }
     $(function(){
         queryColl();
-    })
+    });
+
 </script>
 </html>

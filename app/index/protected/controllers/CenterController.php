@@ -88,18 +88,13 @@ class CenterController extends BaseController{
     public function actionShowdetail(){
         $id=$_POST['id'];
         $sql="select t.* from cy_message t where t.id=".$id ." ";
-
         $pagelist=new PageList($sql, 1, 1);
-
         echo json_encode($pagelist->pageAjax);
-       /* $msgModel=Message::model();
-        $msgInfo=$msgModel->findByPk($id);
-        $msgInfo->read_time=time();
-        $ar=new AjaxReturn();
-        $ar->status=$msgInfo->save();
-        $ar->params=array('msginfo'=>$msgInfo->message);
-        echo json_encode($ar);*/
-
-
+    }
+    public function actionCheck(){
+        $id=$_POST['id'];
+        $sql="select t.* from cy_info t where t.id=".$id ." ";
+        $pagelist=new PageList($sql, 1, 1);
+        echo json_encode($pagelist->pageAjax);
     }
 }

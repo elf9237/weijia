@@ -53,7 +53,7 @@
         <div class="user-aside">
             <dl class="user-menu">
                 <dt>
-                    我的发布
+                    审核房源
                 </dt>
             </dl>
             <section>
@@ -72,7 +72,7 @@
          </div>  -->
 </body>
 <script src="lib/zepto.min.js"></script>
-
+<script src="lib/layer/layer.js"></script>
 <script>
 
     var ajax=!1;//是否加载中
@@ -132,12 +132,16 @@
                                         '</span>'+
                                         '</dd>'+
                                         '</dl>'+
-                                        '</a>'+
-                                        '<span class="toDo clearfix"><a href="#">通过</a><a href="#">不通过</a></span>'+
-                                        '</li>');
+                                        '</a>');
+                                    if(value.lend_type==0){
+                                        innerHtml.push( '<span class="toDo clearfix"><a href="#"  onclick="check(this,'+value.id+')">通过</a><a href="#" class="checkFaile">不通过</a></span>')
+                                    }else if(value.lend_type==1){
+                                        innerHtml.push('<span class="toDo clearfix"><span>审核通过</span></span>');
+                                    }else{
+                                        innerHtml.push('<span class="toDo clearfix"><span class="checkFaile checkStade">审核不通过</span></span>');
+                                    }
+                                    innerHtml.push('</li>');
                                 });
-
-
                             }
                             $("#infoList").append(innerHtml.join(""));
                             ajax=!1;
@@ -147,6 +151,30 @@
                 }}).scroll();
         });
     };
+    function check(th,id){
+        $.ajax({
+            url:"index.php?r=center/check",
+            data:{id:id},
+            type:'POST',
+            dataType:'json',
+            success:function(data){
+                if(data.pageList.length>0){
+                    var value=data.pageList[0];
+                    layer.open({
+                        content: '审核通过？',
+                        btn: ['确认', '取消'],
+                        shadeClose: true,
+                        yes: function(){
+                            layer.open({content: '该房源通过审核', time: 1});
+                            $(th).parent('.toDo').empty().text(value.audit_content);
+                        }, no: function(){
+                            layer.open({content: '该房源未通过审核', time: 1});
+                        }
+                    });
+                }
+            }
+        });
+    }
     $(function(){
         queryColl();
     })
