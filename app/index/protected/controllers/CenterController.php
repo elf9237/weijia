@@ -41,7 +41,35 @@ class CenterController extends BaseController{
     }
 //    我要佣金
     public function actionWmoney(){
-        $this -> renderPartial('wmoney');
+        
+        $jsapiTicket = $this->getJsApiTicket();
+        $timestamp = time();
+        $nonceStr = $this->createNonceStr(10);
+        $url = Yii::app()->request->hostInfo.Yii::app()->request->getUrl();
+
+        $string = "jsapi_ticket=$jsapiTicket&noncestr=$nonceStr&timestamp=$timestamp&url=$url";
+
+        $signature = sha1($string);
+
+        $signPackage = array(
+            "appId"     => 'wx10b693027f09c60e',
+            "nonceStr"  => $nonceStr,
+            "timestamp" => $timestamp,
+            "url"       => $url,
+            "signature" => $signature
+        );
+
+        $nUid = $this->getUserId();
+        $strBaseUri = 'Center/wmoney';
+        $securityManager = Yii::app()->getSecurityManager();
+        $arrUrlParam = array(
+            'r' => $strBaseUri,
+            'timestamp' => time(),
+            'pid' => base64_encode($securityManager->encrypt($nUid, $this->key)),
+        );
+        $arrUrlParam['sign'] = $this->getAuthSignStr($arrUrlParam);
+        $strshareUrl = Yii::app()->request->hostInfo.$this->createUrl($strBaseUri, $arrUrlParam);
+        $this -> renderPartial('wmoney', array('package' => $signPackage, 'shareurl' => $strshareUrl));
     }
 //    出租审核
     public function actionShenhe(){

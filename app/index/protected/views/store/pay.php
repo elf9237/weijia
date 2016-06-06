@@ -81,7 +81,6 @@
             <td align="right">房子名称：</td>
             <td><?php echo $cyInfo->info_name; ?></td>
         </tr>
-       >
         <tr>
             <td align="right">月租金(元)：</td>
             <td id='yuezu'><?php echo $cyInfo->price; ?></td>
