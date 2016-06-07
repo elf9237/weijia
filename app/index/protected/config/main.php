@@ -36,16 +36,16 @@ return array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
 		),
-		'authManager' => array(
-	   'class' => 'CDbAuthManager',
-	   'defaultRoles'=>array('guest'),//Ĭ�Ͻ�ɫ 
-            'itemTable' => 'authitem',//��֤������ 
-            'itemChildTable' => 'authitemchild',//��֤��ӹ�ϵ 
-            'assignmentTable' => 'authassignment',//��֤�Ȩ��ϵ 
-	   'connectionID'=>'db'
-),
+        'authManager' => array(
+            'class' => 'CDbAuthManager',
+            'defaultRoles'=>array('guest'),//Ĭ�Ͻ�ɫ
+            'itemTable' => 'authitem',//��֤������
+            'itemChildTable' => 'authitemchild',//��֤��ӹ�ϵ
+            'assignmentTable' => 'authassignment',//��֤�Ȩ��ϵ
+            'connectionID'=>'db'
+        ),
 
-		// uncomment the following to enable URLs in path-format
+        // uncomment the following to enable URLs in path-format
 		/*
 		'urlManager'=>array(
 			'urlFormat'=>'path',
