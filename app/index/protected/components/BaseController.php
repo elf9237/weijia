@@ -40,7 +40,7 @@ class BaseController extends CController
 
 	}
 
-    public function getOpenid()
+    public function getOpenID()
     {
         $session = Yii::app()->session;
         $openid = $session['openid'];
@@ -187,14 +187,6 @@ class BaseController extends CController
         }
         return  $data;
     }
-
-
-	/**
-	 * 获取当前用户OpenId
-	 */
-	public function getOpenID(){
-		return '123';
-	}
 
 	/**
 	 * 获取当前用户ID
