@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
         <meta name="format-detection" content="telephone=no">
-        <title>包租婆</title>
+        <title>微家</title>
         <link rel="stylesheet" href="css/frozen.css">
         <link href="public/css/iSlider.css" rel="stylesheet">
         <link href="css/house.css" rel="stylesheet">

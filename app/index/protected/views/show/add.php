@@ -59,7 +59,7 @@
            <ul class="ui-tiled ui-border-t">
                 <li data-href="shopstore.html" class="ui-border-r ui-rentflow"><div>商铺出租</div></li>
                 <li data-href="add.html" class="ui-border-r ui-joinflow"><div>加盟流程</div></li>
-                <li data-href="bzp.html" class="ui-bzpo"><div>包租婆</div></li>
+                <li data-href="add.html" class="ui-bzpo"><div>加盟</div></li>
             </ul>
         </header>
         <footer id="foot" class="ui-footer ui-footer-btn ui-footer-new">
@@ -74,7 +74,7 @@
                 <img src="img/sumlist.png" width="100%">
             </div>
             <div class="ui-btn-wrap">
-    <button class="ui-btn-lg ui-btn-danger link-btn" data-href="./index.php?r=site/join">
+    <button class="ui-btn-lg ui-btn-danger link-btn" data-href="./index.php?r=agent/join">
         我要加盟
     </button>
 </div>

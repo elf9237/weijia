@@ -1,5 +1,5 @@
 /**
- * µØÇøÁª¶¯
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  * */
 function getProvinceBuy(){
 $(".filter-wrap .dqld_div").remove();
@@ -60,5 +60,11 @@ function getallArea(val,val1,val2){
 	var allarea=area[val2].NAME;
 	$("#shengshi").attr({"SS":province[val].NAME,"SQ":city[val1].NAME,"XS":area[val2].NAME});
 	$("#shengshi").val(allarea);
+        param.prov=province[val].NAME;
+        param.city=city[val1].NAME;
+        param.dist=area[val2].NAME;
+        param.page=0;
+        param.totalPage=1;
+        querySecond();
 	$(".filter-wrap .dqld_div").remove();
 }

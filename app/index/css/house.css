@@ -21,8 +21,8 @@ html{font-size: 42px;}
 .list_filter{width: 100%;height: 1.25rem;}
 .nav_filter{position: relative;z-index: 1000;width: 100%;display: -webkit-box;display: -webkit-flex;display: flex;background: #FFF;border-bottom: 1px solid #f3f3f3;height: 1.25rem;line-height: 1.25rem;-webkit-user-select: none;}
 .nav_filter .nav-name{width: 25%;-webkit-box-flex: 1;-webkit-flex: 1;flex: 1;position: inherit;text-align: center;}
-.nav_filter .nav-name a{display: inline-block;width: 1.34375rem;-o-text-overflow: ellipsis;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;-webkit-user-select: none;margin-left: -.65625rem;}
-.address_input1{display: inline-block;width: 1.34375rem;-webkit-user-select: none;border: 0 none;text-align: center;}
+.nav_filter .nav-name a{display: inline-block;width: 1.34375rem;-o-text-overflow: ellipsis;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;-webkit-user-select: none;margin-left: -.65625rem;color:#BFBABA;}
+.address_input1{display: inline-block;width: 1.34375rem;-webkit-user-select: none;border: 0 none;text-align: center;color: #e5e5e5;}
 
 
 .ad-banner{ background-color: #fff;border: 1px solid #f3f3f3;}
@@ -33,7 +33,7 @@ html{font-size: 42px;}
 .infoList{display: block;width: 100%;background: #fff;}
 .infoList li.item{border-top: 1px solid #f3f3f3;}
 .infoList li.item:first-child{border-top: 0px;}
-.infoList li.item a{height: 2.5rem;padding: .3rem .5rem;display: flex;}
+.infoList li.item a{height: 2rem;padding: .3rem .5rem;display: flex;}
 .item a .item-thumb{width: 2.8rem;height: 2.1rem;border: 0;}
 .item a .item-info{flex:1;padding-left: .3rem;}
 .info-title{height: 1.125rem;line-height: .5625rem;font-size: .40625rem;overflow: hidden;position: relative;top: -.0625rem;}
@@ -75,8 +75,6 @@ html{font-size: 42px;}
 .noborder{border: 0;}
 .link-text{padding-right: 20px;}
 .ng-scope{margin-bottom: 20px;margin-top: 10px;}
-
-
 
 /*我要出租*/
 .paytoptips {
@@ -693,3 +691,18 @@ input.roll {
 .ui-notice-success{background: #fff}
 .mt10{margin-top: 10px;}
 .rent-btn a{display: block;}
+.ui-border-r a,.ui-rentout a{color: #fff;}
+
+/*个人中心*/
+.my-nickname-txt{display: block;margin-bottom: 10px;}
+.red{color: red}
+em{color: #000;}
+.fl{float: left;}
+.fr{float: right;}
+.tiMoney{font-size: 20px;display: block;padding: 0 10px;text-align: center;}
+.infoList li.item span.toDo{display: inline-block;width: 100%;height: 20px;line-height: 20px;}
+.infoList li.item span a{display: inline-block;height: 10px;font-size: 14px;padding: 0px 30px 10px 0;float: right;color:#1d84ad;}
+.cl:after,.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}.cl,.clearfix{zoom:1}
+.ui-border-t{border-top:1px solid #e0e0e0;}
+
+.checkStade{font-size: 14px;color:red; float: right;padding:0px 30px 10px 0;}
