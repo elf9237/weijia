@@ -302,7 +302,7 @@ class BaseController extends CController
 	/**
 	 * 执行此函数，商家打款给用户
 	 * @param $strOpenId
-	 * @param $nAmount
+	 * @param $nAmount 打款金额（分）
 	 * @return bool
 	 */
 	public function doSharePay($strOpenId, $nAmount){
