@@ -108,7 +108,7 @@ class BaseController extends CController
 		}
 		$arrTrans = array_change_key_case(array_filter($arrInput, function($arrInput){return $arrInput !== '';}), CASE_LOWER);
 		$strTrans = '';
-		// 按key值升序排�?
+		// 按key值升序排序
 		if (ksort($arrTrans)) {
 			foreach ($arrTrans as $key => $value) {
 				if ($key == 'sign') {
@@ -149,6 +149,146 @@ class BaseController extends CController
 		$nPid = $securityManager->decrypt(base64_decode($arrParam['pid']), $this->key);
 		return (int)$nPid;
 	}
+
+	/**
+	 * 执行此函数，商家打款给用户
+	 * @param $strOpenId
+	 * @param $nAmount
+	 * @return bool
+	 */
+	public function doSharePay($strOpenId, $nAmount){
+		$arrPayParams = array(
+			'mch_appid' => 'wx10b693027f09c60e',
+			'mchid' => '1340986601',
+			'nonce_str' => $this->createNonceStr(32),
+			'partner_trade_no' => $this->build_order_no(),
+			'openid' => $strOpenId,
+			'check_name' => 'NO_CHECK',
+			'amount' => (int)$nAmount,
+			'desc' => '分享分红',
+			'spbill_create_ip' => gethostbyname($_SERVER['SERVER_NAME'])
+		);
+
+		$arrPayParams['sign'] = $this->getWxPaySign($arrPayParams);
+		$xmlParams = $this->toXml($arrPayParams);
+
+		$arrUrl = 'https://api.mch.weixin.qq.com/mmpaymkttransfers/promotion/transfers';
+		$arrRet = $this->postXmlCurl($xmlParams, $arrUrl, true);
+		if('SUCCESS' == $arrRet['return_code'] && 'SUCCESS' == $arrRet['result_code']){
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * 输出xml字符
+	 * @throws WxPayException
+	 **/
+	public function toXml($arrParams)
+	{
+		if(!is_array($arrParams)
+			|| count($arrParams) <= 0)
+		{
+			throw new Exception('数组数据异常！', 101);
+		}
+
+		$xml = "<xml>";
+		foreach ($arrParams as $key=>$val)
+		{
+			if (is_numeric($val)){
+				$xml.="<".$key.">".$val."</".$key.">";
+			}else{
+				$xml.="<".$key."><![CDATA[".$val."]]></".$key.">";
+			}
+		}
+		$xml.="</xml>";
+		return $xml;
+	}
+
+	protected function postXmlCurl($xml, $url, $useCert = false, $second = 30)
+	{
+		$ch = curl_init();
+		//设置超时
+		curl_setopt($ch, CURLOPT_TIMEOUT, $second);
+
+		//如果有配置代理这里就设置代理
+		/*if(WxPayConfig::CURL_PROXY_HOST != "0.0.0.0"
+			&& WxPayConfig::CURL_PROXY_PORT != 0){
+			curl_setopt($ch,CURLOPT_PROXY, WxPayConfig::CURL_PROXY_HOST);
+			curl_setopt($ch,CURLOPT_PROXYPORT, WxPayConfig::CURL_PROXY_PORT);
+		}*/
+		curl_setopt($ch,CURLOPT_URL, $url);
+		curl_setopt($ch,CURLOPT_SSL_VERIFYPEER,TRUE);
+		curl_setopt($ch,CURLOPT_SSL_VERIFYHOST,2);//严格校验
+		//设置header
+		curl_setopt($ch, CURLOPT_HEADER, FALSE);
+		//要求结果为字符串且输出到屏幕上
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+
+		if($useCert == true){
+			//设置证书
+			//使用证书：cert 与 key 分别属于两个.pem文件
+			curl_setopt($ch,CURLOPT_SSLCERTTYPE,'PEM');
+			curl_setopt($ch,CURLOPT_SSLCERT, '../cert/apiclient_cert.pem');
+			curl_setopt($ch,CURLOPT_SSLKEYTYPE,'PEM');
+			curl_setopt($ch,CURLOPT_SSLKEY, '../cert/apiclient_key.pem');
+		}
+		//post提交方式
+		curl_setopt($ch, CURLOPT_POST, TRUE);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $xml);
+		//运行curl
+		$data = curl_exec($ch);
+		//返回结果
+		if($data){
+			curl_close($ch);
+			//将XML转为array
+			//禁止引用外部xml实体
+			libxml_disable_entity_loader(true);
+			$arrRet = json_decode(json_encode(simplexml_load_string($data, 'SimpleXMLElement', LIBXML_NOCDATA)), true);
+			return $arrRet;
+		} else {
+			$error = curl_errno($ch);
+			curl_close($ch);
+			throw new Exception("curl出错，错误码:$error", 102);
+		}
+	}
+
+	public function build_order_no()
+	{
+		/* 选择一个随机的方案 */
+		mt_srand((double) microtime() * 1000000);
+
+		/* PHPALLY + 年月日 + 6位随机数 */
+		return 'WJ' . date('Ymd') . str_pad(mt_rand(1, 999999), 6, '0', STR_PAD_LEFT);
+	}
+
+	public function getWxPaySign($arrParams){
+		//签名步骤一：按字典序排序参数
+		ksort($arrParams);
+		$string = $this->ToUrlParams($arrParams);
+		//签名步骤二：在string后加入KEY
+		$string = $string . "&key=123";
+		//签名步骤三：MD5加密
+		$string = md5($string);
+		//签名步骤四：所有字符转为大写
+		$result = strtoupper($string);
+		return $result;
+	}
+
+	public function ToUrlParams($arrParams)
+	{
+		$buff = "";
+		foreach ($arrParams as $k => $v)
+		{
+			if($k != "sign" && $v != "" && !is_array($v)){
+				$buff .= $k . "=" . $v . "&";
+			}
+		}
+
+		$buff = trim($buff, "&");
+		return $buff;
+	}
+
 
 
 	 
