@@ -704,3 +704,5 @@ em{color: #000;}
 .infoList li.item span a{display: inline-block;height: 10px;font-size: 14px;padding: 0px 30px 10px 0;float: right;color:#1d84ad;}
 .cl:after,.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}.cl,.clearfix{zoom:1}
 .ui-border-t{border-top:1px solid #e0e0e0;}
+
+.checkStade{font-size: 14px;color:red; float: right;padding:0px 30px 10px 0;}

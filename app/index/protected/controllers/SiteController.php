@@ -30,9 +30,11 @@ class SiteController extends BaseController
             $cyinfoModel=  Info::model();
             $newInfos=$cyinfoModel->findAllBySql("select * from {{info}} order by create_time desc limit 10");
             $starInfos=$cyinfoModel->findAllBySql("select * from {{info}} order by create_time desc limit 5");
-            
+
+
 		if( $this->wechat){
 			$this->render('index');
+            //$this->render('desktop/index',array("starInfos"=>$starInfos,"newInfos"=>$newInfos));
 		}else{
 			$this->render('desktop/index',array("starInfos"=>$starInfos,"newInfos"=>$newInfos));
 		}
@@ -182,6 +184,7 @@ class SiteController extends BaseController
 		}
 	}
 	public function actionLoginUser(){
+
 		$model = new User("login");
 		if($_POST['User']){
 			$model->attributes = $_POST['User'];
@@ -214,12 +217,12 @@ class SiteController extends BaseController
 				$this->redirect('index.php?r=site/kanfangsave');
 			}
 		}
-                if( $this->wechat){
-                $this->render('kanfang',array('model'=>$model));
-                
-                }else{
-                    $this->render('yuyue');
-                }
+        if( $this->wechat){
+        $this->render('kanfang',array('model'=>$model));
+
+        }else{
+            $this->render('yuyue');
+        }
 	}
 	public function actionKanfangsave(){
 		$this->render('kanfangsave');

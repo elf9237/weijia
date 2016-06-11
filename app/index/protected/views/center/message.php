@@ -54,6 +54,7 @@
         <div class="user-aside">
             <dl class="user-menu">
                 <dt>
+
                     消息列表
                 </dt>
                 <dd>
@@ -62,9 +63,10 @@
                     </ul>
                 </dd>
             </dl>
-            <div class="ui-dialog" id="msgDetail">
 
-            </div>
+<!--            <div class="ui-dialog" id="msgDetail">-->
+<!--            </div>-->
+
         </div>
 
         <!--  <div class="user-content">
@@ -74,6 +76,8 @@
          </div>  -->
 </body>
 <script src="lib/zepto.min.js"></script>
+<script src="js/frozen.js"></script>
+<script src="lib/layer/layer.js"></script>
 <script>
 
     var ajax=!1;//是否加载中
@@ -112,7 +116,7 @@
                                     }
                                     innerHtml.push(
                                     '<li class="ui-border-t">'+
-                                        '<div class="ui-list-info" onclick="showDetail('+value.id+')">'+
+                                        '<div class="ui-list-info" onclick="showdetail(this,'+value.id+')" id="show">'+
                                         '<h4 class="ui-nowrap">'+message+'</h4>'+
                                    ' </div>'+
                                     '<div class="'+yifuClass+'" id="readStade" onclick="biaoji(this,'+value.id+')">'+infoStatus+'</div>'+
@@ -144,44 +148,36 @@
             }
         })
     }
-    function showDetail(id) {
+    function showdetail(th,id) {
         $.ajax({
-            url:"index.php?r=center/showDetail/",
+            url:"index.php?r=center/showdetail",
             data:{id:id},
             type:"POST",
             dataType:"json",
             success:function(data){
-                var innerHtml=[];
-                if(data.msgDetail.length>0){
+//            alert(JSON.stringify(data));
+               var innerHtml=[];
+                if(data.pageList.length>0){
                     var status='系统消息';
-                    var value=data.msgDetail;
+                    var value=data.pageList[0];
                     var message=value.message;
                     if(value.message_type==0){
                         status='预约消息';
-                        message="我对你发布的--"+value.info_name+"感兴趣--"+message;
                     }
-                    innerHtml.push('<div class="ui-dialog-cnt">'+
-                        '<header class="ui-dialog-hd ui-border-b">'+
-                        '<h3>消息详情</h3>'+
-                        '<i class="ui-dialog-close" data-role="button"></i>'+
-                        '</header>'+
-                        '<div class="ui-dialog-bd">'+
-                        '<h4>'+status+'</h4>'+
-                        '<div>'+message+'</div>'+
-                        '</div>'+
-                        '<div class="ui-dialog-ft">'+
-                        '<button type="button" data-role="button">取消</button>'+
-                        '<button type="button" data-role="button">确定</button>'+
-                        '</div>'+
-                        '</div>');
-                    $(".ui-dialog").dialog("show");
-                    $("#msgDetail").append(innerHtml.join(""));
+                    layer.open({
+                        title:status,
+                        content:message
+                    });
+                    $(th).siblings().text("已读");
+                    $(th).siblings().addClass('ui-badge-muted').removeClass('ui-badge');
+                    biaoji(th,id);
                 }
             }
         })
     }
     $(function(){
         queryColl();
-    })
+    });
+
 </script>
 </html>
