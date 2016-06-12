@@ -31,8 +31,25 @@ class BaseController extends CController
 //		$this->wechat = !(strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') == false);
 //		return  true;
         $this->wechat==true;
-
+        if($this->wechat){
+            $openid = $this->getOpenID();
+            $usermodel = new User();
+            $newUser = $usermodel::model()->find('openid=:openid', array(':openid'=>$openid));
+            if(!empty($newUser)){
+                Yii::app()->session['user'] = $newUser;
+            }
+        }
 	}
+
+    public function is_login(){
+        $session = Yii::app()->session;
+        $user = $session['user'];
+        if(!empty($user)){
+            return $user;
+        }else{
+            return false;
+        }
+    }
 
     public function getOpenID()
     {

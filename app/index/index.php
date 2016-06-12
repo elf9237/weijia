@@ -1,6 +1,8 @@
 <?php
 
 // change the following paths if necessary
+date_default_timezone_set("PRC");
+
 $yii=dirname(__FILE__).'/../framework/yii.php';
 $config=dirname(__FILE__).'/protected/config/main.php';
 
