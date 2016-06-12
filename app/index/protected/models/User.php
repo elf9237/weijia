@@ -46,8 +46,8 @@ class User extends CActiveRecord
 			array('cellphone','match', 'pattern'=>"/^1[3-5,8]{1}[0-9]{9}$/",'message'=>'电话格式不正确'),
 			array('cellphone','unique','message'=>'电话号码已存在'),
 			array('image_url','url','message'=>'头像格式不正确'),
-			array(' gender,password', 'required', 'on'=>'register','message'=>'不能为空'),
-			array('password', 'authenticate','on'=>'login','message'=>'不能为空'),
+			array('password', 'required', 'on'=>'register','message'=>'密码不能为空'),
+            array('password', 'authenticate','on'=>'login','message'=>'不能为空'),
 			array('username, password, inviter, openid', 'length', 'max'=>50,'message'=>'您输入的长度过大'),
 			array('gender', 'length', 'max'=>64,'message'=>'您输入的用户名不符合标准'),
 			array('image_url', 'length', 'max'=>255),
@@ -57,14 +57,14 @@ class User extends CActiveRecord
 		);
 	}
 	public function authenticate($attribute,$params)
-	 	{
-			if(!$this->hasErrors())
-			{
-				$this->_identity=new UserIdentity($this->gender,$this->password);
-				if(!$this->_identity->authenticate())
-					$this->addError('password','Incorrect username or password.');
-			}
-		}
+    {
+        if(!$this->hasErrors())
+        {
+            $this->_identity=new UserIdentity($this->gender,$this->password);
+            if(!$this->_identity->authenticate())
+                $this->addError('password','Incorrect username or password.');
+        }
+    }
 	/**
 	 * @return array relational rules.
 	 */

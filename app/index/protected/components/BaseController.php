@@ -3,7 +3,7 @@ class BaseController extends CController
 {
 	
 	public $layout=null;
-	public $wechat = false;
+	public $wechat = true;
 
 	protected $key = 'z+Y4N{FdU4vNkXIf*tiKFF-odDRM,I88';
 
@@ -28,15 +28,9 @@ class BaseController extends CController
 //	}
 	public function init(){
 
-        $openid = $this->getOpenid();
-
-        $session = YII::app()->session;
-
-        echo $session['openid'];die;
-
 //		$this->wechat = !(strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') == false);
 //		return  true;
-        $this->wechat==false;
+        $this->wechat==true;
 
 	}
 
@@ -192,7 +186,8 @@ class BaseController extends CController
 	 * 获取当前用户ID
 	 */
 	public function getUserId(){
-		return 100;
+        $user = Yii::app()->session['user'];
+		return $user['id'];
 	}
 
 	public function getAccessToken(){
