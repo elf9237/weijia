@@ -24,7 +24,7 @@ class LoginForm extends CFormModel
 			// username and password are required
 			array('username, password', 'required'),
 			// rememberMe needs to be a boolean
-			array('rememberMe', 'boolean'),
+			//array('rememberMe', 'boolean'),
 			// password needs to be authenticated
 			array('password', 'authenticate'),
 		);
@@ -71,6 +71,7 @@ class LoginForm extends CFormModel
 			Yii::app()->user->login($this->_identity,$duration);
 			$USER =USER::model()->find("login_id ='".$this->username."'");
 			//设置session
+            Yii::app()->session['user'] = $USER;
 			Yii::app()->user->setState("userdetail" ,$USER);
 
 			return true;

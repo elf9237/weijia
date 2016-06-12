@@ -33,15 +33,39 @@ class CenterController extends BaseController{
     }
 //    我的佣金
     public function actionMybroker(){
-        $this -> renderPartial('mybroker');
+         $userModel=  User::model();
+           $userinfo=$userModel->find('id=123');
+        
+        $this -> renderPartial('mybroker',array("userinfo"=>$userinfo));
     }
 //    提现申请
     public function actionForward(){
-        $this -> renderPartial('forward');
+        $ar= new AjaxReturn();
+        $id=$_POST['id'];
+        $jine=$_POST['jine'];
+         $userModel=  User::model();
+         $tixianModel = new Tixian();
+           $userinfo=$userModel->find('id='.$id);
+           $userinfo->yue=0;
+           $tixianModel->user_id=$id;
+           $tixianModel->jine=$jine;
+           $tixianModel->create_time=time();
+           $tixianModel->status=0;
+           $transaction=Yii::app()->db->beginTransaction();
+          try{
+              if($tixianModel->save()&&$userinfo->save()){
+                 $ar->status=true; 
+                  
+    }
+              $transaction->commit();
+          }  catch (Exception $e){
+              $ar->status=false; 
+              $transaction->rollback();
+          }
+       echo json_encode($ar);
     }
 //    我要佣金
     public function actionWmoney(){
-        
         $jsapiTicket = $this->getJsApiTicket();
         $timestamp = time();
         $nonceStr = $this->createNonceStr(10);
@@ -92,9 +116,49 @@ class CenterController extends BaseController{
         echo json_encode($pagelist->pageAjax);
     }
     public function actionCheck(){
+        $ar = new AjaxReturn();
         $id=$_POST['id'];
-        $sql="select t.* from cy_info t where t.id=".$id ." ";
-        $pagelist=new PageList($sql, 1, 1);
-        echo json_encode($pagelist->pageAjax);
+         $type=$_POST['type'];
+          $rentModel= Rentinfo::model();
+          $cyModel=  Info::model();
+         
+          $rentinfo = $rentModel->findByPk($id);
+           $cyinfo=$cyModel->findByPk($rentinfo->info_id);
+           $userModel=  User::model();
+           $userinfo=$userModel->find('id='.$cyinfo->user_id);
+           $userinfosend=$userModel->find('id='.$rentinfo->sender);
+        if($type==2){
+            $rentinfo->status=2;
+          $ar->status=$rentinfo->save();
+        }else{
+            if($cyinfo->yong_jin!=0){
+                $userinfosend->yue=$userinfosend->yue+$cyinfo->yong_jin*0.2;
+                
+                $userinfosendf=$userModel->find('id='.$userinfosend->inviter);
+                if($userinfosendf){
+                    $userinfosendf->yue=$userinfosendf->yue+$cyinfo->yong_jin*0.2;
+                    $userinfosendff=$userModel->find('id='.$userinfosendf->inviter);
+                    if($userinfosendff){
+                         $userinfosendff->yue=$userinfosendff->yue+$cyinfo->yong_jin*0.2;
+                         $userinfosendff->save();
+    }
+                  $userinfosendf->save();
+}
+                
+            }
+             $rentinfo->status=1;
+             $cyinfo->lend_status=1;
+            
+             if( $cyinfo->save()&&
+             $userinfosend->save()&&
+             $rentinfo->save()){
+                 $ar->status=true;
+             }else{
+                   $ar->status=false;
+             }
+             
+            
+        }
+        echo json_encode($ar);
     }
 }

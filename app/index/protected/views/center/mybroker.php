@@ -58,11 +58,11 @@
             <dl class="user-menu">
                 <dd>
                     <section class="ui-container ui-center">
-                        <span class="tiMoney">您的佣金为<span class="red">100</span> ，可以申请申请提现</span>
+                        <span class="tiMoney">您的佣金为<span class="red" id="yue"><?php echo $userinfo->yue;?></span> ，可以申请申请提现</span>
 
                     </section>
                     <div class="ui-btn-wrap">
-                        <button class="ui-btn-lg ui-btn-primary">
+                        <button onclick="shenqingTixian()" class="ui-btn-lg ui-btn-primary">
                             申请提现
                         </button>
                     </div>
@@ -76,4 +76,32 @@
            <a href="#" ><i class="i-icon-logout"></i>退出登入</a>
           </div>
          </div>  -->
+        <script src="lib/zepto.min.js"></script>
+<script src="lib/layer/layer.js"></script>
+        <script>
+        function shenqingTixian(){
+            var jine="<?php echo $userinfo->yue;?>";
+            var user_id="<?php echo $userinfo->id;?>";
+            if(parseFloat(jine)<10){
+               alert('提现金额不得少于200');
+            }else{
+               $.ajax({
+                   type:'POST',
+                   data:{jine:jine,id:user_id},
+                   url:"index.php?r=center/forward",
+                   success:function(data){
+                     
+                           window.location.reload();
+                      
+                       
+                   }
+                   
+               }) 
+                
+            }
+            
+            
+        }
+        </script>
+        
 </body></html>

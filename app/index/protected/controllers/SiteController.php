@@ -30,9 +30,10 @@ class SiteController extends BaseController
             $cyinfoModel=  Info::model();
             $newInfos=$cyinfoModel->findAllBySql("select * from {{info}} order by create_time desc limit 10");
             $starInfos=$cyinfoModel->findAllBySql("select * from {{info}} order by create_time desc limit 5");
-            
+
 		if( $this->wechat){
 			$this->render('index');
+            //$this->render('desktop/index',array("starInfos"=>$starInfos,"newInfos"=>$newInfos));
 		}else{
 			$this->render('desktop/index',array("starInfos"=>$starInfos,"newInfos"=>$newInfos));
 		}
@@ -158,6 +159,16 @@ class SiteController extends BaseController
 	{
 		$model=new LoginForm;
 
+        if( $this->wechat){
+            $openid = $this->getOpenID();
+            $usermodel = new User();
+            $newUser = $usermodel::model()->find('openid=:openid', array(':openid'=>$openid));
+            if(!empty($newUser)){
+                Yii::app()->session['user'] = $newUser;
+                $this->redirect(Yii::app()->user->returnUrl);
+            }
+        }
+
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
 		{
@@ -170,8 +181,25 @@ class SiteController extends BaseController
 		{
 			$model->attributes=$_POST['LoginForm'];
 			// validate user input and redirect to the previous page if valid
-			if($model->validate() && $model->login())
-				$this->redirect(Yii::app()->user->returnUrl);
+			if($model->validate() && $model->login()){
+
+                if( $this->wechat){
+                    $user = Yii::app()->session['user'];
+                    if(!empty($user)){
+                        $openid = $this->getOpenID();
+                        $usermodel = new User();
+                        $newUser = $usermodel::model()->find('login_id=:login_id', array(':login_id'=>$user['login_id']));
+                        $newUser->openid = $openid;
+                        $newUser->save();
+                    }
+                }
+
+                $this->redirect(Yii::app()->user->returnUrl);
+
+            }
+
+
+
 		}
 		// display the login form
 		if( $this->wechat)
@@ -182,6 +210,7 @@ class SiteController extends BaseController
 		}
 	}
 	public function actionLoginUser(){
+
 		$model = new User("login");
 		if($_POST['User']){
 			$model->attributes = $_POST['User'];
@@ -214,12 +243,12 @@ class SiteController extends BaseController
 				$this->redirect('index.php?r=site/kanfangsave');
 			}
 		}
-                if( $this->wechat){
-                $this->render('kanfang',array('model'=>$model));
-                
-                }else{
-                    $this->render('yuyue');
-                }
+        if( $this->wechat){
+        $this->render('kanfang',array('model'=>$model));
+
+        }else{
+            $this->render('yuyue');
+        }
 	}
 	public function actionKanfangsave(){
 		$this->render('kanfangsave');
@@ -230,6 +259,11 @@ class SiteController extends BaseController
 			$model->attributes=$_POST['User'];
 			$model->login_id =$model->cellphone;
 			$password = $model->password;
+            $password2 = Yii::app()->request->getParam('password2');
+            if($password !== $password2){
+                $this->redirect('index.php?r=site/error');
+            }
+
 			$model->password = md5($password);
 			$model->type =0;
 			if($model->save()){

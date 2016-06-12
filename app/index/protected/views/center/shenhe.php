@@ -92,7 +92,7 @@
                     ajax=!0;//注明开始ajax加载中
 
                     $.ajax({
-                        url:"index.php?r=ajax/querymyhome",
+                        url:"index.php?r=ajax/querymyshenhehome",
                         data:param,
                         type:"POST",
                         dataType:"json",
@@ -133,13 +133,8 @@
                                         '</dd>'+
                                         '</dl>'+
                                         '</a>');
-                                    if(value.lend_type==0){
-                                        innerHtml.push( '<span class="toDo clearfix"><a href="#"  onclick="check(this,'+value.id+')">通过</a><a href="#" class="checkFaile">不通过</a></span>')
-                                    }else if(value.lend_type==1){
-                                        innerHtml.push('<span class="toDo clearfix"><span>审核通过</span></span>');
-                                    }else{
-                                        innerHtml.push('<span class="toDo clearfix"><span class="checkFaile checkStade">审核不通过</span></span>');
-                                    }
+                                        innerHtml.push( '<span class="toDo clearfix"><a href="javascript:void(0)"  onclick="check(1,'+value.rentid+')">通过</a><a  class="check(2,'+value.rentid+')">不通过</a></span>')
+                                  
                                     innerHtml.push('</li>');
                                 });
                             }
@@ -151,29 +146,34 @@
                 }}).scroll();
         });
     };
-    function check(th,id){
-        $.ajax({
-            url:"index.php?r=center/check",
-            data:{id:id},
-            type:'POST',
-            dataType:'json',
-            success:function(data){
-                if(data.pageList.length>0){
-                    var value=data.pageList[0];
-                    layer.open({
+    function check(type,id){
+    
+    layer.open({
                         content: '审核通过？',
                         btn: ['确认', '取消'],
                         shadeClose: true,
-                        yes: function(){
-                            layer.open({content: '该房源通过审核', time: 1});
-                            $(th).parent('.toDo').empty().text(value.audit_content);
-                        }, no: function(){
-                            layer.open({content: '该房源未通过审核', time: 1});
-                        }
-                    });
+                        yes: function(index){
+                           $.ajax({
+            url:"index.php?r=center/check",
+            data:{id:id,type:type},
+            type:'POST',
+            dataType:'json',
+            success:function(data){
+                if(data.status){
+                    layer.close(index);
+                    window.location.reload();
+                }else{
+                    layer.close(index);
+                    layer.msg("审核失败！！");
                 }
             }
-        });
+        }); 
+                        },
+                        cancel: function(index){
+                            layer.close(index);
+                        }
+    });
+        
     }
     $(function(){
         queryColl();

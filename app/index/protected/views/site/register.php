@@ -27,15 +27,17 @@
             </p>
             <li><i class="un"><img src="images/user_name.png"></i>
 <!--                <input class="username" type="text" placeholder="请输入用户名" />-->
-                <?php echo $form->textField($model,'cellphone',array('placeholder'=>"请输入用户名",'class'=>"username")); ?>
+                <?php echo $form->textField($model,'cellphone',array('placeholder'=>"请输入手机号码",'class'=>"username")); ?>
 
             </li>
-            <li><i class="yz"><img src="images/msg.png"></i><input class="yzm" type="text" placeholder="请输入手机验证码" /><input type="button" id="send" value="获取验证码" /></li>
+            <!--<li><i class="yz"><img src="images/msg.png"></i><input class="yzm" type="text" placeholder="请输入手机验证码" /><input type="button" id="send" value="获取验证码" /></li>-->
             <li><i class="pw"><img src="images/pwd.png"></i>
 <!--                <input class="pwd" type="password" placeholder="请输入密码" />-->
                 <?php echo $form->passwordField($model,'password',array('class'=>"pwd", 'placeholder'=>"请输入密码" )); ?>
             </li>
-            <li><i class="pw2"><img src="images/pwd.png"></i><input class="pwd2" type="password" placeholder="请输入确认密码" /></li>
+            <li><i class="pw2"><img src="images/pwd.png"></i>
+                <input class="pwd2" type="password" name="password2" placeholder="请输入确认密码" />
+            </li>
             <div class="queren"><input class="fx" type="checkbox" checked="checked" /><p>我已阅读并同意《用户协议》</p></div>
 
         </ul>

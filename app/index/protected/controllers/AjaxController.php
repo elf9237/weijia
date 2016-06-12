@@ -108,6 +108,9 @@ class AjaxController extends BaseController {
          $this->render('myhome');
          
      }
+     /**
+      * 我的房源
+      */
      public function actionQuerymyhome(){
           $page=$_POST['page'];
        $sql="select t.* from cy_info t  where 1=1  and t.user_id=123 " ;
@@ -201,7 +204,12 @@ $roomeqip->info_id=$info->id;
          echo json_encode($ar);
          
      }
-     
+     public function actionQuerymyshenhehome(){
+          $page=$_POST['page'];
+       $sql="select t.*,t1.id as rentid from cy_info t join cy_rentinfo t1 on(t1.info_id=t.id)  where 1=1  and t1.status=0 and t.lend_status=0 and t.user_id=123 " ;
+ $pagelist=new PageList($sql, $page, 5);
+  echo json_encode($pagelist->pageAjax);
+     }
      
       public function actionZhuangxiu(){
          $this->render('zhuangxiu');

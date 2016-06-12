@@ -36,9 +36,10 @@ class UserIdentity extends CUserIdentity
 		$username = $this->username;
 		//$userid = $this->passowrd;
 		$users = $model->find("login_id = '$username'");
+
 		if(!$model->exists("login_id = '$username'"))
 			$this->errorCode=self::ERROR_USERNAME_INVALID;
-		elseif ($users->password!==($this->password))
+		elseif ($users->password!==md5($this->password))
 			$this->errorCode=self::ERROR_PASSWORD_INVALID;
 		else 
 			$this->errorCode=self::ERROR_NONE;
