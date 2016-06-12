@@ -60,7 +60,7 @@
                type:"POST",
                success:function(data){
                    if(data.status)
-                       location.href="index.php?r=store/detial";
+                       location.href="index.php?r=store/detial&id="+<?php echo $infoid ; ?>;
                    else
                        alert(data.content);
 
