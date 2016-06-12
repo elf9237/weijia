@@ -80,7 +80,7 @@
       rooms:-1,
       sprice:0,
       eprice:10000,
-      info_type:-1,
+      info_type:'<?php echo $info_type;?>',
       prov: "福建",
       city: "福州",
       dist: "仓山区",

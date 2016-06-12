@@ -32,12 +32,12 @@ class BaseController extends CController
 //		return  true;
         $this->wechat==true;
         if($this->wechat){
-            $openid = $this->getOpenID();
-            $usermodel = new User();
-            $newUser = $usermodel::model()->find('openid=:openid', array(':openid'=>$openid));
-            if(!empty($newUser)){
-                Yii::app()->session['user'] = $newUser;
-            }
+//            $openid = $this->getOpenID();
+//            $usermodel = new User();
+//            $newUser = $usermodel::model()->find('openid=:openid', array(':openid'=>$openid));
+//            if(!empty($newUser)){
+//                Yii::app()->session['user'] = $newUser;
+//            }
         }
 	}
 

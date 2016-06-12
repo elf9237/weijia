@@ -6,8 +6,9 @@ class StoreController extends BaseController
 	
 		$this->render('jiameng');	
 	}
-	public function actionIndex(){
-		$this->render('shopstore');
+	public function actionIndex($info_type){
+            
+		$this->render('shopstore',array("info_type"=>$info_type));
 	}
 	public function actionDetial($id){
              $infoModel=  Info::model();
