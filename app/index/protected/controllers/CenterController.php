@@ -161,4 +161,16 @@ class CenterController extends BaseController{
         }
         echo json_encode($ar);
     }
+    //    登入
+    public function actionLogin(){
+        $this -> renderPartial('login');
+    }
+    //    注册
+    public function actionAssign(){
+        $this -> renderPartial('assign');
+    }
+    //    忘记密码
+    public function actionForgetpsw(){
+        $this -> renderPartial('forgetpsw');
+    }
 }
