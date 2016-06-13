@@ -62,5 +62,70 @@ class StoreController extends BaseController
            $ar->status=$rentInfo->save();
            echo json_encode($ar);
 	}
+        
+        public function actionZufang(){
+            $ar=new AjaxReturn();
+            $sender=123;
+            $days=$_POST['days'];
+            $type=$_POST['type'];
+            $infoid=$_POST['infoid'];
+            $price=$_POST['price'];
+            $orderModel= new Order();
+            $orderModel->info_id=$infoid;
+            $orderModel->audit_status=0;
+             $orderModel->order_type='房租';
+            $orderModel->pay_type='微信支付';
+            $orderModel->create_time=time();
+            $orderModel->pay_price=$price;
+            $orderModel->user_id=$sender; 
+            $orderModel->order_no='fz'.(time()+$infoid);
+            $ar->status=$orderModel->save();
+            echo json_encode($ar);
+            //调用支付接口
+            //支付成功后调用PayAfter
+        }
+        
+         public function actionZhiding(){
+              $ar=new AjaxReturn();
+            $sender=123;
+            $days=$_POST['days'];
+           
+            $infoid=$_POST['infoid'];
+            $price=$_POST['price'];
+            $orderModel= new Order();
+            $orderModel->info_id=$infoid;
+            $orderModel->audit_status=0;
+            $orderModel->order_type='置顶';
+            $orderModel->pay_type='微信支付';
+            $orderModel->create_time=time();
+            $orderModel->pay_price=$price;
+            $orderModel->user_id=$sender; 
+            $orderModel->order_no='zd'.(time()+$infoid);
+            $ar->status=$orderModel->save();
+             echo json_encode($ar);
+            //调用支付接口
+            //支付成功后调用PayAfter
+        }
+        
+         public function actionYongjin(){
+             $ar=new AjaxReturn();
+            $sender=123;
+            $infoid=$_POST['infoid'];
+            $price=$_POST['price'];
+            $orderModel= new Order();
+            $orderModel->info_id=$infoid;
+            $orderModel->audit_status=0;
+            $orderModel->order_type='佣金';
+            $orderModel->pay_type='微信支付';
+            $orderModel->create_time=time();
+            $orderModel->pay_price=$price;
+            $orderModel->user_id=$sender; 
+            $orderModel->order_no='yj'.(time()+$infoid);
+            $ar->status=$orderModel->save();
+             echo json_encode($ar);
+            //调用支付接口
+            //支付成功后调用PayAfter
+            //如果ajax方式不行需要跳转 到前台将$.ajax()改成window.location.href  上面的post参数记得传
+        }
       
 }

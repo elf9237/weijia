@@ -79,39 +79,26 @@
         </tr>
         <tr>
             <td align="right">房子名称：</td>
-            <td>英伦之吻</td>
+            <td><?php echo $cyInfo->info_name; ?></td>
         </tr>
-        <tr>
-            <td align="right">房间名称：</td>
-            <td>魅力</td>
-        </tr>
+      
         <tr>
             <td align="right">月租金(元)：</td>
-            <td>2200</td>
+            <td><?php echo $cyInfo->price; ?></td>
         </tr>
         <tr>
             <td align="right">支付方式：</td>
             <td>
-                <select id="style" name="style" onchange="heji()">
-                    <option value="y">月付</option>
-                    <option selected="" value="j">季付</option>
-                    <option value="b">半年付</option>
-                    <option value="n">年付</option>
+                <select id="type" name="style" >
+                    <option selected="" value="1,10">1天10元</option>
+                    <option  value="2,19">2天19</option>
+                    <option value="7,60">7天60</option>
+                    <option value="15,120">半个月120</option>
+                     <option value="30,240">包月240</option>
                 </select>
             </td>
         </tr>
-        <tr>
-            <td align="right">押金(元)：</td>
-            <td id="yj">2200</td>
-        </tr>
-        <tr>
-            <td align="right">折扣(%)：</td>
-            <td id="zk">100</td>
-        </tr>
-        <tr>
-            <td align="right">合计(元)：</td>
-            <td id="hj">8800</td>
-        </tr>
+        
         <tr>
             <td align="right">&nbsp;</td>
             <td>&nbsp;</td>
@@ -129,6 +116,33 @@
 </section>
 <script src="lib/zepto.min.js"></script>
 <script src="js/frozen.js"></script>
+<script>
+ function calljs(){
+     var type=$("#type option:selected").val();
+     var types=type.split(",");
+     var price=types[1];
+     var days=types[0];
+        $.ajax({
+            type:"POST",
+            url:"index.php?r=store/zhiding",
+            data:{
+                infoid:'<?php echo  $cyInfo->id ?>',
+              
+                days:days,
+                price:price
+            },dataType: 'json',
+                    success:function(data){
+                        if(data.status)
+                            alert('支付完成');
+                        
+                    }
+            
+            
+        })
+        
+    }
+
+</script>
 
 </body>
 </html>
