@@ -36,8 +36,8 @@
 	</div>
 	<div class="login">
 		<span><a href="index.php?r=site/login">登入</a></span>
-		<span>|</span>
-		<span><a href="index.php?r=site/register">注册</a></span>
+<!--		<span>|</span>-->
+<!--		<span><a href="index.php?r=site/register">注册</a></span>-->
 	</div>
 </div>
 <div id="focus-banner">

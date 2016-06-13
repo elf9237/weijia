@@ -3,7 +3,7 @@ class BaseController extends CController
 {
 	
 	public $layout=null;
-	public $wechat = true;
+	public $wechat = false;
 
 	protected $key = 'z+Y4N{FdU4vNkXIf*tiKFF-odDRM,I88';
 
@@ -30,7 +30,7 @@ class BaseController extends CController
 
 //		$this->wechat = !(strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') == false);
 //		return  true;
-        $this->wechat==true;
+        $this->wechat==false;
         if($this->wechat){
 //            $openid = $this->getOpenID();
 //            $usermodel = new User();

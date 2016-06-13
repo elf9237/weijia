@@ -44,9 +44,9 @@
                     ok: true,
                 });
             } else if (ua.indexOf("msie 8") > -1) {
-                window.external.AddToFavoritesBar('${dynamicURL}/authority/loginInit.action', '西宁市公共租赁住房信息管理系统管理');//IE8
+                window.external.AddToFavoritesBar('${dynamicURL}/authority/loginInit.action', '福州市租赁住房信息管理系统管理');//IE8
             } else if (document.all) {
-                window.external.addFavorite('${dynamicURL}/authority/loginInit.action', '西宁市公共租赁住房信息管理系统管理');
+                window.external.addFavorite('${dynamicURL}/authority/loginInit.action', '福州市公共租赁住房信息管理系统管理');
             } else {
                 art.dialog({
                     icon: 'error',
@@ -388,7 +388,7 @@
 <body onload="getDate01()">
 <div id="top">
     <div id="top_logo">
-        <img alt="logo" src="public/admin/images/common/logo.jpg" width="274" height="49"
+        <img alt="logo" src="public/admin/images/common/logo.png"
              style="vertical-align:middle;">
     </div>
     <div id="top_links">

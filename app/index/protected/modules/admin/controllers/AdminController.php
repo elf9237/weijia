@@ -266,5 +266,8 @@ if(!empty($_POST['username'])){
         }
         echo $ar;
     }
+    public function actionLogin(){
+        $this ->renderPartial('login');
+    }
     
 }

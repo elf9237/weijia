@@ -14,7 +14,7 @@
         </tr>
         <tr>
             <td width="100" height="30">当前版本<span class="TableRow2"></span></td>
-            <td style="text-align:left">后台管理系统 4.1</td>
+            <td style="text-align:left">后台管理系统 1.0</td>
         </tr>
         <tr>
             <td width="100" height="30">版权声明</td>
@@ -29,18 +29,18 @@
         </tr>
         <tr>
             <td width="100" height="30">程序制作</td>
-            <td style="text-align:left">（青岛）信息科技有限公司</td>
+            <td style="text-align:left">鼎尚网络有限公司</td>
         </tr>
         <tr>
             <td width="100" height="30">联系方式</td>
             <td style="text-align:left">
-                <a href="mailto:shangcent@126.com">shangcent@126.com</a>
+                <a href="mailto:shangcent@126.com">18695785035</a>
             </td>
         </tr>
         <tr>
             <td width="100" height="30">程序主页<span class="TableRow2"></span></td>
             <td style="text-align:left">
-                <a href="http://sc.chinaz.com" target="_blank">http://sc.chinaz.com</a>
+                <a href="http://www.weijiazx.com" target="_blank">http://www.weijiazx.com</a>
             </td>
         </tr>
     </table>
