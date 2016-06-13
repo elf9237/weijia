@@ -82,7 +82,8 @@ class PayController extends BaseController
     {
         if(array_key_exists('err_code',$UnifiedOrderResult)){
             if(!empty($UnifiedOrderResult['err_code'])){
-                $this->error($UnifiedOrderResult['err_code_des']);
+                //$this->error($UnifiedOrderResult['err_code_des']);
+                throw new HttpException($UnifiedOrderResult['err_code_des']);
                 //$this->error($UnifiedOrderResult['err_code_desc']);
             }
         }
@@ -91,7 +92,8 @@ class PayController extends BaseController
             || !array_key_exists("prepay_id", $UnifiedOrderResult)
             || $UnifiedOrderResult['prepay_id'] == "")
         {
-            $this->error( '参数错误');
+            throw new HttpException('参数错误');
+            //$this->error( '参数错误');
             //$this->error($UnifiedOrderResult['err_code_desc']);
         }
         $jsapi = new \WxPayJsApiPay();

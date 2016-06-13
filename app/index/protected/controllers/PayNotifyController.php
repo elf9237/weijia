@@ -21,7 +21,10 @@ class PayNotifyController extends \WxPayNotify
             && $result["return_code"] == "SUCCESS"
             && $result["result_code"] == "SUCCESS")
         {
-
+            $orderModel = new Order();
+            $order = $orderModel::model()->find('id=:id',array(':id'=>1));
+            $order->pay_price = 20.00;
+            $order->save();
             return true;
         }
         return false;
