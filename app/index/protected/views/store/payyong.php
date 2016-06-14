@@ -118,23 +118,26 @@
         if(!check())
             return;
         var price=$("#price").val();
-        $.ajax({
-            type:"POST",
-            url:"index.php?r=store/yongjin",
-            data:{
-                infoid:'<?php echo  $cyInfo->id ?>',
-                type:0,
-                days:365,
-                price:price
-            },dataType: 'json',
-                    success:function(data){
-                        if(data.status)
-                            alert('支付完成');
-                        
-                    }
-            
-            
-        })
+         var url = 'index.php?r=store/yongjin';
+        url = url + '&infoid=' + '<?php echo  $cyInfo->id ?>' + '&price=' + price;
+          window.location.href = url;
+//        $.ajax({
+//            type:"POST",
+//            url:"index.php?r=store/yongjin",
+//            data:{
+//                infoid:'<?php echo  $cyInfo->id ?>',
+//                type:0,
+//                days:365,
+//                price:price
+//            },dataType: 'json',
+//                    success:function(data){
+//                        if(data.status)
+//                            alert('支付完成');
+//                        
+//                    }
+//            
+//            
+//        })
         
     }
     

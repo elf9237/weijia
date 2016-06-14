@@ -96,22 +96,29 @@ class StoreController extends BaseController
          public function actionZhiding(){
               $ar=new AjaxReturn();
             $sender=123;
-            $days=$_POST['days'];
+            $days=$_GET['days'];
            
-            $infoid=$_POST['infoid'];
-            $price=$_POST['price'];
+            $infoid=$_GET['infoid'];
+            $price=$_GET['price'];
             $orderModel= new Order();
             $orderModel->info_id=$infoid;
             $orderModel->audit_status=0;
              $orderModel->days = $days;
             $orderModel->order_type='置顶';
+            $orderModel->days = $days;
+            $orderModel->type = 0;
             $orderModel->pay_type='微信支付';
             $orderModel->create_time=time();
             $orderModel->pay_price=$price;
             $orderModel->user_id=$sender; 
             $orderModel->order_no='zd'.(time()+$infoid);
             $ar->status=$orderModel->save();
-             echo json_encode($ar);
+            $order_id = $orderModel->attributes['id'];
+
+
+
+            $this->redirect(array('pay/index','order_id'=>$order_id));
+
             //调用支付接口
             //支付成功后调用PayAfter
         }
@@ -119,19 +126,26 @@ class StoreController extends BaseController
          public function actionYongjin(){
              $ar=new AjaxReturn();
             $sender=123;
-            $infoid=$_POST['infoid'];
-            $price=$_POST['price'];
+            $infoid=$_GET['infoid'];
+            $price=$_GET['price'];
             $orderModel= new Order();
             $orderModel->info_id=$infoid;
             $orderModel->audit_status=0;
             $orderModel->order_type='佣金';
             $orderModel->pay_type='微信支付';
             $orderModel->create_time=time();
+              $orderModel->days = 0;
+            $orderModel->type = 0;
             $orderModel->pay_price=$price;
             $orderModel->user_id=$sender; 
             $orderModel->order_no='yj'.(time()+$infoid);
             $ar->status=$orderModel->save();
-             echo json_encode($ar);
+            $order_id = $orderModel->attributes['id'];
+
+
+
+            $this->redirect(array('pay/index','order_id'=>$order_id));
+
             //调用支付接口
             //支付成功后调用PayAfter
             //如果ajax方式不行需要跳转 到前台将$.ajax()改成window.location.href  上面的post参数记得传

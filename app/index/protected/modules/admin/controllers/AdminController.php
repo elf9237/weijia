@@ -15,7 +15,7 @@ class AdminController extends BaseController{
     
     
     public function actionIndex(){
-        echo 1111;die;
+        //echo 1111;die;
         $this->render("index");
     }
     public function actionIntroduce(){
@@ -28,18 +28,15 @@ class AdminController extends BaseController{
        $this->render("user_list");
     }
     public  function actionQueryUser(){
-         $connection = Yii::app()->db;
-         $usetModel = User::model();
-         $cnt=$usetModel->count();
          $page=$_POST['page'];
-      $pageAjax= new PageAjax($cnt,$page,2);    
+        
        $sql="select t.*,count(tt.id) as fans,ifnull(sum(tt.jubao),0) jubaos 
 from cy_user t 
 left join (
 	select t1.user_id,t1.id,count(t2.id) as jubao  from cy_info t1 
 	left join cy_message t2 
 	on(t1.id = t2.info_id and t2.message_type=1) group by t1.id  ) 
-as tt on(t.login_id = tt.user_id) where 1=1";
+as tt on(t.id = tt.user_id) where 1=1";
 if(!empty($_POST['username'])){
           $sql.=" and t.username like '%".$_POST['username']."%'";
       }
@@ -49,13 +46,9 @@ if(!empty($_POST['username'])){
        if(!empty($_POST['status'])){
            $sql.=" and t.status = ".$_POST['status']." ";
       }
- $sql.=" GROUP BY t.login_id ";
-       $sql.=$pageAjax->limit;
-       
-       $command = $connection->createCommand($sql);
-       $rows=$command->queryAll();
-       $pageAjax->pageList=$rows;
-       echo json_encode($pageAjax);
+ $sql.=" GROUP BY t.id ";
+       $pagelist=new PageList($sql, $page, 10);
+       echo json_encode($pagelist->pageAjax);
         
     }
     /**
@@ -69,13 +62,18 @@ if(!empty($_POST['username'])){
         echo json_encode($ar);
         }
         $id=$_POST['id'];
+         $status=$_POST['status'];
+         
         $userModel=User::model();
-        $sql="select * from cy_user where id=$id";
-        echo $sql;
-        $user_info=$userModel->findBySql($sql);
+    
+      
+        $user_info=$userModel->find('id='.$id);
+        if(!$status||$status==0)
         $user_info->status=1;
-//        $ar->status=$userModel->save($user_info);
-        echo json_encode($user_info);
+        else
+        $user_info->status=0;
+        $ar->status=$user_info->save($user_info);
+        echo json_encode($ar);
         
     }
     /**
@@ -140,7 +138,7 @@ if(!empty($_POST['username'])){
        
  $sql.=" GROUP BY t.id ";
 
- $pagelist=new PageList($sql, $page, 2);
+ $pagelist=new PageList($sql, $page, 10);
  
        echo json_encode($pagelist->pageAjax);
         
@@ -226,7 +224,7 @@ if(!empty($_POST['username'])){
        if(!empty($_POST['audit_status'])){
           $sql.=" and t.audit_status = ".$_POST['audit_status']." ";
       }
- $pagelist=new PageList($sql, $page, 2);
+ $pagelist=new PageList($sql, $page, 10);
  
        echo json_encode($pagelist->pageAjax);
         
@@ -249,6 +247,14 @@ if(!empty($_POST['username'])){
         $message->message='你的代理申请已通过，审批意见：'.$mes.'.具体事务请联系管理人员进行确认！！';
          if($type==1)
         $message->message='你的代理申请已驳回，审批意见：'.$mes;
+         
+         $userInfo =  User::model()->find('id='.$agentInfo->user_id);
+         if(!$userInfo){
+            $userInfo->type=2; 
+            $userInfo->save();
+             
+         }
+             
         
     
     if($agentInfo->save()&&$message->save()){
@@ -267,8 +273,61 @@ if(!empty($_POST['username'])){
         }
         echo $ar;
     }
+    
+    public function actionTotixian(){
+        $this->render("tixian_list");
+        
+    }
+    
+    public function actionQueryTixian(){
+        
+        $page=$_POST['page'];
+  
+       $sql="select t.* from cy_tixian t  where 1=1 " ;
+
+       if(!empty($_POST['status'])){
+       $sql.=" and t.status = ".$_POST['status']." ";
+       
+       }
+       $pagelist=new PageList($sql, $page, 10);
+ 
+       echo json_encode($pagelist->pageAjax);
+    }
+    
+    
+    /**
+     * 
+     */
     public function actionLogin(){
         $this ->renderPartial('login');
     }
+    
+    public function actionToshouyi(){
+         $this->render("shouyi");
+        
+    }
+    
+     public function actionQueryshouyi(){
+        
+        $page=$_POST['page'];
+  
+       $sql="select sum(case  when t.order_type='房租' then t.pay_price else 0 end) as fangzu,"
+               . "sum(case  when t.order_type='置顶' then t.pay_price else 0 end) as zhiding,"
+               . "sum(case  when t.order_type='佣金' then t.pay_price else 0 end) as yongjin "
+               . "from cy_order t join cy_info t1 on(t1.id=t.info_id)  where 1=1 and t.audit_status =1 " ;
+
+    
+       if(!empty($_POST['bTime'])&&!empty($_POST['eTime'])){
+          $sql.=" and t.create_time >= ".$_POST['bTime']."  and t.create_time<=".$_POST['eTime']." "; 
+       }
+       $sql.=" and  t1.province='".$_POST['province']."' and t1.city='".$_POST['city']."' and t1.zone='".$_POST['bTime']."'";
+       
+      
+       
+       $pagelist=new PageList($sql, $page, 10);
+ 
+       echo json_encode($pagelist->pageAjax);
+    }
+    
     
 }
