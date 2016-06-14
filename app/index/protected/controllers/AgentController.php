@@ -38,6 +38,7 @@ class AgentController extends BaseController
             $model->province = $_POST['province'];
             $model->city = $_POST['city'];
             $model->zone = $_POST['zone'];
+            $model->city = $_POST['price'];
             $model->audit_time = time();
             $model->audit_status =  $_POST['audit_status'];
             $model->audit_id = Yii::app()->user->userdetail->id;

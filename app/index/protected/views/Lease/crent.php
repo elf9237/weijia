@@ -72,7 +72,7 @@
             <div id="chuzumenu" class="ui-tab">
                 <ul class="ui-tab-nav ui-border-b">
                     <li data-href=""class="current" ><a href="./index.php?r=lease/crent">住房出租</a></li>
-                    <li ><a href="./index.php?r=lease/storerent">商铺出租</a></li>
+<!--                    <li ><a href="./index.php?r=lease/storerent">商铺出租</a></li>-->
                 </ul>
             </div>
             <div class="list"> 
@@ -137,15 +137,13 @@
                             </div>
                             
                             <div class="gr_itemt" style='width:25%'>
-                                <span class="gr_after">m2</span>
+                                <span class="gr_after">M <sup>2</sup></span>
                                 <div class="gr_itemt_con">
                                      
                                     <input type="number" pattern="[0-9]*" id="area" name="area" max="100" min="-10" />
                                 </div>
                                
                             </div>
-                           
-                            
                         </div>
                         <div class="errorTip huxingLabelerror">
                             <div class="errorTipDiv"></div>
