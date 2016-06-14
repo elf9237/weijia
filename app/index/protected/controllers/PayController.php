@@ -9,22 +9,22 @@ class PayController extends BaseController
 {
 
 	public function actionIndex(){
-
+        $order_id = $_GET['order_id'];
 
         $openid = $this->getOpenID();
 
-        $orderModel = new Order();
-        $order = $orderModel::model()->find('id=:id',array(':id'=>1));
-
-        $jsApiParameters = $this->doWechatpay($order,$openid);
+        $jsApiParameters = $this->doWechatpay($order_id,$openid);
 
         $this->render('wechatPay',array('jsApiParameters'=>$jsApiParameters));
 
 	}
 
-    public function doWechatpay($pay_order,$openId){
+    public function doWechatpay($order_id,$openId){
         //①、获取用户openid
         //②、统一下单
+
+        $orderModel = new Order();
+        $order = Order::model()->find('id=:id',array(':id'=>$order_id));
 
         $input = new \WxPayUnifiedOrder();
 
@@ -32,9 +32,9 @@ class PayController extends BaseController
         $input->SetBody("采菜网订单");
         $input->SetAttach("采菜网订单");
         //$input->SetOut_trade_no($pay_order['order_sn']);
-        $pay_money = $pay_order['pay_price'] * 100;
+        $pay_money = $order->pay_price * 100;
 
-        $input->SetOut_trade_no($pay_order['order_no']);
+        $input->SetOut_trade_no($order->order_no);
         //$input->SetOut_trade_no(microtime(true));
         //$input->SetTotal_fee($pay_money);
         $input->SetTotal_fee(1);

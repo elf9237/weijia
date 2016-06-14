@@ -21,10 +21,16 @@ class PayNotifyController extends \WxPayNotify
             && $result["return_code"] == "SUCCESS"
             && $result["result_code"] == "SUCCESS")
         {
+
+            $order_sn = trim($result['out_trade_no']);
             $orderModel = new Order();
-            $order = $orderModel::model()->find('id=:id',array(':id'=>1));
-            $order->pay_price = 20.00;
+            $order = $orderModel::model()->find('order_no=:order_sn',array(':order_sn'=>$order_sn));
+            $order->audit_status = 1;
             $order->save();
+
+            $payafter = new PayAfter();//$type,$days,$sendid
+            $payafter->yongJinAfter($order->info_id,$order->type,$order->days,$order->user_id);
+
             return true;
         }
         return false;

@@ -38,6 +38,8 @@ class BaseController extends CController
 //            if(!empty($newUser)){
 //                Yii::app()->session['user'] = $newUser;
 //            }
+
+
         }
 	}
 

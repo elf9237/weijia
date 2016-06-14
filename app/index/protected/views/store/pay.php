@@ -128,7 +128,14 @@
 <script >
     function calljs(){
         var price=$("#hj").text();
-        $.ajax({
+
+
+        var url = 'index.php?r=store/zufang';
+        url = url + '&infoid=' + '<?php echo  $cyInfo->id ?>' + '&type=0&days=365&price=' + price;
+
+        window.location.href = url;
+
+        /*$.ajax({
             type:"POST",
             url:"index.php?r=store/zufang",
             data:{
@@ -144,7 +151,7 @@
                     }
             
             
-        })
+        })*/
         
     }
     

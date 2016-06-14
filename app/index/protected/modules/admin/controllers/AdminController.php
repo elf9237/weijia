@@ -15,6 +15,7 @@ class AdminController extends BaseController{
     
     
     public function actionIndex(){
+        echo 1111;die;
         $this->render("index");
     }
     public function actionIntroduce(){

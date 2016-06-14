@@ -66,21 +66,29 @@ class StoreController extends BaseController
         public function actionZufang(){
             $ar=new AjaxReturn();
             $sender=123;
-            $days=$_POST['days'];
-            $type=$_POST['type'];
-            $infoid=$_POST['infoid'];
-            $price=$_POST['price'];
+            $days=$_GET['days'];
+            $type=$_GET['type'];
+            $infoid=$_GET['infoid'];
+            $price=$_GET['price'];
             $orderModel= new Order();
             $orderModel->info_id=$infoid;
             $orderModel->audit_status=0;
              $orderModel->order_type='房租';
             $orderModel->pay_type='微信支付';
+            $orderModel->days = $days;
+            $orderModel->type = $type;
             $orderModel->create_time=time();
             $orderModel->pay_price=$price;
             $orderModel->user_id=$sender; 
             $orderModel->order_no='fz'.(time()+$infoid);
             $ar->status=$orderModel->save();
-            echo json_encode($ar);
+            $order_id = $orderModel->attributes['id'];
+
+
+
+            $this->redirect(array('pay/index','order_id'=>$order_id));
+
+            //echo json_encode($ar);
             //调用支付接口
             //支付成功后调用PayAfter
         }
@@ -95,6 +103,7 @@ class StoreController extends BaseController
             $orderModel= new Order();
             $orderModel->info_id=$infoid;
             $orderModel->audit_status=0;
+             $orderModel->days = $days;
             $orderModel->order_type='置顶';
             $orderModel->pay_type='微信支付';
             $orderModel->create_time=time();
