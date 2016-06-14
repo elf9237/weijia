@@ -125,6 +125,30 @@
 <script src="lib/zepto.min.js"></script>
 <script src="js/frozen.js"></script>
 <script >
+    
+    function calljs(){
+        var days=$("#tianshu option:selected").val();
+        var price=$("#hj").text();
+        $.ajax({
+            type:"POST",
+            url:"index.php?r=store/zufang",
+            data:{
+                infoid:'<?php echo  $cyInfo->id ?>',
+                type:1,
+                days:days,
+                price:price
+            },dataType: 'json',
+                    success:function(data){
+                        if(data.status)
+                            alert('支付完成');
+                        
+                    }
+            
+            
+        })
+        
+    }
+    
 function heji(){
    var type= $("#tianshu option:selected").val();
   $("#hj").val(type*$("#yuezu").val());

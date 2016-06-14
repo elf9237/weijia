@@ -133,7 +133,7 @@
                                         '</dd>'+
                                         '</dl>'+
                                         '</a>'+
-                                        '<span class="toDo clearfix"><a href="#">置顶</a><a href="#">佣金</a><a href="#">修改</a></span>'+
+                                        '<span class="toDo clearfix"><a onclick="toZhiding('+value.id+')">置顶</a><a onclick="toYongjin('+value.id+')">佣金</a><a href="#">修改</a></span>'+
                                         '</li>');
                                 });
 
@@ -147,6 +147,14 @@
                 }}).scroll();
         });
     };
+    
+    function toYongjin(id){
+    window.location.href="index.php?r=store/toFuKuangYong&infoid="+id;
+    
+    }
+      function toZhiding(id){
+    window.location.href="index.php?r=store/toFuKuangDing&infoid="+id;
+    }
     $(function(){
         queryColl();
     })

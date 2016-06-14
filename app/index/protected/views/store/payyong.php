@@ -77,17 +77,14 @@
             <td width="20%" align="right">&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
-        <tr>
-            <td align="right">房子名称：</td>
-            <td>英伦之吻</td>
-        </tr>
+        
         <tr>
             <td align="right">房间名称：</td>
-            <td>魅力</td>
+            <td><?php echo $cyInfo->info_name; ?></td>
         </tr>
         <tr>
             <td align="right">月租金(元)：</td>
-            <td id='zujin'>2200</td>
+            <td id='zujin'><?php echo $cyInfo->price; ?></td>
         </tr>
         <tr>
             <td align="right">支付金额：</td>
@@ -97,10 +94,7 @@
             </td>
         </tr>
        
-        <tr>
-            <td align="right">合计(元)：</td>
-            <td id="hj">8800</td>
-        </tr>
+       
         <tr>
             <td align="right">&nbsp;</td>
             <td>&nbsp;</td>
@@ -119,16 +113,45 @@
 <script src="lib/zepto.min.js"></script>
 <script src="js/frozen.js"></script>
 <script>
+    
+    function calljs(){
+        if(!check())
+            return;
+        var price=$("#price").val();
+        $.ajax({
+            type:"POST",
+            url:"index.php?r=store/yongjin",
+            data:{
+                infoid:'<?php echo  $cyInfo->id ?>',
+                type:0,
+                days:365,
+                price:price
+            },dataType: 'json',
+                    success:function(data){
+                        if(data.status)
+                            alert('支付完成');
+                        
+                    }
+            
+            
+        })
+        
+    }
+    
 function check(){
-if($("#price").val().trim()==""||$("#price").val().trim()>=$("#zujin").text()){
+if (isNaN($("#price").val().trim())) { 
+     alert("请输入数字！！");
+     return false;
+ }
+ if($("#price").val().trim()==""|| parseFloat($("#price").val().trim())>=parseFloat($("#zujin").text())){
     alert("佣金不能大于租金且不能为空！！");
-    return false
-    
-}else{
-    return true;
+    return false;
     
 }
+ return true;
 }
+
+
 </script>
 
 </body>
