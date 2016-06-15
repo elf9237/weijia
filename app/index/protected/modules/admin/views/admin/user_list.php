@@ -34,7 +34,7 @@
                     <div id="box_center">
                         用户类别
                         <select name="type" id="fyXq" class="ui_select01"
-                                onchange="getFyDhListByFyXqCode();">
+                               >
                             <option value=""
                             >--请选择--
                             </option>
@@ -105,7 +105,7 @@
                type:"POST",
                dataType:"json",
                success:function(data){
-                         $("#userbody");
+                      
                    var innerHtml=[];
                    if(data.pageList.length>0){
                     $.each(data.pageList,function(n,value){
@@ -121,22 +121,24 @@
                           var stext="禁用";
                           if(value.status=="1")
                           stext="启用"; 
-                           innerHtml.push("<td><a onclick='jinyong("+value.id+")'>"+stext+"</a>|<a onclick='tixing("+value.id+")'>提醒</a></td>");
+                           innerHtml.push("<td><a onclick='jinyong("+value.id+","+value.status+")'>"+stext+"</a>|<a onclick='tixing("+value.id+")'>提醒</a></td>");
                     })
-                    $("#userbody").html(innerHtml.join(""));
+                   
                        
                    }
+                    $("#userbody").html(innerHtml.join(""));
                    pageding(pagearr,"queryUsers",data);
                }
             })
             
         }
         
-        function jinyong(id){
+        function jinyong(id,status){
         $.ajax({
             type:"POST",
             data:{
                 id:id,
+                status:status
             },
             dataType:"json",
             url:"index.php?r=admin/admin/lahei",

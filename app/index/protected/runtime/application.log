@@ -299,3 +299,54 @@ Stack trace:
 REQUEST_URI=/weijia/app/index/index.php?r=agent/join
 HTTP_REFERER=http://localhost/weijia/app/index/index.php?r=show/add
 ---
+2016/06/14 21:18:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Admin/admin/index".' in F:\wamp\www\weijia\app\framework\web\CWebApplication.php:286
+Stack trace:
+#0 F:\wamp\www\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('Admin/admin/ind...')
+#1 F:\wamp\www\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 F:\wamp\www\weijia\app\index\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=Admin/admin/index
+---
+2016/06/14 21:18:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Admin/".' in F:\wamp\www\weijia\app\framework\web\CWebApplication.php:286
+Stack trace:
+#0 F:\wamp\www\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('Admin/')
+#1 F:\wamp\www\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 F:\wamp\www\weijia\app\index\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=Admin/
+---
+2016/06/14 21:21:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/default/login".' in F:\wamp\www\weijia\app\framework\web\CWebApplication.php:286
+Stack trace:
+#0 F:\wamp\www\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/default/l...')
+#1 F:\wamp\www\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 F:\wamp\www\weijia\app\index\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=admin/default/login
+HTTP_REFERER=http://localhost/index.php?r=admin/admin/index
+---
+2016/06/15 20:33:41 [error] [php] mcrypt_generic(): An empty string was passed (F:\wamp\www\weijia\app\framework\base\CSecurityManager.php:227)
+Stack trace:
+#0 F:\wamp\www\weijia\app\framework\web\actions\CInlineAction.php(49): CenterController->actionWmoney()
+#1 F:\wamp\www\weijia\app\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 F:\wamp\www\weijia\app\framework\web\CController.php(286): CenterController->runAction()
+#3 F:\wamp\www\weijia\app\framework\web\CController.php(265): CenterController->runActionWithFilters()
+#4 F:\wamp\www\weijia\app\framework\web\CWebApplication.php(282): CenterController->run()
+#5 F:\wamp\www\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 F:\wamp\www\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 F:\wamp\www\weijia\app\index\index.php(15): CWebApplication->run()
+REQUEST_URI=/index.php?r=Center/wmoney
+in F:\wamp\www\weijia\app\index\protected\controllers\CenterController.php (92)
+in F:\wamp\www\weijia\app\index\index.php (15)
+2016/06/15 21:16:52 [error] [php] Missing argument 1 for BaseController::postXmlCurl(), called in F:\wamp\www\weijia\app\index\protected\modules\admin\controllers\AdminController.php on line 18 and defined (F:\wamp\www\weijia\app\index\protected\components\BaseController.php:371)
+Stack trace:
+#0 F:\wamp\www\weijia\app\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 F:\wamp\www\weijia\app\framework\web\CController.php(286): AdminController->runAction()
+#2 F:\wamp\www\weijia\app\framework\web\CController.php(265): AdminController->runActionWithFilters()
+#3 F:\wamp\www\weijia\app\framework\web\CWebApplication.php(282): AdminController->run()
+#4 F:\wamp\www\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 F:\wamp\www\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 F:\wamp\www\weijia\app\index\index.php(15): CWebApplication->run()
+REQUEST_URI=/index.php?r=admin/admin/index
+in F:\wamp\www\weijia\app\index\protected\components\BaseController.php (371)
+in F:\wamp\www\weijia\app\index\protected\modules\admin\controllers\AdminController.php (18)
+in F:\wamp\www\weijia\app\index\index.php (15)
