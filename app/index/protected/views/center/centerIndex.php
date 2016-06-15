@@ -50,7 +50,7 @@
                     个人中心
                 </dt>
                 <dd>
-                    <a href=""><i class="i-my-order"></i>发布房源</a>
+                    <a href="index.php?r=lease/crent"><i class="i-my-order"></i>发布房源</a>
                 </dd>
                 <dd>
                     <a href="index.php?r=center/collect"><i class="i-my-order"></i>我的收藏</a>

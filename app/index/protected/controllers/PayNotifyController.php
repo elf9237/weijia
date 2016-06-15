@@ -24,12 +24,18 @@ class PayNotifyController extends \WxPayNotify
 
             $order_sn = trim($result['out_trade_no']);
             $orderModel = new Order();
-            $order = $orderModel::model()->find('order_no=:order_sn',array(':order_sn'=>$order_sn));
+            $order = Order::model()->find('order_no=:order_sn',array(':order_sn'=>$order_sn));
             $order->audit_status = 1;
             $order->save();
-
+            
+            
             $payafter = new PayAfter();//$type,$days,$sendid
+            if($order->order_type=='房租')
             $payafter->yongJinAfter($order->info_id,$order->type,$order->days,$order->user_id);
+            if($order->order_type=='置顶')
+               $payafter->zhiDingAfter ($order->info_id, $order->days) ;
+             if($order->order_type=='佣金')
+               $payafter->yongJinAfter ($order->info_id, $order->pay_price);
 
             return true;
         }

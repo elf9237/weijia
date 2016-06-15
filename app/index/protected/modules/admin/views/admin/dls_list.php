@@ -92,6 +92,7 @@
                url:"index.php?r=admin/admin/Querydls",
                data:{
                    page:page
+                   audit_status:audit_status
 
                },
                type:"POST",
@@ -123,11 +124,12 @@
                  
                   
             })
-              $("#userbody").html(innerHtml.join(""));
-                   pageding(pagearr,"queryDls",data);
+              
                
             
             }
+            $("#userbody").html(innerHtml.join(""));
+                   pageding(pagearr,"queryDls",data);
             
         }})}
         

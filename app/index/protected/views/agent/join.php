@@ -92,12 +92,30 @@
             <a href="#" class="ui-icon-close">
             </a>
         </div>
+        <div class="ui-form-item ui-border-b">
+            <label>
+                <?php echo $form->label($model, 'price'); ?>
+            </label>
+            <?php echo $form->textField($model, 'price', array('class' => "text", 'placeholder' => "加盟金额")); ?>
+
+            <a href="#" class="ui-icon-close">
+            </a>
+        </div>
         <div class="ui-form-item ui-form-item-textarea ui-border-b">
             <label>
                 <?php echo $form->label($model, 'jiamengzone'); ?>
             </label>
-            <?php echo $form->textField($model, 'jiamengzone', array('class' => "textarea", 'placeholder' => "区域地址")); ?>
-
+<!--            --><?php //echo $form->textField($model, 'jiamengzone', array('class' => "textarea", 'placeholder' => "区域地址")); ?>
+            <div tabindex="0" class="tm_itemtext">
+                <div id="city_4" style='float: right;margin-right:10%'>
+                    <?php echo $form->dropDownList($model, 'province',array(), array('class' => "prov", 'id' => "prov")); ?>
+                    <?php echo $form->dropDownList($model, 'city', array(),array('class' => "city", 'disabled' => "disabled","id"=>"city")); ?>
+                    <?php echo $form->dropDownList($model, 'zone',array(),array('class' => "dist    ", 'disabled' => "disabled","id"=>"dist")); ?>
+<!--                    <select id="prov" class="prov input" ></select>-->
+<!--                    <select id="city" class="city input" disabled="disabled"></select>-->
+<!--                    <select id="dist" class="dist input" disabled="disabled"></select>-->
+                </div>
+            </div>
         </div>
         <div class="ui-form-item ui-form-item-l ui-border-b">
             <label class="ui-border-r">
@@ -123,6 +141,8 @@
 </section>
 
 </body>
+<script src="public/desktop/js/jquery.min.js"></script>
+<script type="text/javascript" src="public/desktop/js/skill/jquery.cityselect.js"></script>
 <script src="lib/zepto.min.js"></script>
 <script src="js/frozen.js"></script>
 <script src="js/house.js"></script>
@@ -141,5 +161,16 @@
             },
         })
     });
+    $(function(){
+        $("#city_4").citySelect({
+            prov: "福建",
+            city: "福州",
+            dist: "仓山区",
+            nodata: "none"
+        });
+        $('.select_all span').click(function(){
+            $('.shebei').prop('checked',true);
+        })
+    })
 </script>
 </html>

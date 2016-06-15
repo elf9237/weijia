@@ -321,6 +321,33 @@
                     "resourceType": ""
                 },
                 {
+                    "accessPath": "index.php?r=admin/admin/Totixian",
+                    "checked": false,
+                    "delFlag": 0,
+                    "parentID": 3,
+                    "resourceCode": "",
+                    "resourceDesc": "",
+                    "resourceGrade": 3,
+                    "resourceID": 13,
+                    "resourceName": "提现管理",
+                    "resourceOrder": 0,
+                    "resourceType": ""
+                },
+                {
+                    "accessPath": "index.php?r=admin/admin/Toshouyi",
+                    "checked": false,
+                    "delFlag": 0,
+                    "parentID": 3,
+                    "resourceCode": "",
+                    "resourceDesc": "",
+                    "resourceGrade": 3,
+                    "resourceID": 14,
+                    "resourceName": "收益查询",
+                    "resourceOrder": 0,
+                    "resourceType": ""
+                },
+                
+                {
                     "accessPath": "",
                     "checked": false,
                     "delFlag": 0,

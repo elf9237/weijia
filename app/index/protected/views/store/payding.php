@@ -122,23 +122,29 @@
      var types=type.split(",");
      var price=types[1];
      var days=types[0];
-        $.ajax({
-            type:"POST",
-            url:"index.php?r=store/zhiding",
-            data:{
-                infoid:'<?php echo  $cyInfo->id ?>',
-              
-                days:days,
-                price:price
-            },dataType: 'json',
-                    success:function(data){
-                        if(data.status)
-                            alert('支付完成');
-                        
-                    }
-            
-            
-        })
+     
+     
+      var url = 'index.php?r=store/zhiding';
+        url = url + '&infoid=' + '<?php echo  $cyInfo->id ?>' + '&days='+days+'&price=' + price;
+          window.location.href = url;
+     
+//        $.ajax({
+//            type:"POST",
+//            url:"index.php?r=store/zhiding",
+//            data:{
+//                infoid:'<?php echo  $cyInfo->id ?>',
+//              
+//                days:days,
+//                price:price
+//            },dataType: 'json',
+//                    success:function(data){
+//                        if(data.status)
+//                            alert('支付完成');
+//                        
+//                    }
+//            
+//            
+//        })
         
     }
 
