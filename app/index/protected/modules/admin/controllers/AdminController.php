@@ -11,9 +11,34 @@
  *
  * @author fanyouyong
  */
-class AdminController extends BaseController{
-    
-    
+class AdminController extends CController{
+
+
+  public function init(){
+        if(!$this->is_login()){
+
+
+            //$this->renderPartial('login');die;
+
+            //header("Location: http://".$_SERVER['SERVER_NAME']."/app/index/index.php?r=admin/admin/login");
+            //$this->redirect('index.php?r=admin/admin/login');
+            $this->redirect(array('login/index'));
+        }
+    }
+
+    public function is_login(){
+
+
+        $session = Yii::app()->session;
+        $adminUser = $session['adminUser'];
+        if($adminUser){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
     public function actionIndex(){
         //echo 1111;die;
         $this->render("index");
@@ -294,13 +319,14 @@ if(!empty($_POST['username'])){
        echo json_encode($pagelist->pageAjax);
     }
     
-    
+
     /**
-     * 
+     *
      */
-    public function actionLogin(){
-        $this ->renderPartial('login');
-    }
+   /* public function actionLogin(){
+
+        $this->renderPartial('login');
+    }*/
     
     public function actionToshouyi(){
          $this->render("shouyi");
