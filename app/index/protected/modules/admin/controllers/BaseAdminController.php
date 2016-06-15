@@ -14,7 +14,7 @@ class BaseAdminController extends CController
 
 
         $session = Yii::app()->session;
-        $adminUser = $session['adminUser'];
+        $adminUser = $session['userAdmin'];
         if($adminUser){
             return true;
         }else{

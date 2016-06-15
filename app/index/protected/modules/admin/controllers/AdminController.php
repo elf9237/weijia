@@ -30,7 +30,7 @@ class AdminController extends CController{
 
 
         $session = Yii::app()->session;
-        $adminUser = $session['adminUser'];
+        $adminUser = $session['userAdmin'];
         if($adminUser){
             return true;
         }else{
@@ -50,6 +50,7 @@ class AdminController extends CController{
      * 跳转至用户页面
      */
     public function actionUser(){
+        
        $this->render("user_list");
     }
     public  function actionQueryUser(){
@@ -76,6 +77,31 @@ if(!empty($_POST['username'])){
        echo json_encode($pagelist->pageAjax);
         
     }
+    
+     public function actionDlsUser(){
+        
+       $this->render("dlsuser");
+    }
+    
+     public  function actionQueryDlsUser(){
+         $page=$_POST['page'];
+        
+       $sql="select t.* ,tt.create_time as ctime,tt.price,tt.province,tt.city,tt.zone
+from cy_user t 
+ join (select t1.* from cy_agentform t1 join  (select max(t2.create_time) as maxtime ,t2.user_id from cy_agentform t2 where t2.audit_status=2 GROUP BY t2.user_id) t2 on(t2.maxtime=t1.create_time and t2.user_id =t1.user_id)) tt 
+  on(t.id = tt.user_id) where 1=1 ";
+if(!empty($_POST['username'])){
+          $sql.=" and t.username like '%".$_POST['username']."%'";
+      }
+       if(!empty($_POST['status'])){
+           $sql.=" and t.status = ".$_POST['status']." ";
+      }
+
+       $pagelist=new PageList($sql, $page, 10);
+       echo json_encode($pagelist->pageAjax);
+        
+    }
+    
     /**
      * 拉黑用户
      */
@@ -303,7 +329,9 @@ if(!empty($_POST['username'])){
         $this->render("tixian_list");
         
     }
-    
+    /**
+     * 提现查询
+     */
     public function actionQueryTixian(){
         
         $page=$_POST['page'];
@@ -318,6 +346,55 @@ if(!empty($_POST['username'])){
  
        echo json_encode($pagelist->pageAjax);
     }
+    /**
+     * 审核提现
+     */
+
+    public function actionShenHeTiXian(){
+         $ar=new AjaxReturn();
+          $ar->status=false;
+        $type=$_POST['type'];
+        $id=$_POST['id'];
+        $mes=$_POST['message'];
+        $agentModel= Tixian::model();
+        $agentInfo = $agentModel->findByPk($id);
+        $agentInfo->status=$type;
+        
+        $userInfo =  User::model()->find('id='.$agentInfo->user_id);
+        
+         $message=new Message();
+        $message->info_id=-1;
+        $message->sender=1;
+        $message->receiver=$agentInfo->user_id;
+        $message->message_type=2;
+        if($type==1)
+        $message->message='你的提现申请已通过，审批意见：'.$mes.'.具体事务请联系管理人员进行确认！！';
+         if($type==2)
+        $message->message='你的提现申请已驳回，审批意见：'.$mes;
+         
+         if($type==1){
+             $paybase = new BaseController();
+             $issuccess=$paybase->doSharePay($userInfo->openid, $agentInfo->jine*100);
+             if(!$issuccess){
+                 $agentInfo->status=3;
+                 $userInfo->yue=$userInfo->yue+$agentInfo->jine;
+                  $message->message='你的提现申请出现故障金额已退还到你的账户请查收！';
+             }
+         }else{
+               $userInfo->yue=$userInfo->yue+$agentInfo->jine;
+         }
+         
+         
+       
+             
+        
+    
+    if($agentInfo->save()&&$message->save()&&$userInfo->save()){
+              $ar->status=true;
+    }
+    echo json_encode($ar);
+    }
+    
     
 
     /**
@@ -347,6 +424,29 @@ if(!empty($_POST['username'])){
           $sql.=" and t.create_time >= ".$_POST['bTime']."  and t.create_time<=".$_POST['eTime']." "; 
        }
        $sql.=" and  t1.province='".$_POST['province']."' and t1.city='".$_POST['city']."' and t1.zone='".$_POST['bTime']."'";
+       
+      
+       
+       $pagelist=new PageList($sql, $page, 10);
+ 
+       echo json_encode($pagelist->pageAjax);
+    }
+    
+    
+     public function actionTotuikuan(){
+         $this->render("tuikuan");
+        
+    }
+    
+     public function actionQuerytuikuan(){
+        
+        $page=$_POST['page'];
+  
+       $sql="select t1.info_name,t.* "
+               . "from cy_order t join cy_info t1 on(t1.id=t.info_id)  where 1=1 and t.audit_status =3 and t1.lend_status =0 and t.order_type='佣金' " ;
+
+    
+      
        
       
        

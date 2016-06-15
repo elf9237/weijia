@@ -31,26 +31,8 @@
             <div class="ui_text_indent">
                 <div id="box_border">
                     <div id="box_top">搜索</div>
-                    <div id="box_center">
-                        已租未租
-                        <select name="audit_status" id="audit_status" class="ui_select01"
-                                >
-                            <option value=""
-                            >--请选择--
-                            </option>
-                            <option value="0">未审核</option>
-                             <option value="2">驳回</option>
-                            <option value="1">通过</option>
-                           
-                            
-                        </select>
-
-                      
-                    </div>
-                    <div id="box_bottom">
-                        <input type="button" value="查询" class="ui_input_btn01" onclick="queryDls(1);"/>
-<!--                        <input type="button" value="新增" class="ui_input_btn01" id="addBtn" onclick="add()"/>-->
-                    </div>
+                    
+                   
                 </div>
             </div>
         </div>
@@ -59,9 +41,10 @@
                 <table class="table" cellspacing="0" cellpadding="0" width="100%" align="center" border="0">
                     <tr>
                        
-                        <th>金额</th>
-                        <th>状态</th>
-                        <th>申请时间</th>
+                        <th>房源名称</th>
+                        <th>退款金额</th>
+                        <th>单号</th>
+                        <th>类别</th>
                        
                         <th>操作</th>
                     </tr>
@@ -82,54 +65,41 @@
     <script>
           function queryDls(page){
           
-              var audit_status=$("#audit_status option:selected").val();
+        
              
             
               var pagearr=$("#pagearr");
             $.ajax({
-               url:"index.php?r=admin/admin/queryTixian",
+               url:"index.php?r=admin/admin/querytuikuan",
                data:{
                    page:page,
-                   status:audit_status
+                   
 
                },
                type:"POST",
                dataType:"json",
                success:function(data){
-                       
+                         $("#userbody");
                    var innerHtml=[];
                    if(data.pageList.length>0){
                     $.each(data.pageList,function(n,value){
                         innerHtml.push("<tr>");
-                        innerHtml.push("<td>"+value.jine+"</td>");
-                         
-                          
-                        var status="待审核";
-                        if(value.status=="1")
-                          status="通过"; 
-                       if(value.status=="2")
-                          status="驳回";
-                      if(value.status=="3")
-                          status="异常";
-                      innerHtml.push("<td>"+status+"</td>");
-                       innerHtml.push("<td>"+new Date(parseInt(value.create_time) * 1000).toLocaleString().replace(/:\d{1,2}$/,' ')+"</td>");
-                      
-                      
-                      if(value.status=="0"){
-                           innerHtml.push("<td><a onclick='pass("+value.id+",1)'>通过</a>|<a onclick='pass("+value.id+",2)'>驳回</a></td>");
-                    }else{
-                          innerHtml.push("<td>已审核</td>");
-                    }
+                        innerHtml.push("<td>"+value.info_name+"</td>");
+                         innerHtml.push("<td>"+value.pay_price+"</td>");
+                          innerHtml.push("<td>"+value.order_no+"</td>");
+                          innerHtml.push("<td>佣金</td>");
+                           innerHtml.push("<td><a onclick='pass("+value.id+",4)'>通过</a>|<a onclick='pass("+value.id+",5)'>驳回</a></td>");
+                 
                    
                        
                  
                   
             })
-            
+              
                
             
             }
-              $("#userbody").html(innerHtml.join(""));
+            $("#userbody").html(innerHtml.join(""));
                    pageding(pagearr,"queryDls",data);
             
         }})}
@@ -181,7 +151,7 @@
                 type:type
             },
             dataType:"json",
-            url:"index.php?r=admin/admin/shenHeTiXian",
+            url:"index.php?r=admin/admin/shenhe",
             success:function(data){
                 if(data.status){
                     layer.close(index);

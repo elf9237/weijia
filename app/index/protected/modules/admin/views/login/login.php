@@ -6,19 +6,10 @@
     <link href="public/admin/style/authority/login_css.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="public/admin/scripts/jquery/jquery-1.7.1.js"></script>
     <script type="text/javascript">
-        $(document).ready(function () {
-            $("#login_sub").click(function () {
-                $("#submitForm").attr("action", "index.html").submit();
-            });
-        });
+    
 
-        /*回车事件*/
-        function EnterPress(e) { //传入 event 
-            var e = e || window.event;
-            if (e.keyCode == 13) {
-                $("#submitForm").attr("action", "index.html").submit();
-            }
-        }
+      
+     
     </script>
 </head>
 <body>
@@ -26,7 +17,7 @@
     <div id="login_area">
         <div id="login_box">
             <div id="login_form">
-                <form id="submitForm" action="" method="post">
+                <form >
                     <div id="login_tip">
                         <span id="login_err" class="sty_txt2"></span>
                     </div>
@@ -38,11 +29,14 @@
                                                           id="pwd" onkeypress="EnterPress(event)"
                                                           onkeydown="EnterPress()">
                     </div>
-                    <div id="btn_area">
-                        <input type="submit" class="login_btn" value="登  录">
-                        <input type="reset" class="login_btn" id="login_ret" value="重 置">
-                    </div>
+                    <span id="cuo" style="display:none">*用户名或密码不正确</span>
+                    <span id="kong" style="display:none">*用户名或密码不为空</span>
+                   
                 </form>
+                 <div id="btn_area">
+                        <input type="" onclick="login()" class="login_btn" value="登  录">
+                        <input type="" class="login_btn" id="login_ret" value="重 置">
+                    </div>
             </div>
         </div>
     </div>
@@ -50,5 +44,37 @@
 <div style="display:none">
     <script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script>
 </div>
+    <script>
+        function login(){
+            var username=$("#name").val();
+            var password=$("#pwd").val();
+            if(username==""||password==null){
+                $("#kong").show();
+                return;
+            }
+             $.ajax({
+            type:"POST",
+            data:{
+                password:password,
+                username:username
+               
+            },
+            dataType:"json",
+            url:"index.php?r=admin/login/index",
+            success:function(data){
+                if(data.status){
+                    console.log(data);
+                    window.location.href="index.php?r=admin/admin/index";
+                }else{
+                    $("#cuo").show();
+                    
+                }
+            }
+        })
+            
+            
+        }
+    
+    </script>
 </body>
 </html>

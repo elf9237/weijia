@@ -91,7 +91,7 @@
             $.ajax({
                url:"index.php?r=admin/admin/Querydls",
                data:{
-                   page:page
+                   page:page,
                    audit_status:audit_status
 
                },

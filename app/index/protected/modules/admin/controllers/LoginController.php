@@ -16,19 +16,17 @@ class LoginController extends CController{
 
     public function actionIndex(){
         //echo 1111;die;
-
+       $ar=new AjaxReturn();
         if(empty($_POST)){
             $this->render("login");
         }else{
 
-            $loginModel = new LoginForm();
-            $loginModel->attributes = $_POST;
-
-            $loginModel->validate();
-
-
-
-
+            $loginModel = new LoginFormAdmin();
+            $loginModel->password = $_POST['password'];
+            $loginModel->username=$_POST['username'];
+            
+           $ar->status= $loginModel->login();
+           echo json_encode($ar);
         }
 
 
