@@ -40,7 +40,7 @@
             <a href="#"> <img src="./img/avatar-default.png" alt="" /> <span class="update-tip"><i class="i-update-avatar"></i></span> </a>
         </div>
         <div class="my-nickname">
-            <span> <a href="#"><em>L1437441246887</em></a> </span>
+            <span> <a href="index.php?r=center/modify"><em>L1437441246887</em></a> </span>
         </div>
     </div>
     <div class="user-bd">
