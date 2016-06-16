@@ -3,7 +3,7 @@ class BaseController extends CController
 {
 	
 	public $layout=null;
-	public $wechat = true;
+	public $wechat ;
 
 	protected $key = 'z+Y4N{FdU4vNkXIf*tiKFF-odDRM,I88';
 
@@ -28,16 +28,16 @@ class BaseController extends CController
 //	}
 	public function init(){
 
-//		$this->wechat = !(strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') == false);
+		$this->wechat = !(strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') == false);
 //		return  true;
-        $this->wechat==true;
+
         if($this->wechat){
-//            $openid = $this->getOpenID();
-//            $usermodel = new User();
-//            $newUser = $usermodel::model()->find('openid=:openid', array(':openid'=>$openid));
-//            if(!empty($newUser)){
-//                Yii::app()->session['user'] = $newUser;
-//            }
+            $openid = $this->getOpenID();
+            $usermodel = new User();
+            $newUser = $usermodel::model()->find('openid=:openid', array(':openid'=>$openid));
+            if(!empty($newUser)){
+                Yii::app()->session['user'] = $newUser;
+            }
 
 
         }

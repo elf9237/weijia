@@ -468,7 +468,15 @@
                  var userid="<?php echo $cyinfo->user_id;?>";
                  var infoType="<?php echo $cyinfo->info_type;?>";
                  var userType="<?php echo $useinfo->type;?>";
+                 var senderid= <?php 
+                 $loginuserid=-1;
+            $userLogin= Yii::app()->session['user'] ;
+            if(!empty($userLogin)){
+                $loginuserid=$userLogin->id;
+               
+            } echo $loginuserid; ?>;
                  if(userType=="1"||userType=="2"){
+                     if(senderid !=-1){
                     $.ajax({
                         url:"index.php?r=store/rentFang&infoid="+infoid,
                         dataType:"json",
@@ -482,7 +490,10 @@
                             }
                         }
                         
-                    })
+                    })}else{
+                    window.location.href="index.php?r=site/login";
+                    
+                    }
                  }else{
                      if(infoType==1){
                           window.location.href="index.php?r=store/toFuKuangRi&infoid="+infoid; 

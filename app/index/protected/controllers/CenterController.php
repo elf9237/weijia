@@ -8,7 +8,12 @@
 class CenterController extends BaseController{
 //    个人中心首页
     public function actionCenterIndex(){
+        $loginuserid=-1;
+            $userLogin= Yii::app()->session['user'] ;
+            if(!empty($userLogin))
         $this -> renderPartial('centerIndex');
+    else 
+         $this ->redirect ("index.php?r=site/login");
     }
 //    我的发布
     public function actionIssue(){

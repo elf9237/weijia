@@ -71,7 +71,7 @@
 
 <div style="width:90%;" class="div-center0">
   <div style="position:absolute;left:50px;"><img src="public/desktop/images/editdata.png"></div>
-  <form method="POST" name="formreg" id="formreg" action="http://www.baozupo.com/baozupo/web/memberRegDispatcher.do?method=saveMember" target="iframe">
+  <form method="" name="formreg" id="formreg" action="http://www.baozupo.com/baozupo/web/memberRegDispatcher.do?method=saveMember" target="iframe">
   <div style="position:absolute;left:150px;top:3px;font-size:16px;"></div>
   <div id="name_car" style="position:absolute;left:585px;top:159px;display:none;"><img src="public/desktop/images/cartooninput.gif"></div>
 
@@ -83,7 +83,7 @@
       <tbody><tr><td></td><td class="td_cont_find">&nbsp;&nbsp;&nbsp;&nbsp;您的手机号(<font style="color:#FF0000">变更手机号需要验证</font>)：</td></tr>
       <tr>
         <td id="phone_td" class="num_reg">4</td>
-        <td><input type="text" id="phone" name="phone" onkeypress="return checkInputNumber(event)" maxlength="20" onblur="changeInput(&#39;phone&#39;,&#39;&#39;)" value="" class="input_reg"></td>
+        <td><input type="text" id="name" name="phone" onkeypress="return checkInputNumber(event)" maxlength="20" onblur="changeInput(&#39;phone&#39;,&#39;&#39;)" value="" class="input_reg"></td>
         <td>
         </td>
       </tr>
@@ -98,10 +98,13 @@
       <tbody><tr><td></td><td class="td_cont_find">&nbsp;&nbsp;&nbsp;&nbsp;密码：</td></tr>
       <tr>
         <td id="vercode_td" class="num_reg">5</td>
-        <td><input type="text" id="vercode" name="vercode" maxlength="20" onblur="changeInput(&#39;vercode&#39;,&#39;&#39;)" value="" class="input_reg"></td>
+        <td><input type="text" id="pwd" name="vercode" maxlength="20" onblur="changeInput(&#39;vercode&#39;,&#39;&#39;)" value="" class="input_reg"></td>
+        
       </tr>
     </tbody></table>
   </div>
+  <span id="cuo" style="display:none">*用户名或密码不正确</span>
+                    <span id="kong" style="display:none">*用户名或密码不为空</span>
   <div id="vercode_car" style="position:absolute;left:588px;top:446px;display:none;"><img src="public/desktop/images/cartooninput.gif"></div>
   <div style="position:absolute;left:264px;top:843px;">
     
@@ -130,7 +133,7 @@
   </form>
   
   <div id="divbut" style="position:absolute;left:290px;top:350px;">
-    <input id="but" onclick="saveClick()" onmousemove="changeClass(&#39;but&#39;,&#39;button2_reg&#39;)" onmouseout="changeClass(&#39;but&#39;,&#39;button_reg&#39;)" class="button_reg" type="button" value="登入">
+    <input id="but" onclick="login()" onmousemove="changeClass(&#39;but&#39;,&#39;button2_reg&#39;)" onmouseout="changeClass(&#39;but&#39;,&#39;button_reg&#39;)" class="button_reg" type="button" value="登入">
   </div>
   
   <div id="tmpdiv" style="display:none;"></div>
@@ -200,6 +203,41 @@
 </tbody></table>
   </div>
 <script type="text/javascript">
+    
+     function login(){
+            var username=$("#name").val();
+            var password=$("#pwd").val();
+            if(username==""||password==null){
+                $("#kong").show();
+                return;
+            }
+             $.ajax({
+            type:"POST",
+            data:{
+                password:password,
+                username:username
+               
+            },
+            dataType:"json",
+            url:"index.php?r=site/login",
+            success:function(data){
+                if(data.status){
+                    console.log(data);
+                    window.location.href="index.php?r=site/index";
+                }else{
+                    $("#cuo").show();
+                    
+                }
+            }
+        })
+            
+            
+        }
+    
+    
+    
+    
+    
   function setContentHeight(height,color){
     $("#content").css("height",height);
     if(color){

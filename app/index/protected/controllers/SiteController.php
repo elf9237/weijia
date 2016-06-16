@@ -50,32 +50,53 @@ class SiteController extends BaseController
 	}
 	public function actionJiameng()
 	{
+            $user= Yii::app()->session['user'] ;
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
 		if( $this->wechat){
+                    if(!empty($user))
 			$this->render('index');
+                    else  
+                        $this->render('login');
 		}else{
+                          if(!empty($user))
 			$this->render('desktop/fangdongjiameng');
+                          else
+                        $this->render('desktop/login');      
 		}
 	}
 	public function actionMyinfo()
 	{
+            $user= Yii::app()->session['user'] ;
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
 		if( $this->wechat){
+			 if(!empty($user))
 			$this->render('index');
+                    else  
+                        $this->render('login');
 		}else{
+                     if(!empty($user))
 			$this->render('desktop/myinfo');
+                         else
+                        $this->render('desktop/login');    
 		}
 	}
 	public function actionYuyue()
 	{
+             $user= Yii::app()->session['user'] ;
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
 		if( $this->wechat){
+                     if(!empty($user))
 			$this->render('index');
+                     else  
+                        $this->render('login'); 
 		}else{
+                        if(!empty($user))
 			$this->render('desktop/yuyue');
+                          else
+                        $this->render('desktop/login');   
 		}
 	}
 	public function actionZufangdetail($id)
@@ -158,6 +179,24 @@ class SiteController extends BaseController
 	public function actionLogin()
 	{
 		$model=new LoginForm;
+                 if( !$this->wechat){
+                if(isset($_POST['username'])){
+                     $ar =new AjaxReturn();
+                     $newUser = User::model()->find('login_id=:openid', array(':openid'=>$_POST['username']));
+                     if(!empty($newUser) && md5($_POST['password'])==$newUser->password && $newUser->status!=1){
+                        
+                         $ar->status=true;
+                           Yii::app()->session['user']=$newUser;
+                         echo json_encode($ar);
+                         
+                     }else{
+                          $ar->status=false;
+                         echo json_encode($ar); 
+                     }
+                     return;
+                 }
+                 
+                }
 
         if( $this->wechat){
             $openid = $this->getOpenID();
@@ -206,7 +245,7 @@ class SiteController extends BaseController
 		{
 			$this->render('login', array('model' => $model));
 		}else{
-			$this->render('desktop/login', array('model' => $model));
+			$this->render('desktop/login');
 		}
 	}
 	public function actionLoginUser(){

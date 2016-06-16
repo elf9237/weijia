@@ -43,7 +43,7 @@ class LoginFormAdmin extends CFormModel
     private function isAdmin(){
         if($this->username == 'admin'){
             $usermodel = User::model()->find('username=:username',array(':username'=>$this->username));
-            if(!empty($usermodel) && $usermodel->password == md5($this->password&&$usermodel->status==0)){
+            if(!empty($usermodel) && $usermodel->password == md5($this->password)&&$usermodel->status==0){
                 Yii::app()->session['userAdmin'] = $usermodel;
                 return true;
             }
@@ -53,7 +53,7 @@ class LoginFormAdmin extends CFormModel
 
     private function isManager(){
         $usermodel = User::model()->find('username=:username',array(':username'=>$this->username));
-        if(!empty($usermodel) && $usermodel->type == 2 && $usermodel->password == md5($this->password&&$usermodel->status==0)){
+        if(!empty($usermodel) && $usermodel->type == 2 && $usermodel->password == md5($this->password)&&$usermodel->status==0){
             Yii::app()->session['userAdmin'] = $usermodel;
             return true;
         }

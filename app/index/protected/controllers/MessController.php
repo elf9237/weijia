@@ -11,6 +11,10 @@ class MessController extends BaseController
      */
 	public function actionYu($userid,$infoid) {
             	// using the default layout 'protected/views/layouts/main.php'
+            $loginuserid=-1;
+            $userLogin= Yii::app()->session['user'] ;
+            if(empty($userLogin))
+                $this->redirect ("index.php?r=site/login");
             $infoModel=  Info::model();
             $cyinfo=$infoModel->findByPk($infoid);
           if( $this->wechat){
@@ -22,6 +26,11 @@ class MessController extends BaseController
 	}
         
 	public function actionSaveyu($userid,$infoid) {
+              $loginuserid=-1;
+            $userLogin= Yii::app()->session['user'] ;
+            if(!empty($userLogin))
+                $loginuserid=$userLogin->id;
+                
               $message_model =new Message();
               $ajaxReturn =  array('status'=>false,'content'=>'');
                    $message_model -> message='预约看房，姓名：'.$_POST['real_name'].',手机号：'.$_POST['phone_no'];
@@ -29,7 +38,7 @@ class MessController extends BaseController
                     $message_model -> info_id=$infoid;
 //                      $sendid=yii::app()->user->getState('User')->id;
 //                    if(!isset($sendid))
-                        $sendid=2;
+                        $sendid=$loginuserid;
                        $message_model->sender=$sendid;  
                      $isSuccess = $message_model -> save();
                      $ajaxReturn['status']=$isSuccess;
@@ -41,10 +50,18 @@ class MessController extends BaseController
           
 	}
         public function actionJubao($userid,$infoid) {
-          
+                   $loginuserid=-1;
+            $userLogin= Yii::app()->session['user'] ;
+            if(!empty($userLogin))
 		$this->render('jubao',array("userid"=>$userid,"infoid"=>$infoid));
+            else
+                $this->redirect ("index.php?r=site/login");
 	}
         public function actionSavejubao($userid,$infoid) {
+            $loginuserid=-1;
+            $userLogin= Yii::app()->session['user'] ;
+            if(!empty($userLogin))
+                $loginuserid=$userLogin->id;
               $message_model =new Message();
               $ajaxReturn =  array('status'=>false,'content'=>'');
                    $message_model -> message='举报房源，信息：'.$_POST['message'].',手机号：'.$_POST['phone_no'];
@@ -52,7 +69,7 @@ class MessController extends BaseController
                     $message_model -> info_id=$infoid;
 //                      $sendid=yii::app()->user->getState('User')->id;
 //                    if(!isset($sendid))
-                        $sendid=2;
+                        $sendid=$loginuserid;
                        $message_model->sender=$sendid;  
                        $message_model->message_type=1;
                      $isSuccess = $message_model -> save();

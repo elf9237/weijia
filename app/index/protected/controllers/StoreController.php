@@ -3,8 +3,12 @@ class StoreController extends BaseController
 {
 	public $layout = '//layouts/main2';
 	public function actionJiaMeng(){
-	
-		$this->render('jiameng');	
+	$loginuserid=-1;
+            $userLogin= Yii::app()->session['user'] ;
+            if(!empty($userLogin))
+		$this->render('jiameng');
+            else
+                $this->redirect ("index.php?r=site/login");
 	}
 	public function actionIndex($info_type){
             
@@ -18,24 +22,43 @@ class StoreController extends BaseController
 		$this->render('detial',array('cyinfo'=>$cyinfo,'useinfo'=>$useinfo));
 	}
          public function actionToFuKuang($infoid){
+             $loginuserid=-1;
+            $userLogin= Yii::app()->session['user'] ;
+            if(empty($userLogin))
+                $this->redirect ("index.php?r=site/login");
+             
           $infoModel=  Info::model();
           $cyInfo=$infoModel->findByPk($infoid);
 	
 		$this->render('pay',array("cyInfo"=>$cyInfo));	
 	}
         public function actionToFuKuangRi($infoid){
+                  $loginuserid=-1;
+            $userLogin= Yii::app()->session['user'] ;
+            if(empty($userLogin))
+                $this->redirect ("index.php?r=site/login");
           $infoModel=  Info::model();
           $cyInfo=$infoModel->findByPk($infoid);
 	
 		$this->render('payri',array("cyInfo"=>$cyInfo));	
 	}
         public function actionToFuKuangYong($infoid){
+                  $loginuserid=-1;
+            $userLogin= Yii::app()->session['user'] ;
+            if(empty($userLogin))
+                $this->redirect ("index.php?r=site/login");
+            
           $infoModel=  Info::model();
           $cyInfo=$infoModel->findByPk($infoid);
 	
 		$this->render('payyong',array("cyInfo"=>$cyInfo));	
 	}
          public function actionToFuKuangDing($infoid){
+                   $loginuserid=-1;
+            $userLogin= Yii::app()->session['user'] ;
+            if(empty($userLogin))
+                $this->redirect ("index.php?r=site/login");
+             
           $infoModel=  Info::model();
           $cyInfo=$infoModel->findByPk($infoid);
 	
@@ -56,7 +79,11 @@ class StoreController extends BaseController
           /**
            * 请求者id到时候要设置
            */
-          $rentInfo->sender=123;
+             $loginuserid=-1;
+            $userLogin= Yii::app()->session['user'] ;
+            if(!empty($userLogin))
+                $loginuserid=$userLogin->id;
+          $rentInfo->sender=$loginuserid;
            $rentInfo->start_time=time();
            $rentInfo->end_time=strtotime("+1 year");
            $ar->status=$rentInfo->save();
@@ -64,8 +91,12 @@ class StoreController extends BaseController
 	}
         
         public function actionZufang(){
+                  $loginuserid=-1;
+            $userLogin= Yii::app()->session['user'] ;
+            if(!empty($userLogin))
+                $loginuserid=$userLogin->id;
             $ar=new AjaxReturn();
-            $sender=123;
+            $sender=$loginuserid;
             $days=$_GET['days'];
             $type=$_GET['type'];
             $infoid=$_GET['infoid'];
@@ -94,8 +125,13 @@ class StoreController extends BaseController
         }
         
          public function actionZhiding(){
+                  $loginuserid=-1;
+            $userLogin= Yii::app()->session['user'] ;
+            if(!empty($userLogin))
+                $loginuserid=$userLogin->id;
+             
               $ar=new AjaxReturn();
-            $sender=123;
+            $sender=$loginuserid;
             $days=$_GET['days'];
            
             $infoid=$_GET['infoid'];
@@ -124,8 +160,13 @@ class StoreController extends BaseController
         }
         
          public function actionYongjin(){
+                  $loginuserid=-1;
+            $userLogin= Yii::app()->session['user'] ;
+            if(!empty($userLogin))
+                $loginuserid=$userLogin->id;
+             
              $ar=new AjaxReturn();
-            $sender=123;
+            $sender=$loginuserid;
             $infoid=$_GET['infoid'];
             $price=$_GET['price'];
             $orderModel= new Order();

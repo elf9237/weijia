@@ -391,7 +391,7 @@
       </div>
       <div class="div-split2"></div>
       <div id="divbut" class="div-align-right">
-	    <input id="but" onclick="saveClick()" class="button_reg" type="button" style="width:80px;height:30px;" value="提交">
+	    <input id="but" onclick="saveCkick()" class="button_reg" type="button" style="width:80px;height:30px;" value="提交">
 	  </div>
     </div>
   </div>
@@ -477,11 +477,19 @@
       window.location.href="index.php?r=mess/yu/&infoid="+info_id+"&userid="+user_id;
   }
   function saveCkick(){
+        var senderid= <?php 
+                 $loginuserid=-1;
+            $userLogin= Yii::app()->session['user'] ;
+            if(!empty($userLogin)){
+                $loginuserid=$userLogin->id;
+               
+            } echo $loginuserid; ?>;
       var message=$("#dsc").val();
       if(message==""){
           layer.msg("请输入内容在提交");
           return;
       }
+      if(senderid!=-1){
        $.ajax({
                url:"index.php?r=mess/savejubao/&infoid="+info_id+"&userid="+user_id,
                data:{
@@ -498,16 +506,24 @@
                        layer.msg("意见提失败"); 
                    }
             
-        }})
+        }})}else{
+     window.location.href="index.php?r=site/login";
+        }
       
   }
   function saveFav(){
-      
+        var senderid= <?php 
+                 $loginuserid=-1;
+            $userLogin= Yii::app()->session['user'] ;
+            if(!empty($userLogin)){
+                $loginuserid=$userLogin->id;
+               
+            } echo $loginuserid; ?>;
+      if(senderid!=-1){
        $.ajax({
                url:"index.php?r=ajax/Coll/",
                data:{
                    id:info_id
-
                },
                type:"POST",
                dataType:"json",
@@ -518,7 +534,9 @@
                        layer.msg("收藏失败"); 
                    }
             
-        }})
+        }})}else{
+     window.location.href="index.php?r=site/login";
+        }
       
   }
   

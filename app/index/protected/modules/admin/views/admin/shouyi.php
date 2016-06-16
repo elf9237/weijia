@@ -32,7 +32,7 @@
                 <div id="box_border">
                     <div id="box_top">搜索</div>
                     <div id="box_center">
-                        已租未租
+                        省市区
                        <div id="city_4" style="display: inline-block">
                     <select id="prov" class="prov input" ></select> 
                     <select id="city" class="city input" disabled="disabled"></select>
