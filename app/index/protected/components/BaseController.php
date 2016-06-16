@@ -389,12 +389,13 @@ class BaseController extends CController
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 
 		if($useCert == true){
+			$strCertPath = dirname(dirname(__FILE__)).'/cert/';
 			//设置证书
 			//使用证书：cert 与 key 分别属于两个.pem文件
 			curl_setopt($ch,CURLOPT_SSLCERTTYPE,'PEM');
-			curl_setopt($ch,CURLOPT_SSLCERT, '../cert/apiclient_cert.pem');
+			curl_setopt($ch,CURLOPT_SSLCERT, $strCertPath.'apiclient_cert.pem');
 			curl_setopt($ch,CURLOPT_SSLKEYTYPE,'PEM');
-			curl_setopt($ch,CURLOPT_SSLKEY, '../cert/apiclient_key.pem');
+			curl_setopt($ch,CURLOPT_SSLKEY, $strCertPath.'apiclient_key.pem');
 		}
 		//post提交方式
 		curl_setopt($ch, CURLOPT_POST, TRUE);
@@ -430,7 +431,7 @@ class BaseController extends CController
 		ksort($arrParams);
 		$string = $this->ToUrlParams($arrParams);
 		//签名步骤二：在string后加入KEY
-		$string = $string . "&key=123";
+		$string = $string . "&key=NzVcctraDVkMk06yPJjSk1SPShaulRDI";
 		//签名步骤三：MD5加密
 		$string = md5($string);
 		//签名步骤四：所有字符转为大写

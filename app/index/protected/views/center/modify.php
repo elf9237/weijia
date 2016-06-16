@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: bruce
- * Date: 2016/6/12
- * Time: 22:19
+ * Date: 2016/6/15
+ * Time: 23:02
  */
 ?>
 <!DOCTYPE html>
@@ -11,7 +11,7 @@
 <!--<![endif]-->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>注册</title>
+    <title>修改信息</title>
     <meta name="keyword" />
     <meta name="description"/>
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
@@ -43,38 +43,30 @@
             <div class="op-alone op-alone-register">
                 <div class="auto-middle">
                     <div class="op-register">
-                        <form action=""  class="modifyform">
-                            <h3><span class="titleico">注 册</span></h3>
+                        <form action=""   class="modifyform">
+                            <h3><span class="titleico" style="width: 135px;">修改用户信息</span></h3>
                             <div class="userbox">
                                 <div class=""></div>
-                                <input type="text" class="userId" placeholder="请输入用户名" datatype="s5-16" errormsg="昵称至少5个字符,最多16个字符！">
+                                <input type="text" class="userId" placeholder="修改用户名" datatype="s5-16" errormsg="昵称至少5个字符,最多16个字符！">
                                 <span class="tip Validform_checktip">昵称为6~18个字符</span>
                             </div>
                             <div class="userbox">
                                 <div class=""></div>
-                                <input type="text" class="userId" placeholder="手机号" name="mobile"  datatype="m" errormsg="手机号码格式不对！">
+                                <input type="text" class="phoneId" placeholder="修改手机号" name="mobile"  datatype="m" errormsg="手机号码格式不对！">
+
                                 <span class="tip Validform_checktip"></span>
                             </div>
-                            <div class="codebox">
-                                <input type="text" class="verifyCode" placeholder="图片验证码">
-                                <img class="codeimg" src="http://account.oneplus.cn/getVerifyImage" data-url="">
-                            </div>
-                            <div class="codebox getSMS">
-                                <input type="text" class="smsCode" placeholder="短信验证码">
-                                <span class="getSMSBtn"><i></i>获取验证码</span>
-                                <span class="time"><i></i><em>120</em>s</span>
+
+                            <div class="passbox">
+                                <input type="password" class="passWord" name="userpassword" placeholder="修改密码" datatype="*6-15" errormsg="密码范围在6~15位之间！"><span class="tip Validform_checktip">密码范围在6~15位之间！</span>
                             </div>
                             <div class="passbox">
-                                <input type="password" class="passWord" placeholder="密码6~16位" name="userpassword" placeholder="修改密码" datatype="*6-15" errormsg="密码范围在6~15位之间！"><span class="tip Validform_checktip">密码范围在6~15位之间！</span>
-                            </div>
-                            <div class="passbox">
-                                <input type="password" class="passWord2" placeholder="确认密码" name="userpassword2" datatype="*" recheck="userpassword" errormsg="您两次输入的账号密码不一致！">
+                                <input type="password" class="passWord2" name="userpassword2" placeholder="确认修改密码" datatype="*" recheck="userpassword" errormsg="您两次输入的账号密码不一致！">
                                 <span class="tip Validform_checktip"></span>
                             </div>
-                            <div class="note">注册微家，就表示您同意微家的<a href="" target="_blank" class="user"  et-attached="1">用户协议</a>。
-                            </div>
-                            <button class="btn registerBtn" type="submit"  et-attached="1">注册</button>
-                            <div class="ft-operate"><a href="#" class="link"  et-attached="1"><i class="arrow"></i>登录</a></div>
+
+                            <button class="btn registerBtn" type="submit"  et-attached="1">提交修改</button>
+                            <!-- <div class="ft-operate"><a href="#" class="link"  et-attached="1"><i class="arrow"></i>登录</a></div> -->
                         </form>
                         <div class="otherlogin">
                             <a href="#" class="qq-login"   et-attached="1"></a>
@@ -83,11 +75,31 @@
                     </div>
                 </div>
             </div>
-
-
 </body>
+<script src="lib/zepto.min.js"></script>
+<script src="lib/layer/layer.js"></script>
 <script type="text/javascript" src="http://validform.rjboy.cn/wp-content/themes/validform/js/jquery-1.6.2.min.js"></script>
 <script type="text/javascript" src="http://validform.rjboy.cn/Validform/v5.1/Validform_v5.1_min.js"></script>
+<script>
+    $(function(){
+        $('.registerBtn').click(function(){
+            var username = $('.userId').val();
+            var psw= $('.passWord').val();
+            var phone=$('.phoneId').val();
+            $.ajax({
+                url:"index.php?r=center/modify",
+                method:"POST",
+                dataType:'json',
+                data:{username:username,psw:psw,phone:phone},
+                success:function(){
+
+                }
+
+            });
+        })
+
+    })
+</script>
 <script type="text/javascript">
     $(function(){
         //$(".registerform").Validform();  //就这一行代码！;

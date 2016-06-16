@@ -5,7 +5,7 @@
  * LoginForm is the data structure for keeping
  * user login form data. It is used by the 'login' action of 'SiteController'.
  */
-class LoginForm extends CFormModel
+class LoginFormAdmin extends CFormModel
 {
 	public $username;
 	public $password;
@@ -43,7 +43,7 @@ class LoginForm extends CFormModel
     private function isAdmin(){
         if($this->username == 'admin'){
             $usermodel = User::model()->find('username=:username',array(':username'=>$this->username));
-            if(!empty($usermodel) && $usermodel->password == md5($this->password)){
+            if(!empty($usermodel) && $usermodel->password == md5($this->password&&$usermodel->status==0)){
                 Yii::app()->session['userAdmin'] = $usermodel;
                 return true;
             }elseif(empty($usermodel)){
@@ -55,7 +55,7 @@ class LoginForm extends CFormModel
 
     private function isManager(){
         $usermodel = User::model()->find('username=:username',array(':username'=>$this->username));
-        if(!empty($usermodel) && $usermodel->type == 2 && $usermodel->password == md5($this->password)){
+        if(!empty($usermodel) && $usermodel->type == 2 && $usermodel->password == md5($this->password&&$usermodel->status==0)){
             Yii::app()->session['userAdmin'] = $usermodel;
             return true;
         }

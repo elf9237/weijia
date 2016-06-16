@@ -173,4 +173,9 @@ class CenterController extends BaseController{
     public function actionForgetpsw(){
         $this -> renderPartial('forgetpsw');
     }
+    //    修改用户信息
+    public function actionModify(){
+        
+        $this -> renderPartial('modify');
+    }
 }

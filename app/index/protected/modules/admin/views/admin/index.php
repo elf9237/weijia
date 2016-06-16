@@ -14,7 +14,7 @@
         /**退出系统**/
         function logout() {
             if (confirm("您确定要退出本系统吗？")) {
-                window.location.href = "index.php?r=admin/default/login";
+                window.location.href = "index.php?r=admin/login/index";
             }
         }
 
@@ -212,10 +212,7 @@
                 zTree.expandAll(true);
             }
         });
-
-        function loadMenu(resourceType, treeObj) {
-        
-            data = [{
+        var data=[{
                 "accessPath": "",
                 "checked": false,
                 "delFlag": 0,
@@ -228,59 +225,6 @@
                 "resourceOrder": 0,
                 "resourceType": ""
             },
-                {
-                    "accessPath": "",
-                    "checked": false,
-                    "delFlag": 0,
-                    "parentID": 37,
-                    "resourceCode": "",
-                    "resourceDesc": "",
-                    "resourceGrade": 2,
-                    "resourceID": 19,
-                    "resourceName": "出租方设置",
-                    "resourceOrder": 0,
-                    "resourceType": ""
-                },
-                {
-                    "accessPath": "",
-                    "checked": false,
-                    "delFlag": 0,
-                    "parentID": 37,
-                    "resourceCode": "",
-                    "resourceDesc": "",
-                    "resourceGrade": 2,
-                    "resourceID": 20,
-                    "resourceName": "租金评定设置",
-                    "resourceOrder": 0,
-                    "resourceType": ""
-                },
-                {
-                    "accessPath": "",
-                    "checked": false,
-                    "delFlag": 0,
-                    "parentID": 1,
-                    "resourceCode": "",
-                    "resourceDesc": "",
-                    "resourceGrade": 2,
-                    "resourceID": 2,
-                    "resourceName": "摇号配租",
-                    "resourceOrder": 0,
-                    "resourceType": ""
-                },
-                {
-                    "accessPath": "",
-                    "checked": false,
-                    "delFlag": 0,
-                    "parentID": 1,
-                    "resourceCode": "",
-                    "resourceDesc": "",
-                    "resourceGrade": 2,
-                    "resourceID": 16,
-                    "resourceName": "签约入住",
-                    "resourceOrder": 0,
-                    "resourceType": ""
-                },
-               
                 {
                     "accessPath": "index.php?r=admin/admin/Tohouse",
                     "checked": false,
@@ -303,7 +247,7 @@
                     "resourceDesc": "",
                     "resourceGrade": 3,
                     "resourceID": 9,
-                    "resourceName": "代理商管理",
+                    "resourceName": "代理商申请管理",
                     "resourceOrder": 0,
                     "resourceType": ""
                 },
@@ -345,48 +289,63 @@
                     "resourceName": "收益查询",
                     "resourceOrder": 0,
                     "resourceType": ""
-                },
-                
+                }
+                ,
                 {
-                    "accessPath": "",
+                    "accessPath": "index.php?r=admin/admin/dlsUser",
                     "checked": false,
                     "delFlag": 0,
-                    "parentID": 2,
+                    "parentID": 3,
                     "resourceCode": "",
                     "resourceDesc": "",
                     "resourceGrade": 3,
-                    "resourceID": 5,
-                    "resourceName": "房源导出",
-                    "resourceOrder": 0,
-                    "resourceType": ""
-                },
-                {
-                    "accessPath": "",
-                    "checked": false,
-                    "delFlag": 0,
-                    "parentID": 16,
-                    "resourceCode": "",
-                    "resourceDesc": "",
-                    "resourceGrade": 3,
-                    "resourceID": 18,
-                    "resourceName": "电子合同管理",
-                    "resourceOrder": 0,
-                    "resourceType": ""
-                },
-                {
-                    "accessPath": "",
-                    "checked": false,
-                    "delFlag": 0,
-                    "parentID": 24,
-                    "resourceCode": "",
-                    "resourceDesc": "",
-                    "resourceGrade": 3,
-                    "resourceID": 59,
-                    "resourceName": "日常合同续费",
+                    "resourceID": 15,
+                    "resourceName": "代理商管理",
                     "resourceOrder": 0,
                     "resourceType": ""
                 }
-               ];
+                 ,
+                {
+                    "accessPath": "index.php?r=admin/admin/Totuikuan",
+                    "checked": false,
+                    "delFlag": 0,
+                    "parentID": 3,
+                    "resourceCode": "",
+                    "resourceDesc": "",
+                    "resourceGrade": 3,
+                    "resourceID": 16,
+                    "resourceName": "退款审核",
+                    "resourceOrder": 0,
+                    "resourceType": ""
+                }
+                
+                
+                ];
+                
+                var realdata=[];
+                function initMeun(){
+                    var type='<?php  $session = Yii::app()->session;
+                    $userInfo=$session['userAdmin'];
+                    echo $userInfo->type;
+                    
+                    ?>';
+                            if(type!='admin'){
+                               for(var i=0;i<data.length;i++){
+                                   if(data[i].resourceID==14||data[i].resourceID==7||data[i].resourceID==3){
+                                       realdata.push(data[i]);
+                                   }
+                               }
+                            }else{
+                                realdata=data;
+                                
+                            }
+                    
+                }
+
+        function loadMenu(resourceType, treeObj) {
+            initMeun();
+        
+            data = realdata;
             // 如果返回数据不为空，加载"业务模块"目录
             if (data != null) {
                 // 将返回的数据赋给zTree
@@ -423,7 +382,11 @@
             <ul>
                 <li>
                     <img alt="当前用户" src="public/admin/images/common/user.jpg">：
-                    <span>admin</span>
+                    <span><?php  $session = Yii::app()->session;
+                    $userInfo=$session['userAdmin'];
+                    echo $userInfo->username;
+                    
+                    ?></span>
                 </li>
                 <li>
                     <img alt="事务月份" src="public/admin/images/common/month.jpg">：

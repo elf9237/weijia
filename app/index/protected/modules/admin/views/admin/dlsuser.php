@@ -32,23 +32,22 @@
                 <div id="box_border">
                     <div id="box_top">搜索</div>
                     <div id="box_center">
-                        已租未租
-                        <select name="audit_status" id="audit_status" class="ui_select01"
-                                >
-                            <option value=""
-                            >--请选择--
-                            </option>
-                            <option value="0">未审核</option>
-                             <option value="2">驳回</option>
-                            <option value="1">通过</option>
-                           
-                            
-                        </select>
+                       
 
-                      
+                       用户状态
+                        <select name="status" id="fyDh" class="ui_select01">
+                            <option value="">--请选择--</option>
+                             <option value="0">--可用--</option>
+                              <option value="1">--拉黑--</option>
+                        </select>
+                       
+                        
+
+                        用户名&nbsp;&nbsp;<input type="text" id="fyZldz" name="username"
+                                             class="ui_input_txt02"/>
                     </div>
                     <div id="box_bottom">
-                        <input type="button" value="查询" class="ui_input_btn01" onclick="queryDls(1);"/>
+                        <input type="button" value="查询" class="ui_input_btn01" onclick="queryUsers(1);"/>
 <!--                        <input type="button" value="新增" class="ui_input_btn01" id="addBtn" onclick="add()"/>-->
                     </div>
                 </div>
@@ -59,10 +58,11 @@
                 <table class="table" cellspacing="0" cellpadding="0" width="100%" align="center" border="0">
                     <tr>
                        
-                        <th>金额</th>
-                        <th>状态</th>
+                        <th>用户名</th>
+                        <th>代理地区</th>
+                        <th>代理费用</th>
                         <th>申请时间</th>
-                       
+                        <th>状态</th>
                         <th>操作</th>
                     </tr>
                     <tbody id="userbody">
@@ -80,72 +80,63 @@
 <div style="display:none">
     <script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script>
     <script>
-          function queryDls(page){
-          
-              var audit_status=$("#audit_status option:selected").val();
-             
-            
+          function queryUsers(page){
+              
+              var status=$("#fyDh option:selected").val();
+              var username=$("#fyZldz").val();
               var pagearr=$("#pagearr");
             $.ajax({
-               url:"index.php?r=admin/admin/queryTixian",
+               url:"index.php?r=admin/admin/queryDlsUser",
                data:{
                    page:page,
-                   status:audit_status
-
+                   status:status,
+                   username:username
+                   
                },
                type:"POST",
                dataType:"json",
                success:function(data){
-                       
+                      
                    var innerHtml=[];
                    if(data.pageList.length>0){
                     $.each(data.pageList,function(n,value){
                         innerHtml.push("<tr>");
-                        innerHtml.push("<td>"+value.jine+"</td>");
-                         
-                          
-                        var status="待审核";
+                        innerHtml.push("<td>"+value.username+"</td>");
+                          innerHtml.push("<td>"+value.zone+"</td>");
+                          innerHtml.push("<td>"+value.price+"</td>");
+                          innerHtml.push("<td>"+value.ctime+"</td>");
+                        var status="可用";
                         if(value.status=="1")
-                          status="通过"; 
-                       if(value.status=="2")
-                          status="驳回";
-                      if(value.status=="3")
-                          status="异常";
-                      innerHtml.push("<td>"+status+"</td>");
-                       innerHtml.push("<td>"+new Date(parseInt(value.create_time) * 1000).toLocaleString().replace(/:\d{1,2}$/,' ')+"</td>");
-                      
-                      
-                      if(value.status=="0"){
-                           innerHtml.push("<td><a onclick='pass("+value.id+",1)'>通过</a>|<a onclick='pass("+value.id+",2)'>驳回</a></td>");
-                    }else{
-                          innerHtml.push("<td>已审核</td>");
-                    }
+                          status="禁用"; 
+                        innerHtml.push("<td>"+status+"</td>");
+                        
+                          var stext="禁用";
+                          if(value.status=="1")
+                          stext="启用"; 
+                           innerHtml.push("<td><a onclick='jinyong("+value.id+","+value.status+")'>"+stext+"</a>|<a onclick='tixing("+value.id+")'>提醒</a></td>");
+                    })
                    
                        
-                 
-                  
+                   }
+                    $("#userbody").html(innerHtml.join(""));
+                   pageding(pagearr,"queryUsers",data);
+               }
             })
             
-               
-            
-            }
-              $("#userbody").html(innerHtml.join(""));
-                   pageding(pagearr,"queryDls",data);
-            
-        }})}
+        }
         
-        function yichu(id){
+        function jinyong(id,status){
         $.ajax({
             type:"POST",
             data:{
                 id:id,
-               
+                status:status
             },
             dataType:"json",
-            url:"index.php?r=admin/admin/delagent",
+            url:"index.php?r=admin/admin/lahei",
             success:function(data){
                 if(data.status){
-                     queryDls(1);
+                     queryUsers(1);
                 }
             }
         })
@@ -161,12 +152,12 @@
           
 //layer.msg("hehe");
         }
-          function pass(id,type){
+          function tixing(id){
                  layer.open({
                 type:1,
                 content:'<div style="text-align:center;display:inline-block;padding-top:10px"><span>消息内容：</span><textarea id="message"></textarea></div>',
                 area:["300px","300px"],
-                title:"审核",
+                title:"添加提醒",
                 btn:["发送","取消"],
                  yes:function(index){
                      if($("#message").val()==""){
@@ -178,16 +169,14 @@
             data:{
                 message:$("#message").val(),
                 id:id,
-                type:type
             },
             dataType:"json",
-            url:"index.php?r=admin/admin/shenHeTiXian",
+            url:"index.php?r=admin/admin/tixing",
             success:function(data){
                 if(data.status){
                     layer.close(index);
-                    queryDls(1);
                 }else{
-                    layer.msg("失败！！");
+                    layer.msg("发送异常！！");
                 }
             }
         })
@@ -200,7 +189,7 @@
             })
             }
     $(function(){
-    queryDls(1);
+    queryUsers(1);
         
     })
     </script>
