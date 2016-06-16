@@ -24,6 +24,8 @@ class LoginController extends CController{
             $loginModel = new LoginForm();
             $loginModel->attributes = $_POST;
 
+
+
             $loginModel->validate();
 
 

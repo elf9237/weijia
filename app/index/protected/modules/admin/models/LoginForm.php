@@ -46,6 +46,8 @@ class LoginForm extends CFormModel
             if(!empty($usermodel) && $usermodel->password == md5($this->password)){
                 Yii::app()->session['userAdmin'] = $usermodel;
                 return true;
+            }elseif(empty($usermodel)){
+                $this->addError('password','原始密码不正确');
             }
         }
         return false;
@@ -57,6 +59,7 @@ class LoginForm extends CFormModel
             Yii::app()->session['userAdmin'] = $usermodel;
             return true;
         }
+
         return false;
     }
 }
