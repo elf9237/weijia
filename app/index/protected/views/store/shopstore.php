@@ -115,7 +115,7 @@
                                  ding="置顶";
                               var yong="";
                              if(value.yong_jin!=0)
-                                 yong="佣";
+                                 yong="佣："+value.yong_jin;
                              
                              
                                  innerHtml.push('<li class="item">'+

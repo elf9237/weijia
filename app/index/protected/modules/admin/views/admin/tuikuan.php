@@ -86,9 +86,9 @@
                         innerHtml.push("<tr>");
                         innerHtml.push("<td>"+value.info_name+"</td>");
                          innerHtml.push("<td>"+value.pay_price+"</td>");
-                          innerHtml.push("<td>"+value.order_no+"</td>");
+                          innerHtml.push("<td>"+value.weidan+"</td>");
                           innerHtml.push("<td>佣金</td>");
-                           innerHtml.push("<td><a onclick='pass("+value.id+",4)'>通过</a>|<a onclick='pass("+value.id+",5)'>驳回</a></td>");
+                           innerHtml.push("<td><a onclick='pass("+value.id+")'>确认退款</a>|<a href='https://mp.weixin.qq.com/' target='_blank'>去退款</a></td>");
                  
                    
                        
@@ -131,7 +131,7 @@
           
 //layer.msg("hehe");
         }
-          function pass(id,type){
+          function pass(id){
                  layer.open({
                 type:1,
                 content:'<div style="text-align:center;display:inline-block;padding-top:10px"><span>消息内容：</span><textarea id="message"></textarea></div>',
@@ -147,11 +147,10 @@
             type:"POST",
             data:{
                 message:$("#message").val(),
-                id:id,
-                type:type
+                id:id
             },
             dataType:"json",
-            url:"index.php?r=admin/admin/shenhe",
+            url:"index.php?r=admin/admin/sureTui",
             success:function(data){
                 if(data.status){
                     layer.close(index);

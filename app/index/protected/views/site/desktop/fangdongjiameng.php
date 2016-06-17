@@ -28,6 +28,7 @@
   <link rel="stylesheet" href="public/desktop/css/comment.css">
   <link rel="stylesheet" href="public/desktop/css/scroller.css">
   <link rel="stylesheet" href="public/desktop/css/style.css">
+  <script type="text/javascript" src="public/desktop/js/skill/jquery.cityselect.js"></script>
 </head>
 <body class="body-web" style="Overflow-y:scroll">
 <div class="header">
@@ -43,9 +44,15 @@
 		</ul>
 	</div>
 	<div class="login">
-		<span><a href="index.php?r=site/login">登入</a></span>
-<!--		<span>|</span>-->
-<!--		<span><a href="index.php?r=site/register">注册</a></span>-->
+ <?php
+          $user= Yii::app()->session['user'] ;
+          if(!empty($user)){
+              echo '<span>欢迎回来！'.$user->login_id.'</span>';
+          }else{
+              echo '<span><a href="index.php?r=site/login">登入</a></span>'; 
+          }
+        
+        ?>
 	</div>
 </div>
 
@@ -93,13 +100,32 @@
   					<td></td>
   				</tr>
   				<tr height="40px">
-  					<td class="color_def font_lease" style="text-align:right">房源地址&nbsp;&nbsp;</td>
+                                   <td class="color_def font_lease" style="text-align:right">区域&nbsp;&nbsp;</td>
+                                    <td style="width:50%">
+  					 <div id="city_4">
+                    <select id="prov" class="prov input" ></select> 
+                    <select id="city" class="city input" disabled="disabled"></select>
+                    <select id="dist" class="dist input" disabled="disabled"></select>
+                    
+                </div>
+                                </td>
+  				</tr>
+                                <tr height="40px">
+  					<td class="color_def font_lease" style="text-align:right">身份证号&nbsp;&nbsp;</td>
   					<td>
-  					<input type="text" id="place" name="place" title="请输入房源地址" onkeyup="limitInputLen(this,100)" value="" class="input7_reg">
+  					<input type="text" id="user_idno" name="phone"  maxlength="20" value="" class="input7_reg">
   					</td>
   					<td></td>
   				</tr>
-  				<tr height="60px"><td colspan="2"><input type="button" value="提  交" onclick="saveClick()" class="button_reg" style="font-size:16px;width:100px"></td><td></td></tr>
+                                 <tr height="40px">
+  					<td class="color_def font_lease" style="text-align:right">金额&nbsp;&nbsp;</td>
+  					<td>
+  					<input type="text" id="price" name="phone"  maxlength="20" value="" class="input7_reg">
+  					</td>
+  					<td></td>
+  				</tr>
+                                
+  				<tr height="60px"><td colspan="2"><input type="button" value="提  交" onclick="save()" class="button_reg" style="font-size:16px;width:100px"></td><td></td></tr>
   			</tbody></table>
   		</td>
   	</tr>
@@ -244,6 +270,51 @@
 
 
 <script type="text/javascript">
+    
+    function save(){
+          var param={
+      phone:-1,
+      user_name:0,
+      price:10000,
+      prov: "福建",
+      city: "福州",
+      dist: "仓山区",
+      user_idno:""
+  };
+   param.prov= $("#prov option:selected").val();
+      param.city= $("#city option:selected").val();
+       param.dist= $("#dist option:selected").val();
+  if($("#name").val()==""||$("#price").val()==""||$("#phone").val()==""||$("#user_idno").val()==""){
+      alert("请完善信息");
+      return;
+  }
+  
+  param.phone=$("#phone").val();
+   param.user_name=$("#name").val();
+    param.price=$("#price").val();
+     param.user_idno=$("#user_idno").val();
+     
+     $.ajax({
+               url:"index.php?r=ajax/submitAgent",
+               data:param,
+               type:"POST",
+               dataType:"json",
+               success:function(data){
+                   alert("提交成功！");
+               }});
+        
+    }
+    
+    
+      $(function(){
+       $("#city_4").citySelect({
+                    prov: "福建",
+                    city: "福州",
+                    dist: "仓山区",
+                    nodata: "none"
+                });
+                queryFanyuans(1);
+  })
   function setContentHeight(height,color){
     $("#content").css("height",height);
     if(color){

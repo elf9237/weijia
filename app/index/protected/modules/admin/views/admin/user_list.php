@@ -121,7 +121,12 @@
                           var stext="禁用";
                           if(value.status=="1")
                           stext="启用"; 
-                           innerHtml.push("<td><a onclick='jinyong("+value.id+","+value.status+")'>"+stext+"</a>|<a onclick='tixing("+value.id+")'>提醒</a></td>");
+                       
+                       var pingtai="|<a onclick='biaoji("+value.id+")'></a>";
+                       if(value.type=="0")
+                           pingtai="";
+                          
+                           innerHtml.push("<td><a onclick='jinyong("+value.id+","+value.status+")'>"+stext+"</a>|<a onclick='tixing("+value.id+")'>提醒</a>"+pingtai+"</td>");
                     })
                    
                        
@@ -149,6 +154,24 @@
             }
         })
         }
+        
+         
+        function biaoji(id){
+        $.ajax({
+            type:"POST",
+            data:{
+                id:id
+            },
+            dataType:"json",
+            url:"index.php?r=admin/admin/biaojipt",
+            success:function(data){
+                if(data.status){
+                     queryUsers(1);
+                }
+            }
+        })
+        }
+        
         function add(){
             layer.open({
                 type:2,

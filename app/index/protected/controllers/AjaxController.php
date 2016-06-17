@@ -121,6 +121,7 @@ class AjaxController extends BaseController {
          $this->render('myhome');
          
      }
+     
      /**
       * 我的房源
       */
@@ -151,7 +152,7 @@ class AjaxController extends BaseController {
             if(!empty($userLogin))
                 $loginuserid=$userLogin->id;
           $page=$_POST['page'];
-       $sql="select t.*,t1.id as rid from cy_info t join cy_rentinfo t1 on(t1.info_id=t.id)  where 1=1  and t.user_id=".$loginuserid." and t1.status=0" ;
+       $sql="select t.*,t1.id as rid from cy_info t join cy_rentinfo t1 on(t1.info_id=t.id)  where 1=1 and t.lend_status=0 and t.user_id=".$loginuserid." and t1.status=0" ;
    
  $pagelist=new PageList($sql, $page, 5);
   echo json_encode($pagelist->pageAjax);
@@ -248,6 +249,65 @@ $roomeqip->info_id=$info->id;
  $pagelist=new PageList($sql, $page, 5);
   echo json_encode($pagelist->pageAjax);
      }
+     /**
+      * 查询我的订单
+      */
+       public function actionQuerymyorder(){
+          $loginuserid=-1;
+            $userLogin= Yii::app()->session['user'] ;
+            if(!empty($userLogin))
+                $loginuserid=$userLogin->id; 
+         
+          $page=$_POST['page'];
+       $sql="select t.* from cy_order t   where 1=1  and t.user_id= ".$loginuserid." " ;
+ $pagelist=new PageList($sql, $page, 5);
+  echo json_encode($pagelist->pageAjax);
+     }
+     /**
+      * 退款申请
+      */
+        public function actionApplyTui(){
+            $ar = new AjaxReturn();
+            $id=$_POST['id'];
+           $order= Order::model()->findByPk($id);
+           $cyInfo=  Info::model()->findByPk($order->info_id);
+           if($cyInfo->lend_type!=1&&$cyInfo->audit_status!=1&&$order->order_type='佣金'){
+               $order->audit_status=3;
+               $ar->status=$order->save();
+           }else{
+               $ar->status=false;
+               $ar->content="仅支持，未出租房源的佣金退款！";
+           }
+     
+           echo json_encode($ar);
+     }
+     
+     public function actionSubmitAgent(){
+         $ar=new AjaxReturn();
+         $loginuserid=-1;
+            $userLogin= Yii::app()->session['user'] ;
+            if(!empty($userLogin))
+                $loginuserid=$userLogin->id; 
+            $aren=new Agentform();
+            $aren->user_id=$loginuserid;
+            $aren->user_idno=$_POST['user_idno'];
+            $aren->price=$_POST['price'];
+            $aren->cellphone=$_POST['phone'];
+            $aren->user_name=$_POST['user_name'];
+            $aren->province=$_POST['prov'];$aren->city=$_POST['city'];$aren->zone=$_POST['dist'];
+            $aren->jiamengzone=$_POST['prov'].$_POST['city'].$_POST['dist'];
+            $aren->create_time=time();
+            $aren->save();
+            $ar->status=true;
+            echo json_encode($ar);
+            
+            
+            
+            
+         
+     }
+     
+     
      
       public function actionZhuangxiu(){
          $this->render('zhuangxiu');

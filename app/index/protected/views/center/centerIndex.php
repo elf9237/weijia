@@ -64,6 +64,9 @@
                 <dd>
                     <a href="index.php?r=center/shenhe"><i class="i-my-prize"></i>出租审核</a>
                 </dd>
+                 <dd>
+                    <a href="index.php?r=center/mydingdan"><i class="i-my-prize"></i>我的订单</a>
+                </dd>
                 <dd>
                     <a href="index.php?r=center/message"><i class="i-my-prize"></i>我的消息</a>
                 </dd>
