@@ -86,8 +86,10 @@ class Order extends CActiveRecord
 			'audit_status' => 'Audit Status',
 			'audit_id' => 'Audit',
 			'audit_content' => 'Audit Content',
-                    'days' => 'Days',
+                         'days' => 'Days',
 			'type' => 'Type',
+                        'weidan' => 'weidan',
+                        
 		);
 	}
 
@@ -128,6 +130,7 @@ class Order extends CActiveRecord
                 
                 $criteria->compare('days',$this->days,true);
 		$criteria->compare('type',$this->type,true);
+                $criteria->compare('weidan',$this->weidan,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
