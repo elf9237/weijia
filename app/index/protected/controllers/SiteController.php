@@ -305,8 +305,8 @@ class SiteController extends BaseController
 
 			$model->username = $model->login_id;
 			$model->password = md5($password);
-			$model->type =0;
-			$model->pid = $_SESSION['share_user_id'];
+			$model->type =1;
+			$model->inviter = $_SESSION['share_user_id'];
 			if($model->save()){
 				$this->redirect('index.php?r=site/regsuccess');
 			}
@@ -314,7 +314,10 @@ class SiteController extends BaseController
 		}
 
 		$pid = $this->getUserIdByShareUrl();
-		$_SESSION['share_user_id'] = 100;
+                if($pid){
+                    $_SESSION['share_user_id'] = $pid;
+                }else{
+                $_SESSION['share_user_id'] = -1;}
 		if( $this->wechat)
 		{
 			$this->render('register', array('model' => $model));
