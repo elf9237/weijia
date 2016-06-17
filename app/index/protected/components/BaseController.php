@@ -293,14 +293,14 @@ class BaseController extends CController
 		if(empty($arrParam)){
 			$arrParam = array(
 				'r' => $_GET['r'],
-				'timestamp' => $_GET['timestamp'],
-				'pid' => $_GET['pid'],
-				'sign' => $_GET['sign']
+				'timestamp' => isset($_GET['timestamp']) ? $_GET['timestamp'] : 0,
+				'pid' => isset($_GET['pid']) ? $_GET['pid'] : 0,
+				'sign' => isset($_GET['sign']) ? $_GET['sign'] : 0
 			);
 		}
 
 		$sign = $this->getAuthSignStr($arrParam);
-		if($arrParam['sign'] != $sign){
+		if(empty($arrParam['pid']) || $arrParam['sign'] != $sign){
 			return 0;
 		}
 
@@ -308,9 +308,9 @@ class BaseController extends CController
 			return 0;
 		}*/
 
-		$securityManager = Yii::app()->getSecurityManager();
-		$nPid = $securityManager->decrypt(base64_decode($arrParam['pid']), $this->key);
-		return (int)$nPid;
+		//$securityManager = Yii::app()->getSecurityManager();
+		//$nPid = $securityManager->decrypt(base64_decode($arrParam['pid']), $this->key);
+		return (int)$arrParam['pid'];
 	}
 
 	/**

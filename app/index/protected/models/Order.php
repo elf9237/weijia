@@ -22,6 +22,7 @@
  * @property string $audit_content
  * @property string $days
  * @property string $type
+ * @property string $weidan
  */
 class Order extends CActiveRecord
 {
@@ -48,7 +49,7 @@ class Order extends CActiveRecord
 			array('audit_content', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, order_no, user_id, info_id, room_id, order_type, pay_type, pay_price, create_time, begin_time, expire_time, pay_time, audit_time, audit_status, audit_id, audit_content,days,type', 'safe', 'on'=>'search'),
+			array('id, order_no, user_id, info_id, room_id, order_type, pay_type, pay_price, create_time, begin_time, expire_time, pay_time, audit_time, audit_status, audit_id, audit_content,days,type,weidan', 'safe', 'on'=>'search'),
 		);
 	}
 

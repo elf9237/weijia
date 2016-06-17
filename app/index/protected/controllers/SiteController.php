@@ -305,11 +305,15 @@ class SiteController extends BaseController
 
 			$model->password = md5($password);
 			$model->type =0;
+			$model->pid = $_SESSION['share_user_id'];
 			if($model->save()){
 				$this->redirect('index.php?r=site/regsuccess');
 			}
 			$model->password = $password;
 		}
+
+		$pid = $this->getUserIdByShareUrl();
+		$_SESSION['share_user_id'] = 100;
 		if( $this->wechat)
 		{
 			$this->render('register', array('model' => $model));

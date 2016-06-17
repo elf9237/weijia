@@ -89,12 +89,12 @@ class CenterController extends BaseController{
         );
 
         $nUid = $this->getUserId();
-        $strBaseUri = 'Center/wmoney';
-        $securityManager = Yii::app()->getSecurityManager();
+        $strBaseUri = 'Site/register';
+        //$securityManager = Yii::app()->getSecurityManager();
         $arrUrlParam = array(
             'r' => $strBaseUri,
             'timestamp' => time(),
-            'pid' => base64_encode($securityManager->encrypt($nUid, $this->key)),
+            'pid' => $nUid//base64_encode($securityManager->encrypt($nUid, $this->key)),
         );
         $arrUrlParam['sign'] = $this->getAuthSignStr($arrUrlParam);
         $strshareUrl = Yii::app()->request->hostInfo.$this->createUrl($strBaseUri, $arrUrlParam);
