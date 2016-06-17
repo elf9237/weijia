@@ -303,6 +303,7 @@ class SiteController extends BaseController
                 $this->redirect('index.php?r=site/error');
             }
 
+			$model->username = $model->login_id;
 			$model->password = md5($password);
 			$model->type =0;
 			$model->pid = $_SESSION['share_user_id'];
