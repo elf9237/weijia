@@ -16,6 +16,10 @@ class CenterController extends BaseController{
          $this ->redirect ("index.php?r=site/login");
     }
 //    我的发布
+    public function actionMydingdan(){
+        $this -> renderPartial('mydingdan');
+    }
+//    我的发布
     public function actionIssue(){
         $this -> renderPartial('issue');
     }
