@@ -25,7 +25,7 @@
       <file leaf-file-name="zufangdetail.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/index/protected/views/site/desktop/zufangdetail.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
+            <state relative-caret-position="-1295">
               <caret line="146" column="58" selection-start-line="146" selection-start-column="58" selection-end-line="146" selection-end-column="58" />
               <folding>
                 <element signature="n#div#3;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -40,88 +40,38 @@
       <file leaf-file-name="BaseController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/index/protected/components/BaseController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+            <state relative-caret-position="323">
+              <caret line="41" column="0" selection-start-line="33" selection-start-column="9" selection-end-line="42" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/index/protected/views/center/login.php">
+      <file leaf-file-name="weijia.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/index/protected/views/weijia/weijia.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+            <state relative-caret-position="-173">
+              <caret line="66" column="96" selection-start-line="66" selection-start-column="96" selection-end-line="66" selection-end-column="96" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="centerIndex.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/index/protected/views/center/centerIndex.php">
+      <file leaf-file-name="footmenu.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/index/protected/views/basemenu/footmenu.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="19">
+              <caret line="1" column="102" selection-start-line="1" selection-start-column="102" selection-end-line="1" selection-end-column="102" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="collect.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/index/protected/views/center/collect.php">
+      <file leaf-file-name="WeiJiaController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/index/protected/controllers/WeiJiaController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
-              <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="20aabc5b6cf60015127896b31137ca20" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.history/10/20aabc5b6cf60015127896b31137ca20">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="61" column="75" selection-start-line="61" selection-start-column="75" selection-end-line="61" selection-end-column="75" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="b0baba646ff60015127896b31137ca20" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.history/10/b0baba646ff60015127896b31137ca20">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="61" column="62" selection-start-line="61" selection-start-column="62" selection-end-line="61" selection-end-column="62" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="60ed103570f60015127896b31137ca20" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.history/12/60ed103570f60015127896b31137ca20">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="61" column="66" selection-start-line="61" selection-start-column="66" selection-end-line="61" selection-end-column="66" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="103b84076ef60015127896b31137ca20" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.history/17/103b84076ef60015127896b31137ca20">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" column="74" selection-start-line="3" selection-start-column="74" selection-end-line="3" selection-end-column="74" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="assign.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/index/protected/views/center/assign.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-814">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="95">
+              <caret line="5" column="29" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -140,6 +90,9 @@
         <option value="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.history/10/b0baba646ff60015127896b31137ca20" />
         <option value="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.history/12/60ed103570f60015127896b31137ca20" />
         <option value="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.history/17/103b84076ef60015127896b31137ca20" />
+        <option value="$PROJECT_DIR$/app/index/protected/components/BaseController.php" />
+        <option value="$PROJECT_DIR$/app/index/protected/models/Agentform.php" />
+        <option value="$PROJECT_DIR$/app/index/protected/views/basemenu/footmenu.php" />
       </list>
     </option>
   </component>
@@ -280,6 +233,36 @@
               <option name="myItemId" value="views" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="weijia" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="weijia" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="weijia" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="index" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protected" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -307,7 +290,33 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="center" />
+              <option name="myItemId" value="basemenu" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="weijia" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="weijia" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="index" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protected" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -328,12 +337,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1466221598898</updated>
-      <workItem from="1466221603808" duration="3877000" />
+      <workItem from="1466221603808" duration="4782000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3877000" />
+    <option name="totallyTimeSpent" value="4782000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1370" height="754" extended-state="0" />
@@ -376,7 +385,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/index/protected/views/site/desktop/zufangdetail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
+        <state relative-caret-position="-1295">
           <caret line="146" column="58" selection-start-line="146" selection-start-column="58" selection-end-line="146" selection-end-column="58" />
           <folding>
             <element signature="n#div#3;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -387,17 +396,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/index/protected/components/BaseController.php">
+    <entry file="file://$PROJECT_DIR$/app/index/protected/views/center/assign.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+        <state relative-caret-position="-814">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/index/protected/views/center/assign.php">
+    <entry file="file://$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.history/17/103b84076ef60015127896b31137ca20">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-814">
+        <state relative-caret-position="57">
+          <caret line="3" column="74" selection-start-line="3" selection-start-column="74" selection-end-line="3" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.history/12/60ed103570f60015127896b31137ca20">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="61" column="66" selection-start-line="61" selection-start-column="66" selection-end-line="61" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.history/10/b0baba646ff60015127896b31137ca20">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="61" column="62" selection-start-line="61" selection-start-column="62" selection-end-line="61" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.history/10/20aabc5b6cf60015127896b31137ca20">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="61" column="75" selection-start-line="61" selection-start-column="75" selection-end-line="61" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index/protected/views/center/collect.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index/protected/views/center/centerIndex.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -411,50 +460,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/index/protected/views/center/centerIndex.php">
+    <entry file="file://$PROJECT_DIR$/app/index/protected/models/Agentform.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="242">
+          <caret line="75" column="32" selection-start-line="75" selection-start-column="32" selection-end-line="75" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/index/protected/views/center/collect.php">
+    <entry file="file://$PROJECT_DIR$/app/index/protected/views/agent/join.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+        <state relative-caret-position="285">
+          <caret line="105" column="60" selection-start-line="105" selection-start-column="49" selection-end-line="105" selection-end-column="60" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.history/10/20aabc5b6cf60015127896b31137ca20">
+    <entry file="file://$PROJECT_DIR$/app/index/protected/components/BaseController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="61" column="75" selection-start-line="61" selection-start-column="75" selection-end-line="61" selection-end-column="75" />
+        <state relative-caret-position="323">
+          <caret line="41" column="0" selection-start-line="33" selection-start-column="9" selection-end-line="42" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.history/10/b0baba646ff60015127896b31137ca20">
+    <entry file="file://$PROJECT_DIR$/app/index/protected/views/weijia/weijia.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="61" column="62" selection-start-line="61" selection-start-column="62" selection-end-line="61" selection-end-column="62" />
+        <state relative-caret-position="-173">
+          <caret line="66" column="96" selection-start-line="66" selection-start-column="96" selection-end-line="66" selection-end-column="96" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.history/12/60ed103570f60015127896b31137ca20">
+    <entry file="file://$PROJECT_DIR$/app/index/protected/controllers/WeiJiaController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="61" column="66" selection-start-line="61" selection-start-column="66" selection-end-line="61" selection-end-column="66" />
+        <state relative-caret-position="95">
+          <caret line="5" column="29" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.history/17/103b84076ef60015127896b31137ca20">
+    <entry file="file://$PROJECT_DIR$/app/index/protected/views/basemenu/footmenu.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="74" selection-start-line="3" selection-start-column="74" selection-end-line="3" selection-end-column="74" />
+        <state relative-caret-position="19">
+          <caret line="1" column="102" selection-start-line="1" selection-start-column="102" selection-end-line="1" selection-end-column="102" />
           <folding />
         </state>
       </provider>

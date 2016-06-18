@@ -72,6 +72,7 @@ class Agentform extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
+			'jiamengzone'=>'加盟区域',
 			'user_id' => 'User',
 			'user_name' => 'User Name',
 			'user_idno' => '身份证号',
