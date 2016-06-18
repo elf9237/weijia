@@ -122,7 +122,7 @@
                                         ' <dt class="info-title"><strong>'+value.info_name+'</strong></dt>'+
                                         '<dd class="info-desc">'+
                                         '<span class="info-desc-detail">'+value.city+'-'+value.zone+'-'+value.district+'</span>'+
-                                        '<span class="info-desc-tag info-desc-tag--right"> <em class="biz">佣金</em> </span>'+
+                                        '<span class="info-desc-tag info-desc-tag--right"> <em class="biz">'+value.yong_jin+'</em> </span>'+
                                         '</dd>'+
                                         '<dd class="info-desc">'+
                                         '<span class="info-desc-price"> '+value.price+'<em class="priceunit"> 元</em></span><span class="info-desc-tag">'+
