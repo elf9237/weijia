@@ -707,3 +707,6 @@ em{color: #000;}
 
 .checkStade{font-size: 14px;color:red; float: right;padding:0px 30px 10px 0;}
 em.time{margin-left:5px;}
+.table-pay  table tr td:first-child{min-width: 170px;}
+.table-pay  table tr td:nth-child(2){width: 100px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.table-pay  #price{width:100px;}

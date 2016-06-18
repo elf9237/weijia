@@ -81,6 +81,8 @@
         page:0,
         totalPage:1,
     };
+    function getLocalTime(nS) {
+        return new Date(parseInt(nS) * 1000).toLocaleString().substr(0,12)}
     function queryColl(){
 
         Zepto(function($){
@@ -112,23 +114,19 @@
                                     if(value.info_type==2){
                                         infoStatus="商铺";
                                     }
-                                    var date = new Date(value.create_time);
-                                    Y = date.getFullYear() + '-';
-                                    M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
-                                    D = date.getDate() + ' ';
-                                    var time=Y+M+D;
+
                                     innerHtml.push( '<li class="item">'+
-                                        '<a href="rent-detail.html">'+
+                                        '<a href="#" onclick="showRoom('+value.id+')">'+
                                         '<img src="upload/'+value.mian_url+'" alt="" class="item-thumb">'+
                                         '<dl class="item-info">'+
                                         ' <dt class="info-title"><strong>'+value.info_name+'</strong></dt>'+
                                         '<dd class="info-desc">'+
                                         '<span class="info-desc-detail">'+value.city+'-'+value.zone+'-'+value.district+'</span>'+
-                                        '<span class="info-desc-tag info-desc-tag--right"> <em class="biz">佣金</em> </span>'+
+                                        '<span class="info-desc-tag info-desc-tag--right"> <em class="biz">'+value.yong_jin+'</em> </span>'+
                                         '</dd>'+
                                         '<dd class="info-desc">'+
                                         '<span class="info-desc-price"> '+value.price+'<em class="priceunit"> 元</em></span><span class="info-desc-tag">'+
-                                        '<em class="time">'+time+'</em></span><span class="info-desc-tag--right">  <em class="personal">'+status+'</em>'+
+                                        '<em class="time">'+getLocalTime(value.create_time)+'</em></span><span class="info-desc-tag--right">  <em class="personal">'+status+'</em>'+
                                         '</span>'+
                                         '</dd>'+
                                         '</dl>'+
@@ -155,6 +153,11 @@
       function toZhiding(id){
     window.location.href="index.php?r=store/toFuKuangDing&infoid="+id;
     }
+    function showRoom(id){
+        window.location.href='index.php?r=store/detial&id='+id;
+
+    }
+
     $(function(){
         queryColl();
     })

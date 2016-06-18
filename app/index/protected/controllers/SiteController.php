@@ -330,4 +330,49 @@ class SiteController extends BaseController
 	public  function  actionRegSuccess(){
 		$this->render('success');
 	}
+        
+          public function actionShenHeTiXian(){
+         $ar=new AjaxReturn();
+          $ar->status=false;
+        $type=$_POST['type'];
+        $id=$_POST['id'];
+        $mes=$_POST['message'];
+        $agentModel= Tixian::model();
+        $agentInfo = $agentModel->findByPk($id);
+        $agentInfo->status=$type;
+        
+        $userInfo =  User::model()->find('id='.$agentInfo->user_id);
+        
+         $message=new Message();
+        $message->info_id=-1;
+        $message->sender=1;
+        $message->receiver=$agentInfo->user_id;
+        $message->message_type=2;
+        if($type==1)
+        $message->message='你的提现申请已通过，审批意见：'.$mes.'.具体事务请联系管理人员进行确认！！';
+         if($type==2)
+        $message->message='你的提现申请已驳回，审批意见：'.$mes;
+         
+         if($type==1){
+             
+             $issuccess=$this->doSharePay($userInfo->openid, $agentInfo->jine*100);
+             if(!$issuccess){
+                 $agentInfo->status=3;
+                 $userInfo->yue=$userInfo->yue+$agentInfo->jine;
+                  $message->message='你的提现申请出现故障金额已退还到你的账户请查收！';
+             }
+         }else{
+               $userInfo->yue=$userInfo->yue+$agentInfo->jine;
+         }
+         
+         
+       
+             
+        
+    
+    if($agentInfo->save()&&$message->save()&&$userInfo->save()){
+              $ar->status=true;
+    }
+    echo json_encode($ar);
+    }
 }
