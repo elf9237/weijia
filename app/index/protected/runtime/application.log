@@ -536,3 +536,133 @@ REQUEST_URI=/index.php?r=site/register
 in F:\wamp\www\weijia\app\index\protected\components\BaseController.php (312)
 in F:\wamp\www\weijia\app\index\protected\controllers\SiteController.php (315)
 in F:\wamp\www\weijia\app\index\index.php (15)
+2016/06/18 19:01:51 [error] [php] Missing argument 1 for BaseController::doSharePay(), called in F:\wamp\www\weijia\app\index\protected\components\BaseController.php on line 30 and defined (F:\wamp\www\weijia\app\index\protected\components\BaseController.php:323)
+Stack trace:
+#0 F:\wamp\www\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#1 F:\wamp\www\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 F:\wamp\www\weijia\app\index\index.php(15): CWebApplication->run()
+REQUEST_URI=/
+in F:\wamp\www\weijia\app\index\protected\components\BaseController.php (323)
+in F:\wamp\www\weijia\app\index\protected\components\BaseController.php (30)
+in F:\wamp\www\weijia\app\index\index.php (15)
+2016/06/18 19:02:05 [error] [exception.Exception] exception 'Exception' with message 'curl出错，错误码:60' in F:\wamp\www\weijia\app\index\protected\components\BaseController.php:417
+Stack trace:
+#0 F:\wamp\www\weijia\app\index\protected\components\BaseController.php(340): BaseController->postXmlCurl('<xml><mch_appid...', 'https://api.mch...', true)
+#1 F:\wamp\www\weijia\app\index\protected\components\BaseController.php(30): BaseController->doSharePay(1, 1)
+#2 F:\wamp\www\weijia\app\framework\web\CWebApplication.php(281): BaseController->init()
+#3 F:\wamp\www\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#4 F:\wamp\www\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#5 F:\wamp\www\weijia\app\index\index.php(15): CApplication->run()
+#6 {main}
+REQUEST_URI=/
+---
+2016/06/18 19:04:53 [error] [exception.Exception] exception 'Exception' with message 'curl出错，错误码:60' in F:\wamp\www\weijia\app\index\protected\components\BaseController.php:417
+Stack trace:
+#0 F:\wamp\www\weijia\app\index\protected\components\BaseController.php(340): BaseController->postXmlCurl('<xml><mch_appid...', 'https://api.mch...', true)
+#1 F:\wamp\www\weijia\app\index\protected\components\BaseController.php(30): BaseController->doSharePay(1, 1)
+#2 F:\wamp\www\weijia\app\framework\web\CWebApplication.php(281): BaseController->init()
+#3 F:\wamp\www\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#4 F:\wamp\www\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#5 F:\wamp\www\weijia\app\index\index.php(15): CApplication->run()
+#6 {main}
+REQUEST_URI=/
+---
+2016/06/18 19:04:54 [error] [exception.Exception] exception 'Exception' with message 'curl出错，错误码:60' in F:\wamp\www\weijia\app\index\protected\components\BaseController.php:417
+Stack trace:
+#0 F:\wamp\www\weijia\app\index\protected\components\BaseController.php(340): BaseController->postXmlCurl('<xml><mch_appid...', 'https://api.mch...', true)
+#1 F:\wamp\www\weijia\app\index\protected\components\BaseController.php(30): BaseController->doSharePay(1, 1)
+#2 F:\wamp\www\weijia\app\framework\web\CWebApplication.php(281): BaseController->init()
+#3 F:\wamp\www\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#4 F:\wamp\www\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#5 F:\wamp\www\weijia\app\index\index.php(15): CApplication->run()
+#6 {main}
+REQUEST_URI=/
+---
+2016/06/18 19:04:54 [error] [exception.Exception] exception 'Exception' with message 'curl出错，错误码:60' in F:\wamp\www\weijia\app\index\protected\components\BaseController.php:417
+Stack trace:
+#0 F:\wamp\www\weijia\app\index\protected\components\BaseController.php(340): BaseController->postXmlCurl('<xml><mch_appid...', 'https://api.mch...', true)
+#1 F:\wamp\www\weijia\app\index\protected\components\BaseController.php(30): BaseController->doSharePay(1, 1)
+#2 F:\wamp\www\weijia\app\framework\web\CWebApplication.php(281): BaseController->init()
+#3 F:\wamp\www\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#4 F:\wamp\www\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#5 F:\wamp\www\weijia\app\index\index.php(15): CApplication->run()
+#6 {main}
+REQUEST_URI=/
+---
+2016/06/18 19:04:55 [error] [exception.Exception] exception 'Exception' with message 'curl出错，错误码:60' in F:\wamp\www\weijia\app\index\protected\components\BaseController.php:417
+Stack trace:
+#0 F:\wamp\www\weijia\app\index\protected\components\BaseController.php(340): BaseController->postXmlCurl('<xml><mch_appid...', 'https://api.mch...', true)
+#1 F:\wamp\www\weijia\app\index\protected\components\BaseController.php(30): BaseController->doSharePay(1, 1)
+#2 F:\wamp\www\weijia\app\framework\web\CWebApplication.php(281): BaseController->init()
+#3 F:\wamp\www\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#4 F:\wamp\www\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#5 F:\wamp\www\weijia\app\index\index.php(15): CApplication->run()
+#6 {main}
+REQUEST_URI=/
+---
+2016/06/18 19:29:05 [error] [exception.Exception] exception 'Exception' with message 'curl出错，错误码:60' in F:\wamp\www\weijia\app\index\protected\components\BaseController.php:417
+Stack trace:
+#0 F:\wamp\www\weijia\app\index\protected\components\BaseController.php(340): BaseController->postXmlCurl('<xml><mch_appid...', 'https://api.mch...', true)
+#1 F:\wamp\www\weijia\app\index\protected\components\BaseController.php(30): BaseController->doSharePay(1, 1)
+#2 F:\wamp\www\weijia\app\framework\web\CWebApplication.php(281): BaseController->init()
+#3 F:\wamp\www\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#4 F:\wamp\www\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#5 F:\wamp\www\weijia\app\index\index.php(15): CApplication->run()
+#6 {main}
+REQUEST_URI=/
+---
+2016/06/18 19:29:05 [error] [exception.Exception] exception 'Exception' with message 'curl出错，错误码:60' in F:\wamp\www\weijia\app\index\protected\components\BaseController.php:417
+Stack trace:
+#0 F:\wamp\www\weijia\app\index\protected\components\BaseController.php(340): BaseController->postXmlCurl('<xml><mch_appid...', 'https://api.mch...', true)
+#1 F:\wamp\www\weijia\app\index\protected\components\BaseController.php(30): BaseController->doSharePay(1, 1)
+#2 F:\wamp\www\weijia\app\framework\web\CWebApplication.php(281): BaseController->init()
+#3 F:\wamp\www\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#4 F:\wamp\www\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#5 F:\wamp\www\weijia\app\index\index.php(15): CApplication->run()
+#6 {main}
+REQUEST_URI=/
+---
+2016/06/18 19:29:06 [error] [exception.Exception] exception 'Exception' with message 'curl出错，错误码:60' in F:\wamp\www\weijia\app\index\protected\components\BaseController.php:417
+Stack trace:
+#0 F:\wamp\www\weijia\app\index\protected\components\BaseController.php(340): BaseController->postXmlCurl('<xml><mch_appid...', 'https://api.mch...', true)
+#1 F:\wamp\www\weijia\app\index\protected\components\BaseController.php(30): BaseController->doSharePay(1, 1)
+#2 F:\wamp\www\weijia\app\framework\web\CWebApplication.php(281): BaseController->init()
+#3 F:\wamp\www\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#4 F:\wamp\www\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#5 F:\wamp\www\weijia\app\index\index.php(15): CApplication->run()
+#6 {main}
+REQUEST_URI=/
+---
+2016/06/18 19:29:07 [error] [exception.Exception] exception 'Exception' with message 'curl出错，错误码:60' in F:\wamp\www\weijia\app\index\protected\components\BaseController.php:417
+Stack trace:
+#0 F:\wamp\www\weijia\app\index\protected\components\BaseController.php(340): BaseController->postXmlCurl('<xml><mch_appid...', 'https://api.mch...', true)
+#1 F:\wamp\www\weijia\app\index\protected\components\BaseController.php(30): BaseController->doSharePay(1, 1)
+#2 F:\wamp\www\weijia\app\framework\web\CWebApplication.php(281): BaseController->init()
+#3 F:\wamp\www\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#4 F:\wamp\www\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#5 F:\wamp\www\weijia\app\index\index.php(15): CApplication->run()
+#6 {main}
+REQUEST_URI=/
+---
+2016/06/18 19:30:06 [error] [exception.Exception] exception 'Exception' with message 'curl出错，错误码:60' in F:\wamp\www\weijia\app\index\protected\components\BaseController.php:418
+Stack trace:
+#0 F:\wamp\www\weijia\app\index\protected\components\BaseController.php(340): BaseController->postXmlCurl('<xml><mch_appid...', 'https://api.mch...', true)
+#1 F:\wamp\www\weijia\app\index\protected\components\BaseController.php(30): BaseController->doSharePay(1, 1)
+#2 F:\wamp\www\weijia\app\framework\web\CWebApplication.php(281): BaseController->init()
+#3 F:\wamp\www\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#4 F:\wamp\www\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#5 F:\wamp\www\weijia\app\index\index.php(15): CApplication->run()
+#6 {main}
+REQUEST_URI=/
+---
+2016/06/18 19:33:31 [error] [exception.Exception] exception 'Exception' with message 'curl出错，错误码:60' in F:\wamp\www\weijia\app\index\protected\components\BaseController.php:417
+Stack trace:
+#0 F:\wamp\www\weijia\app\index\protected\components\BaseController.php(340): BaseController->postXmlCurl('<xml><mch_appid...', 'https://api.mch...', true)
+#1 F:\wamp\www\weijia\app\index\protected\components\BaseController.php(30): BaseController->doSharePay(1, 1)
+#2 F:\wamp\www\weijia\app\framework\web\CWebApplication.php(281): BaseController->init()
+#3 F:\wamp\www\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#4 F:\wamp\www\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#5 F:\wamp\www\weijia\app\index\index.php(15): CApplication->run()
+#6 {main}
+REQUEST_URI=/
+---
