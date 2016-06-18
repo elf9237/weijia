@@ -306,7 +306,7 @@ class SiteController extends BaseController
 			$model->username = $model->login_id;
 			$model->password = md5($password);
 			$model->type =0;
-			$model->pid = $_SESSION['share_user_id'];
+			$model->inviter = Yii::app()->session['share_user_id'];
 			if($model->save()){
 				$this->redirect('index.php?r=site/regsuccess');
 			}
@@ -314,7 +314,11 @@ class SiteController extends BaseController
 		}
 
 		$pid = $this->getUserIdByShareUrl();
-		$_SESSION['share_user_id'] = 100;
+		if($pid){
+			Yii::app()->session['share_user_id'] = $pid;
+		}else{
+			Yii::app()->session['share_user_id'] = -1;
+		}
 		if( $this->wechat)
 		{
 			$this->render('register', array('model' => $model));

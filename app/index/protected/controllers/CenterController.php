@@ -46,8 +46,8 @@ class CenterController extends BaseController{
 //    提现申请
     public function actionForward(){
         $ar= new AjaxReturn();
-        $id=$_POST['id'];
-        $jine=$_POST['jine'];
+        $id = Yii::app()->request->getParam( 'id' );;
+        $jine = Yii::app()->request->getParam( 'jine' );
          $userModel=  User::model();
          $tixianModel = new Tixian();
            $userinfo=$userModel->find('id='.$id);

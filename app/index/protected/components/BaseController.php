@@ -61,7 +61,7 @@ class BaseController extends CController
             //通过code获得openid
             if (!isset($_GET['code'])){
                 $baseUrl = urlencode('http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
-                // echo $baseUrl;die;
+                //echo $baseUrl;die;
                 $url = $this->createOauthUrlForCode($baseUrl);
                 Header("Location: $url");
                 exit();
