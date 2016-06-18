@@ -27,8 +27,6 @@ class BaseController extends CController
 //		
 //	}
 	public function init(){
-		var_dump($this->doSharePay(1,1));
-		exit;
 		$this->wechat = !(strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') == false);
 //		return  true;
 //		$this->wechat=true;
