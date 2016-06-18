@@ -92,7 +92,7 @@
                 dataType:'json',
                 data:{username:username,psw:psw,phone:phone},
                 success:function(){
-
+                    
                 }
 
             });
