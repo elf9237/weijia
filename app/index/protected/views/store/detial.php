@@ -458,6 +458,7 @@
                     </li> -->
                 </ul>
             </div>
+            <input type='hidden' value='<?php echo $useinfo->type;?>'/>
             <div class="ad-btn"><a href="index.php?r=center/wmoney">佣</a></div>
         </section>
         <script src="lib/zepto.min.js"></script>

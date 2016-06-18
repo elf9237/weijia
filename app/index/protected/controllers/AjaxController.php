@@ -165,8 +165,8 @@ class AjaxController extends BaseController {
       public function actionSavemyhome(){
           $loginuserid=-1;
             $userLogin= Yii::app()->session['user'] ;
-            if(!empty($userLogin))
-                $loginuserid=$userLogin->id; 
+            if(!empty($userLogin)){
+            $loginuserid=$userLogin->id; }
      $ar=new     AjaxReturn();
      $info= new Info();
      $info->area=$_POST['area'];

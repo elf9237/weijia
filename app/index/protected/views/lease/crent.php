@@ -117,38 +117,54 @@
                     <li class="splitLine"></li>
                     <li class="_item huxingLabel"><span class="gr_title">户型</span>
                         <div class="gr_itemtext">
-                            <div class="gr_itemt" style='width:25%'>
+                            <div class="gr_itemt" style='width:33%'>
                                 <span class="gr_after">室</span>
                                 <div class="gr_itemt_con">
                                     <input type="number" pattern="[0-9]*" id="huxingshi" name="jushishuru" max="100" min="-10" />
                                 </div>
                             </div>
-                            <div class="gr_itemt" style='width:25%'>
+                            <div class="gr_itemt" style='width:33%'>
                                 <span class="gr_after">厅</span>
                                 <div class="gr_itemt_con">
                                     <input type="number" pattern="[0-9]*" id="huxingting" name="huxingting" max="100" min="-10" />
                                 </div>
                             </div>
-                            <div class="gr_itemt" style='width:25%'>
+                            <div class="gr_itemt" style='width:33%'>
                                 <span class="gr_after">卫</span>
                                 <div class="gr_itemt_con">
                                     <input type="number" pattern="[0-9]*" id="huxingwei" name="huxingwei" max="100" min="-10" />
                                 </div>
                             </div>
                             
-                            <div class="gr_itemt" style='width:25%'>
+<!--                            <div class="gr_itemt" style='width:25%'>
                                 <span class="gr_after">M <sup>2</sup></span>
                                 <div class="gr_itemt_con">
                                      
                                     <input type="number" pattern="[0-9]*" id="area" name="area" max="100" min="-10" />
                                 </div>
                                
-                            </div>
+                            </div>-->
                         </div>
                         <div class="errorTip huxingLabelerror">
                             <div class="errorTipDiv"></div>
                             <span></span>
                         </div></li>
+                        
+                        <li class="_item huxingLabel"><span class="gr_title">面积</span>
+                            <span class="gr_after">M <sup>2&nbsp;</sup></span>
+                        <div class="gr_itemtext">
+                            
+                               
+                                <div class="gr_itemt_con">
+                                  <input type="number" pattern="[0-9]*" id="area" name="area" max="100" min="-10" />
+                                </div>
+                         
+                        </div>
+                        <div class="errorTip huxingLabelerror">
+                            <div class="errorTipDiv"></div>
+                            <span></span>
+                        </div></li>
+                        
                         
                         <li class="_item huxingLabel"><span class="gr_title">朝向</span>
                         <div class="gr_itemtext">
