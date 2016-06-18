@@ -54,8 +54,8 @@
         <script src="lib/searchDiv.js"></script>
         <script src="js/house.js"></script>
         <script>
-            function getLocalTime(nS) {     
-   return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d{1,2}$/,' ');     
+            function getLocalTime(nS) {
+                return new Date(parseInt(nS) * 1000).toLocaleString().substr(0,12)
 }
   query();
 		$(document).ready(function() { 

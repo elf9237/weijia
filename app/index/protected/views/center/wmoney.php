@@ -165,9 +165,7 @@
                 <div class="bzp_content" style="padding-top:16px;padding-bottom:50px;">
                     <div class="div-center0">
                         <div class="ui-btn-wrap">
-                            <button class="ui-btn-lg ui-btn-danger" style="background: #eb0028;">
-                               获取专属链接
-                            </button>
+                            <h3>点击右上角分享页面获取专属链接</h3>
                         </div>
                     </div>
                 </div>

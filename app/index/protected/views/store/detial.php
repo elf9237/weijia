@@ -458,7 +458,7 @@
                     </li> -->
                 </ul>
             </div>
-            <div class="ad-btn"><a href="#">佣</a></div>
+            <div class="ad-btn"><a href="index.php?r=center/wmoney">佣</a></div>
         </section>
         <script src="lib/zepto.min.js"></script>
         <script src="js/frozen.js"></script>
