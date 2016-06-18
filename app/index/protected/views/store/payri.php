@@ -60,7 +60,7 @@
 <footer class="ui-footer ui-footer-btn ui-footer-new">
     <ul class="ui-tiled ui-border-t">
         <li data-href="index.html" class="ui-border-r ui-house">
-            <div><a href="./index.php?r=weijia">微家</a></div>
+            <div><a href="./index.php?r=weijia/index">微家</a></div>
         </li>
         <li data-href="rent.html" class="ui-border-r ui-rent">
             <div><a href="./index.php?r=store/index&info_type=-1">我要租房</a></div>

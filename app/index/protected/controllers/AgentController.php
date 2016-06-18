@@ -74,6 +74,10 @@ class AgentController extends BaseController
     public function actionJoin()
     {
          $user= Yii::app()->session['user'] ;
+         if(!$user){
+             $this->redirect('index.php?r=site/login');
+             
+         }
         $model = new Agentform();
 //        $user_info = Yii::app()->user->userdetail;
 //        $model->cellphone = $user_info->cellphone;

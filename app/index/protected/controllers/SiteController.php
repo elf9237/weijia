@@ -299,7 +299,7 @@ class SiteController extends BaseController
 			$model->login_id =$model->cellphone;
 			$password = $model->password;
             $password2 = Yii::app()->request->getParam('password2');
-            if($password !== $password2){
+            if($password != $password2){
                 $this->redirect('index.php?r=site/error');
             }
 
