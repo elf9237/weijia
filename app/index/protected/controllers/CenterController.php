@@ -17,7 +17,7 @@ class CenterController extends BaseController{
     }
 //    我的发布
     public function actionMydingdan(){
-        $this -> renderPartial('mydingdan');
+        $this -> renderPartial('dingdan');
     }
 //    我的发布
     public function actionIssue(){
@@ -47,11 +47,29 @@ class CenterController extends BaseController{
         
         $this -> renderPartial('mybroker',array("userinfo"=>$userinfo));
     }
+     public function actionQueryTixian(){
+         $loginuserid=-1;
+            $userLogin= Yii::app()->session['user'] ;
+            if(!empty($userLogin))
+                $loginuserid=$userLogin->id;
+        $page=$_POST['page'];
+  
+       $sql="select t.* from cy_tixian t  where 1=1 " ;
+
+      
+       $sql.=" and t.user_id = ".$loginuserid." ";
+       
+      
+       $pagelist=new PageList($sql, $page, 10);
+ 
+       echo json_encode($pagelist->pageAjax);
+    }
+    
 //    提现申请
     public function actionForward(){
         $ar= new AjaxReturn();
-        $id = Yii::app()->request->getParam( 'id' );;
-        $jine = Yii::app()->request->getParam( 'jine' );
+        $id=$_POST['id'];
+        $jine=$_POST['jine'];
          $userModel=  User::model();
          $tixianModel = new Tixian();
            $userinfo=$userModel->find('id='.$id);
