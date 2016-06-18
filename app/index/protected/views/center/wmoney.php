@@ -75,8 +75,8 @@
                 <td>
                     <div class="bzp_title" style="margin-left:10px;">
                         <div>
-                            小东<br>
-                            <font style="font-size:14px;font-weight:normal;">ID:00105995</font>
+                            <?php echo Yii::app()->session['user']->username; ?><br>
+                            <font style="font-size:14px;font-weight:normal;">ID:<?php echo Yii::app()->session['user']->login_id;?></font>
                         </div>
                     </div>
                 </td>

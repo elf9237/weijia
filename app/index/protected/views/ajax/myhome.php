@@ -390,7 +390,7 @@
                       '<td><img src="upload/'+value.mian_url+'" alt="" width="200px" height="100px"></td>'+
                       '<td>'+value.info_name+'</td>'+
                            '<td>'+value.zone+'</td>'+
-                              '<td>'+value.lend_type+'</td>'+
+                              '<td>'+value.house_type+'</td>'+
                                '<td>'+infoStatus+'</td>'+
                                '<td>'+status+'</td>'+
                         '<td>'+value.price+'</td>'

@@ -309,7 +309,7 @@
 	   ' <tr>'+
 	    	'<td><img src="public/desktop/images/hs_home.png"></td>'+
 	    	'<td class="td_cont_find">'+
-	    		value.rooms+'&nbsp;|&nbsp;'+value.area+'平米&nbsp;|&nbsp;'+value.nfloor+'/'+value.floors+'&nbsp;|&nbsp;'+value.direction+
+	    		value.house_type+'&nbsp;|&nbsp;'+value.area+'平米&nbsp;|&nbsp;'+value.nfloor+'/'+value.floors+'&nbsp;|&nbsp;'+value.direction+
 	    	'</td>'+
 	   ' </tr>'+
 	   ' <tr height="10px"><td></td></tr>'+

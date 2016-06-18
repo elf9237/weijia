@@ -103,7 +103,7 @@
 	      <tbody><tr><td width="50px" class="td_cont_hsinfo_c">面积：</td><td class="td_cont_hsinfo_l"> <?php echo $cyinfo->area ?></td></tr>
 	      <tr><td class="td_cont_hsinfo_c">楼层：</td><td class="td_cont_hsinfo_l"> <?php echo $cyinfo->nfloor?>/ <?php echo $cyinfo->floors ?></td></tr>
 	      <tr><td class="td_cont_hsinfo_c">朝向：</td><td class="td_cont_hsinfo_l"> <?php echo $cyinfo->direction ?></td></tr>
-	      <tr><td class="td_cont_hsinfo_c">户型：</td><td class="td_cont_hsinfo_l"> <?php echo $cyinfo->rooms ?></td></tr>
+	      <tr><td class="td_cont_hsinfo_c">户型：</td><td class="td_cont_hsinfo_l"> <?php echo $cyinfo->house_type ?></td></tr>
 	      <tr><td class="td_cont_hsinfo_c">小区：</td><td class="td_cont_hsinfo_l"> <?php echo $cyinfo->district ?> </td></tr>
 	      <tr><td class="td_cont_hsinfo_c">公交：</td><td class="td_cont_hsinfo_l"> <?php echo $cyinfo->bus ?></td></tr>
 	      <tr><td class="td_cont_hsinfo_c">地铁：</td><td class="td_cont_hsinfo_l">--</td></tr>

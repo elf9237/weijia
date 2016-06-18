@@ -131,7 +131,7 @@
                                 </tr>
                                 <tr>
                                     <td class="td_point"><label>户型</label></td>
-                                    <td><span><?php echo $cyinfo->rooms ?></span></td>
+                                    <td><span><?php echo $cyinfo->house_type ?></span></td>
                                 </tr>
                                 <tr>
                                     <td class="td_point"><label>楼层</label></td>

@@ -271,7 +271,7 @@
                         <div class="nu_itemtext">
                             <span class="nu_after"></span>
                             <div class="nu_itemtext_con">
-                                <input type="number" pattern="[0-9]*" id="bus" name="MinPrice" />
+                                <input   id="bus" name="MinPrice" />
                             </div>
                         </div>
                         <div class="errorTip MinPriceerror">
