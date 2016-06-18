@@ -194,7 +194,7 @@
     });
     wx.ready(function(){
         wx.onMenuShareAppMessage({
-            title: '人人都是包租婆', // 分享标题
+            title: '人人都是微家', // 分享标题
             desc: '没房也能收房租', // 分享描述
             link: '<?php echo $shareurl ?>', // 分享链接
             imgUrl: '', // 分享图标
@@ -210,7 +210,7 @@
             }
         });
         wx.onMenuShareTimeline({
-            title: '人人都是包租婆', // 分享标题
+            title: '人人都是微家', // 分享标题
             link: '<?php echo $shareurl ?>', // 分享链接
             imgUrl: '', // 分享图标
             success: function () {

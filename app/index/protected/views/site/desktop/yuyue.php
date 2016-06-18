@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <!-- saved from url=(0037)http://www.baozupo.com/baozupo/web.do -->
 <html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>包租婆</title>
+  <title>微家</title>
   
-  <meta name="description" content="包租婆是一家互联网女性租住生活平台，是一种全新的O2O模式的女性公寓。无中介费、服务费，定期免费保洁，24小时管家服务，WiFi入户，免费使用。包租婆要为女性打造品质租住，创造真正的家。">
+  <meta name="description" content="微家是一家互联网女性租住生活平台，是一种全新的O2O模式的女性公寓。无中介费、服务费，定期免费保洁，24小时管家服务，WiFi入户，免费使用。微家要为女性打造品质租住，创造真正的家。">
   <meta name="sogou_site_verification" content="DvDFbTLWNb">
   <script src="public/desktop/js/jquery.min.js"></script>
   <script src="public/desktop/js/common.js"></script>
