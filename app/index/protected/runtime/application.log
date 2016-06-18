@@ -666,3 +666,41 @@ Stack trace:
 #6 {main}
 REQUEST_URI=/
 ---
+2016/06/18 23:13:03 [error] [php] Trying to get property of non-object (E:\xampp\htdocs\weijia\app\index\protected\views\site\desktop\zufangdetail.php:84)
+Stack trace:
+#0 E:\xampp\htdocs\weijia\app\framework\web\CController.php(869): SiteController->renderFile()
+#1 E:\xampp\htdocs\weijia\app\framework\web\CController.php(782): SiteController->renderPartial()
+#2 E:\xampp\htdocs\weijia\app\index\protected\controllers\SiteController.php(112): SiteController->render()
+#3 unknown(0): SiteController->actionZufangdetail()
+#4 E:\xampp\htdocs\weijia\app\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#5 E:\xampp\htdocs\weijia\app\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 E:\xampp\htdocs\weijia\app\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 E:\xampp\htdocs\weijia\app\framework\web\CController.php(286): SiteController->runAction()
+#8 E:\xampp\htdocs\weijia\app\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#9 E:\xampp\htdocs\weijia\app\framework\web\CWebApplication.php(282): SiteController->run()
+#10 E:\xampp\htdocs\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 E:\xampp\htdocs\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 E:\xampp\htdocs\weijia\app\index\index.php(15): CWebApplication->run()
+REQUEST_URI=/weijia/app/index/index.php?r=site/zufangdetail&id=+value.id+
+in E:\xampp\htdocs\weijia\app\index\protected\views\site\desktop\zufangdetail.php (84)
+in E:\xampp\htdocs\weijia\app\index\protected\controllers\SiteController.php (112)
+in E:\xampp\htdocs\weijia\app\index\index.php (15)
+2016/06/18 23:22:54 [error] [php] Trying to get property of non-object (E:\xampp\htdocs\weijia\app\index\protected\views\site\desktop\zufangdetail.php:84)
+Stack trace:
+#0 E:\xampp\htdocs\weijia\app\framework\web\CController.php(869): SiteController->renderFile()
+#1 E:\xampp\htdocs\weijia\app\framework\web\CController.php(782): SiteController->renderPartial()
+#2 E:\xampp\htdocs\weijia\app\index\protected\controllers\SiteController.php(112): SiteController->render()
+#3 unknown(0): SiteController->actionZufangdetail()
+#4 E:\xampp\htdocs\weijia\app\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#5 E:\xampp\htdocs\weijia\app\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 E:\xampp\htdocs\weijia\app\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 E:\xampp\htdocs\weijia\app\framework\web\CController.php(286): SiteController->runAction()
+#8 E:\xampp\htdocs\weijia\app\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#9 E:\xampp\htdocs\weijia\app\framework\web\CWebApplication.php(282): SiteController->run()
+#10 E:\xampp\htdocs\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 E:\xampp\htdocs\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 E:\xampp\htdocs\weijia\app\index\index.php(15): CWebApplication->run()
+REQUEST_URI=/weijia/app/index/index.php?r=site/zufangdetail&id=+value.id+
+in E:\xampp\htdocs\weijia\app\index\protected\views\site\desktop\zufangdetail.php (84)
+in E:\xampp\htdocs\weijia\app\index\protected\controllers\SiteController.php (112)
+in E:\xampp\htdocs\weijia\app\index\index.php (15)

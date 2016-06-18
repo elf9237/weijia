@@ -27,19 +27,19 @@ class BaseController extends CController
 //		
 //	}
 	public function init(){
-//		$this->wechat = !(strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') == false);
+		$this->wechat = !(strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') == false);
 //		return  true;
-		$this->wechat=true;
-//        if($this->wechat){
-//            $openid = $this->getOpenID();
-//            $usermodel = new User();
-//            $newUser = $usermodel::model()->find('openid=:openid', array(':openid'=>$openid));
-//            if(!empty($newUser)){
-//                Yii::app()->session['user'] = $newUser;
-//            }
-//
-//
-//        }
+//		$this->wechat=true;
+        if($this->wechat){
+            $openid = $this->getOpenID();
+            $usermodel = new User();
+            $newUser = $usermodel::model()->find('openid=:openid', array(':openid'=>$openid));
+            if(!empty($newUser)){
+                Yii::app()->session['user'] = $newUser;
+            }
+
+
+        }
 	}
 
     public function is_login(){
