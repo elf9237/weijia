@@ -58,15 +58,15 @@
 <body ontouchstart="">
 
 <footer class="ui-footer ui-footer-btn ui-footer-new">
-    <ul class="ui-tiled ui-border-t">
+   <ul class="ui-tiled ui-border-t">
         <li data-href="index.html" class="ui-border-r ui-house">
-            <div>微家</div>
+            <div><a href="./index.php?r=weijia/index">微家</a></div>
         </li>
         <li data-href="rent.html" class="ui-border-r ui-rent">
-            <div>我要租房</div>
+            <div><a href="./index.php?r=store/index&info_type=-1">我要租房</a></div>
         </li>
         <li data-href="js.html" class="ui-rentout">
-            <div>我要出租</div>
+            <div><a href="./index.php?r=lease/crent">我要出租</a></div>
         </li>
     </ul>
 </footer>

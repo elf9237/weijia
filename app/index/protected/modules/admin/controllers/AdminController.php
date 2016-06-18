@@ -72,10 +72,19 @@ if(!empty($_POST['username'])){
        if(!empty($_POST['status'])){
            $sql.=" and t.status = ".$_POST['status']." ";
       }
- $sql.=" GROUP BY t.id ";
+ $sql.="and t.type in ('1','0') GROUP BY t.id ";
        $pagelist=new PageList($sql, $page, 10);
        echo json_encode($pagelist->pageAjax);
         
+    }
+    public function actionBiaojipt(){
+        $ar= new AjaxReturn();
+        $userinfo=  User::model()->find("id=".$_POST['id']);
+        $userinfo->type='0';
+        $userinfo->save();
+        $ar->status=true;
+        echo json_encode($ar);
+    
     }
     
      public function actionDlsUser(){
@@ -420,7 +429,7 @@ if(!empty($_POST['username'])){
                . "from cy_order t join cy_info t1 on(t1.id=t.info_id)  where 1=1 and t.audit_status =1 " ;
 
     
-       if(!empty($_POST['bTime'])&&!empty($_POST['eTime'])){
+       if(isset($_POST['bTime'])&&isset($_POST['eTime'])){
           $sql.=" and t.create_time >= ".$_POST['bTime']."  and t.create_time<=".$_POST['eTime']." "; 
        }
        $sql.=" and  t1.province='".$_POST['province']."' and t1.city='".$_POST['city']."' and t1.zone='".$_POST['bTime']."'";
@@ -453,6 +462,33 @@ if(!empty($_POST['username'])){
        $pagelist=new PageList($sql, $page, 10);
  
        echo json_encode($pagelist->pageAjax);
+    }
+    /**
+     * 退款审核
+     */
+    public function actionSureTui(){
+        
+        
+         $ar=new AjaxReturn();
+          $ar->status=false;
+        $id=$_POST['id'];
+        
+        $agentModel= Order::model();
+        $agentInfo = $agentModel->findByPk($id);
+        $agentInfo->audit_status=4;
+         $message=new Message();
+        $message->info_id=-1;
+        $message->sender=1;
+        $message->receiver=$agentInfo->user_id;
+        $message->message_type=2;
+        $message->message='你的退款申请已通过，具体事务请联系管理人员进行确认！！';
+        
+    
+    if($agentInfo->save()&&$message->save()){
+              $ar->status=true;
+    }
+    echo json_encode($ar);
+        
     }
     
     

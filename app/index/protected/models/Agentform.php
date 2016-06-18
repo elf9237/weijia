@@ -15,6 +15,7 @@
  * @property string $audit_time
  * @property integer $audit_status
  * @property string $audit_id
+ *  @property string $price
  */
 class Agentform extends CActiveRecord
 {
@@ -36,7 +37,7 @@ class Agentform extends CActiveRecord
 		return array(
 			array('user_idno', 'required','message'=>'身份证号码不能为空'),
 			array('price', 'required','message'=>'金额不能为零'),
-			array('user_idno', 'length','is'=>18,'message'=>'身份证号码必须是18位'),
+//			array('user_idno', 'length','is'=>18,'message'=>'身份证号码必须是18位'),
 			array('user_id, audit_status', 'numerical', 'integerOnly'=>true),
 			array('user_name, audit_id', 'length', 'max'=>50),
 			array('user_idno, province, city, zone', 'length', 'max'=>18),
@@ -71,6 +72,7 @@ class Agentform extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
+			'jiamengzone'=>'加盟区域',
 			'user_id' => 'User',
 			'user_name' => 'User Name',
 			'user_idno' => '身份证号',
@@ -106,7 +108,7 @@ class Agentform extends CActiveRecord
 
 		$criteria->compare('id',$this->id,true);
 		$criteria->compare('user_id',$this->user_id);
-		$criteria->compare('price',$this->money);
+		$criteria->compare('price',$this->price);
 		$criteria->compare('user_name',$this->user_name,true);
 		$criteria->compare('user_idno',$this->user_idno,true);
 		$criteria->compare('province',$this->province,true);

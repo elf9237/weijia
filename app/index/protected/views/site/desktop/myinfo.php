@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- saved from url=(0051)http://www.baozupo.com/baozupo/web.do#1459344318433 -->
 <html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>包租婆</title>
+  <title>微家</title>
   
   
   <meta name="description" content="">
@@ -45,9 +45,15 @@
         </ul>
     </div>
     <div class="login">
-        <span><a href="index.php?r=site/login">登入</a></span>
-<!--        <span>|</span>-->
-<!--        <span><a href="index.php?r=site/register">注册</a></span>-->
+           <?php
+          $user= Yii::app()->session['user'] ;
+          if(!empty($user)){
+              echo '<span>欢迎回来！'.$user->login_id.'</span>';
+          }else{
+              echo '<span><a href="index.php?r=site/login">登入</a></span>'; 
+          }
+        
+        ?>
     </div>
 </div>
 
@@ -78,14 +84,14 @@
   <div style="position:absolute;left:106px;top:49px;"><img src="public/desktop/images/dline1_y.gif"></div>
   
   <form method="POST" name="formreg" id="formreg" action="http://www.baozupo.com/baozupo/web/memberRegDispatcher.do?method=saveMember" target="iframe">
-  <div style="position:absolute;left:150px;top:3px;font-size:16px;"><strong><a class="font_sel" style="color:#1ABC9C" onclick="changeSerBk(&#39;mypass&#39;)">修改密码</a></strong></div>
+  <div style="position:absolute;left:150px;top:3px;font-size:16px;"></div>
   <div style="position:absolute;left:181px;top:72px;">
     <input type="hidden" id="usid" name="usid" value="108445">
     <table class="table">
       <tbody><tr><td></td><td class="td_cont_find">&nbsp;&nbsp;&nbsp;&nbsp;显示昵称：</td></tr>
       <tr>
         <td id="uscode_td" class="num2_reg">1</td>
-        <td><input type="text" id="uscode" name="uscode" onkeyup="limitInputLen(this,20)" onblur="changeInput(&#39;uscode&#39;,&#39;&#39;)" value="偏执者" class="input2_reg"></td>
+        <td><input type="text" id="uscode" name="uscode" onkeyup="limitInputLen(this,20)" onblur="changeInput(&#39;uscode&#39;,&#39;&#39;)" value="<?php echo Yii::app()->session['user']->username;?>" class="input2_reg"></td>
       </tr>
     </tbody></table>
   </div>
@@ -97,7 +103,7 @@
       <tbody><tr><td></td><td class="td_cont_find">&nbsp;&nbsp;&nbsp;&nbsp;您的姓名：</td></tr>
       <tr>
         <td id="name_td" class="num_reg">2</td>
-        <td><input type="text" id="name" name="name" onkeyup="limitInputLen(this,20)" onblur="changeInput(&#39;name&#39;,&#39;&#39;)" value="" class="input_reg"></td>
+        <td><input type="text" id="name" name="name" onkeyup="limitInputLen(this,20)" onblur="changeInput(&#39;name&#39;,&#39;&#39;)" value="<?php echo Yii::app()->session['user']->username;?>" class="input_reg"></td>
       </tr>
     </tbody></table>
   </div>
@@ -106,33 +112,20 @@
   
   <div style="position:absolute;left:175px;top:255px;">
   	<input type="hidden" id="sex" name="sex" value="男">
-    <table class="table">
-      <tbody><tr>
-        <td id="sex_td" class="num2_reg">3</td>
-        <td>
-        	<img style="cursor:pointer" id="sexm" title="男" onclick="changeInput(&#39;sex&#39;,&#39;&#39;,&#39;男&#39;)" src="public/desktop/images/man_y.gif">
-        </td>
-        <td>
-        	<img style="cursor:pointer" id="sexwm" title="女" onclick="changeInput(&#39;sex&#39;,&#39;&#39;,&#39;女&#39;)" src="public/desktop/images/woman_h.gif">
-        </td>
-      </tr>
-    </tbody></table>
+    
   </div>
   <div id="sex_car" style="position: absolute; left: 286px; top: 230px; display: block;"><img src="public/desktop/images/cartooninput.gif"></div>
   <div style="position:absolute;left:195px;top:293px;"><img id="sex_img" src="public/desktop/images/dline1_y.gif"></div>
   
   <div style="position:absolute;left:270px;top:313px;">
     <table class="table">
-      <tbody><tr><td></td><td class="td_cont_find">&nbsp;&nbsp;&nbsp;&nbsp;您的手机号(<font style="color:#FF0000">变更手机号需要验证</font>)：</td></tr>
+      <tbody><tr><td></td><td class="td_cont_find">&nbsp;&nbsp;&nbsp;&nbsp;您的手机号：</td></tr>
       <tr>
         <td id="phone_td" class="num_reg">4</td>
-        <td><input type="text" id="phone" name="phone" onkeypress="return checkInputNumber(event)" maxlength="20" onblur="changeInput(&#39;phone&#39;,&#39;&#39;)" value="" class="input_reg"></td>
+        <td><input type="text" id="phone" name="phone" onkeypress="return checkInputNumber(event)" maxlength="20" onblur="changeInput(&#39;phone&#39;,&#39;&#39;)" value="<?php echo Yii::app()->session['user']->login_id;?>" class="input_reg"></td>
         <td>
         	<div id="phoneflag_td" class="input_reg" style="width:50px;">
-        		<select id="phoneflag" name="phoneflag" class="input_log">
-        			<option value="0" selected="">保密</option>
-        			<option value="1">公开</option>
-        		</select>
+        		
         	</div>
         </td>
       </tr>
@@ -141,39 +134,37 @@
   <div id="phone_car" style="position:absolute;left:638px;top:316px;display:none;"><img src="public/desktop/images/cartooninput.gif"></div>
   <div style="position:absolute;left:283px;top:375px;"><img id="phone_img" src="public/desktop/images/dline4_h.gif"></div>
   <div style="position:absolute;left:295px;top:384px;">
-  <table border="0" cellpadding="0" cellspacing="0">
-  <tbody><tr>
-    <td width="66px"><input name="checkCode" type="text" id="checkCode" size="4" maxlength="4"></td>
-    <td width="74px" style="padding-top:4px"><img class="handpoint" title="看不清?换一个" onclick="myReload()" src="public/desktop/images/pictureCheckCode" id="createCheckCode"></td>
-    <td><input type="button" id="butver" style="width:56px;height:22px;padding:0;font-size:12px;" value="手机验证" class="button_reg" onclick="verifyClick()" onmousemove="changeClass(&#39;butver&#39;,&#39;button2_reg&#39;)" onmouseout="changeClass(&#39;butver&#39;,&#39;button_reg&#39;)"></td>
-  </tr>
-  </tbody></table>
+  
   </div>
   
   <div style="position:absolute;left:270px;top:443px;">
-    <table class="table">
-      <tbody><tr><td></td><td class="td_cont_find">&nbsp;&nbsp;&nbsp;&nbsp;手机验证码：</td></tr>
-      <tr>
-        <td id="vercode_td" class="num_reg">5</td>
-        <td><input type="text" id="vercode" name="vercode" maxlength="20" onblur="changeInput(&#39;vercode&#39;,&#39;&#39;)" value="" class="input_reg"></td>
-      </tr>
-    </tbody></table>
+    
   </div>
   <div id="vercode_car" style="position:absolute;left:588px;top:446px;display:none;"><img src="public/desktop/images/cartooninput.gif"></div>
   <div style="position:absolute;left:195px;top:496px;"><img id="vercode_img" src="public/desktop/images/dline2_h.gif"></div>
   
   <div style="position:absolute;left:175px;top:525px;">
     <table class="table">
-      <tbody><tr><td></td><td class="td_cont_find">&nbsp;&nbsp;&nbsp;&nbsp;您的邮箱：</td></tr>
+      <tbody><tr><td></td><td class="td_cont_find">&nbsp;&nbsp;&nbsp;&nbsp;您的用户类别：</td></tr>
       <tr>
         <td id="email_td" class="num_reg">6</td>
-        <td><input type="text" id="email" name="email" maxlength="20" onblur="changeInput(&#39;email&#39;,&#39;&#39;)" value="" class="input_reg"></td>
+        <td><input type="text" id="email" name="email" maxlength="20" onblur="changeInput(&#39;email&#39;,&#39;&#39;)" value="<?php $type= Yii::app()->session['user']->type;
+        if($type=='admin'){
+            echo '超级管理员';
+        }
+        if($type=='0'){
+            echo '平台用户';
+        }
+         if($type=='1'){
+            echo '个人用户';
+        }
+          if($type=='2'){
+            echo '代理商';
+        }
+        ?>" readonly="true" class="input_reg"></td>
         <td>
         	<div id="emailflag_td" class="input_reg" style="width:50px;">
-        		<select id="emailflag" name="emailflag" class="input_log">
-        			<option value="0" selected="">保密</option>
-        			<option value="1">公开</option>
-        		</select>
+        		
         	</div>
         </td>
       </tr>
@@ -205,10 +196,10 @@
   
   <div style="position:absolute;left:175px;top:688px;">
     <table class="table">
-      <tbody><tr><td></td><td class="td_cont_find">&nbsp;&nbsp;&nbsp;&nbsp;您的生日：</td></tr>
+      <tbody><tr><td></td><td class="td_cont_find">&nbsp;&nbsp;&nbsp;&nbsp;您的余额：</td></tr>
       <tr>
         <td id="birthday_td" class="num_reg">8</td>
-        <td><input type="text" id="birthday" name="birthday" maxlength="20" onchange="changeInput(&#39;birthday&#39;,&#39;&#39;)" value="" class="input_reg" onclick="WdatePicker({dateFmt:&#39;yyyy-MM-dd&#39;})"></td>
+        <td><input type="text" id="birthday" name="birthday" maxlength="20" onchange="changeInput(&#39;birthday&#39;,&#39;&#39;)" value="<?php echo Yii::app()->session['user']->yue;?>" class="input_reg" onclick="WdatePicker({dateFmt:&#39;yyyy-MM-dd&#39;})"></td>
         <td>
         	<div id="birthdayflag_td" class="input_reg" style="width:50px;">
         		<select id="birthdayflag" name="birthdayflag" class="input_log">
@@ -223,23 +214,7 @@
   <div id="birthday_car" style="position:absolute;left:548px;top:692px;display:none;"><img src="public/desktop/images/cartooninput.gif"></div>
   <div style="position:absolute;left:190px;top:748px;"><img id="birthday_img" src="public/desktop/images/dline1_h.gif"></div>
   
-  <div style="position:absolute;left:264px;top:769px;">
-    <table class="table">
-      <tbody><tr><td></td><td class="td_cont_find">&nbsp;&nbsp;&nbsp;&nbsp;您的行业：</td></tr>
-      <tr>
-        <td id="job_td" class="num_reg">9</td>
-        <td><input type="text" id="job" name="job" maxlength="20" onkeyup="limitInputLen(this,20)" onblur="changeInput(&#39;job&#39;,&#39;&#39;)" value="" class="input_reg"></td>
-        <td>
-        	<div id="jobflag_td" class="input_reg" style="width:50px;">
-        		<select id="jobflag" name="jobflag" class="input_log">
-        			<option value="0" selected="">保密</option>
-        			<option value="1">公开</option>
-        		</select>
-        	</div>
-        </td>
-      </tr>
-    </tbody></table>
-  </div>
+ 
   <div id="job_car" style="position:absolute;left:637px;top:773px;display:none;"><img src="public/desktop/images/cartooninput.gif"></div>
   <div style="position:absolute;left:279px;top:829px;"><img id="job_img" src="public/desktop/images/dline3_h.gif"></div>
   
@@ -294,7 +269,7 @@
   </form>
   
   <div id="divbut" style="position:absolute;left:290px;top:1346px;">
-    <input id="but" onclick="saveClick()" onmousemove="changeClass(&#39;but&#39;,&#39;button2_reg&#39;)" onmouseout="changeClass(&#39;but&#39;,&#39;button_reg&#39;)" class="button_reg" type="button" value="保存">
+<!--    <input id="but" onclick="saveClick()" onmousemove="changeClass(&#39;but&#39;,&#39;button2_reg&#39;)" onmouseout="changeClass(&#39;but&#39;,&#39;button_reg&#39;)" class="button_reg" type="button" value="保存">-->
   </div>
   
   <div id="tmpdiv" style="display:none;"></div>

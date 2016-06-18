@@ -133,7 +133,7 @@
                                         '</dd>'+
                                         '</dl>'+
                                         '</a>');
-                                        innerHtml.push( '<span class="toDo clearfix"><a href="javascript:void(0)"  onclick="check(1,'+value.rentid+')">通过</a><a  class="check(2,'+value.rentid+')">不通过</a></span>')
+                                        innerHtml.push( '<span class="toDo clearfix"><a href="javascript:void(0)"  onclick="check(1,'+value.rentid+')">通过</a><a  onclick="check(2,'+value.rentid+')">不通过</a></span>')
                                   
                                     innerHtml.push('</li>');
                                 });

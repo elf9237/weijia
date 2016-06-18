@@ -1,5 +1,5 @@
            <ul class="ui-tiled ui-border-t">
                 <li class="ui-border-r ui-rentflow"><div><a href="./index.php?r=store">商铺出租</a></div></li>
                 <li data-href="./index.php?r=show/add" class="ui-border-r ui-joinflow"><div><a>加盟流程</a></div></li>
-                <li data-href="./index.php?r=bzp" class="ui-bzpo"><div>包租婆</div></li>
+                <li data-href="./index.php?r=bzp" class="ui-bzpo"><div>微家</div></li>
             </ul>

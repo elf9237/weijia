@@ -74,6 +74,10 @@ class AgentController extends BaseController
     public function actionJoin()
     {
          $user= Yii::app()->session['user'] ;
+         if(!$user){
+             $this->redirect('index.php?r=site/login');
+             
+         }
         $model = new Agentform();
 //        $user_info = Yii::app()->user->userdetail;
 //        $model->cellphone = $user_info->cellphone;
@@ -85,6 +89,10 @@ class AgentController extends BaseController
 //            $model->user_name = $user_info->username;
             $model->user_id =$user->id;
             $model->user_name =$user->username;
+            $model->create_time=time();
+            if( isset($_POST['Agentform']['province'])){
+               $model->jiamengzone=$_POST['Agentform']['province'].$_POST['Agentform']['city'].$_POST['Agentform']['zone'];
+            }
 
             if ($model->save())
             {

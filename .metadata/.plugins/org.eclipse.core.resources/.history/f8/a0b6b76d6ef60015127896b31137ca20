@@ -1,6 +1,6 @@
 <?php
 /**
-商铺出租	加盟流程	包租婆
+商铺出租	加盟流程	微家
 
 微家	我要租房	我要出租
 
@@ -67,7 +67,7 @@
 	<ul class="ui-tiled ui-border-t">
 		<li data-href="index.html" class="ui-border-r ui-rentflow"><div>租房流程</div></li>
 		<li data-href="ui.html" class="ui-border-r ui-joinflow"><div>加盟流程</div></li>
-		<li data-href="js.html" class="ui-bzpo"><div>包租婆</div></li>
+		<li data-href="js.html" class="ui-bzpo"><div>微家</div></li>
 	</ul>
 </header>
 <footer id="head"class="ui-footer ui-footer-btn ui-footer-new">

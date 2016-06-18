@@ -133,7 +133,7 @@
                                         '</dd>'+
                                         '</dl>'+
                                         '</a>'+
-                                        '<span class="toDo clearfix"><a onclick="toZhiding('+value.id+')">置顶</a><a onclick="toYongjin('+value.id+')">佣金</a><a href="#">修改</a></span>'+
+                                        '<span class="toDo clearfix"><a onclick="toZhiding('+value.id+')">置顶</a><a onclick="toYongjin('+value.id+')">佣金</a></span>'+
                                         '</li>');
                                 });
 

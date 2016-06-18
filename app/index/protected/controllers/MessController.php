@@ -36,6 +36,8 @@ class MessController extends BaseController
                    $message_model -> message='预约看房，姓名：'.$_POST['real_name'].',手机号：'.$_POST['phone_no'];
                   $message_model -> receiver=$userid;
                     $message_model -> info_id=$infoid;
+                    if(isset($_POST['time']))
+                         $message_model->order_time=$_POST['time'];
 //                      $sendid=yii::app()->user->getState('User')->id;
 //                    if(!isset($sendid))
                         $sendid=$loginuserid;

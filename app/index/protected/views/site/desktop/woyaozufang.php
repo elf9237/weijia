@@ -35,9 +35,15 @@
 		</ul>
 	</div>
 	<div class="login">
-		<span><a href="index.php?r=site/login">登入</a></span>
-<!--		<span>|</span>-->
-<!--		<span><a href="index.php?r=site/register">注册</a></span>-->
+    <?php
+          $user= Yii::app()->session['user'] ;
+          if(!empty($user)){
+              echo '<span>欢迎回来！'.$user->login_id.'</span>';
+          }else{
+              echo '<span><a href="index.php?r=site/login">登入</a></span>'; 
+          }
+        
+        ?>
 	</div>
 </div>
 <div id="focus-banner">
@@ -147,7 +153,7 @@
   	  <tbody>
               <tr>
   	    <td width="810px" align="left">
-	      <div class="color_def">共有 468 套符合要求的房源</div>
+	      <div class="color_def"></div>
 	    </td>
 	    <td align="left"><img src="public/desktop/images/right_tri.gif"></td>
   	  </tr>
@@ -442,6 +448,9 @@
                    var innerHtml=[];
                    if(data.pageList.length>0){
                     $.each(data.pageList,function(n,value){ 
+                         var ding="";
+                             if(value.orderno!=null)
+                                 ding='<tr><td><img src="public/desktop/images/top.png"></td><td class="td_cont_find"></td></tr>';
                     innerHtml.push('<tr>'+
 	'<td width="600px" height="370px" class="handpoint" onclick="showRoom('+value.id+');" style="background-color:#00FF00">'+
 	  '<div style="width:370px;height:370px;float:left;"><img width="370px" height="370px" src="upload/'+value.mian_url+'"></div>'+
@@ -503,10 +512,7 @@
 	    	'<td class="td_cont_find">'+value.bus+'</td>'+
 	    '</tr>'+
       '<tr height="8px"><td></td></tr>'+
-          '<tr>'+
-             '<td><img src="public/desktop/images/top.png"></td>'+
-               '  <td class="td_cont_find"></td>'+
-            '</tr>'+
+         ding+
 	  '</tbody></table>'+
 	'</td>'+
   '</tr>'+

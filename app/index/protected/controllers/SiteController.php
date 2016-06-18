@@ -299,13 +299,14 @@ class SiteController extends BaseController
 			$model->login_id =$model->cellphone;
 			$password = $model->password;
             $password2 = Yii::app()->request->getParam('password2');
-            if($password !== $password2){
+            if($password != $password2){
                 $this->redirect('index.php?r=site/error');
             }
 
 			$model->username = $model->login_id;
 			$model->password = md5($password);
-			$model->type =0;
+
+			$model->type =1;
 			$model->inviter = Yii::app()->session['share_user_id'];
 			if($model->save()){
 				$this->redirect('index.php?r=site/regsuccess');
