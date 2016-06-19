@@ -6,6 +6,7 @@
  * The followings are the available columns in table '{{equip}}':
  * @property string $id
  * @property string $equip
+ * @property string $img_url
  */
 class Equip extends CActiveRecord
 {
@@ -29,7 +30,7 @@ class Equip extends CActiveRecord
 			array('equip', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, equip', 'safe', 'on'=>'search'),
+			array('id, equip,img_url', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -52,6 +53,7 @@ class Equip extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'equip' => 'Equip',
+                        'img_url'=>img_url
 		);
 	}
 
@@ -75,6 +77,7 @@ class Equip extends CActiveRecord
 
 		$criteria->compare('id',$this->id,true);
 		$criteria->compare('equip',$this->equip,true);
+                $criteria->compare('img_url',$this->img_url,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

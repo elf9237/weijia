@@ -43,7 +43,7 @@ class Order extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('order_no, user_id, info_id', 'required'),
-			array('user_id, info_id, room_id, pay_price, audit_status', 'numerical', 'integerOnly'=>true),
+			array('user_id, info_id, room_id,  audit_status', 'numerical', 'integerOnly'=>true),
 			array('order_no, audit_id', 'length', 'max'=>50),
 			array('order_type, pay_type, create_time, begin_time, expire_time, pay_time, audit_time', 'length', 'max'=>10),
 			array('audit_content', 'length', 'max'=>255),

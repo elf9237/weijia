@@ -222,6 +222,7 @@ $roomeqip->info_id=$info->id;
    }
 }
        $ar->status=$isSuccess;
+       $ar->params["infoid"]=$info->id;
        echo json_encode($ar);
      }
      public function actionColl(){

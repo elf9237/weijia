@@ -19,7 +19,9 @@ class StoreController extends BaseController
                $userModel= User::model();
             $cyinfo=$infoModel->findByPk($id);
              $useinfo=$userModel->find("id=".$cyinfo->user_id);
-		$this->render('detial',array('cyinfo'=>$cyinfo,'useinfo'=>$useinfo));
+             $equis=  Equip::model()->findAll();
+             $equi_infos=  RoomEquip::model()->findAll('info_id=:info_id',array('info_id'=>$id));
+		$this->render('detial',array('cyinfo'=>$cyinfo,'useinfo'=>$useinfo,'equis'=>$equis,'equi_infos'=>$equi_infos));
 	}
          public function actionToFuKuang($infoid){
              $loginuserid=-1;

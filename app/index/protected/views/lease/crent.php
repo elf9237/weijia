@@ -359,19 +359,19 @@
 
                     </div>
                     <li class="splitLine"></li>
-                    <li class="_item canNullSplit canNullSplit1"><span class="canNull_title">提示信息</span><span class="canNull_after"></span></li>
+                    <li class="_item canNullSplit canNullSplit1"><span class="canNull_title">附加选项</span><span class="canNull_after"></span></li>
                     <form class="exra">
 
                         <ul class="tglist">
                             <li class="li-subul">
                                 <ul>
-                                    <li class="select" id="infotopChangeProject"><span>置顶<span class="dayprice"><span class="dayprice" id="infotop_pmcAmount">置顶到第一页，效果5倍提升</span></span></span></li>
-                                    <li class="select" id="infotopChangeProject"><span>佣金<span class="dayprice"><span class="dayprice" id="infotop_pmcAmount">设立佣金，让更多的人转发你的房源</span></span></span></li>
+                                    <li class="select" id="infotopChangeProject"><input id="" value="0" class="roll" name="xuantian" type="radio"><span>置顶<span class="dayprice"><span class="dayprice" id="infotop_pmcAmount">置顶到第一页，效果5倍提升</span></span></span></li>
+                                    <li class="select" id="infotopChangeProject"><input id="" value="1" name="xuantian" class="roll" type="radio"><span>佣金<span class="dayprice"><span class="dayprice" id="infotop_pmcAmount">设立佣金，让更多的人转发你的房源</span></span></span></li>
                                 </ul>
                             </li>
                         </ul>
                         <div class="payable">
-                            提示：<span class="lastprice">发布完成后去置顶、设立佣金</span>
+                            提示：<span class="lastprice">选择设置佣金和置顶可以有效地，帮你租掉房子</span>
                                 <span id="main_fee_detail_show" style="display:none">
         (总金额<font id="main_total_fee">0</font>元，已优惠<font id="main_total_coup">0</font>元)
         </span>
@@ -565,7 +565,7 @@ function submitmyhome(){
             public_url:public_urls.join(","),
             room_url:room_urls.join(","),
             floors:floors,
-            nfloor:nfloor,
+            nfloor:nfloor
             
             
         };
@@ -576,10 +576,18 @@ function submitmyhome(){
                type:"POST",
                dataType:"json",
                success:function(data){
-                   if(data.status)
+                   if(data.status){
+                        var paytype=$("input[name='xuantian']:checked").val();
+                        if(paytype=="0"){
+                            window.location.href="index.php?r=store/toFuKuangDing&infoid="+data.params.infoid;
+                        }else if(paytype=="0"){
+                            window.location.href="index.php?r=store/ToFuKuangYong&infoid="+data.params.infoid;
+                        }else{
                          window.location.href="index.php?r=center/issue";
-                   else
+                     }}
+                   else{
                        layer.msg("发布失败！！")
+                   }
                }
             
         })

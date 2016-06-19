@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -86,21 +86,24 @@
                         <div class="list_item_div" style="background-color:#303133">
                           <table style="border:0;border-spacing:2px;" width="90%" align="center">
                             <tbody>
+                                
+                                
+                                
                             <tr>
-                              <td align="left"><img src="img/2015010513142700011.png"></td>
-                              <td align="left"><img src="img/2015010513144300011.png"></td>
-                              <td align="left"><img src="img/2015010513145500011.png"></td>
-                              <td align="left"><img src="img/2015010513153400011.png"></td>
-                            </tr>
-                            <tr>
-                              <td align="left"><img src="img/2015010513155200011.png"></td>
-                              <td align="left"><img src="img/2015010513162200011.png"></td>
-                              <td align="left"><img src="img/2015010513163900011.png"></td>
-                              <td align="left"><img src="img/2015010513171000011.png"></td>
-                            </tr>
-                            <tr>
-                              <td align="left"><img src="img/2015010513173600011.png"></td>
-                            </tr>
+                                <?php 
+                                 if(isset($equi_infos)){
+             foreach ($equi_infos as $eqinfo){
+                foreach ($equis as $eq){
+                    if($eq->id==$eqinfo->equip_id){
+                        echo '<td align="left"><img src="'.$eq->img_url.'"></td>';
+                    }
+             } 
+                 
+             }
+             
+                }
+                                
+                                ?>
                           </tbody>
                           </table>
                         </div>
