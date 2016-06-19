@@ -106,10 +106,13 @@ class SiteController extends BaseController
             $infoModel=  Info::model();
             $cyinfo=$infoModel->findByPk($id);
             
+            $equis=  Equip::model()->findAll();
+             $equi_infos=  RoomEquip::model()->findAll('info_id=:info_id',array('info_id'=>$id));
+            
 		if( $this->wechat){
 			$this->render('index');
 		}else{
-			$this->render('desktop/zufangdetail',array('cyinfo'=>$cyinfo));
+			$this->render('desktop/zufangdetail',array('cyinfo'=>$cyinfo,'equis'=>$equis,'equi_infos'=>$equi_infos));
 		}
 	}
 	public function actionGuanjia()
