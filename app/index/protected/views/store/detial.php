@@ -14,7 +14,50 @@
        <script src="public/desktop/js/common.js"></script>
        <link href="css/jquery.bxslider.css" rel="stylesheet" type="text/css">
        <link href="css/house.css" rel="stylesheet">
- 
+        <style>
+            /*ul wrapper*/
+            #iSlider-wrapper {
+                height: 90%;
+                width: 100%;
+                overflow: hidden;
+                position: absolute;
+            }
+            #iSlider-wrapper ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                overflow: hidden;
+            }
+
+            #iSlider-wrapper li {
+                position: absolute;
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-box-pack: center;
+                -webkit-box-align: center;
+                list-style: none;
+            }
+
+            #iSlider-wrapper li img {
+                max-width: 100%;
+                max-height: 100%;
+            }
+
+            .islider-btn-outer {
+                background-color: rgba(0, 0, 0, .5);
+                border-radius: 99px;
+            }
+
+            .islider-btn-inner {
+                height: 30%;
+                width: 30%;
+                margin-top: 34%;
+            }
+        </style>
            </head>
     <body ontouchstart="">
         <!-- <header class="ui-header ui-header-positive ui-border-b">
@@ -30,7 +73,7 @@
         <section>
             <div class="ui-tab">
 
-                <ul class="ui-tab-content ui-tab-content-detail" style="width:300%">
+                <ul class="ui-tab-content ui-tab-content-detail">
                     <li class="current clearfix">
                         <div class="slide-wrap">
                             <h1>房源图片</h1>
@@ -45,7 +88,7 @@
                                         $imgs=explode(',',$roomima);
                                         for($index=0;$index<count($imgs);$index++)
                                         {
-                                            echo ' <li><a href="#"><img src="upload/'.$imgs[$index].'"></a></li>';
+                                            echo ' <li><a href="#" class="img-show"><img src="upload/'.$imgs[$index].'"></a></li>';
                                         }
                                         ?>
                                     </ul>
@@ -66,7 +109,7 @@
                                         for($index=0;$index<count($imgs);$index++)
                                         {
 
-                                            echo '<li><a href="#"><img src="upload/'.$imgs[$index].'"></a></li>';
+                                            echo '<li><a href="#" class="img-show"><img src="upload/'.$imgs[$index].'"></a></li>';
 
                                         }
                                         ?>
@@ -84,28 +127,23 @@
                             <div class="title_text" align="left"><strong><a style="color:#FFFFFF">标准配置</a></strong></div>
                         </div>
                         <div class="list_item_div" style="background-color:#303133">
-                          <table style="border:0;border-spacing:2px;" width="90%" align="center">
-                            <tbody>
-                                
-                                
-                                
-                            <tr>
-                                <?php 
-                                 if(isset($equi_infos)){
-             foreach ($equi_infos as $eqinfo){
-                foreach ($equis as $eq){
-                    if($eq->id==$eqinfo->equip_id){
-                        echo '<td align="left"><img src="'.$eq->img_url.'"></td>';
-                    }
-             } 
-                 
-             }
-             
-                }
-                                
+                            <ul class="shebei clearfix">
+                                <?php
+                                if(isset($equi_infos)){
+                                    foreach ($equi_infos as $eqinfo){
+                                        foreach ($equis as $eq){
+                                            if($eq->id==$eqinfo->equip_id){
+                                                echo '<li><img src="'.$eq->img_url.'" alt=""></li>';
+                                            }
+                                        }
+
+                                    }
+
+                                }
                                 ?>
-                          </tbody>
-                          </table>
+
+                            </ul>
+
                         </div>
                         <div class="title">
                             <div class="title_text" align="left"><strong><a style="color:#FFFFFF">热舞</a></strong></div>
@@ -194,47 +232,49 @@
             <input type='hidden' value='<?php echo $useinfo->type;?>'/>
             <div class="ad-btn"><a href="index.php?r=center/wmoney">佣</a></div>
         </section>
-        <script src="lib/zepto.min.js"></script>
-        <script src="js/frozen.js"></script>
-        <script src="js/TouchSlide.1.1.source.js"></script>
-        <script type="text/javascript">
 
-            TouchSlide({
-                slideCell:"#focus",
-                titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
-                mainCell:".bd ul",
-                effect:"left",
-                autoPlay:true,//自动播放
-                autoPage:true, //自动分页
-                switchLoad:"_src" //切换加载，真实图片路径为"_src"
-            });
+    </body>
+    <script src="lib/zepto.min.js"></script>
+    <script src="js/frozen.js"></script>
+    <script src="js/TouchSlide.1.1.source.js"></script>
+    <script type="text/javascript">
 
-            TouchSlide({
-                slideCell:"#focus2",
-                titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
-                mainCell:".bd ul",
-                effect:"left",
-                autoPlay:true,//自动播放
-                autoPage:true, //自动分页
-                switchLoad:"_src" //切换加载，真实图片路径为"_src"
-            });
+        TouchSlide({
+            slideCell:"#focus",
+            titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+            mainCell:".bd ul",
+            effect:"left",
+            autoPlay:true,//自动播放
+            autoPage:true, //自动分页
+            switchLoad:"_src" //切换加载，真实图片路径为"_src"
+        });
 
-        </script>
-         <script>
-             function zufang(){
-                 var infoid="<?php echo $cyinfo->id;?>";
-                 var userid="<?php echo $cyinfo->user_id;?>";
-                 var infoType="<?php echo $cyinfo->info_type;?>";
-                 var userType="<?php echo $useinfo->type;?>";
-                 var senderid= <?php 
-                 $loginuserid=-1;
-            $userLogin= Yii::app()->session['user'] ;
-            if(!empty($userLogin)){
-                $loginuserid=$userLogin->id;
-               
-            } echo $loginuserid; ?>;
-                 if(userType=="1"||userType=="2"){
-                     if(senderid !=-1){
+        TouchSlide({
+            slideCell:"#focus2",
+            titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+            mainCell:".bd ul",
+            effect:"left",
+            autoPlay:true,//自动播放
+            autoPage:true, //自动分页
+            switchLoad:"_src" //切换加载，真实图片路径为"_src"
+        });
+
+    </script>
+    <script>
+        function zufang(){
+            var infoid="<?php echo $cyinfo->id;?>";
+            var userid="<?php echo $cyinfo->user_id;?>";
+            var infoType="<?php echo $cyinfo->info_type;?>";
+            var userType="<?php echo $useinfo->type;?>";
+            var senderid= <?php
+                $loginuserid=-1;
+                $userLogin= Yii::app()->session['user'] ;
+                if(!empty($userLogin)){
+                    $loginuserid=$userLogin->id;
+
+                } echo $loginuserid; ?>;
+            if(userType=="1"||userType=="2"){
+                if(senderid !=-1){
                     $.ajax({
                         url:"index.php?r=store/rentFang&infoid="+infoid,
                         dataType:"json",
@@ -244,39 +284,39 @@
                                 alert("租房信息提交成功！");
                             }else{
                                 alert("信息提交失败！");
-                                
+
                             }
                         }
-                        
+
                     })}else{
                     window.location.href="index.php?r=site/login";
-                    
-                    }
-                 }else{
-                     if(infoType==1){
-                          window.location.href="index.php?r=store/toFuKuangRi&infoid="+infoid; 
-                     }else{
-                    window.location.href="index.php?r=store/toFuKuang&infoid="+infoid; 
+
                 }
-                 }
-                 
-             }
-             
-             
-              function initBaiDuMap(){
-    var map= '<?php echo $cyinfo->map ?>';
- var jin='0';
- var wei='0';
- if(map!=null&&map!=''){
- var maps=map.split(',');
- if(maps.length>1){
-    jin=maps[0];
-    wei=maps[1];
-    
- }
- }
-  	loadBaiDuMap("baidudiv",jin,wei);
-  }
+            }else{
+                if(infoType==1){
+                    window.location.href="index.php?r=store/toFuKuangRi&infoid="+infoid;
+                }else{
+                    window.location.href="index.php?r=store/toFuKuang&infoid="+infoid;
+                }
+            }
+
+        }
+
+
+        function initBaiDuMap(){
+            var map= '<?php echo $cyinfo->map ?>';
+            var jin='0';
+            var wei='0';
+            if(map!=null&&map!=''){
+                var maps=map.split(',');
+                if(maps.length>1){
+                    jin=maps[0];
+                    wei=maps[1];
+
+                }
+            }
+            loadBaiDuMap("baidudiv",jin,wei);
+        }
         window.addEventListener('load', function(){
 
             var tab = new fz.Scroll('.ui-tab', {
@@ -296,32 +336,30 @@
             });
 
         })
-        </script>
-        <script>
-		$(document).ready(function() { 
-			$.ajax({
-		　　　　　　url: 'index.php?r=basemenu/footmenu',
-		　　　　　　type: 'POST',
-		　　　　　　//data: { id: idValue },
-		　　　　　　//timeout: 3000,
-		　　　　　　success: function (data) {
-						$("#foot").html(data);
-					 },
-		　　　　　　error: function (data) {
-								 alert('===');},
-　　　　		})
-		}); 
-		</script>
-        <script type="text/javascript">
-        $(document).ready(function(){
-               loadBaiDuMapAsy("initBaiDuMap");
-          $('.slider6').bxSlider({
-            mode: 'fade',
-            slideWidth: 600, 
-            slideMargin: 10
-          });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                url: 'index.php?r=basemenu/footmenu',
+                type: 'POST',
+                //data: { id: idValue },
+                //timeout: 3000,
+                success: function (data) {
+                    $("#foot").html(data);
+                },
+                error: function (data) {
+                    alert('===');},
+            })
         });
     </script>
-    </body> 
-
+    <script type="text/javascript">
+        $(document).ready(function(){
+            loadBaiDuMapAsy("initBaiDuMap");
+            $('.slider6').bxSlider({
+                mode: 'fade',
+                slideWidth: 600,
+                slideMargin: 10
+            });
+        });
+    </script>
 </html>

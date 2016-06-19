@@ -286,7 +286,7 @@
   <tr style="height:5px;"><td colspan="10"></td></tr>
 </tbody></table>
   </div>
-  <div style="position:fixed;top:200px;right:20px;z-index:18000;"><img class="handpoint" onclick="prefindTop()" src="public/desktop/images/flowright.png"></div>
+<!--  <div style="position:fixed;top:200px;right:20px;z-index:18000;"><img class="handpoint" onclick="prefindTop()" src="public/desktop/images/flowright.png"></div>-->
 
 
 <script type="text/javascript">
