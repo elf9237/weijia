@@ -194,6 +194,7 @@ class CenterController extends BaseController{
     }
     //    注册
     public function actionAssign(){
+
         $this -> renderPartial('assign');
     }
     //    忘记密码

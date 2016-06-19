@@ -237,6 +237,7 @@
     <script src="lib/zepto.min.js"></script>
     <script src="js/frozen.js"></script>
     <script src="js/TouchSlide.1.1.source.js"></script>
+    <script src="lib/layer/layer.js"></script>
     <script type="text/javascript">
 
         TouchSlide({
@@ -281,9 +282,18 @@
                         type:"POST",
                         success:function(data){
                             if(data.status){
-                                alert("租房信息提交成功！");
+//                                alert("租房信息提交成功！");
+                                layer.open({
+                                    content: '租房信息提交成功,非平台房源只能线下支付',
+                                    style: 'background-color:#ff6d00; color:#fff; border:none;',
+                                    time: 2
+                                });
                             }else{
-                                alert("信息提交失败！");
+                                layer.open({
+                                    content: '租房信息提交失败',
+                                    style: 'background-color:#ff6d00; color:#fff; border:none;',
+                                    time: 2
+                                });
 
                             }
                         }

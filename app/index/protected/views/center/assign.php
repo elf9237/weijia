@@ -30,6 +30,9 @@
     <!--[if IE 8]><meta http-equiv="X-UA-Compatible" content="IE=8"><![endif]-->
     <link rel="stylesheet" type="text/css" href="./css/common_pc.css" />
     <link rel="stylesheet" type="text/css" href="./css/m-index.css" />
+    <style>
+        #city_4 select{width:70px;height: 40px;border: none;}
+    </style>
 </head>
 <body>
 <div id="op-wrap">
@@ -71,7 +74,20 @@
                                 <input type="password" class="passWord2" placeholder="确认密码" name="userpassword2" datatype="*" recheck="userpassword" errormsg="您两次输入的账号密码不一致！">
                                 <span class="tip Validform_checktip"></span>
                             </div>
-                            <div class="note">注册微家，就表示您同意微家的<a href="" target="_blank" class="user"  et-attached="1">用户协议</a>。
+                            <div class="passbox" style="background: #efefef">
+                                <div tabindex="0" class="tm_itemtext clearfix">
+                                    <span style="float: left;display: inline-block;height: 40px;line-height: 40px;">请选择区域</span>
+                                    <div id="city_4" style='float: right;'>
+<!--                                        --><?php //echo $form->dropDownList($model, 'province',array(), array('class' => "prov", 'id' => "prov")); ?>
+<!--                                        --><?php //echo $form->dropDownList($model, 'city', array(),array('class' => "city", 'disabled' => "disabled","id"=>"city")); ?>
+<!--                                        --><?php //echo $form->dropDownList($model, 'zone',array(),array('class' => "dist    ", 'disabled' => "disabled","id"=>"dist")); ?>
+                                                            <select id="prov" class="prov input" ></select>
+                                                            <select id="city" class="city input" disabled="disabled"></select>
+                                                            <select id="dist" class="dist input" disabled="disabled"></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="note">注册微家，就表示您同意微家的<a href="#"  id="xieyi">用户协议</a>。
                             </div>
                             <button class="btn registerBtn" type="submit"  et-attached="1">注册</button>
                             <div class="ft-operate"><a href="#" class="link"  et-attached="1"><i class="arrow"></i>登录</a></div>
@@ -86,8 +102,13 @@
 
 
 </body>
+
 <script type="text/javascript" src="http://validform.rjboy.cn/wp-content/themes/validform/js/jquery-1.6.2.min.js"></script>
 <script type="text/javascript" src="http://validform.rjboy.cn/Validform/v5.1/Validform_v5.1_min.js"></script>
+<script type="text/javascript" src="public/desktop/js/skill/jquery.cityselect.js"></script>
+<script src="lib/zepto.min.js"></script>
+<script src="js/frozen.js"></script>
+<script src="lib/layer/layer.js"></script>
 <script type="text/javascript">
     $(function(){
         //$(".registerform").Validform();  //就这一行代码！;
@@ -110,5 +131,26 @@
             ajaxPost:true
         });
     })
+    $(function(){
+        $("#city_4").citySelect({
+            prov: "福建",
+            city: "福州",
+            dist: "仓山区",
+            nodata: "none"
+        });
+        $('.select_all span').click(function(){
+            $('.shebei').prop('checked',true);
+        })
+    })
 </script>
+<!--<script>-->
+<!--    $(function(){-->
+<!--        $('#xieyi').on('click',function(){-->
+<!--            layer.open({-->
+<!--                content: '通过style设置你想要的样式',-->
+<!--                btn: ['OK']-->
+<!--            });-->
+<!--        })-->
+<!--    })-->
+<!--</script>-->
 </html>

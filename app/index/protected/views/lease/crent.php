@@ -303,7 +303,7 @@
                         <div class="upload">
                             <div class="localUpload_wrap">
 
-                                <div class="localUpload" style="width:540px;min-height:230px;background:#fff">
+                                <div class="localUpload" style="min-height:230px;background:#fff">
                                     <div id="imgUploadf">
 
                                     </div>
@@ -325,7 +325,7 @@
                         <div class="upload">
                             <div class="localUpload_wrap">
 
-                                <div class="localUpload" style="width:540px;min-height:230px;background:#fff">
+                                <div class="localUpload" style="min-height:230px;background:#fff">
                                     <div id="imgUploadp">
 
                                     </div>
@@ -344,7 +344,7 @@
                         <div class="upload">
                             <div class="localUpload_wrap">
 
-                                <div class="localUpload" style="width:540px;min-height:230px;background:#fff">
+                                <div class="localUpload" style="min-height:230px;background:#fff">
                                     <div id="imgUpload1">
 
                                     </div>
