@@ -84,13 +84,11 @@
     $(function(){
         $('.registerBtn').click(function(){
             var username = $('.userId').val();
-            var psw= $('.passWord').val();
-            var phone=$('.phoneId').val();
             $.ajax({
                 url:"index.php?r=center/modify",
                 method:"POST",
                 dataType:'json',
-                data:{username:username,psw:psw,phone:phone},
+                data:{psw:psw},
                 success:function(){
                     
                 }
