@@ -300,8 +300,13 @@ class SiteController extends BaseController
 		if(isset($_POST['User'])){
 			$model->attributes=$_POST['User'];
 			$model->login_id =$model->cellphone;
+                        echo $model->city.'';
+//                        $model->username =$model->cellphone;
 			$password = $model->password;
             $password2 = Yii::app()->request->getParam('password2');
+             $model->province  = Yii::app()->request->getParam('province');
+              $model->city  = Yii::app()->request->getParam('city');
+               $model->zone  = Yii::app()->request->getParam('zone');
             if($password != $password2){
                 $this->redirect('index.php?r=site/error');
             }
@@ -325,7 +330,7 @@ class SiteController extends BaseController
 		}
 		if( $this->wechat)
 		{
-			$this->render('register', array('model' => $model));
+			$this->render('assign', array('model' => $model));
 		}else{
 			$this->render('desktop/register', array('model' => $model));
 		}

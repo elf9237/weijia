@@ -59,6 +59,21 @@ class AjaxController extends BaseController {
        echo json_encode($pagelist->pageAjax);
          
      }
+     
+       public function actionQuerymyKehuyuyue(){ 
+           $loginuserid=-1;
+            $userLogin= Yii::app()->session['user'] ;
+            if(!empty($userLogin))
+                $loginuserid=$userLogin->id;
+         $page=$_POST['page'];
+       $sql="select t.*,t1.order_time,t1.read_time,t1.message,t1.id as messid from cy_info t join cy_message t1 on(t1.info_id=t.id) where 1=1 and t1.message_type=0 and t1.receiver=".$loginuserid." " ;
+   
+ $pagelist=new PageList($sql, $page, 5);
+
+       echo json_encode($pagelist->pageAjax);
+         
+     }
+     
      public function actionBiaoji(){
          $id=$_POST['id'];
          $messModel=  Message::model();

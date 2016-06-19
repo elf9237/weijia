@@ -30,6 +30,9 @@
     <!--[if IE 8]><meta http-equiv="X-UA-Compatible" content="IE=8"><![endif]-->
     <link rel="stylesheet" type="text/css" href="./css/common_pc.css" />
     <link rel="stylesheet" type="text/css" href="./css/m-index.css" />
+    <style>
+        #city_4 select{width:70px;height: 40px;border: none;}
+    </style>
 </head>
 <body>
 <div id="op-wrap">
@@ -43,16 +46,21 @@
             <div class="op-alone op-alone-register">
                 <div class="auto-middle">
                     <div class="op-register">
-                        <form action=""  class="modifyform">
+                         <?php $form=$this->beginWidget('CActiveForm', array(
+                'id'=>'user-input-form',
+                'enableAjaxValidation'=>false
+            )); ?>
                             <h3><span class="titleico">注 册</span></h3>
                             <div class="userbox">
                                 <div class=""></div>
-                                <input type="text" class="userId" placeholder="请输入用户名" datatype="s5-16" errormsg="昵称至少5个字符,最多16个字符！">
+                                 <?php echo $form->textField($model,'username',array('placeholder'=>"请输入用户名",'class'=>"userId",'type'=>"text",'datatype'=>"s5-16",'errormsg'=>"昵称至少5个字符,最多16个字符！")); ?>
+<!--                                <input type="text" class="userId" placeholder="请输入用户名" datatype="s5-16" errormsg="昵称至少5个字符,最多16个字符！">-->
                                 <span class="tip Validform_checktip">昵称为6~18个字符</span>
                             </div>
                             <div class="userbox">
                                 <div class=""></div>
-                                <input type="text" class="userId" placeholder="手机号" name="mobile"  datatype="m" errormsg="手机号码格式不对！">
+                                 <?php echo $form->textField($model,'cellphone',array('placeholder'=>"手机号",'class'=>"userId",'type'=>"text",'errormsg'=>"手机号码格式不对")); ?>
+<!--                                <input type="text" class="userId" placeholder="手机号" name="mobile"  datatype="m" errormsg="手机号码格式不对！">-->
                                 <span class="tip Validform_checktip"></span>
                             </div>
                             <div class="codebox">
@@ -65,17 +73,31 @@
                                 <span class="time"><i></i><em>120</em>s</span>
                             </div>
                             <div class="passbox">
-                                <input type="password" class="passWord" placeholder="密码6~16位" name="userpassword" placeholder="修改密码" datatype="*6-15" errormsg="密码范围在6~15位之间！"><span class="tip Validform_checktip">密码范围在6~15位之间！</span>
+                                 <?php echo $form->textField($model,'password',array('placeholder'=>"密码6~16位",'class'=>"userId",'type'=>"text",'datatype'=>"*6-15",'errormsg'=>"密码范围在6~15位之间！")); ?>
+<!--                                <input type="password" class="passWord" placeholder="密码6~16位" name="userpassword" placeholder="修改密码" datatype="*6-15" errormsg="密码范围在6~15位之间！"><span class="tip Validform_checktip">密码范围在6~15位之间！</span>-->
                             </div>
                             <div class="passbox">
-                                <input type="password" class="passWord2" placeholder="确认密码" name="userpassword2" datatype="*" recheck="userpassword" errormsg="您两次输入的账号密码不一致！">
+                                <input type="password" class="passWord2" placeholder="确认密码" name="password2" datatype="*" recheck="userpassword" errormsg="您两次输入的账号密码不一致！">
                                 <span class="tip Validform_checktip"></span>
                             </div>
-                            <div class="note">注册微家，就表示您同意微家的<a href="" target="_blank" class="user"  et-attached="1">用户协议</a>。
+                            <div class="passbox" style="background: #efefef">
+                                <div tabindex="0" class="tm_itemtext clearfix">
+                                    <span style="float: left;display: inline-block;height: 40px;line-height: 40px;">请选择区域</span>
+                                    <div id="city_4" style='float: right;'>
+                  
+                    <select id="prov" name='province' class="prov input" ></select>
+                    <select id="city" name='city' class="city input" disabled="disabled"></select>
+                    <select id="dist" name='zone' class="dist input" disabled="disabled"></select>
+                                    </div>
+                                </div>
                             </div>
-                            <button class="btn registerBtn" type="submit"  et-attached="1">注册</button>
-                            <div class="ft-operate"><a href="#" class="link"  et-attached="1"><i class="arrow"></i>登录</a></div>
-                        </form>
+                            <div class="note">注册微家，就表示您同意微家的<a href="#"  id="xieyi">用户协议</a>。
+                            </div>
+                             <?php echo CHtml::submitButton('注册',array('class'=>"btn registerBtn",'type'=>"submit")); ?>
+<!--                            <button class="btn registerBtn" type="submit"  et-attached="1">注册</button>-->
+                            <div class="ft-operate"><a href="./index.php?r=site/login" class="link"  et-attached="1"><i class="arrow"></i>登录</a></div>
+                          <?php echo $form->errorSummary($model); ?>
+            <?php $this->endWidget(); ?>
                         <div class="otherlogin">
                             <a href="#" class="qq-login"   et-attached="1"></a>
                             <a href="#" class="sina-login"  et-attached="1"></a>
@@ -86,8 +108,13 @@
 
 
 </body>
+
 <script type="text/javascript" src="http://validform.rjboy.cn/wp-content/themes/validform/js/jquery-1.6.2.min.js"></script>
 <script type="text/javascript" src="http://validform.rjboy.cn/Validform/v5.1/Validform_v5.1_min.js"></script>
+<script type="text/javascript" src="public/desktop/js/skill/jquery.cityselect.js"></script>
+<script src="lib/zepto.min.js"></script>
+<script src="js/frozen.js"></script>
+<script src="lib/layer/layer.js"></script>
 <script type="text/javascript">
     $(function(){
         //$(".registerform").Validform();  //就这一行代码！;
@@ -110,5 +137,26 @@
             ajaxPost:true
         });
     })
+    $(function(){
+        $("#city_4").citySelect({
+            prov: "福建",
+            city: "福州",
+            dist: "仓山区",
+            nodata: "none"
+        });
+        $('.select_all span').click(function(){
+            $('.shebei').prop('checked',true);
+        })
+    })
 </script>
+<!--<script>-->
+<!--    $(function(){-->
+<!--        $('#xieyi').on('click',function(){-->
+<!--            layer.open({-->
+<!--                content: '通过style设置你想要的样式',-->
+<!--                btn: ['OK']-->
+<!--            });-->
+<!--        })-->
+<!--    })-->
+<!--</script>-->
 </html>

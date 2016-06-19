@@ -11,6 +11,8 @@
     <link href="css/register.css" type="text/css" rel="stylesheet">
     <link href="css/global.css" type="text/css" rel="stylesheet">
     <script type="text/javascript" src="js/register.js"></script>
+    <script src="public/desktop/js/jquery.min.js"></script>
+    <script type="text/javascript" src="public/desktop/js/skill/jquery.cityselect.js"></script>
 </head>
 <body>
 <div id="layout">
@@ -38,6 +40,16 @@
             <li><i class="pw2"><img src="images/pwd.png"></i>
                 <input class="pwd2" type="password" name="password2" placeholder="请输入确认密码" />
             </li>
+            <li>
+                <div id="city_4" style='float: right;margin-right:10%'>
+                    <?php echo $form->dropDownList($model, 'province',array(), array('class' => "prov", 'id' => "prov")); ?>
+                    <?php echo $form->dropDownList($model, 'city', array(),array('class' => "city", 'disabled' => "disabled","id"=>"city")); ?>
+                    <?php echo $form->dropDownList($model, 'zone',array(),array('class' => "dist    ", 'disabled' => "disabled","id"=>"dist")); ?>
+<!--                    <select id="prov" class="prov input" ></select>-->
+<!--                    <select id="city" class="city input" disabled="disabled"></select>-->
+<!--                    <select id="dist" class="dist input" disabled="disabled"></select>-->
+                </div>
+            </li>
             <div class="queren"><input class="fx" type="checkbox" checked="checked" /><p>我已阅读并同意《用户协议》</p></div>
 
         </ul>
@@ -50,5 +62,16 @@
         </div>
     </form>
 </div>
+    <script>
+     $(function(){
+        $("#city_4").citySelect({
+            prov: "福建",
+            city: "福州",
+            dist: "仓山区",
+            nodata: "none"
+        });
+     
+    })
+    </script>
 </body>
 </html>

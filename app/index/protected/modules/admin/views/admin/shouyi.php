@@ -49,7 +49,7 @@
                       
                     </div>
                     <div id="box_bottom">
-                        <input type="button" value="查询" class="ui_input_btn01" onclick="queryDls(1);"/>
+                        <input type="button" value="查询" class="ui_input_btn01" onclick="queryAll();"/>
 <!--                        <input type="button" value="新增" class="ui_input_btn01" id="addBtn" onclick="add()"/>-->
                     </div>
                 </div>
@@ -67,6 +67,10 @@
                        
                     </tr>
                     <tbody id="userbody">
+                        <td id='fangzu'>0</td>
+                        <td id='zhiding'>0</td>
+                        <td id='yongjin'>0</td>
+                        <td id='hj'>0</td>
                    
 <tbody>
                     
@@ -74,6 +78,31 @@
                 </table>
             </div>
             <div class="ui_tb_h30" id="pagearr">
+            </div>
+        </div>
+        
+        <div class="ui_content">
+            <div class="ui_tb">
+                <table class="table" cellspacing="0" cellpadding="0" width="100%" align="center" border="0">
+                    <tr>
+                       
+                        <th>退换佣金</th>
+                        <th>用户提现</th>
+                        <th>合计支出</th>
+                       
+                    </tr>
+                    <tbody id="">
+                        <td id="yongjintui">0</td>
+                        <td id="tixian">0</td>
+                        <td id='zhj'>0</td>
+                   
+<tbody>
+                    
+
+                </table>
+            </div>
+            <div class="ui_tb_h30" id="pagearr">
+                <span> 合计利润：<strong id='zong'>0</strong></span>
             </div>
         </div>
     </div>
@@ -95,19 +124,12 @@
         };
         
           function queryDls(page){
-          
-              
-             
-            param.province= $("#prov option:selected").val();
-      param.city= $("#city option:selected").val();
-       param.zone= $("#dist option:selected").val();
-       param.bTime=new Date($("#bTime").val().replace(/-/g,'/')).getTime()/1000;
-        param.eTime=new Date($("#eTime").val().replace(/-/g,'/')).getTime()/1000;
              
             $.ajax({
                url:"index.php?r=admin/admin/Queryshouyi",
                data:param,
                type:"POST",
+               async: false,
                dataType:"json",
                success:function(data){
                  
@@ -115,87 +137,120 @@
                    if(data.pageList.length>0){
                     $.each(data.pageList,function(n,value){
                         var zongji = value.fangzu+value.zhiding+value.yongjin;
-                        innerHtml.push("<tr>");
-                        innerHtml.push("<td>"+(value.fangzu==null?0:value.fangzu)+"</td>");
-                         innerHtml.push("<td>"+(value.zhiding==null?0:value.zhiding)+"</td>");
-                          innerHtml.push("<td>"+(value.yongjin==null?0:value.yongjin)+"</td>");
-                          innerHtml.push("<td>"+zongji+"</td>");
-                  
+                        if(value.fangzu==null){
+                           $("#fangzu").html("0");  
+                        }else{
+                            $("#fangzu").html(value.fangzu); 
+                        }
+                          if(value.fangzu==null){
+                           $("#zhiding").html("0");  
+                        }else{
+                            $("#zhiding").html(value.zhiding); 
+                        }
+                        
+                           if(value.fangzu==null){
+                           $("#zhiding").html("0");  
+                        }else{
+                            $("#zhiding").html(value.zhiding); 
+                        }
+                        
+                           if(value.yongjin==null){
+                           $("#yongjin").html("0");  
+                        }else{
+                            $("#yongjin").html(value.yongjin); 
+                        }
+                        $("#hj").html(zongji);
+                        
+                       
             })
               
                
             
             }
-            $("#userbody").html(innerHtml.join(""));
+            
                 
             
         }})}
         
-        function yichu(id){
-        $.ajax({
-            type:"POST",
-            data:{
-                id:id,
-               
-            },
-            dataType:"json",
-            url:"index.php?r=admin/admin/delagent",
-            success:function(data){
-                if(data.status){
-                     queryDls(1);
-                }
-            }
-        })
-        }
-        function add(){
-            layer.open({
-                type:2,
-                content:'index.php?r=admin/admin/adduser',
-                area:["600px","600px"],
-                title:"添加用户"
-                
+        
+        
+        
+         function querytuiyong(page){
+            $.ajax({
+               url:"index.php?r=admin/admin/queryZhichuyong",
+               data:param,
+               type:"POST",
+               async: false,
+               dataType:"json",
+               success:function(data){
+                   var innerHtml=[];
+                   if(data.pageList.length>0){
+                    $.each(data.pageList,function(n,value){
+                       if(value.yongjin==null){
+                            $("#yongjintui").html("0");
+                       }else{
+                          $("#yongjintui").html(value.yongjin);  
+                       }
             })
-          
-//layer.msg("hehe");
-        }
-          function pass(id,type){
-                 layer.open({
-                type:1,
-                content:'<div style="text-align:center;display:inline-block;padding-top:10px"><span>消息内容：</span><textarea id="message"></textarea></div>',
-                area:["300px","300px"],
-                title:"审核",
-                btn:["发送","取消"],
-                 yes:function(index){
-                     if($("#message").val()==""){
-                     layer.msg("请填写内容！！");
-                     return;
-                 }
-                     $.ajax({
-            type:"POST",
-            data:{
-                message:$("#message").val(),
-                id:id,
-                type:type
-            },
-            dataType:"json",
-            url:"index.php?r=admin/admin/shenhe",
-            success:function(data){
-                if(data.status){
-                    layer.close(index);
-                    queryDls(1);
-                }else{
-                    layer.msg("失败！！");
-                }
+              
+              
+            
             }
-        })
-                     
-                 },
-             cancel:  function(index){
-                 layer.close(index);
-             }          
+           
                 
+            
+        }
+    })}
+        
+         function querytian(page){
+             
+            $.ajax({
+               url:"index.php?r=admin/admin/queryZhichuxian",
+               data:param,
+               type:"POST",
+               async: false,
+               dataType:"json",
+               success:function(data){
+                   var innerHtml=[];
+                   if(data.pageList.length>0){
+                    $.each(data.pageList,function(n,value){
+                       if(value.tixian==null){
+                            $("#tixian").html("0");
+                       }else{
+                          $("#tixian").html(value.tixian);  
+                       }
+                       
+                  
             })
+              
+             
+            
             }
+           
+                
+            
+        }})}
+        
+        
+        function queryAll(){
+            alert(1);
+            param.province= $("#prov option:selected").val();
+      param.city= $("#city option:selected").val();
+       param.zone= $("#dist option:selected").val();
+       param.bTime=new Date($("#bTime").val().replace(/-/g,'/')).getTime()/1000;
+        param.eTime=new Date($("#eTime").val().replace(/-/g,'/')).getTime()/1000;
+            queryDls(1);
+            querytuiyong(1);
+            querytian(1);
+            $("#zhj").html(parseFloat($("#yongjintui").text())+parseFloat($("#tixian").text()));
+            $("#zong").html(parseFloat($("#zhj").text())+parseFloat($("#hj").text()));
+            
+            
+        }
+        
+        
+      
+      
     $(function(){
      $("#city_4").citySelect({
                     prov: "福建",

@@ -18,6 +18,9 @@
  * @property string $status
  * @property string $openid
  * @property string $yue
+ * @property string $province
+ * @property string $city
+ * @property string $zone
  */
 class User extends CActiveRecord
 {
@@ -53,7 +56,7 @@ class User extends CActiveRecord
 			array('image_url', 'length', 'max'=>255),
 			array('birthday, type, create_time, update_time, status', 'length', 'max'=>10),
 			array('cellphone', 'length', 'max'=>13,'on'=>'register,update'),
-			array('id, username, password, gender, image_url, birthday, cellphone, type, create_time, update_time, inviter, status, openid', 'safe', 'on'=>'search'),
+			array('id, username, password, gender, image_url, birthday, cellphone, type, create_time, update_time, inviter, status, openid,province,city,zone','safe', 'on'=>'search'),
 		);
 	}
 	public function authenticate($attribute,$params)
@@ -131,6 +134,11 @@ class User extends CActiveRecord
 		$criteria->compare('status',$this->status,true);
 		$criteria->compare('openid',$this->openid,true);
                 $criteria->compare('yue',$this->yue,true);
+                
+                
+                $criteria->compare('zone',$this->zone,true);
+		$criteria->compare('city',$this->city,true);
+                $criteria->compare('province',$this->province,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
