@@ -76,7 +76,7 @@
     </ul>
 </footer>
 <section class="ui-container">
-    <div class="ui-form ui-border-t mt30">
+    <div class="ui-form ui-border-t">
 
         <?php $form = $this->beginWidget('CActiveForm', array(
             'id' => 'agent-form',

@@ -52,7 +52,7 @@
     </div>
     <div class="user-bd">
         <div class="user-aside">
-            <dl class="user-menu">
+            <dl class="user-menu order-list">
                 <dt>
 
                     订单列表
@@ -79,7 +79,8 @@
 <script src="js/frozen.js"></script>
 <script src="lib/layer/layer.js"></script>
 <script>
-
+    function getLocalTime(nS) {
+        return new Date(parseInt(nS) * 1000).toLocaleString().substr(0,12)}
     var ajax=!1;//是否加载中
     var param={
 
@@ -134,7 +135,7 @@
                       '<td>'+value.order_no+'</td>'+
                         '<td>'+value.order_type+'</td>'+
                          '<td>'+infoStatus+'</td>'+
-                           '<td>'+new Date(parseInt(value.create_time) * 1000).toLocaleString().replace(/:\d{1,2}$/,"") +'</td>'+strs
+                           '<td>'+getLocalTime(value.create_time) +'</td>'+strs
                            
                        
                       

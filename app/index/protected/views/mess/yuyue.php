@@ -68,7 +68,7 @@
     </div>
     <div id="leasediv"><img class="images" src="img/sumlist.png"></div>
    <div class="ui-notice-btn">
-        <button class="ui-btn-primary ui-btn-lg link-btn" data-href="join-form.html">我要加盟</button>
+        <button class="ui-btn-primary ui-btn-lg link-btn" data-href="./index.php?r=agent/join">我要加盟</button>
     </div>
 </div>
                     </li>

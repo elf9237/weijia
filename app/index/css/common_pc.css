@@ -1443,9 +1443,9 @@ body.bodyOverflowHide {
 	text-align: center;
 	cursor: pointer;
 	font-size: 14px;
-	background: #eb0028;
+	background: #ff7e00;
 	color: #fff;
-	border: 1px solid #d70226;
+	border: 1px solid #ff7e00;
 	-moz-border-radius: 0;
 	-webkit-border-radius: 0;
 	border-radius: 0;
@@ -1498,7 +1498,8 @@ body.bodyOverflowHide {
 }
 
 #op-content .op-alone-register h3 .titleico {
-	margin: 0 auto
+	margin: 0 auto;
+	text-align: center;
 }
 
 #op-content .op-alone-register .op-register {

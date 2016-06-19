@@ -202,7 +202,23 @@ class CenterController extends BaseController{
     }
     //    修改用户信息
     public function actionModify(){
-        
+        $loginuserid=-1;
+        $userLogin= Yii::app()->session['user'] ;
+//        if(!empty($userLogin))
+//            $loginuserid=$userLogin->id;
+//        $sql="select t.* from cy_order t   where 1=1  and t.user_id= ".$loginuserid." " ;
+//        $pagelist=new PageList($sql, $page, 5);
+
         $this -> renderPartial('modify');
+    }
+    public function actionModifynext(){
+//        $loginuserid=-1;
+//        $userLogin= Yii::app()->session['user'] ;
+//        if(!empty($userLogin))
+//            $loginuserid=$userLogin->id;
+//        $sql="select t.* from cy_order t   where 1=1  and t.user_id= ".$loginuserid." " ;
+//        $pagelist=new PageList($sql, $page, 5);
+
+        $this -> renderPartial('modifynext');
     }
 }

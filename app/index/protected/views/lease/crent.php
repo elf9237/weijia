@@ -79,7 +79,7 @@
                 <div class="notNullGroup"> 
                    <li class="_item priceNumber"><span class="nu_title">类别</span>
                         <div class="nu_itemtext">
-                            <span checked="checked" style="display:inline-block;margin-right: 10px;width:28%"><input type="radio" name="info_type" id="inlineRadio1" value="0" style="width:30%;appearance:radio;-webkit-appearance:radio;display: inline-block" > 月租房</span>
+                            <span checked="checked" style="display:inline-block;margin-right: 10px;width:28%"><input type="radio" name="info_type" id="inlineRadio1" value="0" style="width:30%;appearance:radio;-webkit-appearance:radio;display: inline-block" checked> 月租房</span>
                             <span style="display:inline-block;margin-right: 10px;width:28%"><input type="radio" name="info_type" id="inlineRadio2" value="1" style="width:30%;appearance:radio;-webkit-appearance:radio;display: inline-block"> 日租房</span>
                             <span style="display:inline-block;margin-right: 10px;width:28%"> <input type="radio" name="info_type" id="inlineRadio2" value="2" style="width:30%;appearance:radio;-webkit-appearance:radio;display: inline-block"> 商铺 </span>  
                         </div>
@@ -297,67 +297,98 @@
                             <div class="errorTipDiv"></div>
                             <span></span>
                         </div></li>
+                    <li class="splitLine"></li>
+                    <div class="rows_wrap clearfix custom_name">
+
+                        <div class="upload">
+                            <div class="localUpload_wrap">
+
+                                <div class="localUpload" style="width:540px;min-height:230px;background:#fff">
+                                    <div id="imgUploadf">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rows_title">
+                            <span>上传封面图片</span></div>
+                        <div class="info">只能上传房屋图片，不能包含有文字、数字、网址、名片等，最多上传
+                            <span>1</span>张，每张最大
+                            <span>8M</span></div>
+
+
+                    </div>
+
+                    <div class="rows_wrap clearfix custom_name">
+
+
+                        <div class="upload">
+                            <div class="localUpload_wrap">
+
+                                <div class="localUpload" style="width:540px;min-height:230px;background:#fff">
+                                    <div id="imgUploadp">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rows_title">
+                            <span>上传公共区域图片</span></div>
+                        <div class="info">只能上传房屋图片，不能包含有文字、数字、网址、名片等，最多上传
+                            <span>2</span>张，每张最大
+                            <span>8M</span></div>
+
+
+                    </div>
+                    <div class="rows_wrap clearfix custom_name">
+                        <div class="upload">
+                            <div class="localUpload_wrap">
+
+                                <div class="localUpload" style="width:540px;min-height:230px;background:#fff">
+                                    <div id="imgUpload1">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rows_title">
+                            <span>上传房屋图片</span></div>
+                        <div class="info">只能上传房屋图片，不能包含有文字、数字、网址、名片等，最多上传
+                            <span>2</span>张，每张最大
+                            <span>8M</span></div>
+
+                    </div>
+                    <li class="splitLine"></li>
+                    <li class="_item canNullSplit canNullSplit1"><span class="canNull_title">提示信息</span><span class="canNull_after"></span></li>
+                    <form class="exra">
+
+                        <ul class="tglist">
+                            <li class="li-subul">
+                                <ul>
+                                    <li class="select" id="infotopChangeProject"><span>置顶<span class="dayprice"><span class="dayprice" id="infotop_pmcAmount">置顶到第一页，效果5倍提升</span></span></span></li>
+                                    <li class="select" id="infotopChangeProject"><span>佣金<span class="dayprice"><span class="dayprice" id="infotop_pmcAmount">设立佣金，让更多的人转发你的房源</span></span></span></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="payable">
+                            提示：<span class="lastprice">发布完成后去置顶、设立佣金</span>
+                                <span id="main_fee_detail_show" style="display:none">
+        (总金额<font id="main_total_fee">0</font>元，已优惠<font id="main_total_coup">0</font>元)
+        </span>
+                            <!-- hide -->
+                            <input id="main_jz_fee" type="hidden" value="0">
+                            <input id="main_jz_coupon" type="hidden" value="0">
+                            <input id="main_zn_fee" type="hidden" value="0">
+                            <input id="main_zn_coupon" type="hidden" value="0">
+                            <input id="main_zd_fee" type="hidden" value="0">
+                            <input id="main_zd_coupon" type="hidden" value="0">
+                        </div>
+                    </form>
                     
                     
                     
                 </div> 
-                <div class="rows_wrap clearfix custom_name">
-            
-              <div class="upload">
-                        <div class="localUpload_wrap">
-                         
-                          <div class="localUpload" style="width:540px;min-height:230px;background:#fff">
-                            <div id="imgUploadf">
-                              
-                            </div>
-                            </div>
-                        </div>
-                      </div>
-                      <div class="info">只能上传房屋图片，不能包含有文字、数字、网址、名片等，最多上传
-                        <span>1</span>张，每张最大
-                        <span>8M</span></div>
-                <div class="rows_title">
-                  <span>上传封面图片</span></div>
-            
-                  </div>
-                
-                 <div class="rows_wrap clearfix custom_name">
-               
-                 
-                <div class="upload">
-                        <div class="localUpload_wrap">
-                         
-                          <div class="localUpload" style="width:540px;min-height:230px;background:#fff">
-                            <div id="imgUploadp">
-                              
-                            </div>
-                            </div>
-                        </div>
-                      </div>
-                      <div class="info">只能上传房屋图片，不能包含有文字、数字、网址、名片等，最多上传
-                        <span>2</span>张，每张最大
-                        <span>8M</span></div>
-                <div class="rows_title">
-                  <span>上传公共区域图片</span></div>
-              
-                  </div>
-              <div class="rows_wrap clearfix custom_name">
-                  <div class="upload">
-                        <div class="localUpload_wrap">
-                         
-                          <div class="localUpload" style="width:540px;min-height:230px;background:#fff">
-                            <div id="imgUpload1">
-                              
-                            </div>
-                            </div>
-                        </div>
-                      </div>
-                      <div class="info">只能上传房屋图片，不能包含有文字、数字、网址、名片等，最多上传
-                        <span>2</span>张，每张最大
-                        <span>8M</span></div>
-                <div class="rows_title">
-                  <span>上传房屋图片</span></div>
-              </div>
+
             </div>
             <input type="hidden" id="map" value=""/>
 
@@ -546,7 +577,7 @@ function submitmyhome(){
                dataType:"json",
                success:function(data){
                    if(data.status)
-                         window.location.href="index.php?r=ajax/myhome";
+                         window.location.href="index.php?r=center/issue";
                    else
                        layer.msg("发布失败！！")
                }
