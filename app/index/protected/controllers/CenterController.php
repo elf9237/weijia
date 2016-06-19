@@ -221,4 +221,10 @@ class CenterController extends BaseController{
 
         $this -> renderPartial('modifynext');
     }
+//我的预约
+    public function actionMyyuyue(){
+
+
+        $this -> renderPartial('myyuyue');
+    }
 }

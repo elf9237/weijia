@@ -203,7 +203,7 @@
       <tr>
         <td id="name_td" class="num_reg">2</td>
         <td>
-          <input type="text" id="name" name="username"  title="请输入您的姓名" value="" class="input_reg"> 
+          <input type="text" id="name" name="username"  title="请输入您的姓名" value="" class="input_reg" placeholder="请输入您的姓名">
         </td>
       </tr>
     </tbody></table>
@@ -213,10 +213,10 @@
   
   <div style="position:absolute;left:255px;top:182px;">
     <table class="table">
-      <tbody><tr><td></td><td class="td_cont_find">&nbsp;&nbsp;&nbsp;&nbsp;联系电话：</td></tr>
+      <tbody><tr><td></td><td class="td_cont_find" >&nbsp;&nbsp;&nbsp;&nbsp;联系电话：</td></tr>
       <tr>
         <td id="phone_td" class="num_reg">3</td>
-        <td><input type="text" id="phone" name="phone" title="请输入您的联系电话"  maxlength="20"  value="" class="input_reg"></td>
+        <td><input type="text" id="phone" name="phone" title="请输入您的联系电话"  maxlength="20"  value="" class="input_reg" placeholder="请输入您的联系电话"></td>
       </tr>
     </tbody></table>
   </div>

@@ -82,30 +82,16 @@
 		<script type="text/javascript" src="./public/js/iSlider.plugin.dot.js"></script>
 		<script id="show-code">
 		    var list = [
-		        // picture
-		        {
-		            content: './imgs/6.jpg'
-		        },
+
 		        // HTML String
 		        {
-		            content: './imgs/1.jpg'
+		            content: './img/banner01.jpg'
 		        },
 		        // element
 		        {
-		            content: './imgs/2.jpg'
-		        },
-		        // fragment
-		        {
-		            content: './imgs/3.jpg'
-		        },
-		        // dom
-		        {
-		            content: './imgs/4.jpg'
-		        },
-		        // iframe
-		        {
-		            content: './imgs/5.jpg'
+		            content: './img/banner02.jpg'
 		        }
+		        // fragment
 		    ];
 
 		    var S = new iSlider({

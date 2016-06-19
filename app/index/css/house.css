@@ -73,7 +73,7 @@ html{font-size: 42px;}
 
 .bg-zmz {background-image: url(../img/zmz-bg.png)}
 .noborder{border: 0;}
-.link-text{padding-right: 20px;}
+.link-text{padding-right: 20px;min-width:90px;}
 .ng-scope{margin-bottom: 20px;margin-top: 10px;}
 
 /*我要出租*/

@@ -59,6 +59,9 @@
                     <a href="index.php?r=center/issue"><i class="i-my-address"></i>我的发布</a>
                 </dd>
                 <dd>
+                    <a href="index.php?r=center/myyuyue"><i class="i-my-address"></i>我的预约</a>
+                </dd>
+                <dd>
                     <a href="index.php?r=center/hasrent"><i class="i-my-prize"></i>已租房子</a>
                 </dd>
                 <dd>

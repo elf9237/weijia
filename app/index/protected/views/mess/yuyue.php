@@ -37,20 +37,26 @@
                                         <input type="hidden" ng-model="user.roomid" name="roomid" class="ng-pristine ng-valid">
                                     </td></tr>
                                     <tr class="bg-zmz">
+                                        <td width="20%" align="right" class="link-text">姓名</td>
+                                        <td align="left"><input type="text" style="font-size:24px;height:30px;width:80%" maxlength="20" ng-model="user.username" name="username" class="ng-pristine ng-valid" placeholder="请输入您的姓名"></td>
+                                    </tr>
+                                    <tr class="bg-zmz" height="10px"><td colspan="2"></td></tr>
+                                    <tr class="bg-zmz">
                                         <td width="20%" align="right" class="link-text">* 联系电话</td>
                                         <td align="left">
-                                          <input type="text" style="font-size:24px;height:30px;width:80%" maxlength="12" ng-model="user.phone" id="phone" name="phone" required="" class="ng-pristine ng-invalid ng-invalid-required">
+                                            <input type="text" style="font-size:24px;height:30px;width:80%" maxlength="12" ng-model="user.phone" id="phone" name="phone" required="" class="ng-pristine ng-invalid ng-invalid-required" placeholder="请输入您的联系电话">
                                         </td>
                                     </tr>
                                     <tr class="bg-zmz" height="10px"><td colspan="2"></td></tr>
                                     <tr class="bg-zmz">
-                                        <td width="20%" align="right" class="link-text">姓名</td>
-                                        <td align="left"><input type="text" style="font-size:24px;height:30px;width:80%" maxlength="20" ng-model="user.username" name="username" class="ng-pristine ng-valid"></td>
+                                        <td width="20%" align="right" class="link-text">* 看房时间</td>
+                                        <td align="left">
+                                            <input type="text" style="font-size:24px;height:30px;width:80%" maxlength="12" ng-model="user.time" id="time" name="time" required="" class="ng-pristine ng-invalid ng-invalid-required" onclick="WdatePicker({skin:'whyGreen'})" placeholder="请选择看房时间">
+                                        </td>
                                     </tr>
-                                    
                                     <tr class="bg-zmz"><td colspan="2">&nbsp;</td></tr>
                                     <tr class="bg-zmz"><td colspan="2" style="text-align:center">
-                                            <a ng-click="subscribe()" onclick="saveYu"  >
+                                            <a  onclick="saveYu()">
                                             <img class="noborder" src="img/button-submit.png" width="80%">
                                         </a>
                                     </td></tr>
@@ -78,6 +84,7 @@
         <script src="lib/zepto.min.js"></script>
         <script src="js/frozen.js"></script>
         <script src="js/house.js"></script>
+        <script src="public/desktop/date/WdatePicker.js"></script>
        <script>
         window.addEventListener('load', function(){
 
@@ -99,6 +106,7 @@
 
         });
         function saveYu(){
+            var time=new Date($("#time").val().replace(/-/g,'/')).getTime()/1000;
             if($("input[name='username']").val()==""||$("input[name='phone']").val()=="")
                 return;
              $.ajax({
@@ -106,12 +114,13 @@
                data:{
                    real_name:$("input[name='username']").val(),
                     phone_no:$("input[name='phone']").val(),
+                   time:time
                },
                dataType: "json", 
                type:"POST",
                success:function(data){
                    if(data.status)
-                       location.href="index.php?r=store/detial";
+                       location.href="index.php?r=store/detial"+"&id="+<?php echo $infoid ; ?>;
                    else
                        alert(data.content);
 
