@@ -310,7 +310,7 @@ class SiteController extends BaseController
             if($password != $password2){
                 $this->redirect('index.php?r=site/error');
             }
-
+                        if(empty($model->username))
 			$model->username = $model->login_id;
 			$model->password = md5($password);
 
