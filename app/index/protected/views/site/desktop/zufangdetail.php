@@ -235,24 +235,20 @@
     <div class="div_hsifor" id="div_hsifor01">
     <table style="border:0;border-spacing:2px;" width="80%">
         <tbody><tr>
-          
-          <td align="left"><img src="public/desktop/images/2015010513142700011.png"></td>
-          
-          <td align="left"><img src="public/desktop/images/2015010513144300011.png"></td>
-          
-          <td align="left"><img src="public/desktop/images/2015010513145500011.png"></td>
-          
-          <td align="left"><img src="public/desktop/images/2015010513153400011.png"></td>
-          
-          <td align="left"><img src="public/desktop/images/2015010513155200011.png"></td>
-          
-          <td align="left"><img src="public/desktop/images/2015010513162200011.png"></td>
-          
-          <td align="left"><img src="public/desktop/images/2015010513163900011.png"></td>
-          
-          <td align="left"><img src="public/desktop/images/2015010513171000011.png"></td>
-          
-          <td align="left"><img src="public/desktop/images/2015010513173600011.png"></td>
+          <?php 
+                                 if(isset($equi_infos)){
+             foreach ($equi_infos as $eqinfo){
+                foreach ($equis as $eq){
+                    if($eq->id==$eqinfo->equip_id){
+                        echo '<td align="left"><img src="'.$eq->img_url.'"></td>';
+                    }
+             } 
+                 
+             }
+             
+                }
+                                
+                                ?>
           
         </tr>
     </tbody></table>
