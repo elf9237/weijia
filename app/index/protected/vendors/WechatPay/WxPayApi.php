@@ -53,7 +53,8 @@ class WxPayApi
 		$inputObj->SetSpbill_create_ip($_SERVER['REMOTE_ADDR']);//终端ip	  
 		//$inputObj->SetSpbill_create_ip("1.1.1.1");  	    
 		$inputObj->SetNonce_str(self::getNonceStr());//随机字符串
-		
+
+
 		//签名
 		$inputObj->SetSign();
 		$xml = $inputObj->ToXml();

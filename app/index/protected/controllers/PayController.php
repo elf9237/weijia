@@ -1,5 +1,5 @@
 <?php
-
+header("Content-Type:text/html;   charset=utf-8");
 Yii::import('application.vendors.*');
 require_once('WechatPay/WxPayApi.php');
 require_once('WechatPay/PayNotifyCallBack.php');
@@ -22,33 +22,34 @@ class PayController extends BaseController
     public function doWechatpay($order_id,$openId){
         //①、获取用户openid
         //②、统一下单
-
         $orderModel = new Order();
         $order = Order::model()->find('id=:id',array(':id'=>$order_id));
 
         $input = new \WxPayUnifiedOrder();
 
 
-        $input->SetBody("采菜网订单");
-        $input->SetAttach("采菜网订单");
+        $input->SetBody("微家订单");
+        $input->SetAttach("微家订单");
         //$input->SetOut_trade_no($pay_order['order_sn']);
         $pay_money = $order->pay_price * 100;
-
         $input->SetOut_trade_no($order->order_no);
         //$input->SetOut_trade_no(microtime(true));
         //$input->SetTotal_fee($pay_money);
         $input->SetTotal_fee(1);
         $input->SetTime_start(date("YmdHis"));
         $input->SetTime_expire(date("YmdHis", time() + 24*60*60));
-        $input->SetGoods_tag("采菜网商品");
+        $input->SetGoods_tag("微家商品");
 
         //$notify_url = 'http://'.$_SERVER['SERVER_NAME'].'/weixin.php/WechatPay/notify';
-        $notify_url = 'http://'.$_SERVER['SERVER_NAME'].'/app/index/index.php?r=pay/notify';
+        $notify_url = 'http://'.$_SERVER['SERVER_NAME'].'/index.php?r=pay/notify';
         $input->SetNotify_url($notify_url);
         $input->SetTrade_type("JSAPI");
+
+
         $input->SetOpenid($openId);
-        $order = \WxPayApi::unifiedOrder($input);
-        $jsApiParameters = $this->GetJsApiParameters($order);
+        $order_para = \WxPayApi::unifiedOrder($input);
+
+        $jsApiParameters = $this->GetJsApiParameters($order_para);
 
         return $jsApiParameters;
         //获取共享收货地址js函数参数
@@ -61,7 +62,8 @@ class PayController extends BaseController
         $notify->Handle(false);
     }*/
 
-    public function notify(){
+    public function actionNotify(){
+
         $notify = new PayNotifyController();
         $notify->Handle(false);
 
@@ -72,7 +74,7 @@ class PayController extends BaseController
 
     /**
      *
-     * 获取jsapi支付的参数
+     * 获取jsapi支付的参数  Weiluoyuan520
      * @param array $UnifiedOrderResult 统一支付接口返回的数据
      * @throws WxPayException
      *
@@ -88,7 +90,8 @@ class PayController extends BaseController
                 //$this->error($UnifiedOrderResult['err_code_desc']);
             }
         }
-        //print_r($UnifiedOrderResult);exit;
+
+        print_r($UnifiedOrderResult);die;
         if(!array_key_exists("appid", $UnifiedOrderResult)
             || !array_key_exists("prepay_id", $UnifiedOrderResult)
             || $UnifiedOrderResult['prepay_id'] == "")
