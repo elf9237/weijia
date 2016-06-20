@@ -3,7 +3,7 @@ class BaseController extends CController
 {
 	
 	public $layout=null;
-	public $wechat = true;
+	public $wechat ;
 
 	protected $key = 'z+Y4N{FdU4vNkXIf*tiKFF-odDRM,I88';
 
@@ -27,20 +27,17 @@ class BaseController extends CController
 //		
 //	}
 	public function init(){
-
 //		$this->wechat = !(strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') == false);
 //		return  true;
-        $this->wechat==true;
-        if($this->wechat){
+		$this->wechat=true;
+//        if($this->wechat){
 //            $openid = $this->getOpenID();
 //            $usermodel = new User();
 //            $newUser = $usermodel::model()->find('openid=:openid', array(':openid'=>$openid));
 //            if(!empty($newUser)){
 //                Yii::app()->session['user'] = $newUser;
 //            }
-
-
-        }
+//        }
 	}
 
     public function is_login(){
@@ -61,7 +58,7 @@ class BaseController extends CController
             //通过code获得openid
             if (!isset($_GET['code'])){
                 $baseUrl = urlencode('http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
-                // echo $baseUrl;die;
+                //echo $baseUrl;die;
                 $url = $this->createOauthUrlForCode($baseUrl);
                 Header("Location: $url");
                 exit();
@@ -293,14 +290,14 @@ class BaseController extends CController
 		if(empty($arrParam)){
 			$arrParam = array(
 				'r' => $_GET['r'],
-				'timestamp' => $_GET['timestamp'],
-				'pid' => $_GET['pid'],
-				'sign' => $_GET['sign']
+				'timestamp' => isset($_GET['timestamp']) ? $_GET['timestamp'] : 0,
+				'pid' => isset($_GET['pid']) ? $_GET['pid'] : 0,
+				'sign' => isset($_GET['sign']) ? $_GET['sign'] : 0
 			);
 		}
 
 		$sign = $this->getAuthSignStr($arrParam);
-		if($arrParam['sign'] != $sign){
+		if(empty($arrParam['pid']) || $arrParam['sign'] != $sign){
 			return 0;
 		}
 
@@ -308,9 +305,9 @@ class BaseController extends CController
 			return 0;
 		}*/
 
-		$securityManager = Yii::app()->getSecurityManager();
-		$nPid = $securityManager->decrypt(base64_decode($arrParam['pid']), $this->key);
-		return (int)$nPid;
+		//$securityManager = Yii::app()->getSecurityManager();
+		//$nPid = $securityManager->decrypt(base64_decode($arrParam['pid']), $this->key);
+		return (int)$arrParam['pid'];
 	}
 
 	/**
@@ -381,8 +378,8 @@ class BaseController extends CController
 			curl_setopt($ch,CURLOPT_PROXYPORT, WxPayConfig::CURL_PROXY_PORT);
 		}*/
 		curl_setopt($ch,CURLOPT_URL, $url);
-		curl_setopt($ch,CURLOPT_SSL_VERIFYPEER,TRUE);
-		curl_setopt($ch,CURLOPT_SSL_VERIFYHOST,2);//严格校验
+		curl_setopt($ch,CURLOPT_SSL_VERIFYPEER,false);
+		curl_setopt($ch,CURLOPT_SSL_VERIFYHOST,false);//严格校验
 		//设置header
 		curl_setopt($ch, CURLOPT_HEADER, FALSE);
 		//要求结果为字符串且输出到屏幕上

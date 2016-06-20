@@ -59,7 +59,7 @@
 <!--           <ul class="ui-tiled ui-border-t">-->
 <!--                <li data-href="./index.php?r=store" class="ui-border-r ui-rentflow"><div>商铺出租</div></li>-->
 <!--                <li data-href="./index.php?r=show/add" class="ui-border-r ui-joinflow"><div>加盟流程</div></li>-->
-<!--                <li data-href="./index.php?r=bzp" class="ui-bzpo"><div>包租婆</div></li>-->
+<!--                <li data-href="./index.php?r=bzp" class="ui-bzpo"><div>微家</div></li>-->
 <!--            </ul>-->
         </header>
         <footer id="foot"class="ui-footer ui-footer-btn ui-footer-new">
@@ -82,30 +82,16 @@
 		<script type="text/javascript" src="./public/js/iSlider.plugin.dot.js"></script>
 		<script id="show-code">
 		    var list = [
-		        // picture
-		        {
-		            content: './imgs/6.jpg'
-		        },
+
 		        // HTML String
 		        {
-		            content: './imgs/1.jpg'
+		            content: './img/banner01.jpg'
 		        },
 		        // element
 		        {
-		            content: './imgs/2.jpg'
-		        },
-		        // fragment
-		        {
-		            content: './imgs/3.jpg'
-		        },
-		        // dom
-		        {
-		            content: './imgs/4.jpg'
-		        },
-		        // iframe
-		        {
-		            content: './imgs/5.jpg'
+		            content: './img/banner02.jpg'
 		        }
+		        // fragment
 		    ];
 
 		    var S = new iSlider({

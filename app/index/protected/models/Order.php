@@ -22,6 +22,7 @@
  * @property string $audit_content
  * @property string $days
  * @property string $type
+ * @property string $weidan
  */
 class Order extends CActiveRecord
 {
@@ -42,13 +43,13 @@ class Order extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('order_no, user_id, info_id', 'required'),
-			array('user_id, info_id, room_id, pay_price, audit_status', 'numerical', 'integerOnly'=>true),
+			array('user_id, info_id, room_id,  audit_status', 'numerical', 'integerOnly'=>true),
 			array('order_no, audit_id', 'length', 'max'=>50),
 			array('order_type, pay_type, create_time, begin_time, expire_time, pay_time, audit_time', 'length', 'max'=>10),
 			array('audit_content', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, order_no, user_id, info_id, room_id, order_type, pay_type, pay_price, create_time, begin_time, expire_time, pay_time, audit_time, audit_status, audit_id, audit_content,days,type', 'safe', 'on'=>'search'),
+			array('id, order_no, user_id, info_id, room_id, order_type, pay_type, pay_price, create_time, begin_time, expire_time, pay_time, audit_time, audit_status, audit_id, audit_content,days,type,weidan', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -85,8 +86,10 @@ class Order extends CActiveRecord
 			'audit_status' => 'Audit Status',
 			'audit_id' => 'Audit',
 			'audit_content' => 'Audit Content',
-                    'days' => 'Days',
+                         'days' => 'Days',
 			'type' => 'Type',
+                        'weidan' => 'weidan',
+                        
 		);
 	}
 
@@ -127,6 +130,7 @@ class Order extends CActiveRecord
                 
                 $criteria->compare('days',$this->days,true);
 		$criteria->compare('type',$this->type,true);
+                $criteria->compare('weidan',$this->weidan,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

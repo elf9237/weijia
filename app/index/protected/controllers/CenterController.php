@@ -8,7 +8,16 @@
 class CenterController extends BaseController{
 //    个人中心首页
     public function actionCenterIndex(){
+        $loginuserid=-1;
+            $userLogin= Yii::app()->session['user'] ;
+            if(!empty($userLogin))
         $this -> renderPartial('centerIndex');
+    else 
+         $this ->redirect ("index.php?r=site/login");
+    }
+//    我的发布
+    public function actionMydingdan(){
+        $this -> renderPartial('dingdan');
     }
 //    我的发布
     public function actionIssue(){
@@ -38,6 +47,24 @@ class CenterController extends BaseController{
         
         $this -> renderPartial('mybroker',array("userinfo"=>$userinfo));
     }
+     public function actionQueryTixian(){
+         $loginuserid=-1;
+            $userLogin= Yii::app()->session['user'] ;
+            if(!empty($userLogin))
+                $loginuserid=$userLogin->id;
+        $page=$_POST['page'];
+  
+       $sql="select t.* from cy_tixian t  where 1=1 " ;
+
+      
+       $sql.=" and t.user_id = ".$loginuserid." ";
+       
+      
+       $pagelist=new PageList($sql, $page, 10);
+ 
+       echo json_encode($pagelist->pageAjax);
+    }
+    
 //    提现申请
     public function actionForward(){
         $ar= new AjaxReturn();
@@ -84,12 +111,12 @@ class CenterController extends BaseController{
         );
 
         $nUid = $this->getUserId();
-        $strBaseUri = 'Center/wmoney';
-        $securityManager = Yii::app()->getSecurityManager();
+        $strBaseUri = 'Site/register';
+        //$securityManager = Yii::app()->getSecurityManager();
         $arrUrlParam = array(
             'r' => $strBaseUri,
             'timestamp' => time(),
-            'pid' => base64_encode($securityManager->encrypt($nUid, $this->key)),
+            'pid' => $nUid//base64_encode($securityManager->encrypt($nUid, $this->key)),
         );
         $arrUrlParam['sign'] = $this->getAuthSignStr($arrUrlParam);
         $strshareUrl = Yii::app()->request->hostInfo.$this->createUrl($strBaseUri, $arrUrlParam);
@@ -167,6 +194,7 @@ class CenterController extends BaseController{
     }
     //    注册
     public function actionAssign(){
+
         $this -> renderPartial('assign');
     }
     //    忘记密码
@@ -175,7 +203,29 @@ class CenterController extends BaseController{
     }
     //    修改用户信息
     public function actionModify(){
-        
+        $loginuserid=-1;
+        $userLogin= Yii::app()->session['user'] ;
+//        if(!empty($userLogin))
+//            $loginuserid=$userLogin->id;
+//        $sql="select t.* from cy_order t   where 1=1  and t.user_id= ".$loginuserid." " ;
+//        $pagelist=new PageList($sql, $page, 5);
+
         $this -> renderPartial('modify');
+    }
+    public function actionModifynext(){
+//        $loginuserid=-1;
+//        $userLogin= Yii::app()->session['user'] ;
+//        if(!empty($userLogin))
+//            $loginuserid=$userLogin->id;
+//        $sql="select t.* from cy_order t   where 1=1  and t.user_id= ".$loginuserid." " ;
+//        $pagelist=new PageList($sql, $page, 5);
+
+        $this -> renderPartial('modifynext');
+    }
+//我的预约
+    public function actionMyyuyue(){
+
+
+        $this -> renderPartial('myyuyue');
     }
 }

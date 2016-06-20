@@ -59,10 +59,16 @@
                     <a href="index.php?r=center/issue"><i class="i-my-address"></i>我的发布</a>
                 </dd>
                 <dd>
+                    <a href="index.php?r=center/myyuyue"><i class="i-my-address"></i>我的预约</a>
+                </dd>
+                <dd>
                     <a href="index.php?r=center/hasrent"><i class="i-my-prize"></i>已租房子</a>
                 </dd>
                 <dd>
                     <a href="index.php?r=center/shenhe"><i class="i-my-prize"></i>出租审核</a>
+                </dd>
+                 <dd>
+                    <a href="index.php?r=center/mydingdan"><i class="i-my-prize"></i>我的订单</a>
                 </dd>
                 <dd>
                     <a href="index.php?r=center/message"><i class="i-my-prize"></i>我的消息</a>

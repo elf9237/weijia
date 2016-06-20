@@ -93,7 +93,7 @@
 		<div class="login-btn">
 			<?php echo CHtml::submitButton('登陆',array('class'=>'submit')); ?>
 			<a href="./index.php?r=site/register"><div class="login-reg"><p>注册</p></div></a>
-			<a href="register.html"><div class="login-reg"><p>微信一键登入</p></div></a>
+<!--			<a href="register.html"><div class="login-reg"><p>微信一键登入</p></div></a>-->
 		</div>
 	<?php $this->endWidget(); ?>
 </div>

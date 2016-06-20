@@ -1,28 +1,19 @@
 <!DOCTYPE html>
 <!-- saved from url=(0037)http://www.baozupo.com/baozupo/web.do -->
 <html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>包租婆</title>
+  <title>微家</title>
   
-  <meta name="description" content="包租婆是一家互联网女性租住生活平台，是一种全新的O2O模式的女性公寓。无中介费、服务费，定期免费保洁，24小时管家服务，WiFi入户，免费使用。包租婆要为女性打造品质租住，创造真正的家。">
-  <meta name="sogou_site_verification" content="DvDFbTLWNb">
-  <script src="public/desktop/js/jquery.min.js"></script>
-  <script src="public/desktop/js/common.js"></script>
-  <script src="public/desktop/js/webCommon.js"></script>
-  <script type="text/javascript" src="public/desktop/js/scroller.js"></script>
-  <script type="text/javascript" src="public/desktop/js/picEffect.js"></script>
-  <script type="text/javascript" src="public/desktop/js/topbananer.js"></script>
-  <script src="public/desktop/js/validate.js"></script>
-  <script type="text/javascript" src="public/desktop/js/jquery.history.js"></script>
-  <script src="public/desktop/js/WdatePicker.js"></script>
-  <script type="text/javascript" src="public/desktop/js/jquery.bxslider.js"></script>
-  <script src="public/desktop/js/style.js"></script>
-  <link href="public/desktop/css/WdatePicker.css" rel="stylesheet" type="text/css">
-  <script src="public/desktop/js/jquery.autogrowtextarea.min.js"></script>
+  <meta name="description" content="微家是一家互联网租住生活平台，是一种全新的O2O模式的女性公寓。无中介费、服务费，定期免费保洁，24小时管家服务，WiFi入户，免费使用。微家要为女性打造品质租住，创造真正的家。">
+ 
+  <script src="public/js/jquery-1.9.0.min.js"></script>
+  <script src="public/desktop/date/WdatePicker.js"></script>
+  <link href="public/desktop/date/skin/WdatePicker.css" rel="stylesheet" type="text/css">
+ 
   <link rel="stylesheet" href="public/desktop/css/main.css">
   <link rel="stylesheet" href="public/desktop/css/mainweb.css">
   <link rel="stylesheet" href="public/desktop/css/comment.css">
-  <link rel="stylesheet" href="public/desktop/css/scroller.css">
-  <link href="public/desktop/css/jquery.bxslider.css" rel="stylesheet" type="text/css">
+
+  
   <link rel="stylesheet" href="public/desktop/css/style.css">
 <style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
 .en-markup-crop-options {
@@ -38,7 +29,7 @@
     margin-left: 0px !important;
 }
 </style></head>
-<body class="body-web" style="Overflow-y:scroll" cz-shortcut-listen="true"><div style="position: absolute; z-index: 19700; top: -1970px; left: -1970px; display: none;"><iframe src="public/desktop/images/My97DatePicker.html" frameborder="0" border="0" scrolling="no" style="width: 186px; height: 199px;"></iframe></div>
+<body class="body-web" style="Overflow-y:scroll" cz-shortcut-listen="true"><div style="position: absolute; z-index: 19700; top: -1970px; left: -1970px; display: none;"></div>
 
 <div class="header">
   <div class="logo"><img src="public/desktop/images/logo.png" alt=""></div>
@@ -53,10 +44,15 @@
     </ul>
   </div>
   <div class="login">
-    <span><a href="index.php?r=site/login">登入</a></span>
-    <span>|</span>
-    <span><a href="index.php?r=site/register">注册</a></span>
-  </div>
+    <?php
+          $user= Yii::app()->session['user'] ;
+          if(!empty($user)){
+              echo '<span>欢迎回来！'.$user->login_id.'</span>';
+          }else{
+              echo '<span><a href="index.php?r=site/login">登入</a></span>'; 
+          }
+        
+        ?>
 </div>
   
   
@@ -89,38 +85,7 @@
     <img id="banyuan4" src="public/desktop/images/yuan10_he.png" class="handpoint" onclick="bananerFade(14)">
     </div>
   </div>
-<script type="text/javascript">
-  function showBananer(){
-    $("#divbananer").show();
-  }
-  function hideBananer(){
-    $("#divbananer").hide();
-  }
-  var topBananObj=null;
-  function bananerStart(){
-    if(topBananObj){
-      topBananObj.start();
-    }
-  }
-  function bananerStop(){
-    if(topBananObj){
-      topBananObj.stop();
-    }
-  }
-  function bananerFade(index){
-    if(topBananObj){
-      topBananObj.banFade(index);
-    }
-  }
-  $(function(){
-  var bananer_color1=["#e6006d","#f50c1e","#f5d1b1","-1"];
-  var bananer_color2=["#e6006d","#f50c1e","#f5d1b1","-1"];
-  var bananer_pici=[1,9,3,5];
-  var imgtype=["jpg","png","jpg","jpg"];
-  topBananObj=new topBananer(bananer_color1,bananer_color2,bananer_pici,imgtype,"bananer","banbg");
-  bananerStart();
-  });
-</script>
+
   
   <div style="height:2px;overflow:hidden;" width="100%"></div>
   
@@ -225,7 +190,7 @@
       <tbody><tr><td></td><td class="td_cont_find">&nbsp;&nbsp;&nbsp;&nbsp;看房时间：</td></tr>
       <tr>
         <td id="time_td" class="num_reg">1</td>
-        <td><input type="text" id="time" name="time" maxlength="20" title="请输入预约看房时间" onchange="changeInput(&#39;time&#39;,&#39;&#39;)" value="" class="input_reg" onclick="WdatePicker({dateFmt:&#39;yyyy-MM-dd HH:mm&#39;})"></td>
+        <td><input type="text" id="time" name="time" maxlength="20" title="请输入预约看房时间"  value="" class="input_reg" onclick="WdatePicker({skin:'whyGreen'})"></td>
       </tr>
     </tbody></table>
   </div>
@@ -238,7 +203,7 @@
       <tr>
         <td id="name_td" class="num_reg">2</td>
         <td>
-          <input type="text" id="name" name="username" onkeyup="limitInputLen(this,20)" title="请输入您的姓名" onblur="changeInput(&#39;name&#39;,&#39;&#39;)" value="" class="input_reg"> 
+          <input type="text" id="name" name="username"  title="请输入您的姓名" value="" class="input_reg" placeholder="请输入您的姓名">
         </td>
       </tr>
     </tbody></table>
@@ -248,10 +213,10 @@
   
   <div style="position:absolute;left:255px;top:182px;">
     <table class="table">
-      <tbody><tr><td></td><td class="td_cont_find">&nbsp;&nbsp;&nbsp;&nbsp;联系电话：</td></tr>
+      <tbody><tr><td></td><td class="td_cont_find" >&nbsp;&nbsp;&nbsp;&nbsp;联系电话：</td></tr>
       <tr>
         <td id="phone_td" class="num_reg">3</td>
-        <td><input type="text" id="phone" name="phone" title="请输入您的联系电话" onkeypress="return checkInputNumber(event)" maxlength="20" onblur="changeInput(&#39;phone&#39;,&#39;&#39;)" value="" class="input_reg"></td>
+        <td><input type="text" id="phone" name="phone" title="请输入您的联系电话"  maxlength="20"  value="" class="input_reg" placeholder="请输入您的联系电话"></td>
       </tr>
     </tbody></table>
   </div>
@@ -259,7 +224,7 @@
   <div style="position:absolute;left:275px;top:241px;"><img id="phone_img" src="public/desktop/images/dline1_h.gif"></div>
   
   <div id="divbut" style="position:absolute;left:370px;top:320px;">
-    <input id="but" onclick="saveYu()" onmousemove="changeClass(&#39;but&#39;,&#39;button2_reg&#39;)" onmouseout="changeClass(&#39;but&#39;,&#39;button_reg&#39;)" class="button_reg" type="button" value="提交">
+    <input id="but" onclick="saveYu()"  class="button_reg" type="button" value="提交">
   </div>
 </div>
 <div id="tmpdiv"></div>
@@ -321,7 +286,7 @@
   <tr style="height:5px;"><td colspan="10"></td></tr>
 </tbody></table>
   </div>
-  <div style="position:fixed;top:200px;right:20px;z-index:18000;"><img class="handpoint" onclick="prefindTop()" src="public/desktop/images/flowright.png"></div>
+<!--  <div style="position:fixed;top:200px;right:20px;z-index:18000;"><img class="handpoint" onclick="prefindTop()" src="public/desktop/images/flowright.png"></div>-->
 
 
 <script type="text/javascript">
@@ -336,6 +301,8 @@
     }
   }
   function saveYu(){
+      var time=new Date($("#time").val().replace(/-/g,'/')).getTime()/1000;
+ 
             if($("input[name='username']").val()==""||$("input[name='phone']").val()=="")
                 return;
              $.ajax({
@@ -343,6 +310,7 @@
                data:{
                    real_name:$("input[name='username']").val(),
                     phone_no:$("input[name='phone']").val(),
+                    time:time
                },
                dataType: "json", 
                type:"POST",

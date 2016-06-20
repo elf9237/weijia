@@ -11,7 +11,7 @@
 <!--<![endif]-->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>修改信息</title>
+    <title>修改密码</title>
     <meta name="keyword" />
     <meta name="description"/>
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
@@ -44,28 +44,28 @@
                 <div class="auto-middle">
                     <div class="op-register">
                         <form action=""   class="modifyform">
-                            <h3><span class="titleico" style="width: 135px;">修改用户信息</span></h3>
-                            <div class="userbox">
-                                <div class=""></div>
-                                <input type="text" class="userId" placeholder="修改用户名" datatype="s5-16" errormsg="昵称至少5个字符,最多16个字符！">
-                                <span class="tip Validform_checktip">昵称为6~18个字符</span>
-                            </div>
-                            <div class="userbox">
-                                <div class=""></div>
-                                <input type="text" class="phoneId" placeholder="修改手机号" name="mobile"  datatype="m" errormsg="手机号码格式不对！">
-
-                                <span class="tip Validform_checktip"></span>
-                            </div>
+                            <h3><span class="titleico" style="width: 135px;">修改密码</span></h3>
+<!--                            <div class="userbox">-->
+<!--                                <div class=""></div>-->
+<!--                                <input type="text" class="userId" placeholder="修改用户名" datatype="s5-16" errormsg="昵称至少5个字符,最多16个字符！">-->
+<!--                                <span class="tip Validform_checktip">昵称为6~18个字符</span>-->
+<!--                            </div>-->
+<!--                            <div class="userbox">-->
+<!--                                <div class=""></div>-->
+<!--                                <input type="text" class="phoneId" placeholder="修改手机号" name="mobile"  datatype="m" errormsg="手机号码格式不对！">-->
+<!---->
+<!--                                <span class="tip Validform_checktip"></span>-->
+<!--                            </div>-->
 
                             <div class="passbox">
-                                <input type="password" class="passWord" name="userpassword" placeholder="修改密码" datatype="*6-15" errormsg="密码范围在6~15位之间！"><span class="tip Validform_checktip">密码范围在6~15位之间！</span>
+                                <input type="password" class="passWord" name="userpassword" placeholder="请输入旧密码" datatype="*6-15" errormsg="密码范围在6~15位之间！"><span class="tip Validform_checktip">密码范围在6~15位之间！</span>
                             </div>
-                            <div class="passbox">
-                                <input type="password" class="passWord2" name="userpassword2" placeholder="确认修改密码" datatype="*" recheck="userpassword" errormsg="您两次输入的账号密码不一致！">
-                                <span class="tip Validform_checktip"></span>
-                            </div>
+<!--                            <div class="passbox">-->
+<!--                                <input type="password" class="passWord2" name="userpassword2" placeholder="确认修改密码" datatype="*" recheck="userpassword" errormsg="您两次输入的账号密码不一致！">-->
+<!--                                <span class="tip Validform_checktip"></span>-->
+<!--                            </div>-->
 
-                            <button class="btn registerBtn" type="submit"  et-attached="1">提交修改</button>
+                            <button class="btn registerBtn" type="submit"  et-attached="1">下一步</button>
                             <!-- <div class="ft-operate"><a href="#" class="link"  et-attached="1"><i class="arrow"></i>登录</a></div> -->
                         </form>
                         <div class="otherlogin">
@@ -83,16 +83,14 @@
 <script>
     $(function(){
         $('.registerBtn').click(function(){
-            var username = $('.userId').val();
             var psw= $('.passWord').val();
-            var phone=$('.phoneId').val();
             $.ajax({
                 url:"index.php?r=center/modify",
                 method:"POST",
                 dataType:'json',
-                data:{username:username,psw:psw,phone:phone},
+                data:{psw:psw},
                 success:function(){
-
+                    
                 }
 
             });

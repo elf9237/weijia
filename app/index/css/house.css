@@ -73,7 +73,7 @@ html{font-size: 42px;}
 
 .bg-zmz {background-image: url(../img/zmz-bg.png)}
 .noborder{border: 0;}
-.link-text{padding-right: 20px;}
+.link-text{padding-right: 20px;min-width:90px;}
 .ng-scope{margin-bottom: 20px;margin-top: 10px;}
 
 /*我要出租*/
@@ -422,7 +422,7 @@ html{font-size: 42px;}
     padding-top: 10px;
 }
 .tglist li {
-    border: 1px solid #d1d1d1;
+    /*border: 1px solid #d1d1d1;*/
     border-bottom: 0;
     background-color: #fff;
     line-height: 34px;
@@ -492,7 +492,7 @@ input.roll {
 	min-height: 600px;
 }
 .ad-btn{position: fixed;top: 60px;right: 20px;}
-.ad-btn a{width: 60px;height: 60px;background: #E12772;color: #fff;border-radius: 30px;display: inline-block;font-size: 30px;line-height: 60px;text-align: center;}
+.ad-btn a{width: 60px;height: 60px;background: #fe2c55;color: #fff;border-radius: 30px;display: inline-block;font-size: 30px;line-height: 60px;text-align: center;}
 .tm_selectval input{width: 200px;text-align: right;height: 30px;line-height: 30px;border: none;}
 .tx_itemtext textarea{border: none;}
 .dayprice input{border: none;}
@@ -500,7 +500,7 @@ input.roll {
 .tx_itemtextarea{width: auto;height: 60px;}
 .tx_itemtextarea textarea{height: 60px;line-height: 60px;width: 100%;}
 
-/*包租婆*/
+/*微家*/
 .ui-avatar-lg{float: left;margin-top: 30px;margin-left: 20px;}
 .name-id{float: left;margin-top: 25px;margin-left: 20px;color: #fff}
 .name-id h1{font-size: 32px;}
@@ -706,3 +706,84 @@ em{color: #000;}
 .ui-border-t{border-top:1px solid #e0e0e0;}
 
 .checkStade{font-size: 14px;color:red; float: right;padding:0px 30px 10px 0;}
+em.time{margin-left:5px;}
+.table-pay  table tr td:first-child{min-width: 170px;}
+.table-pay  table tr td:nth-child(2){width: 100px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.table-pay  #price{width:100px;}
+
+
+.focus {
+    /*width: 600px;*/
+    height: 400px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+.tempWrap ul li a img{width: 100%;height: auto;}
+.focus .hd {
+    width: 100%;
+    height: 11px;
+    position: absolute;
+    z-index: 1;
+    bottom: 5px;
+    text-align: center;
+}
+.focus .hd ul {
+    display: inline-block;
+    height: 5px;
+    padding: 3px 5px;
+    background-color: rgba(255,255,255,0.7);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    font-size: 0;
+    vertical-align: top;
+
+}
+
+.focus .hd ul .on {
+    background: #FE6C9C;
+}
+.focus .hd ul li {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background: #8C8C8C;
+    margin: 0 5px;
+    vertical-align: top;
+    overflow: hidden;
+}
+.focus .hd ul .on {
+    background: #FE6C9C;
+}
+.rows_title{text-align: center}
+.custom_name .info{font-size: 12px;color: #666;padding: 5px 5px;}
+.ui-btn-primary {
+    background-color: #ff7f0d;
+    border-color: #ff662c;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.5, #ff662c), to(#ff662c));
+    color: white;
+    background-clip: padding-box;
+}
+a{color: #FF662C;}
+.ui-checkbox input:checked:before, .ui-checkbox-s input:checked:before {
+    content: "";
+    color: #FF662C;
+}
+.ui-form-item-l label, .ui-form-item-r button {
+    color: #FF662C;
+}
+
+.webuploader-pick{background: #ff662c}
+.ui-tab-nav li.current {
+    color: #ff7e00;
+    border-bottom: 2px #ff7e00 solid;
+}
+.order-list dd tr td{padding: 0 2px;}
+.shebei{max-width: 350px;margin-left: 20px;}
+.shebei li{float: left;margin-right: 30px;}
+.img-show{display: block;width: 100%;}
+#fonttest{display: none;}

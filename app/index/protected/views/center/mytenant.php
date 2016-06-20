@@ -43,8 +43,8 @@
             <a href="#"> <img src="./img/avatar-default.png" alt="" /> <span class="update-tip"><i class="i-update-avatar"></i></span> </a>
         </div>
         <div class="my-nickname">
-            <span class="my-nickname-txt"> <a href="#"><em>L1437441246887</em></a> </span>
-            <span class="my-nickname-txt"> <a href="#"><em>余额(元)：<span class="red">100</span></em></a> <a href="index.php?r=center/forward">提现</a></span>
+            <span class="my-nickname-txt"> <a href="#"><em><?php echo Yii::app()->session['user']->login_id ?></em></a> </span>
+            <span class="my-nickname-txt"> <a href="#"><em>余额(元)：<span class="red"><?php echo Yii::app()->session['user']->yue ?></span></em></a> </span>
         </div>
 
     </div>
@@ -61,25 +61,7 @@
                     </ul>
                     <ul class="ui-tab-content" style="width:300%">
                         <li class="current">
-                            <ul class="ui-list ui-border-b">
-                                <li>
-                                    <div class="ui-avatar-s">
-                                        <span style="background-image:url(../img/ava1.png)"></span>
-                                    </div>
-                                    <div class="ui-list-info ui-border-t"><h4><span class="fl"><span class="red">300</span>元</span> <span class="fr">2016-02-03 05:52</span></h4></div>
-                                </li>
-                                <li>
-                                    <div class="ui-avatar-s">
-                                        <span style="background-image:url(../img/ava1.png)"></span>
-                                    </div>
-                                    <div class="ui-list-info ui-border-t"><h4><span class="fl"><span class="red">300</span>元</span> <span class="fr">2016-02-03 05:52</span></h4></div>
-                                </li>
-                                <li>
-                                    <div class="ui-avatar-s">
-                                        <span style="background-image:url(../img/ava1.png)"></span>
-                                    </div>
-                                    <div class="ui-list-info ui-border-t"><h4><span class="fl"><span class="red">300</span>元</span> <span class="fr">2016-02-03 05:52</span></h4></div>
-                                </li>
+                            <ul id="tixian" class="ui-list ui-border-b">
                             </ul>
                         </li>
 
@@ -96,6 +78,71 @@
         <script src="./lib/zepto.min.js"></script>
         <script src="./js/frozen.js"></script>
         <script>
+            
+            
+
+    var ajax=!1;//是否加载中
+    var param={
+
+        page:0,
+        totalPage:1,
+    };
+    function queryColl(){
+
+        Zepto(function($){
+            $(window).scroll(function(){
+                if(($(window).scrollTop() + $(window).height() > $(document).height()-30) && !ajax && param.totalPage >= param.page){
+                    //滚动条拉到离底40像素内，而且没ajax中，而且没超过总页数
+                    //json_ajax(cla,++page);
+                    param.page++;//当前页增加1
+                    ajax=!0;//注明开始ajax加载中
+
+                    $.ajax({
+                        url:"index.php?r=center/queryTixian",
+                        data:param,
+                        type:"POST",
+                        dataType:"json",
+                        success:function(data){
+                            param.totalPage=data.totaPage;//更新总页数
+                            param.page=data.currentPage;//更新当前页（js不太可靠）
+                            var innerHtml=[];
+                            if(data.pageList.length>0){
+                                $.each(data.pageList,function(n,value){ 
+                      
+                        var infoStatus="待审核";
+                        if(value.audit_status==1){
+                            infoStatus="成功";
+                        }
+                         if(value.audit_status==2){
+                            infoStatus="失败";
+                        }
+                    innerHtml.push('<li>'+
+                                    '<div class="ui-avatar-s">'+
+                                        '<span style="background-image:url(../img/ava1.png)"></span>'+
+                                    '</div>'+
+                                    '<div class="ui-list-info ui-border-t"><h4><span class="fl"><span class="red">'+value.jine+'</span>元</span> <span class="fr">'+new Date(parseInt(value.create_time) * 1000).toLocaleString().replace(/:\d{1,2}$/,"") +'</span><span class="fr">'+ infoStatus+'</span></h4></div>'+
+                                '</li>'
+                      
+                                   
+            );  });
+
+
+                            }
+                            $("#tixian").append(innerHtml.join(""));
+                            ajax=!1;
+//                pageding($("#turnPageBar"),"queryColl",data);
+                        }
+                    })
+                }}).scroll();
+        });
+    };
+  
+    $(function(){
+        queryColl();
+    });
+            
+            
+            
             (function() {
 
                 var tab = new fz.Scroll('.ui-tab', {

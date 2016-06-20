@@ -45,9 +45,15 @@
         </ul>
     </div>
      <div class="login">
-        <span><a href="index.php?r=site/login">登入</a></span>
-        <span>|</span>
-        <span><a href="index.php?r=site/register">注册</a></span>
+        <?php
+          $user= Yii::app()->session['user'] ;
+          if(!empty($user)){
+              echo '<span>欢迎回来！'.$user->login_id.'</span>';
+          }else{
+              echo '<span><a href="index.php?r=site/login">登入</a></span>'; 
+          }
+        
+        ?>
     </div>
   </div>
   <div style="overflow:hidden;width:100%;height:2px;background:url(/baozupo/images/topline.gif);"></div>
@@ -111,24 +117,19 @@
               </div>
 <div class="div-split2"></div>
 
-
-
-
-
 <hr>
 <div class="div-align-right">
-
-
-
-
-
 <div style="height:32px;text-align:right;" id="turnPageBarmess">
-	
 </div>
 
 </div>
 <div id="tmpcommentdiv" style="display:none;"></div>
 </div>
+      
+      
+      
+      
+      
 <div id="bottomSplitDiv" style="height:20px;width:100%;clear:both;display:block;">
 &nbsp; <img src="public/desktop/images/grey.gif">
 </div>
@@ -222,7 +223,12 @@
                         var message=value.message;
                         if(value.message_type==0){
                             status='预约消息';
-                            message="我对你发布的--"+value.info_name+"感兴趣--"+message;
+                            var oreder_times ='电话联系';
+                            if(value.order_time!=="0"){
+                                oreder_times=new Date(parseInt(value.order_time) * 1000).toLocaleString().replace(/:\d{1,2}$/,' '); 
+                                
+                            }
+                            message="我对你发布的--"+value.info_name+"感兴趣--"+message+"，看房时间："+oreder_times;
                         }
                         var infoStatus="<a onclick='biaoji(this,"+value.id+")'>标记已读</a>";
                         if(value.read_time!=0){

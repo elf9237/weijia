@@ -18,7 +18,7 @@
     <meta http-equiv="refresh" content="0;url=#upgrade/browser">
     <script>location.href="#upgrade/browser";</script>
     <![endif]-->
-    <title>我的收藏</title>
+    <title>已租房子</title>
     <meta name="keyword" />
     <meta name="description"/>
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
@@ -95,7 +95,7 @@
                     ajax=!0;//注明开始ajax加载中
 
                     $.ajax({
-                        url:"index.php?r=ajax/querymyhome",
+                        url:"index.php?r=ajax/querymyrent",
                         data:param,
                         type:"POST",
                         dataType:"json",

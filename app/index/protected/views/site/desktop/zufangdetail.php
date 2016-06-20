@@ -103,7 +103,7 @@
 	      <tbody><tr><td width="50px" class="td_cont_hsinfo_c">面积：</td><td class="td_cont_hsinfo_l"> <?php echo $cyinfo->area ?></td></tr>
 	      <tr><td class="td_cont_hsinfo_c">楼层：</td><td class="td_cont_hsinfo_l"> <?php echo $cyinfo->nfloor?>/ <?php echo $cyinfo->floors ?></td></tr>
 	      <tr><td class="td_cont_hsinfo_c">朝向：</td><td class="td_cont_hsinfo_l"> <?php echo $cyinfo->direction ?></td></tr>
-	      <tr><td class="td_cont_hsinfo_c">户型：</td><td class="td_cont_hsinfo_l"> <?php echo $cyinfo->rooms ?></td></tr>
+	      <tr><td class="td_cont_hsinfo_c">户型：</td><td class="td_cont_hsinfo_l"> <?php echo $cyinfo->house_type ?></td></tr>
 	      <tr><td class="td_cont_hsinfo_c">小区：</td><td class="td_cont_hsinfo_l"> <?php echo $cyinfo->district ?> </td></tr>
 	      <tr><td class="td_cont_hsinfo_c">公交：</td><td class="td_cont_hsinfo_l"> <?php echo $cyinfo->bus ?></td></tr>
 	      <tr><td class="td_cont_hsinfo_c">地铁：</td><td class="td_cont_hsinfo_l">--</td></tr>
@@ -118,7 +118,7 @@
 	      <tr id="picTr" class="td_cont_hsinfo_l">
 	        <td width="60px" align="center"><img id="picImg" src="public/desktop/images/pic_hs.gif"></td>
 	        <td style="height:25px;" onmouseover="showAnchor(&#39;pic&#39;)" onmouseout="showAnchor(&#39;&#39;)">
-	          <a href="http://www.baozupo.com/baozupo/web/houseDispatcher.do?method=showHouse&amp;hsid=85&amp;rmid=226#1F" onclick="setTimeout(winScroll,10)" id="picA" class="font_nom">房屋图片&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+	          <a href="#div_hsifor01" onclick="setTimeout(winScroll,10)" id="picA" class="font_nom">房屋图片&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
 	        </td>
 	        <td width="20px"><img id="picRight" src="public/desktop/images/right_hs.gif"></td>
 	      </tr>
@@ -132,7 +132,7 @@
 	      <tr id="surroundTr" class="td_cont_hsinfo_l">
 	        <td width="60px" align="center"><img id="surroundImg" src="public/desktop/images/surround_hs.gif"></td>
 	        <td style="height:25px;" onmouseover="showAnchor(&#39;surround&#39;)" onmouseout="showAnchor(&#39;&#39;)">
-	          <a href="http://www.baozupo.com/baozupo/web/houseDispatcher.do?method=showHouse&amp;hsid=85&amp;rmid=226#3F" onclick="setTimeout(winScroll,10)" id="surroundA" class="font_nom">公共空间&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+	          <a href="#div_hsifor02" onclick="setTimeout(winScroll,10)" id="surroundA" class="font_nom">公共空间&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
 	        </td>
 	        <td width="20px"><img id="surroundRight" src="public/desktop/images/right_hs.gif"></td>
 	      </tr>
@@ -145,7 +145,7 @@
 	      <tr id="mapTr" class="td_cont_hsinfo_l">
 	        <td width="60px" align="center"><img id="mapImg" src="public/desktop/images/map_hs.gif"></td>
 	        <td style="height:25px;" onmouseover="showAnchor(&#39;map&#39;)" onmouseout="showAnchor(&#39;&#39;)">
-	          <a href="http://www.baozupo.com/baozupo/web/houseDispatcher.do?method=showHouse&amp;hsid=85&amp;rmid=226#4F" onclick="setTimeout(winScroll,10)" id="mapA" class="font_nom">交通地图&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+	          <a href="#div_hsifor03" onclick="setTimeout(winScroll,10)" id="mapA" class="font_nom">交通地图&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
 	        </td>
 	        <td width="20px"><img id="mapRight" src="public/desktop/images/right_hs.gif"></td>
 	      </tr>
@@ -157,7 +157,7 @@
 	      <tr id="duihuaTr" class="td_cont_hsinfo_l">
 	        <td width="60px" align="center"><img id="duihuaImg" src="public/desktop/images/duihua_hs.gif"></td>
 	        <td style="height:25px;" onmouseover="showAnchor(&#39;duihua&#39;)" onmouseout="showAnchor(&#39;&#39;)">
-	          <a href="http://www.baozupo.com/baozupo/web/houseDispatcher.do?method=showHouse&amp;hsid=85&amp;rmid=226#5F" onclick="setTimeout(winScroll,10)" id="duihuaA" class="font_nom">我来说说&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+	          <a href="#div_hsifor04" onclick="setTimeout(winScroll,10)" id="duihuaA" class="font_nom">我来说说&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
 	        </td>
 	        <td width="20px"><img id="duihuaRight" src="public/desktop/images/right_hs.gif"></td>
 	      </tr>
@@ -232,27 +232,23 @@
     
     <div class="div-split2"></div>
     
-    <div class="div_hsifor">
+    <div class="div_hsifor" id="div_hsifor01">
     <table style="border:0;border-spacing:2px;" width="80%">
         <tbody><tr>
-          
-          <td align="left"><img src="public/desktop/images/2015010513142700011.png"></td>
-          
-          <td align="left"><img src="public/desktop/images/2015010513144300011.png"></td>
-          
-          <td align="left"><img src="public/desktop/images/2015010513145500011.png"></td>
-          
-          <td align="left"><img src="public/desktop/images/2015010513153400011.png"></td>
-          
-          <td align="left"><img src="public/desktop/images/2015010513155200011.png"></td>
-          
-          <td align="left"><img src="public/desktop/images/2015010513162200011.png"></td>
-          
-          <td align="left"><img src="public/desktop/images/2015010513163900011.png"></td>
-          
-          <td align="left"><img src="public/desktop/images/2015010513171000011.png"></td>
-          
-          <td align="left"><img src="public/desktop/images/2015010513173600011.png"></td>
+          <?php 
+                                 if(isset($equi_infos)){
+             foreach ($equi_infos as $eqinfo){
+                foreach ($equis as $eq){
+                    if($eq->id==$eqinfo->equip_id){
+                        echo '<td align="left"><img src="'.$eq->img_url.'"></td>';
+                    }
+             } 
+                 
+             }
+             
+                }
+                                
+                                ?>
           
         </tr>
     </tbody></table>
@@ -261,7 +257,7 @@
     <div class="div-split3"></div>
     <div class="div-split2"></div>
     
-    <div class="div_hsifor">
+    <div class="div_hsifor" id="div_hsifor02">
       <img id="1F" src="public/desktop/images/roompic.png">
       <div id="roomPicDiv" class="div_slide" style="cursor: pointer;">
         <div style="position:absolute;width:690px;height:388px;overflow:hidden;">
@@ -315,7 +311,7 @@
     
     <div class="div-split2"></div>
     
-    <div class="div_hsifor">
+    <div class="div_hsifor" id="div_hsifor03">
       <img id="3F" src="public/desktop/images/livingroom.png">
       <div id="surroundPicDiv" class="div_slide" style="cursor: pointer;">
          <div style="position:absolute;width:690px;height:388px;overflow:hidden;">
@@ -376,14 +372,14 @@
     <div class="div-split2"></div>
     <div class="div-split2"></div>
     
-    <div class="div_hsifor">
+    <div class="div_hsifor" id="div_hsifor04">
       <img id="4F" src="public/desktop/images/traffic.png">
       <div style="width: 690px; height: 388px; overflow: hidden; position: relative; z-index: 0; color: rgb(0, 0, 0); text-align: left; background-color: rgb(243, 241, 236);" id="baidudiv"><div style="overflow: visible; position: absolute; z-index: 0; left: 0px; top: 0px; cursor: url(&quot;http://api.map.baidu.com/images/openhand.cur&quot;) 8 8, default;"><div class="BMap_mask" style="position: absolute; left: 0px; top: 0px; z-index: 9; overflow: hidden; -webkit-user-select: none; width: 690px; height: 388px;"></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 200;"><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 800;"></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 700;"><span class="BMap_Marker BMap_noprint" unselectable="on" "="" style="position: absolute; padding: 0px; margin: 0px; border: 0px; cursor: pointer; width: 19px; height: 25px; left: 335px; top: 169px; z-index: -7974814; background: url(&quot;http://api.map.baidu.com/images/blank.gif&quot;);" title=""></span></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 600;"></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 500;"><label class="BMapLabel" unselectable="on" style="position: absolute; display: none; cursor: inherit; border: 1px solid rgb(190, 190, 190); padding: 1px; white-space: nowrap; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: arial, sans-serif; z-index: -20000; color: rgb(190, 190, 190); background-color: rgb(190, 190, 190);">shadow</label></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 400;"><span class="BMap_Marker" unselectable="on" style="position: absolute; padding: 0px; margin: 0px; border: 0px; width: 0px; height: 0px; left: 335px; top: 169px; z-index: -7974814;"><div style="position: absolute; margin: 0px; padding: 0px; width: 19px; height: 25px; overflow: hidden;"><img src="public/desktop/images/marker_red_sprite.png" style="border:none;left:0px; top:0px; position:absolute;"></div></span></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 300;"><span unselectable="on" style="position: absolute; padding: 0px; margin: 0px; border: 0px; width: 20px; height: 11px; left: 339px; top: 183px;"><div style="position: absolute; margin: 0px; padding: 0px; width: 20px; height: 11px; overflow: hidden;"><img src="public/desktop/images/marker_red_sprite.png" style="border:none;left:-19px; top:-13px; position:absolute;"></div></span></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 201;"></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 200;"></div></div><div style="position: absolute; overflow: visible; top: 0px; left: 0px; z-index: 1;"><div style="position: absolute; overflow: visible; z-index: -100; left: 345px; top: 194px;"><img src="public/desktop/images/saved_resource" style="position: absolute; border: none; width: 256px; height: 256px; left: -171px; top: -158px; max-width: none; opacity: 1;"><img src="public/desktop/images/saved_resource(1)" style="position: absolute; border: none; width: 256px; height: 256px; left: -427px; top: -158px; max-width: none; opacity: 1;"><img src="public/desktop/images/saved_resource(2)" style="position: absolute; border: none; width: 256px; height: 256px; left: 85px; top: -158px; max-width: none; opacity: 1;"><img src="public/desktop/images/saved_resource(3)" style="position: absolute; border: none; width: 256px; height: 256px; left: -171px; top: 98px; max-width: none; opacity: 1;"><img src="public/desktop/images/saved_resource(4)" style="position: absolute; border: none; width: 256px; height: 256px; left: -171px; top: -414px; max-width: none; opacity: 1;"><img src="public/desktop/images/saved_resource(5)" style="position: absolute; border: none; width: 256px; height: 256px; left: 341px; top: -158px; max-width: none; opacity: 1;"><img src="public/desktop/images/saved_resource(6)" style="position: absolute; border: none; width: 256px; height: 256px; left: 85px; top: 98px; max-width: none; opacity: 1;"><img src="public/desktop/images/saved_resource(7)" style="position: absolute; border: none; width: 256px; height: 256px; left: -427px; top: 98px; max-width: none; opacity: 1;"><img src="public/desktop/images/saved_resource(8)" style="position: absolute; border: none; width: 256px; height: 256px; left: 85px; top: -414px; max-width: none; opacity: 1;"><img src="public/desktop/images/saved_resource(9)" style="position: absolute; border: none; width: 256px; height: 256px; left: -427px; top: -414px; max-width: none; opacity: 1;"><img src="public/desktop/images/saved_resource(10)" style="position: absolute; border: none; width: 256px; height: 256px; left: 341px; top: 98px; max-width: none; opacity: 1;"><img src="public/desktop/images/saved_resource(11)" style="position: absolute; border: none; width: 256px; height: 256px; left: 341px; top: -414px; max-width: none; opacity: 1;"></div></div><div style="position: absolute; overflow: visible; top: 0px; left: 0px; z-index: 2;"></div></div><div class=" anchorBL" style="height: 32px; position: absolute; z-index: 10; bottom: 0px; right: auto; top: auto; left: 1px;"><a title="到百度地图查看此区域" target="_blank" href="http://map.baidu.com/?sr=1" style="outline: none;"><img style="border:none;width:77px;height:32px" src="public/desktop/images/copyright_logo.png"></a></div><div id="zoomer" style="position:absolute;z-index:0;top:0px;left:0px;overflow:hidden;visibility:hidden;cursor:url(http://api.map.baidu.com/images/openhand.cur) 8 8,default"><div class="BMap_zoomer" style="top:0;left:0;"></div><div class="BMap_zoomer" style="top:0;right:0;"></div><div class="BMap_zoomer" style="bottom:0;left:0;"></div><div class="BMap_zoomer" style="bottom:0;right:0;"></div></div><div unselectable="on" class=" BMap_cpyCtrl BMap_noprint anchorBL" style="cursor: default; white-space: nowrap; color: black; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 11px; line-height: 15px; font-family: arial, sans-serif; bottom: 2px; right: auto; top: auto; left: 81px; position: absolute; z-index: 10; background: none;"><span _cid="1"><span style="font-size:11px">© 2015 Baidu&nbsp;- Data © <a target="_blank" href="http://www.navinfo.com/" style="display:inline;">NavInfo</a> &amp; <a target="_blank" href="http://www.cennavi.com.cn/" style="display:inline;">CenNavi</a> &amp; <a target="_blank" href="http://www.365ditu.com/" style="display:inline;">道道通</a></span></span></div></div>
     </div>
     
     <div class="div-split2"></div>
     
-    <div class="div_hsifor">
+    <div class="div_hsifor" id="div_hsifor05">
       <img id="5F" src="public/desktop/images/say.png">
       <input type="hidden" id="id" name="id" value="">
       <div id="roomcomm" style="width:690px;">
@@ -391,7 +387,7 @@
       </div>
       <div class="div-split2"></div>
       <div id="divbut" class="div-align-right">
-	    <input id="but" onclick="saveClick()" class="button_reg" type="button" style="width:80px;height:30px;" value="提交">
+	    <input id="but" onclick="saveCkick()" class="button_reg" type="button" style="width:80px;height:30px;" value="提交">
 	  </div>
     </div>
   </div>
@@ -477,11 +473,19 @@
       window.location.href="index.php?r=mess/yu/&infoid="+info_id+"&userid="+user_id;
   }
   function saveCkick(){
+        var senderid= <?php 
+                 $loginuserid=-1;
+            $userLogin= Yii::app()->session['user'] ;
+            if(!empty($userLogin)){
+                $loginuserid=$userLogin->id;
+               
+            } echo $loginuserid; ?>;
       var message=$("#dsc").val();
       if(message==""){
           layer.msg("请输入内容在提交");
           return;
       }
+      if(senderid!=-1){
        $.ajax({
                url:"index.php?r=mess/savejubao/&infoid="+info_id+"&userid="+user_id,
                data:{
@@ -498,16 +502,24 @@
                        layer.msg("意见提失败"); 
                    }
             
-        }})
+        }})}else{
+     window.location.href="index.php?r=site/login";
+        }
       
   }
   function saveFav(){
-      
+        var senderid= <?php 
+                 $loginuserid=-1;
+            $userLogin= Yii::app()->session['user'] ;
+            if(!empty($userLogin)){
+                $loginuserid=$userLogin->id;
+               
+            } echo $loginuserid; ?>;
+      if(senderid!=-1){
        $.ajax({
                url:"index.php?r=ajax/Coll/",
                data:{
                    id:info_id
-
                },
                type:"POST",
                dataType:"json",
@@ -518,7 +530,9 @@
                        layer.msg("收藏失败"); 
                    }
             
-        }})
+        }})}else{
+     window.location.href="index.php?r=site/login";
+        }
       
   }
   

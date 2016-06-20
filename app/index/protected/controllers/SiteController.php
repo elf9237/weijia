@@ -50,32 +50,53 @@ class SiteController extends BaseController
 	}
 	public function actionJiameng()
 	{
+            $user= Yii::app()->session['user'] ;
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
 		if( $this->wechat){
+                    if(!empty($user))
 			$this->render('index');
+                    else  
+                        $this->render('login');
 		}else{
+                          if(!empty($user))
 			$this->render('desktop/fangdongjiameng');
+                          else
+                        $this->render('desktop/login');      
 		}
 	}
 	public function actionMyinfo()
 	{
+            $user= Yii::app()->session['user'] ;
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
 		if( $this->wechat){
+			 if(!empty($user))
 			$this->render('index');
+                    else  
+                        $this->render('login');
 		}else{
+                     if(!empty($user))
 			$this->render('desktop/myinfo');
+                         else
+                        $this->render('desktop/login');    
 		}
 	}
 	public function actionYuyue()
 	{
+             $user= Yii::app()->session['user'] ;
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
 		if( $this->wechat){
+                     if(!empty($user))
 			$this->render('index');
+                     else  
+                        $this->render('login'); 
 		}else{
+                        if(!empty($user))
 			$this->render('desktop/yuyue');
+                          else
+                        $this->render('desktop/login');   
 		}
 	}
 	public function actionZufangdetail($id)
@@ -85,10 +106,13 @@ class SiteController extends BaseController
             $infoModel=  Info::model();
             $cyinfo=$infoModel->findByPk($id);
             
+            $equis=  Equip::model()->findAll();
+             $equi_infos=  RoomEquip::model()->findAll('info_id=:info_id',array('info_id'=>$id));
+            
 		if( $this->wechat){
 			$this->render('index');
 		}else{
-			$this->render('desktop/zufangdetail',array('cyinfo'=>$cyinfo));
+			$this->render('desktop/zufangdetail',array('cyinfo'=>$cyinfo,'equis'=>$equis,'equi_infos'=>$equi_infos));
 		}
 	}
 	public function actionGuanjia()
@@ -158,6 +182,24 @@ class SiteController extends BaseController
 	public function actionLogin()
 	{
 		$model=new LoginForm;
+                 if( !$this->wechat){
+                if(isset($_POST['username'])){
+                     $ar =new AjaxReturn();
+                     $newUser = User::model()->find('login_id=:openid', array(':openid'=>$_POST['username']));
+                     if(!empty($newUser) && md5($_POST['password'])==$newUser->password && $newUser->status!=1){
+                        
+                         $ar->status=true;
+                           Yii::app()->session['user']=$newUser;
+                         echo json_encode($ar);
+                         
+                     }else{
+                          $ar->status=false;
+                         echo json_encode($ar); 
+                     }
+                     return;
+                 }
+                 
+                }
 
         if( $this->wechat){
             $openid = $this->getOpenID();
@@ -206,7 +248,7 @@ class SiteController extends BaseController
 		{
 			$this->render('login', array('model' => $model));
 		}else{
-			$this->render('desktop/login', array('model' => $model));
+			$this->render('desktop/login');
 		}
 	}
 	public function actionLoginUser(){
@@ -258,22 +300,37 @@ class SiteController extends BaseController
 		if(isset($_POST['User'])){
 			$model->attributes=$_POST['User'];
 			$model->login_id =$model->cellphone;
+                        echo $model->city.'';
+//                        $model->username =$model->cellphone;
 			$password = $model->password;
             $password2 = Yii::app()->request->getParam('password2');
-            if($password !== $password2){
+             $model->province  = Yii::app()->request->getParam('province');
+              $model->city  = Yii::app()->request->getParam('city');
+               $model->zone  = Yii::app()->request->getParam('zone');
+            if($password != $password2){
                 $this->redirect('index.php?r=site/error');
             }
-
+                        if(empty($model->username))
+			$model->username = $model->login_id;
 			$model->password = md5($password);
-			$model->type =0;
+
+			$model->type =1;
+			$model->inviter = Yii::app()->session['share_user_id'];
 			if($model->save()){
 				$this->redirect('index.php?r=site/regsuccess');
 			}
 			$model->password = $password;
 		}
+
+		$pid = $this->getUserIdByShareUrl();
+		if($pid){
+			Yii::app()->session['share_user_id'] = $pid;
+		}else{
+			Yii::app()->session['share_user_id'] = -1;
+		}
 		if( $this->wechat)
 		{
-			$this->render('register', array('model' => $model));
+			$this->render('assign', array('model' => $model));
 		}else{
 			$this->render('desktop/register', array('model' => $model));
 		}
@@ -281,4 +338,49 @@ class SiteController extends BaseController
 	public  function  actionRegSuccess(){
 		$this->render('success');
 	}
+        
+          public function actionShenHeTiXian(){
+         $ar=new AjaxReturn();
+          $ar->status=false;
+        $type=$_POST['type'];
+        $id=$_POST['id'];
+        $mes=$_POST['message'];
+        $agentModel= Tixian::model();
+        $agentInfo = $agentModel->findByPk($id);
+        $agentInfo->status=$type;
+        
+        $userInfo =  User::model()->find('id='.$agentInfo->user_id);
+        
+         $message=new Message();
+        $message->info_id=-1;
+        $message->sender=1;
+        $message->receiver=$agentInfo->user_id;
+        $message->message_type=2;
+        if($type==1)
+        $message->message='你的提现申请已通过，审批意见：'.$mes.'.具体事务请联系管理人员进行确认！！';
+         if($type==2)
+        $message->message='你的提现申请已驳回，审批意见：'.$mes;
+         
+         if($type==1){
+             
+             $issuccess=$this->doSharePay($userInfo->openid, $agentInfo->jine*100);
+             if(!$issuccess){
+                 $agentInfo->status=3;
+                 $userInfo->yue=$userInfo->yue+$agentInfo->jine;
+                  $message->message='你的提现申请出现故障金额已退还到你的账户请查收！';
+             }
+         }else{
+               $userInfo->yue=$userInfo->yue+$agentInfo->jine;
+         }
+         
+         
+       
+             
+        
+    
+    if($agentInfo->save()&&$message->save()&&$userInfo->save()){
+              $ar->status=true;
+    }
+    echo json_encode($ar);
+    }
 }

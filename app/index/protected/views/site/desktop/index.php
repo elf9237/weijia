@@ -30,7 +30,16 @@
         </ul>
     </div>
     <div class="login">
-        <span><a href="index.php?r=site/login">登入</a></span>
+        <?php
+          $user= Yii::app()->session['user'] ;
+          if(!empty($user)){
+              echo '<span>欢迎回来！'.$user->login_id.'</span>';
+          }else{
+              echo '<span><a href="index.php?r=site/login">登入</a></span>'; 
+          }
+        
+        ?>
+        
 <!--        <span>|</span>-->
 <!--        <span><a href="index.php?r=site/register">注册</a></span>-->
     </div>
@@ -195,7 +204,7 @@
                                 <?php
                                 foreach($newInfos as $_t){
                                 ?>
-                                <li>
+                                <li onclick="showRoom(<?php echo $_v->id; ?>)">
                                     <div class="scrollerImage handpoint" style="margin-left: 5px; margin-right: 5px; width: 240px; height: 240px; display: block;">
                                         <div style="position:absolute">
                                             <img class="images_nobord"  src="upload/<?php echo $_t->mian_url;  ?>" width="240px" height="240px">
@@ -322,21 +331,7 @@
     function showRoom(id){
         window.location.href='index.php?r=site/zufangdetail&id='+id;
     }
-    $('#slide_container').bxSlider({
-        slideWidth: 200,
-        minSlides: 3,
-        maxSlides: 3,
-        ticker: true,
-        speed: 100000,
-        startSlides: 0,
-        slideMargin: 10
-    });
-    $('#importantRoom').bxSlider({
-        slideWidth: 1024,
-        infiniteLoop: false,
-        hideControlOnEnd: true,
-        slideMargin: 10
-    });
+
     var nav=$(".nav ul li a");
     $(nav).click(function(){
         $(this).addClass("active").parent().siblings().find("a").removeClass("active");

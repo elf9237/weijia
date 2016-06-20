@@ -181,7 +181,7 @@
                 type:type
             },
             dataType:"json",
-            url:"index.php?r=admin/admin/shenHeTiXian",
+            url:"index.php?r=site/shenHeTiXian",
             success:function(data){
                 if(data.status){
                     layer.close(index);

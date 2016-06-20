@@ -23,9 +23,11 @@ class PayNotifyController extends \WxPayNotify
         {
 
             $order_sn = trim($result['out_trade_no']);
+            $weidan = trim($result['transaction_id']);
             $orderModel = new Order();
             $order = Order::model()->find('order_no=:order_sn',array(':order_sn'=>$order_sn));
             $order->audit_status = 1;
+            $order->weidan = $weidan;
             $order->save();
             
             

@@ -45,9 +45,15 @@
         </ul>
     </div>
      <div class="login">
-        <span><a href="index.php?r=site/login">登入</a></span>
-        <span>|</span>
-        <span><a href="index.php?r=site/register">注册</a></span>
+       <?php
+          $user= Yii::app()->session['user'] ;
+          if(!empty($user)){
+              echo '<span>欢迎回来！'.$user->login_id.'</span>';
+          }else{
+              echo '<span><a href="index.php?r=site/login">登入</a></span>'; 
+          }
+        
+        ?>
     </div>
   </div>
   <div style="overflow:hidden;width:100%;height:2px;background:url(/baozupo/images/topline.gif);"></div>
@@ -122,7 +128,7 @@
                       <th>类型</th>
                       <th>状态</th>
                       <th>租金</th>
-                      <th>操作</th>
+                    
                     </tr>
                   </thead>
                   <tbody id="myhome">
@@ -184,7 +190,38 @@
 
 </div>
 
-    <h3 class="myHouse-title">待确认租房</h3>
+    <h3 class="myHouse-title">我的订单</h3>
+              <div class="myHouse">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>订单号</th>
+                      <th>订单类别</th>
+                      <th>订单状态</th>
+                      <th>提交时间</th>
+                      <th>操作</th>
+                    </tr>
+                  </thead>
+                  <tbody id="dingdan">
+                  </tbody>
+                </table>
+              </div>
+
+<div class="div-split2"></div>
+
+
+
+
+
+<hr>
+<div class="div-align-right">
+<div style="height:32px;text-align:right;" id="turnPageBardingdan">
+</div>
+
+</div>
+
+
+ <h3 class="myHouse-title">待确认租房</h3>
               <div class="myHouse">
                 <table class="table">
                   <thead>
@@ -215,6 +252,8 @@
 </div>
 
 </div>
+
+
 <div id="tmpcommentdiv" style="display:none;"></div>
 </div>
 <div id="bottomSplitDiv" style="height:20px;width:100%;clear:both;display:block;">
@@ -351,11 +390,10 @@
                       '<td><img src="upload/'+value.mian_url+'" alt="" width="200px" height="100px"></td>'+
                       '<td>'+value.info_name+'</td>'+
                            '<td>'+value.zone+'</td>'+
-                              '<td>'+value.lend_type+'</td>'+
+                              '<td>'+value.house_type+'</td>'+
                                '<td>'+infoStatus+'</td>'+
                                '<td>'+status+'</td>'+
-                        '<td>'+value.price+'</td>'+
-                       '<td class="onCao"><a href="#">修改</a><a href="#">置顶</a></td></tr>'
+                        '<td>'+value.price+'</td>'
                                    
             );   }); 
                    }
@@ -366,7 +404,7 @@
             }
             function queryMyrent(page){
             $.ajax({
-               url:"index.php?r=ajax/querymyhome",
+               url:"index.php?r=ajax/querymyrent",
                data:{page:page},
                type:"POST",
                dataType:"json",
@@ -402,7 +440,7 @@
             
             function queryMyShen(page){
             $.ajax({
-               url:"index.php?r=ajax/querymyhome",
+               url:"index.php?r=ajax/querymyshenhehome",
                data:{page:page},
                type:"POST",
                dataType:"json",
@@ -426,9 +464,9 @@
                            '<td>'+value.zone+'</td>'+
 //                              '<td>'+value.lend_type+'</td>'+
                              
-                               '<td>'+status+'</td>'+
+//                               '<td>'+status+'</td>'+
                        
-                       '<td class="onCao"><a href="#">出租</a><a href="#">驳回</a></td></tr>'
+                       '<td class="onCao"><a  onclick="check(1,'+value.rentid+')">出租</a><a onclick="check(2,'+value.rentid+')">驳回</a></td></tr>'
                                    
             );   }); 
                    }
@@ -438,7 +476,106 @@
             }})
             }
             
+             function queryMydingdan(page){
+            $.ajax({
+               url:"index.php?r=ajax/querymyorder",
+               data:{page:page},
+               type:"POST",
+               dataType:"json",
+               success:function(data){
+                   var innerHtml=[];
+                   if(data.pageList.length>0){
+                    $.each(data.pageList,function(n,value){ 
+                      
+                        var infoStatus="未支付";
+                        if(value.audit_status==1){
+                            infoStatus="已支付";
+                        }
+                         if(value.audit_status==2){
+                            infoStatus="支付失败";
+                        }
+                         if(value.audit_status==3){
+                            infoStatus="申请退款";
+                        }
+                         if(value.audit_status==4){
+                            infoStatus="退款成功";
+                        }
+                         if(value.audit_status==5){
+                            infoStatus="退款失败";
+                        }
+                        var strs='<td>不可操作</td>';
+                        if(value.order_type=="佣金"&&value.status==2)
+                            strs= '<td class="onCao"><a  onclick="tui('+value.id+')">退款</a></td></tr>';
+                        
+                         
+                    innerHtml.push('<tr>'+
+                     
+                      '<td>'+value.order_no+'</td>'+
+                        '<td>'+value.order_type+'</td>'+
+                         '<td>'+infoStatus+'</td>'+
+                           '<td>'+new Date(parseInt(value.create_time) * 1000).toLocaleString().replace(/:\d{1,2}$/,"") +'</td>'+strs
+                           
+                       
+                      
+                                   
+            );   }); 
+                   }
+                    $("#dingdan").html(innerHtml.join(""));
+                   pageding($("#turnPageBardingdan"),"queryMydingdan",data);
+              
+            }})
+            }
+        function check(type,id){
+    
+    layer.open({
+                        content: '审核通过？',
+                        btn: ['确认', '取消'],
+                        shadeClose: true,
+                        yes: function(index){
+                           $.ajax({
+            url:"index.php?r=center/check",
+            data:{id:id,type:type},
+            type:'POST',
+            dataType:'json',
+            success:function(data){
+                if(data.status){
+                    layer.close(index);
+                    window.location.reload();
+                }else{
+                    layer.close(index);
+                    layer.msg("审核失败！！");
+                }
+            }
+        }); 
+                        },
+                        cancel: function(index){
+                            layer.close(index);
+                        }
+    });
+        
+    }
+    
+    function tui(id){
+        
+        $.ajax({
+            url:"index.php?r=ajax/applyTui",
+            data:{id:id},
+            type:'POST',
+            dataType:'json',
+            success:function(data){
+                if(data.status){
+                    window.location.reload();
+                }else{
+                   
+                    layer.msg(data.content);
+                }
+            }
+        }); 
+    }
             $(function(){
             queryMyhome(1);
+             queryMydingdan(1);
+              queryMyShen(1);
+              queryMyrent(1);
             })
 </script></body></html>

@@ -43,9 +43,15 @@
         </ul>
     </div>
      <div class="login">
-        <span><a href="index.php?r=site/login">登入</a></span>
-        <span>|</span>
-        <span><a href="index.php?r=site/register">注册</a></span>
+         <?php
+          $user= Yii::app()->session['user'] ;
+          if(!empty($user)){
+              echo '<span>欢迎回来！'.$user->login_id.'</span>';
+          }else{
+              echo '<span><a href="index.php?r=site/login">登入</a></span>'; 
+          }
+        
+        ?>
     </div>
   </div>
   <div style="overflow:hidden;width:100%;height:2px;background:url(/baozupo/images/topline.gif);"></div>
@@ -255,7 +261,7 @@
 	   ' <tr>'+
 	    	'<td><img src="public/desktop/images/hs_home.png"></td>'+
 	    	'<td class="td_cont_find">'+
-	    		value.rooms+'&nbsp;|&nbsp;'+value.area+'平米&nbsp;|&nbsp;'+value.nfloor+'/'+value.floors+'&nbsp;|&nbsp;'+value.direction+
+	    		value.house_type+'&nbsp;|&nbsp;'+value.area+'平米&nbsp;|&nbsp;'+value.nfloor+'/'+value.floors+'&nbsp;|&nbsp;'+value.direction+
 	    	'</td>'+
 	   ' </tr>'+
 	   ' <tr height="10px"><td></td></tr>'+
