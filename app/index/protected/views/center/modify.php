@@ -44,12 +44,12 @@
                 <div class="auto-middle">
                     <div class="op-register">
                         <form action=""   class="modifyform">
-                            <h3><span class="titleico" style="width: 135px;">修改密码</span></h3>
-<!--                            <div class="userbox">-->
-<!--                                <div class=""></div>-->
-<!--                                <input type="text" class="userId" placeholder="修改用户名" datatype="s5-16" errormsg="昵称至少5个字符,最多16个字符！">-->
-<!--                                <span class="tip Validform_checktip">昵称为6~18个字符</span>-->
-<!--                            </div>-->
+                            <h3><span class="titleico" style="width: 135px;">修改账户信息</span></h3>
+                            <div class="userbox">
+                                <div class=""></div>
+                                <input type="text" class="userId"  datatype="s5-16" errormsg="昵称至少5个字符,最多16个字符！" value="<?php echo $userLogin->username ?>">
+                                <span class="tip Validform_checktip">昵称为6~18个字符</span>
+                            </div>
 <!--                            <div class="userbox">-->
 <!--                                <div class=""></div>-->
 <!--                                <input type="text" class="phoneId" placeholder="修改手机号" name="mobile"  datatype="m" errormsg="手机号码格式不对！">-->
@@ -58,14 +58,21 @@
 <!--                            </div>-->
 
                             <div class="passbox">
-                                <input type="password" class="passWord" name="userpassword" placeholder="请输入旧密码" datatype="*6-15" errormsg="密码范围在6~15位之间！"><span class="tip Validform_checktip">密码范围在6~15位之间！</span>
+                                <input type="password" class="passWordOld" name="userpasswordold" placeholder="请输入旧密码" datatype="*6-15" errormsg="密码范围在6~15位之间！"><span class="tip Validform_checktip">密码范围在6~15位之间！</span>
+                            </div>
+                            <div class="passbox">
+                                <input type="password" class="passWord1" name="password1" placeholder="请输入新密码" datatype="*6-15" errormsg="密码范围在6~15位之间！"><span class="tip Validform_checktip">密码范围在6~15位之间！</span>
+                            </div>
+                            <div class="passbox">
+                                <input type="password" class="passWord2" name="password2" placeholder="确认新密码" datatype="*" recheck="password1" errormsg="您两次输入的账号密码不一致！">
+                                <span class="tip Validform_checktip"></span>
                             </div>
 <!--                            <div class="passbox">-->
 <!--                                <input type="password" class="passWord2" name="userpassword2" placeholder="确认修改密码" datatype="*" recheck="userpassword" errormsg="您两次输入的账号密码不一致！">-->
 <!--                                <span class="tip Validform_checktip"></span>-->
 <!--                            </div>-->
 
-                            <button class="btn registerBtn" type="submit"  et-attached="1">下一步</button>
+                            <button class="btn registerBtn" type="submit"  et-attached="1">提交</button>
                             <!-- <div class="ft-operate"><a href="#" class="link"  et-attached="1"><i class="arrow"></i>登录</a></div> -->
                         </form>
                         <div class="otherlogin">
@@ -83,14 +90,49 @@
 <script>
     $(function(){
         $('.registerBtn').click(function(){
-            var psw= $('.passWord').val();
+            var username= $('.userId').val();
+            var passwordold= $('.passWordOld').val();
+            var passwordnew= $('.passWord1').val();
+            var passwordnew2= $('.passWord2').val();
+            if(username==''||passwordold==''||passwordnew==''||passwordnew2==''){
+                layer.open({
+                    content: '请输入完整信息',
+                    style: 'background-color:#09C1FF; color:#fff; border:none;',
+                    time: 2
+                });
+                return;
+            }
+            if(passwordold==passwordnew){
+                layer.open({
+                    content: '密码一致，无需修改',
+                    style: 'background-color:#09C1FF; color:#fff; border:none;',
+                    time: 2
+                });
+                return;
+            }
+            if(passwordnew!=passwordnew2){
+                layer.open({
+                    content: '两次密码不一致,请从新输入',
+                    style: 'background-color:#09C1FF; color:#fff; border:none;',
+                    time: 2
+                });
+                return;
+            }
             $.ajax({
-                url:"index.php?r=center/modify",
-                method:"POST",
+                url:"index.php?r=center/modifynext",
+                type:"POST",
                 dataType:'json',
-                data:{psw:psw},
-                success:function(){
-                    
+                data:{passwordold:passwordold,username:username,passwordnew:passwordnew},
+                success:function(data){
+                    if (data.status){
+                        window.location.href='index.php?r=center/centerIndex';
+                    }else{
+                        layer.open({
+                            content: data.content,
+                            style: 'background-color:#09C1FF; color:#fff; border:none;',
+                            time: 2
+                        });
+                    }
                 }
 
             });

@@ -201,26 +201,42 @@ class CenterController extends BaseController{
     public function actionForgetpsw(){
         $this -> renderPartial('forgetpsw');
     }
-    //    修改用户信息
+    //    修改用户密码
     public function actionModify(){
-        $loginuserid=-1;
-        $userLogin= Yii::app()->session['user'] ;
-//        if(!empty($userLogin))
-//            $loginuserid=$userLogin->id;
-//        $sql="select t.* from cy_order t   where 1=1  and t.user_id= ".$loginuserid." " ;
-//        $pagelist=new PageList($sql, $page, 5);
 
-        $this -> renderPartial('modify');
+        $userLogin= Yii::app()->session['user'] ;
+        $this->render('modify',array("userLogin"=>$userLogin));
     }
     public function actionModifynext(){
-//        $loginuserid=-1;
-//        $userLogin= Yii::app()->session['user'] ;
-//        if(!empty($userLogin))
-//            $loginuserid=$userLogin->id;
-//        $sql="select t.* from cy_order t   where 1=1  and t.user_id= ".$loginuserid." " ;
-//        $pagelist=new PageList($sql, $page, 5);
+        $ar=new AjaxReturn();
+      $loginuserid=-1;
+       $userLogin= Yii::app()->session['user'] ;
+      if(!empty($userLogin))
+           $loginuserid=$userLogin->id;
+        if($loginuserid==-1){
+            $ar->status=false;
+            $ar->content="请选登陆再修改密码";
+            echo json_encode($ar);
+            return;
+        }
+        $passwordnew = $_POST['passwordnew'];
+        $passwordold=$_POST['passwordold'];
+        $username=$_POST['username'];
+        $userinfonew=User::model()->find("id=".$userLogin->id);
+        if(!$userinfonew->password==md5($passwordold)){
+            $ar->status=false;
+            $ar->content="旧密码错误";
+            echo json_encode($ar);
+            return;
+        }else{
+            $userinfonew->password=md5($passwordnew);
+            $userinfonew->username=$username;
+            $ar->status=$userinfonew->save();
+            Yii::app()->session['user']=$userinfonew;
+            echo json_encode($ar);
+        }
 
-        $this -> renderPartial('modifynext');
+
     }
 //我的预约
     public function actionMyyuyue(){

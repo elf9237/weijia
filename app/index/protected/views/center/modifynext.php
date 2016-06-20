@@ -85,7 +85,7 @@
         $('.registerBtn').click(function(){
             var username = $('.userId').val();
             $.ajax({
-                url:"index.php?r=center/modify",
+                url:"index.php?r=center/modifynext",
                 method:"POST",
                 dataType:'json',
                 data:{psw:psw},
