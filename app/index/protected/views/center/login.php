@@ -45,24 +45,24 @@
                 <div class="op-login">
                     <h3><span class="titleico"></span></h3>
                     <div class="userbox">
-                        <input type="text" id="loginName" placeholder="手机、邮箱或用户名">
+                        <input type="text" id="loginName" placeholder="请输入你的手机号">
                         <span class="tip"></span>
                     </div>
                     <div class="passbox">
                         <input type="password" id="passWord" placeholder="密码">
                         <span class="find"></span>
                     </div>
-                    <div class="codebox">
-                        <input type="text" id="verifyCode" placeholder="验证码">
-                        <img class="codeimg" src="http://account.oneplus.cn/getVerifyImage" alt="" data-url="http://account.oneplus.cn/getVerifyImage">
-                    </div>
+<!--                    <div class="codebox">-->
+<!--                        <input type="text" id="verifyCode" placeholder="验证码">-->
+<!--                        <img class="codeimg" src="http://account.oneplus.cn/getVerifyImage" alt="" data-url="http://account.oneplus.cn/getVerifyImage">-->
+<!--                    </div>-->
                     <div class="err_message"></div>
                     <div class="underbox"><div class="loginbtn"> 登 录 </div></div>
                     <div class="ft-operate">
                         <a href="#" class="link find-pwd"  et-attached="1"><i class="i-find"></i>忘记密码</a>
                         <a href="#" class="link"  et-attached="1"><i class="arrow"></i>注册</a>
                     </div>
-                    、
+
                 </div>
             </div>
         </div>

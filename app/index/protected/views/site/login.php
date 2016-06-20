@@ -1,101 +1,77 @@
 <?php
-///* @var $this SiteController */
-///* @var $model LoginForm */
-///* @var $form CActiveForm  */
-//
-//$this->pageTitle=Yii::app()->name . ' - Login';
-//$this->breadcrumbs=array(
-//	'Login',
-//);
-//?>
-<!---->
-<!--<h1>Login</h1>-->
-<!---->
-<!--<p>Please fill out the following form with your login credentials:</p>-->
-<!---->
-<!--<div class="form">-->
-<?php //$form=$this->beginWidget('CActiveForm', array(
-//	'id'=>'login-form',
-//	'enableClientValidation'=>true,
-//	'clientOptions'=>array(
-//		'validateOnSubmit'=>true,
-//	),
-//)); ?>
-<!---->
-<!--	<p class="note">Fields with <span class="required">*</span> are required.</p>-->
-<!---->
-<!--	<div class="row">-->
-<!--		--><?php //echo $form->labelEx($model,'username'); ?>
-<!--		--><?php //echo $form->textField($model,'username'); ?>
-<!--		--><?php //echo $form->error($model,'username'); ?>
-<!--	</div>-->
-<!---->
-<!--	<div class="row">-->
-<!--		--><?php //echo $form->labelEx($model,'password'); ?>
-<!--		--><?php //echo $form->passwordField($model,'password'); ?>
-<!--		--><?php //echo $form->error($model,'password'); ?>
-<!--		<p class="hint">-->
-<!--			Hint: You may login with <kbd>demo</kbd>/<kbd>demo</kbd> or <kbd>admin</kbd>/<kbd>admin</kbd>.-->
-<!--		</p>-->
-<!--	</div>-->
-<!---->
-<!--	<div class="row rememberMe">-->
-<!--		--><?php //echo $form->checkBox($model,'rememberMe'); ?>
-<!--		--><?php //echo $form->label($model,'rememberMe'); ?>
-<!--		--><?php //echo $form->error($model,'rememberMe'); ?>
-<!--	</div>-->
-<!---->
-<!--	<div class="row buttons">-->
-<!--		--><?php //echo CHtml::submitButton('Login'); ?>
-<!--	</div>-->
-<!---->
-<?php //$this->endWidget(); ?>
-<!--</div><!-- form -->
-
+/**
+ * Created by PhpStorm.
+ * User: bruce
+ * Date: 2016/6/12
+ * Time: 22:19
+ */
+?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<!--<![endif]-->
 <head>
-	<title>登陆页面</title>
-	<meta charset="utf-8">
-	<meta name="format-detection" content="telephone=no">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-touch-fullscreen" content="yes">
-	<meta http-equiv="Access-Control-Allow-Origin" content="*">
-	<link href="css/login.css" type="text/css" rel="stylesheet">
-	<link href="css/global.css" type="text/css" rel="stylesheet">
-<!--	<script type="text/javascript" src="js/login.js"></script>-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript" charset="utf-8" async="" src="./js/contains.js"></script>
+	<script type="text/javascript" charset="utf-8" async="" src="./js/taskMgr.js"></script>
+	<script type="text/javascript" charset="utf-8" async="" src="./js/views.js"></script>
+	<title>登入</title>
+	<meta name="keyword" />
+	<meta name="description"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="HandheldFriendly" content="true" />
+	<meta name="MobileOptimized" content="320" />
+	<meta name="screen-orientation" content="portrait" />
+	<meta name="x5-orientation" content="portrait" />
+	<meta name="full-screen" content="no" />
+	<meta name="x5-fullscreen" content="true" />
+	<meta name="x5-page-mode" content="app" />
+	<meta name="msapplication-tap-highlight" content="no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="renderer" content="webkit|ie-comp|ie-stand" />
+	<link rel="stylesheet" type="text/css" href="./css/common_pc.css" />
+	<link rel="stylesheet" type="text/css" href="./css/common2.css" />
+	<link rel="stylesheet" type="text/css" href="./css/m-index.css" />
 </head>
 <body>
-<div class="login">
-	<?php $form=$this->beginWidget('CActiveForm', array(
-		'id'=>'login-form',
-		'enableClientValidation'=>true,
-		'clientOptions'=>array(
-			'validateOnSubmit'=>true,
-		),
-	)); ?>
-	<div class="login-title"><p>微家登录</p>
-		<i></i>
-	</div>
-		<div class="login-bar">
-			<ul>
-				<li><img src="images/login_user.png">
-					<?php echo $form->textField($model,'username',array('class'=>"text", 'placeholder'=>"请输入用户名")); ?>
-					<?php echo $form->error($model,'username'); ?>
-				</li>
-				<li><img src="images/login_pwd.png">
-					<?php echo $form->passwordField($model,'password',array('class'=>"text" ,'placeholder'=>"请输入确认密码")); ?>
-					<?php echo $form->error($model,'password'); ?>
-				</li>
-			</ul>
+<div id="op-wrap">
+	<div id="op-aside"></div>
+	<div id="op-wrap-mask"></div>
+
+	<div id="op-content">
+		<div class="op-alone op-alone-login">
+			<div class="auto-middle">
+				<?php $form=$this->beginWidget('CActiveForm', array(
+					'id'=>'login-form',
+					'enableClientValidation'=>true,
+					'clientOptions'=>array(
+						'validateOnSubmit'=>true,
+					),
+				)); ?>
+				<div class="op-login">
+					<h3><span class="titleico"></span></h3>
+					<div class="userbox">
+						<?php echo $form->textField($model,'username',array('class'=>"text", 'placeholder'=>"请输入手机号")); ?>
+						<?php echo $form->error($model,'username'); ?>
+					</div>
+					<div class="passbox">
+						<?php echo $form->passwordField($model,'password',array('class'=>"text" ,'placeholder'=>"请输入确认密码")); ?>
+						<?php echo $form->error($model,'password'); ?>
+					</div>
+					<!--                    <div class="codebox">-->
+					<!--                        <input type="text" id="verifyCode" placeholder="验证码">-->
+					<!--                        <img class="codeimg" src="http://account.oneplus.cn/getVerifyImage" alt="" data-url="http://account.oneplus.cn/getVerifyImage">-->
+					<!--                    </div>-->
+					<div class="err_message"></div>
+					<div class="underbox"><?php echo CHtml::submitButton('登陆',array('class'=>'loginbtn')); ?></div>
+					<div class="ft-operate">
+						<!--                        <a href="#" class="link find-pwd"  et-attached="1"><i class="i-find"></i>忘记密码</a>-->
+						<a href="./index.php?r=site/register" class="link"  et-attached="1"><i class="arrow"></i>注册</a>
+					</div>
+
+				</div>
+				</form>
+			</div>
 		</div>
-		<div class="login-btn">
-			<?php echo CHtml::submitButton('登陆',array('class'=>'submit')); ?>
-			<a href="./index.php?r=site/register"><div class="login-reg"><p>注册</p></div></a>
-<!--			<a href="register.html"><div class="login-reg"><p>微信一键登入</p></div></a>-->
-		</div>
-	<?php $this->endWidget(); ?>
-</div>
-</body>
-</html>
+</body></html>

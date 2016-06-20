@@ -39,7 +39,6 @@
         <div id="op-aside"></div>
         <div id="op-wrap-mask"></div>
         <div id="op-content">
-
             <div class="op-alone op-alone-register">
                 <div class="auto-middle">
                     <div class="op-register">
