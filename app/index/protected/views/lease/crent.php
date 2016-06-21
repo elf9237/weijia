@@ -580,7 +580,7 @@ function submitmyhome(){
                         var paytype=$("input[name='xuantian']:checked").val();
                         if(paytype=="0"){
                             window.location.href="index.php?r=store/toFuKuangDing&infoid="+data.params.infoid;
-                        }else if(paytype=="0"){
+                        }else if(paytype=="1"){
                             window.location.href="index.php?r=store/ToFuKuangYong&infoid="+data.params.infoid;
                         }else{
                          window.location.href="index.php?r=center/issue";
