@@ -17,19 +17,16 @@ class WxPayNotify extends WxPayNotifyReply
 	{
 	   // echo 'ok';
 	    //echo file_put_contents($_SERVER["DOCUMENT_ROOT"].'/'.'test.txt', 333);
-	    
 		$msg = "OK";
 		//当返回false的时候，表示notify中调用NotifyCallBack回调失败获取签名校验失败，此时直接回复失败
 		$result = WxpayApi::notify(array($this, 'NotifyCallBack'), $msg);
 		if($result == false){
-		 //   echo file_put_contents($_SERVER["DOCUMENT_ROOT"].'/'.'test.txt', 444);
 			/* $this->SetReturn_code("FAIL");
 			$this->SetReturn_msg($msg); */
 			$this->ReplyNotify(false);
 			return;
 		} else {
 			//该分支在成功回调到NotifyCallBack方法，处理完成之后流程
-		  //  echo file_put_contents($_SERVER["DOCUMENT_ROOT"].'/'.'test.txt', 555);
 			$this->SetReturn_code("SUCCESS");
 			$this->SetReturn_msg("OK");
 		}

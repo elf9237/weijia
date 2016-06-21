@@ -13,6 +13,7 @@ class PayNotifyController extends \WxPayNotify
 
     public function Queryorder($transaction_id)
     {
+
         $input = new \WxPayOrderQuery();
         $input->SetTransaction_id($transaction_id);
         $result = \WxPayApi::orderQuery($input);
@@ -28,6 +29,7 @@ class PayNotifyController extends \WxPayNotify
             $order = Order::model()->find('order_no=:order_sn',array(':order_sn'=>$order_sn));
             $order->audit_status = 1;
             $order->weidan = $weidan;
+            $order->pay_time = time();
             $order->save();
             
             

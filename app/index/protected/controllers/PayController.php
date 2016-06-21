@@ -22,7 +22,7 @@ class PayController extends BaseController
     public function doWechatpay($order_id,$openId){
         //①、获取用户openid
         //②、统一下单
-        $orderModel = new Order();
+        /*$orderModel = new Order();*/
         $order = Order::model()->find('id=:id',array(':id'=>$order_id));
 
         $input = new \WxPayUnifiedOrder();
@@ -41,7 +41,8 @@ class PayController extends BaseController
         $input->SetGoods_tag("微家商品");
 
         //$notify_url = 'http://'.$_SERVER['SERVER_NAME'].'/weixin.php/WechatPay/notify';
-        $notify_url = 'http://'.$_SERVER['SERVER_NAME'].'/index.php?r=pay/notify';
+        $notify_url = 'http://'.$_SERVER['SERVER_NAME'].'/notify';
+        //$notify_url = 'http://weijiazx.com/notify';
         $input->SetNotify_url($notify_url);
         $input->SetTrade_type("JSAPI");
 
@@ -62,9 +63,10 @@ class PayController extends BaseController
         $notify->Handle(false);
     }*/
 
-    public function actionNotify(){
 
+    public function actionNotify(){
         $notify = new PayNotifyController();
+
         $notify->Handle(false);
 
     }

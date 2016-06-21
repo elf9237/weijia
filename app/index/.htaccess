@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+	Options +FollowSymlinks
+	RewriteEngine On
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+
+	RewriteRule ^notify$ index.php?r=pay/notify [QSA,PT,L]
+</IfModule>
+
+
