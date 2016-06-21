@@ -35,7 +35,7 @@ class AjaxController extends BaseController {
           $sql.=" and t.zone like '".$_POST['dist']."%'";
       }
       
-          $sql.=" and t.price >= ".$_POST['sprice']." and t.price<=".$_POST['eprice']." order by (t.yong_jin+t2.orderno) desc,t.create_time DESC ";
+          $sql.=" and t.price >= ".$_POST['sprice']." and t.price<=".$_POST['eprice']." order by (t.yong_jin+ifnull(t2.orderno,0)) desc,t.create_time DESC ";
  $pagelist=new PageList($sql, $page, 10);
 
        echo json_encode($pagelist->pageAjax);
@@ -146,7 +146,7 @@ class AjaxController extends BaseController {
             if(!empty($userLogin))
                 $loginuserid=$userLogin->id;
           $page=$_POST['page'];
-       $sql="select t.* from cy_info t  where 1=1  and t.user_id=".$loginuserid." " ;
+       $sql="select t.* from cy_info t  where 1=1  and t.user_id=".$loginuserid." order by t.create_time DESC" ;
  $pagelist=new PageList($sql, $page, 5);
   echo json_encode($pagelist->pageAjax);
      }

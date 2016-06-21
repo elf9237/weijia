@@ -233,7 +233,7 @@
         
         
         function queryAll(){
-            alert(1);
+           
             param.province= $("#prov option:selected").val();
       param.city= $("#city option:selected").val();
        param.zone= $("#dist option:selected").val();

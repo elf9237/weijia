@@ -115,7 +115,7 @@ class StoreController extends BaseController
             $orderModel->user_id=$sender; 
             $orderModel->order_no='fz'.(time()+$infoid);
             $ar->status=$orderModel->save();
-            $order_id = $orderModel->attributes['id'];
+            $order_id = $orderModel->id;
 
 
 
@@ -151,7 +151,7 @@ class StoreController extends BaseController
             $orderModel->user_id=$sender; 
             $orderModel->order_no='zd'.(time()+$infoid);
             $ar->status=$orderModel->save();
-            $order_id = $orderModel->attributes['id'];
+            $order_id = $orderModel->id;
 
 
 
@@ -183,7 +183,7 @@ class StoreController extends BaseController
             $orderModel->user_id=$sender; 
             $orderModel->order_no='yj'.(time()+$infoid);
             $ar->status=$orderModel->save();
-            $order_id = $orderModel->attributes['id'];
+            $order_id = $orderModel->id;
 
 
 
