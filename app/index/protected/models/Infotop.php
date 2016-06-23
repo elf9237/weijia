@@ -28,8 +28,8 @@ class Infotop extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id', 'required'),
-			array('id, info_id, zding_id, start_time, end_time', 'numerical', 'integerOnly'=>true),
+			
+			array(' info_id, zding_id, start_time, end_time', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, info_id, zding_id, start_time, end_time', 'safe', 'on'=>'search'),

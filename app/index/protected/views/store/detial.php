@@ -218,7 +218,7 @@
                             </td></tr>-->
                             </tbody></table>
                         </div>
-                        <div class="button_div">
+                        <div class="button_div" id="lendstatusshow">
                             <a href="index.php?r=mess/yu&userid=<?php echo $cyinfo->user_id;?>&infoid=<?php echo $cyinfo->id;?>"><img class="noborder" src="img/button_detail_contact.gif" width="100%"></a>
                             <a href="javascript:zufang()" class="mt10"><img class="noborder" src="img/crent.png" width="100%"></a>
                         </div>
@@ -365,6 +365,13 @@
     <script type="text/javascript">
         $(document).ready(function(){
             loadBaiDuMapAsy("initBaiDuMap");
+            var lend_status='<?php echo $cyinfo->lend_status;?>';
+            if(lend_status=='1'){
+                $("#lendstatusshow").hide();
+                
+            }
+            
+            
             $('.slider6').bxSlider({
                 mode: 'fade',
                 slideWidth: 600,

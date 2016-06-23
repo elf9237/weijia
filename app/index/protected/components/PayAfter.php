@@ -31,8 +31,9 @@ class PayAfter {
        $rentInfoModel->apply_time=time();
        $rentInfoModel->start_time=time();
        $rentInfoModel->info_id=$infoid;
+       $rentInfoModel->sender=$sendid;
        if($type==1){
-        $rentInfoModel->end_time=  strtotime('+'.$days.' day');
+        $rentInfoModel->end_time=  time()+(3600*24*$days);
        }else{
            $rentInfoModel->end_time=  strtotime('+1 year');
        }
@@ -84,10 +85,9 @@ class PayAfter {
          $infoModel = new Infotop();
          $infoModel->info_id=$infoid;
          $infoModel->start_time=time();
-          $infoModel->end_time=strtotime('+'.$days.' day');
+          $infoModel->end_time=time()+(3600*24*$days);
           $infoModel->zding_id=0;
-                 
-          $infoModel->save();
+            $infoModel->save();
    }
     
     

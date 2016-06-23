@@ -131,7 +131,7 @@
                                         '</dd>'+
                                         '</dl>'+
                                         '</a>'+
-                                        '<span class="toDo clearfix"><a onclick="toZhiding('+value.id+')">置顶</a><a onclick="toYongjin('+value.id+')">佣金</a></span>'+
+                                        '<span class="toDo clearfix"><a onclick="toUpdate('+value.id+')">修改</a><a onclick="toZhiding('+value.id+')">置顶</a><a onclick="toYongjin('+value.id+')">佣金</a></span>'+
                                         '</li>');
                                 });
 
@@ -156,6 +156,9 @@
     function showRoom(id){
         window.location.href='index.php?r=store/detial&id='+id;
 
+    }
+     function toUpdate(id){
+    window.location.href="index.php?r=center/toUpdateMyhome&infoid="+id;
     }
 
     $(function(){

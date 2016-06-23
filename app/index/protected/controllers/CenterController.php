@@ -238,6 +238,25 @@ class CenterController extends BaseController{
 
 
     }
+    
+    public function actionToUpdateMyhome($infoid){
+        $cyinfo = Info::model()->findByPk($infoid);
+         $this -> renderPartial('update_myhome',array("cyinfo"=>$cyinfo));
+    }
+    
+    
+      public function actionUpdateMyhome($infoid){
+          $ar = new AjaxReturn();
+        $cyinfo = Info::model()->findByPk($infoid);
+         $cyinfo->price=$_POST["price"];
+         $cyinfo->detail=$_POST["detail"];
+         $cyinfo->info_name=$_POST["info_name"];
+         $cyinfo->mian_url=$_POST["mian_url"];
+         $cyinfo->public_url=$_POST["public_url"];
+         $cyinfo->room_url=$_POST["room_url"];
+         $ar->status=$cyinfo->save();
+        echo json_encode($ar);
+    }
 //我的预约
     public function actionMyyuyue(){
 

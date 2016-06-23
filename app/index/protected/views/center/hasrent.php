@@ -111,7 +111,7 @@
                                     D = date.getDate() + ' ';
                                     var time=Y+M+D;
                                     innerHtml.push( '<li class="item">'+
-                                        '<a href="rent-detail.html">'+
+                                        '<a href="#" onclick="showRoom('+value.id+')">'+
                                         '<img src="upload/'+value.mian_url+'" alt="" class="item-thumb">'+
                                         '<dl class="item-info">'+
                                         ' <dt class="info-title"><strong>'+value.info_name+'</strong></dt>'+
@@ -138,6 +138,9 @@
                 }}).scroll();
         });
     };
+    function showRoom(id){
+        window.location.href='index.php?r=store/detial&id='+id;
+    }
     $(function(){
         queryColl();
     })
