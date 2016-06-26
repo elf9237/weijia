@@ -87,7 +87,7 @@
             <td id='zujin'><?php echo $cyInfo->price; ?></td>
         </tr>
         <tr>
-            <td align="right">支付金额：</td>
+            <td align="right">支付佣金金额：</td>
             <td>
                 <input id="price" value=''/>
                 

@@ -6,14 +6,14 @@ html{font-size: 42px;}
 
 .ui-header-positive-new{padding: 0;border: 0;}
 .ui-header-positive-new .ui-border-t,.ui-header-positive-new .ui-border-t li{border: none;}
-.ui-tiled li.ui-rentflow{background: #7FB941;}
-.ui-tiled li.ui-joinflow{background: #ff8444;}
-.ui-tiled li.ui-bzpo{background: #f74c31;}
+.ui-tiled li.ui-rentflow{background: #7FB941;  background: #FF6C00;border: 1px solid #ff7e00;}
+.ui-tiled li.ui-joinflow{background: #ff8444;background: #FF6C00;border: 1px solid #ff7e00;}
+.ui-tiled li.ui-bzpo{background: #f74c31;background: #FF6C00;border: 1px solid #ff7e00;}
 
 .ui-footer-new ul li,.ui-footer-new ul{border: none;color: #fff;}
-.ui-footer-new .ui-house{background: #f67381;}
-.ui-footer-new .ui-rent{background: #FFC902}
-.ui-footer-new .ui-rentout{background: #1dbc9c}
+.ui-footer-new .ui-house{background: #f67381;background: #FF6C00;border: 1px solid #ff7e00;}
+.ui-footer-new .ui-rent{background: #FFC902;background: #FF6C00;border: 1px solid #ff7e00;}
+.ui-footer-new .ui-rentout{background: #1dbc9c;background: #FF6C00;border: 1px solid #ff7e00;}
 
 
 /*我要租房*/
@@ -21,9 +21,26 @@ html{font-size: 42px;}
 .list_filter{width: 100%;height: 1.25rem;}
 .nav_filter{position: relative;z-index: 1000;width: 100%;display: -webkit-box;display: -webkit-flex;display: flex;background: #FFF;border-bottom: 1px solid #f3f3f3;height: 1.25rem;line-height: 1.25rem;-webkit-user-select: none;}
 .nav_filter .nav-name{width: 25%;-webkit-box-flex: 1;-webkit-flex: 1;flex: 1;position: inherit;text-align: center;}
-.nav_filter .nav-name a{display: inline-block;width: 1.34375rem;-o-text-overflow: ellipsis;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;-webkit-user-select: none;margin-left: -.65625rem;color:#BFBABA;}
-.address_input1{display: inline-block;width: 1.34375rem;-webkit-user-select: none;border: 0 none;text-align: center;color: #e5e5e5;}
+.nav_filter .nav-name a{display: inline-block;width: 1.34375rem;-o-text-overflow: ellipsis;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;-webkit-user-select: none;margin-left: -.65625rem;color:#000;}
+.address_input1{display: inline-block;width: 1.34375rem;-webkit-user-select: none;border: 0 none;text-align: center;color: #000!important;}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #000;
+}
 
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #000;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: #000;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #000;
+}
+.checkbox_wrap span{min-width: 110px!important;height: 30px;}
 
 .ad-banner{ background-color: #fff;border: 1px solid #f3f3f3;}
 .ad-banner a{padding: .3125rem .46875rem;display: block;}
@@ -36,7 +53,7 @@ html{font-size: 42px;}
 .infoList li.item a{height: 2rem;padding: .3rem .5rem;display: flex;}
 .item a .item-thumb{width: 2.8rem;height: 2.1rem;border: 0;}
 .item a .item-info{flex:1;padding-left: .3rem;}
-.info-title{height: 1.125rem;line-height: .5625rem;font-size: .40625rem;overflow: hidden;position: relative;top: -.0625rem;}
+.info-title{height: 0.6rem;line-height: .5625rem;font-size: .40625rem;overflow: hidden;position: relative;top: -.0625rem;}
 .info-title strong{color: #333;}
 .info-desc{width: 100%;display: block;height: .5625rem;line-height: .5625rem;position: relative;color: #aaa;font-size: .3125rem;bottom: .0625rem;}
 .info-desc-detail{width: 66%;color: #aaa;font-size: .3125rem;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;display: inline-block;}
