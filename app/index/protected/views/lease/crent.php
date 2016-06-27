@@ -319,7 +319,7 @@
 
                     </div>
 
-                    <div class="rows_wrap clearfix custom_name">
+                    <div class="rows_wrap clearfix custom_name" style="display:none">
 
 
                         <div class="upload">
@@ -354,7 +354,7 @@
                         <div class="rows_title">
                             <span>上传房屋图片</span></div>
                         <div class="info">只能上传房屋图片，不能包含有文字、数字、网址、名片等，最多上传
-                            <span>2</span>张，每张最大
+                            <span>6</span>张，每张最大
                             <span>8M</span></div>
 
                     </div>
@@ -451,7 +451,7 @@ localSearch.setSearchCompleteCallback(function (searchResult) {
 	// 分片大小
 
 	//最大上传的文件数量, 总文件大小,单个文件大小(单位字节);
-	fileNumLimit:3,
+	fileNumLimit:6,
 	fileSizeLimit:5000000 * 1024,
 	fileSingleSizeLimit:500000 * 10240,
 	accept: {}

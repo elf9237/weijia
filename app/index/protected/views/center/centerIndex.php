@@ -40,7 +40,7 @@
             <a href="#"> <img src="./img/avatar-default.png" alt="" /> <span class="update-tip"><i class="i-update-avatar"></i></span> </a>
         </div>
         <div class="my-nickname">
-            <span> <a href="index.php?r=center/modify"><em><?php echo Yii::app()->session['user']->username;?></em></a> </span>
+            <span> <a href="index.php?r=center/modify"><em><?php echo Yii::app()->session['user']->username;?> ,未读信息：<?php echo $weidu;?>条</em></a> </span>
         </div>
     </div>
     <div class="user-bd">
@@ -82,6 +82,7 @@
                     <!--  <a href="#"><i class="i-my-account"></i>我的账户</a> -->
                     <a href="index.php?r=center/mytenant"><i class="i-my-account"></i>提现记录</a>
                     <a href="index.php?r=center/mybroker"><i class="i-my-account"></i>我的佣金</a>
+                    <a href="index.php?r=center/myfenxiao"><i class="i-my-account"></i>我的分销商</a>
                 </dd>
             </dl>
             <dl class="user-menu">

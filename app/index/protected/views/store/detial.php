@@ -95,29 +95,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="slide-wrap">
-                            <h1>公共区域</h1>
-                            <div id="focus2" class="focus">
-                                <div class="hd">
-                                    <ul><li class="on">1</li><li class="">2</li><li class="">3</li></ul>
-                                </div>
-                                <div class="bd">
-                                    <ul>
-                                        <?php
-                                        $roomima= $cyinfo->public_url;
-                                        $imgs=explode(',',$roomima);
-                                        for($index=0;$index<count($imgs);$index++)
-                                        {
 
-                                            echo '<li><a href="#" class="img-show"><img src="upload/'.$imgs[$index].'"></a></li>';
-
-                                        }
-                                        ?>
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
                         <h1 class="detail-title">我们为你精心打造</h1>
                         <h1 class="detail-title">一个<span class="detail-title-b"> “有品质的家”</span></h1>
                         <div class="area" id="baidudiv">

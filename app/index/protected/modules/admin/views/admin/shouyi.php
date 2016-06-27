@@ -136,24 +136,32 @@
                    var innerHtml=[];
                    if(data.pageList.length>0){
                     $.each(data.pageList,function(n,value){
-                        var zongji = value.fangzu+value.zhiding+value.yongjin;
+                      
+                        var fangzu=0;
+                        var zhiding=0;
+                        var yongjin=0;
+                        if(value.fangzu!=null)
+                           fangzu= value.fangzu;
+                       if(value.zhiding!=null)
+                           zhiding=value.zhiding;
+                       if(value.yongjin!=null)
+                           yongjin=value.yongjin;
+                         var zongji = parseFloat(fangzu)+parseFloat(zhiding)+parseFloat(yongjin);
+                         
+                         
+                       
+                       
+                        
                         if(value.fangzu==null){
                            $("#fangzu").html("0");  
                         }else{
                             $("#fangzu").html(value.fangzu); 
                         }
-                          if(value.fangzu==null){
+                          if(value.zhiding==null){
                            $("#zhiding").html("0");  
                         }else{
                             $("#zhiding").html(value.zhiding); 
                         }
-                        
-                           if(value.fangzu==null){
-                           $("#zhiding").html("0");  
-                        }else{
-                            $("#zhiding").html(value.zhiding); 
-                        }
-                        
                            if(value.yongjin==null){
                            $("#yongjin").html("0");  
                         }else{
@@ -243,7 +251,7 @@
             querytuiyong(1);
             querytian(1);
             $("#zhj").html(parseFloat($("#yongjintui").text())+parseFloat($("#tixian").text()));
-            $("#zong").html(parseFloat($("#zhj").text())+parseFloat($("#hj").text()));
+            $("#zong").html(parseFloat($("#hj").text())-parseFloat($("#zhj").text()));
             
             
         }

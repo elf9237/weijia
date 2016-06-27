@@ -46,7 +46,7 @@
             <a href="#"> <img src="./img/avatar-default.png" alt="" /> <span class="update-tip"><i class="i-update-avatar"></i></span> </a>
         </div>
         <div class="my-nickname">
-            <span> <a href="http://account.oneplus.cn/"><em>L1437441246887</em></a> </span>
+            <span> <a href="http://account.oneplus.cn/"><em></em></a> </span>
         </div>
     </div>
     <div class="user-bd">
@@ -74,7 +74,9 @@
 <script src="lib/zepto.min.js"></script>
 <script src="lib/layer/layer.js"></script>
 <script>
-
+         function getLocalTime(nS) {
+                return new Date(parseInt(nS) * 1000).toLocaleString().substr(0,12)
+}
     var ajax=!1;//是否加载中
     var param={
 
@@ -124,11 +126,11 @@
                                         ' <dt class="info-title"><strong>'+value.info_name+'</strong></dt>'+
                                         '<dd class="info-desc">'+
                                         '<span class="info-desc-detail">'+value.city+'-'+value.zone+'-'+value.district+'</span>'+
-                                        '<span class="info-desc-tag info-desc-tag--right"> <em class="biz">佣金</em> </span>'+
+                                        '<span class="info-desc-tag info-desc-tag--right"> <em class="biz">'+value.username+'</em> </span>'+
                                         '</dd>'+
                                         '<dd class="info-desc">'+
                                         '<span class="info-desc-price"> '+value.price+'<em class="priceunit"> 元</em></span><span class="info-desc-tag">'+
-                                        '<em class="time">'+time+'</em></span><span class="info-desc-tag--right">  <em class="personal">'+status+'</em>'+
+                                        '<em class="time">'+getLocalTime(value.apply_time)+'</em></span><span class="info-desc-tag--right">  <em class="personal">'+status+'</em>'+
                                         '</span>'+
                                         '</dd>'+
                                         '</dl>'+

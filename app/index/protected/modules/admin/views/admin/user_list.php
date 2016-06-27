@@ -122,7 +122,7 @@
                           if(value.status=="1")
                           stext="启用"; 
                        
-                       var pingtai="|<a onclick='biaoji("+value.id+")'></a>";
+                       var pingtai="|<a onclick='biaoji("+value.id+")'>标注平台</a>";
                        if(value.type=="0")
                            pingtai="";
                           

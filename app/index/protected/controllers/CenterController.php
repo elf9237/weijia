@@ -10,10 +10,17 @@ class CenterController extends BaseController{
     public function actionCenterIndex(){
         $loginuserid=-1;
             $userLogin= Yii::app()->session['user'] ;
-            if(!empty($userLogin))
-        $this -> renderPartial('centerIndex');
-    else 
-         $this ->redirect ("index.php?r=site/login");
+            if(!empty($userLogin)){
+                $loginuserid=$userLogin->id;
+                $weidu=count(Message::model()->findAll('receiver='.$loginuserid.' and message_type in(0,2) and read_time=0 '));
+                
+            $this -> renderPartial('centerIndex',array("weidu"=>$weidu));
+            
+            }
+    else {
+    $this ->redirect ("index.php?r=site/login");
+    
+    }
     }
 //    我的发布
     public function actionMydingdan(){
@@ -40,6 +47,10 @@ class CenterController extends BaseController{
     public function actionMytenant(){
         $this -> renderPartial('mytenant');
     }
+    
+      public function actionMyfenxiao(){
+        $this -> renderPartial('myfenxiao');
+    }
 //    我的佣金
     public function actionMybroker(){
          $userModel=  User::model();
@@ -58,6 +69,24 @@ class CenterController extends BaseController{
 
       
        $sql.=" and t.user_id = ".$loginuserid." ";
+       
+      
+       $pagelist=new PageList($sql, $page, 10);
+ 
+       echo json_encode($pagelist->pageAjax);
+    }
+    
+     public function actionQueryfenxiao(){
+         $loginuserid=-1;
+            $userLogin= Yii::app()->session['user'] ;
+            if(!empty($userLogin))
+                $loginuserid=$userLogin->id;
+        $page=$_POST['page'];
+  
+       $sql="select t.* from cy_user t  where 1=1 " ;
+
+      
+       $sql.=" and t.inviter = ".$loginuserid." ";
        
       
        $pagelist=new PageList($sql, $page, 10);

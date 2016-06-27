@@ -72,7 +72,7 @@ if(!empty($_POST['username'])){
        if(!empty($_POST['status'])){
            $sql.=" and t.status = ".$_POST['status']." ";
       }
- $sql.="and t.type in ('1','0') GROUP BY t.id ";
+ $sql.=" and t.type in ('1','0') GROUP BY t.id ";
        $pagelist=new PageList($sql, $page, 10);
        echo json_encode($pagelist->pageAjax);
         
@@ -95,7 +95,7 @@ if(!empty($_POST['username'])){
      public  function actionQueryDlsUser(){
          $page=$_POST['page'];
         
-       $sql="select t.* ,tt.create_time as ctime,tt.price,tt.province,tt.city,tt.zone
+       $sql="select t.* ,tt.create_time as ctime,tt.price,tt.zone as zone1
 from cy_user t 
  join (select t1.* from cy_agentform t1 join  (select max(t2.create_time) as maxtime ,t2.user_id from cy_agentform t2 where t2.audit_status=2 GROUP BY t2.user_id) t2 on(t2.maxtime=t1.create_time and t2.user_id =t1.user_id)) tt 
   on(t.id = tt.user_id) where 1=1 ";

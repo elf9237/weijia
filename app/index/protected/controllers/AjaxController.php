@@ -263,7 +263,7 @@ $roomeqip->info_id=$info->id;
                 $loginuserid=$userLogin->id; 
          
           $page=$_POST['page'];
-       $sql="select t.*,t1.id as rentid from cy_info t join cy_rentinfo t1 on(t1.info_id=t.id)  where 1=1  and t1.status=0 and t.lend_status=0 and t.user_id= ".$loginuserid." " ;
+       $sql="select t.*,t1.id as rentid,t2.username,t1.apply_time from cy_info t join cy_rentinfo t1 on(t1.info_id=t.id) join cy_user t2 on(t1.sender=t2.id) where 1=1  and t1.status=0 and t.lend_status=0 and t.user_id= ".$loginuserid." " ;
  $pagelist=new PageList($sql, $page, 5);
   echo json_encode($pagelist->pageAjax);
      }

@@ -87,7 +87,7 @@
             <td><?php echo $cyInfo->price; ?></td>
         </tr>
         <tr>
-            <td align="right">支付方式：</td>
+            <td align="right">置顶套餐：</td>
             <td>
                 <select id="type" name="style" >
                     <option selected="" value="1,10">1天10元</option>
