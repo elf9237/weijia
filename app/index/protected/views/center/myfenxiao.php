@@ -117,7 +117,7 @@
                             infoStatus="失败";
                         }
                     innerHtml.push('<li>'+
-                                    '<div class="ui-list-info ui-border-t"><h4><span class="fl"><span class="red">'+value.username+'</span></span> <span class="fr"></span></h4></div>'+
+                                    '<div class="ui-list-info ui-border-t"><h4><span class="fl usernextWrap"><span class="red usernext">'+value.username+'</span></span> <span class="fr"></span></h4></div>'+
                                 '</li>'
                       
                                    

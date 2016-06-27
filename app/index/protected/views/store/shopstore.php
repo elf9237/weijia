@@ -115,7 +115,7 @@
                                  ding="置顶";
                               var yong="";
                              if(value.yong_jin!=0)
-                                 yong="转发得佣金"+value.yong_jin+"元";
+                                 yong="转发交易成功得佣金"+value.yong_jin*0.2+"元";
                              
                                  var lend_status='未租';
                              if(value.lend_status=='1'){

@@ -47,7 +47,7 @@
             <a href="#"> <img src="./img/avatar-default.png" alt="" /> <span class="update-tip"><i class="i-update-avatar"></i></span> </a>
         </div>
         <div class="my-nickname">
-            <span> <a href="http://account.oneplus.cn/"><em>L1437441246887</em></a> </span>
+            <span> <a href="index.php?r=center/modify"><em>L1437441246887</em></a> </span>
         </div>
     </div>
     <div class="user-bd">
@@ -58,9 +58,23 @@
                     订单列表
                 </dt>
                 <dd>
-                    <ul class="ui-list ui-list-text ui-border-tb" id="msg">
+<!--                    <ul class="ui-list ui-list-text ui-border-tb" >-->
+<!---->
+<!--                    </ul>-->
+                    <table class="orderTable">
+                        <thead>
+                        <tr>
+                            <th>订单号</th>
+                            <th>类型</th>
+                            <th>状态</th>
+                            <th>时间</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody id="msg">
 
-                    </ul>
+                        </tbody>
+                    </table>
                 </dd>
             </dl>
 

@@ -731,7 +731,7 @@ em.time{margin-left:5px;}
 
 .focus {
     /*width: 600px;*/
-    height: 400px;
+    height: 300px;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
@@ -806,3 +806,8 @@ a{color: #FF662C;}
 #fonttest{display: none;}
 .biz,.personal,.time{color: #FF7E00}
 .personal-type{color: #a6a6a6}
+.orderTable thead tr th{text-align: center}
+.orderTable tbody tr td{text-align: center;color: #999;padding: 5px 2px}
+.orderTable{width: 100%;min-height: 300px}
+.usernext{display: block;padding: 5px;text-align: left;width: 100%;color: #0C0C0C}
+.usernextWrap{width:100%;display: block}
