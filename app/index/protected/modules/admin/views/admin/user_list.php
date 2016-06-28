@@ -56,7 +56,7 @@
                     </div>
                     <div id="box_bottom">
                         <input type="button" value="查询" class="ui_input_btn01" onclick="queryUsers(1);"/>
-<!--                        <input type="button" value="新增" class="ui_input_btn01" id="addBtn" onclick="add()"/>-->
+                        <input type="button" value="导出" class="ui_input_btn01" id="addBtn" onclick="export1()"/>
                     </div>
                 </div>
             </div>
@@ -223,6 +223,11 @@
     queryUsers(1);
         
     })
+    
+    function export1(){
+        window.location.href="index.php?r=admin/systeminit/outExcel";
+        
+    }
     </script>
 </div>
 </body>

@@ -317,9 +317,20 @@
                     "resourceName": "退款审核",
                     "resourceOrder": 0,
                     "resourceType": ""
+                },
+                 {
+                    "accessPath": "index.php?r=admin/admin/Toliushui",
+                    "checked": false,
+                    "delFlag": 0,
+                    "parentID": 3,
+                    "resourceCode": "",
+                    "resourceDesc": "",
+                    "resourceGrade": 3,
+                    "resourceID": 17,
+                    "resourceName": "流水明细",
+                    "resourceOrder": 0,
+                    "resourceType": ""
                 }
-                
-                
                 ];
                 
                 var realdata=[];

@@ -102,6 +102,10 @@
                             
                         </div>
                         <div class="title">
+                            <div class="title_text" align="left"><strong><a target="blank" href="http://map.baidu.com/mobile/webapp/search/search/qt=s&wd=<?php echo $cyinfo->province.$cyinfo->city.$cyinfo->zone.$cyinfo->district; ?>&c=300/vt=map" style="color:#FFFFFF">点击导航》》</a></strong></div>
+                        </div>
+                        
+                        <div class="title">
                             <div class="title_text" align="left"><strong><a style="color:#FFFFFF">标准配置</a></strong></div>
                         </div>
                         <div class="list_item_div" style="background-color:#303133">

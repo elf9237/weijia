@@ -522,5 +522,38 @@ if(!empty($_POST['username'])){
         
     }
     
+     public function actionToliushui(){
+         $this->render("liushui");
+    }
+    
+    
+      public function actionQuerytixianLiu(){
+        $page=$_POST['page'];
+       $sql="select "
+               . "t.* ,t1.zone "
+               . "from cy_tixian t join cy_user t1 on(t1.id=t.user_id)  where 1=1 and t.status =1 " ;
+       if(isset($_POST['bTime'])&&isset($_POST['eTime'])){
+          $sql.=" and t.create_time >= ".$_POST['bTime']."  and t.create_time<=".$_POST['eTime']." "; 
+       }
+       $sql.=" and  t1.province='".$_POST['province']."' and t1.city='".$_POST['city']."' and t1.zone='".$_POST['zone']."'";
+       $pagelist=new PageList($sql, $page, 10);
+       echo json_encode($pagelist->pageAjax);
+    }
+    
+     public function actionQueryorder(){
+        $page=$_POST['page'];
+       $sql="select "
+               . "t.*,t1.zone "
+               . "from cy_order t join cy_info t1 on(t1.id=t.info_id)  where 1=1 and t.audit_status in(4,1) " ;
+       if(isset($_POST['bTime'])&&isset($_POST['eTime'])){
+          $sql.=" and t.create_time >= ".$_POST['bTime']."  and t.create_time<=".$_POST['eTime']." "; 
+       }
+       $sql.=" and  t1.province='".$_POST['province']."' and t1.city='".$_POST['city']."' and t1.zone='".$_POST['zone']."'";
+       $pagelist=new PageList($sql, $page, 10);
+       echo json_encode($pagelist->pageAjax);
+    }
+    
     
 }
+
+
