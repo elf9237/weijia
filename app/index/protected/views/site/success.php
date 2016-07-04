@@ -17,9 +17,9 @@
     <p>恭喜您注册成功！</p>
     <div class="s_msg">
         <!--<div class="s_title">您的用户名：<span class="s_red">送佛送到西</span></div>-->
-        <div class="s_title">移动端的产品正在搭建中，请您移步PC端
-            请用PC电脑打开如下网站：</div>
-        <span class="s_redlink"><a href="http://www.weijiazx.com" target="_blank">http://www.weijiazx.com</a></span>
+        <div class="s_title">这里是微信端，如有需要请您移步PC端
+            请用PC电脑打开如下网站：http://www.weijiazx.com</div>
+        <span class="s_redlink"><a href="./index.php?r=site/login" target="_blank">去登陆</a></span>
     </div>
 </div>
 </body>

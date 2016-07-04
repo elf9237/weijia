@@ -188,14 +188,39 @@ class CenterController extends BaseController{
           $ar->status=$rentinfo->save();
         }else{
             if($cyinfo->yong_jin!=0){
-                $userinfosend->yue=$userinfosend->yue+$cyinfo->yong_jin*0.2;
-                
+                $userinfosend->yue=$userinfosend->yue+$cyinfo->yong_jin*0.5;
+                 $message_model =new Message();
+                  $message_model -> message='系统信息：你获得返现--'.$cyinfo->yong_jin*0.5.'元';
+                  $message_model -> receiver=$userinfosend->id;
+                    $message_model -> info_id=-1;
+                       $message_model->sender=-1;  
+                       $message_model->message_type=2;
+                         $message_model->create_time=time();
+                               $message_model->save();
+                 
                 $userinfosendf=$userModel->find('id='.$userinfosend->inviter);
                 if($userinfosendf){
-                    $userinfosendf->yue=$userinfosendf->yue+$cyinfo->yong_jin*0.2;
+                    $userinfosendf->yue=$userinfosendf->yue+$cyinfo->yong_jin*0.15;
+                     $message_modelf =new Message();
+                  $message_modelf -> message='系统信息：你获得佣金--'.$cyinfo->yong_jin*0.15.'元';
+                  $message_modelf -> receiver=$userinfosendf->id;
+                    $message_modelf -> info_id=-1;
+                       $message_modelf->sender=-1;  
+                       $message_modelf->message_type=2;
+                         $message_modelf->create_time=time();
+                               $message_modelf->save();
+                    
                     $userinfosendff=$userModel->find('id='.$userinfosendf->inviter);
                     if($userinfosendff){
-                         $userinfosendff->yue=$userinfosendff->yue+$cyinfo->yong_jin*0.2;
+                         $userinfosendff->yue=$userinfosendff->yue+$cyinfo->yong_jin*0.15;
+                          $message_modelff =new Message();
+                  $message_modelff -> message='系统信息：你获得佣金--'.$cyinfo->yong_jin*0.15.'元';
+                  $message_modelff -> receiver=$userinfosendff->id;
+                    $message_modelff -> info_id=-1;
+                       $message_modelff->sender=-1;  
+                       $message_modelff->message_type=2;
+                         $message_modelff->create_time=time();
+                               $message_modelff->save();
                          $userinfosendff->save();
     }
                   $userinfosendf->save();

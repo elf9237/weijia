@@ -50,7 +50,7 @@
             <a href="#"> <img src="./img/avatar-default.png" alt="" /> <span class="update-tip"><i class="i-update-avatar"></i></span> </a>
         </div>
         <div class="my-nickname">
-            <span> <a href="http://account.oneplus.cn/"><em>L1437441246887</em></a> </span>
+            <span> <a href="http://account.oneplus.cn/"><em><?php echo $userinfo->username;?></em></a> </span>
         </div>
     </div>
     <div class="user-bd">

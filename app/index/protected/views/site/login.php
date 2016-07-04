@@ -69,6 +69,7 @@
 						<!--                        <a href="#" class="link find-pwd"  et-attached="1"><i class="i-find"></i>忘记密码</a>-->
 						<a href="./index.php?r=site/register" class="link"  et-attached="1"><i class="arrow"></i>注册</a>
 					</div>
+                                        <?php $this->endWidget(); ?>
 
 				</div>
 				</form>
