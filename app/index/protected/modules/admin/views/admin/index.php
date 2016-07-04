@@ -17,6 +17,54 @@
                 window.location.href = "index.php?r=admin/login/index";
             }
         }
+        
+        function xiugai(){
+             layer.open({
+                type:1,
+                content:'<div style="text-align:center;display:inline-block;padding-top:10px"><span>新密码：</span><input id="pass1"></div>\n\
+<div style="text-align:center;display:inline-block;padding-top:10px"><span>确认密码：</span><input id="pass2"></div>',
+                area:["300px","300px"],
+                title:"审核",
+                btn:["发送","取消"],
+                 yes:function(index){
+                     if($("#pass1").val()==""||$("#pass2").val()==""){
+                     layer.msg("请填写内容！！");
+                     return;
+                 }
+                 if($("#pass1").val()!=$("#pass2").val()){
+                     layer.msg("密码不一致！！");
+                     return ;
+                 }
+                 var id='<?php  $session = Yii::app()->session;
+                    $userInfo=$session['userAdmin'];
+                    echo $userInfo->id;
+                    
+                    ?>';
+                     $.ajax({
+            type:"POST",
+            data:{
+                password:$("#pass2").val().trim(),
+                id:id
+            },
+            dataType:"json",
+            url:"index.php?r=admin/admin/forget",
+            success:function(data){
+                if(data.status){
+                    layer.close(index);
+                   
+                }else{
+                    layer.msg("失败！！");
+                }
+            }
+        })
+                     
+                 },
+             cancel:  function(index){
+                 layer.close(index);
+             }          
+                
+            })
+        }
 
         /**获得当前日期**/
         function getDate01() {
@@ -389,7 +437,7 @@
              style="vertical-align:middle;">
     </div>
     <div id="top_links">
-        <div id="top_op">
+        <div id="top_op" style="width:600px">
             <ul>
                 <li>
                     <img alt="当前用户" src="public/admin/images/common/user.jpg">：
@@ -397,8 +445,11 @@
                     $userInfo=$session['userAdmin'];
                     echo $userInfo->username;
                     
-                    ?></span>
+                    ?>: <a href="javascript:void(0);" onclick="xiugai()" >
+                修改密码
+            </a></span>
                 </li>
+                
                 <li>
                     <img alt="事务月份" src="public/admin/images/common/month.jpg">：
                     <span id="yue_fen"></span>
@@ -415,6 +466,7 @@
                      style="position: relative; top: 10px; left: 25px;">
             </a>
         </div>
+       
     </div>
 </div>
 <!-- side menu start -->

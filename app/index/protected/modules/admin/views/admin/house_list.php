@@ -158,7 +158,7 @@ eprice:eprice
                           var stext="下架";
                           if(value.audit_status=="1")
                           stext="上线"; 
-                           innerHtml.push("<td><a onclick='jinyong("+value.id+","+value.audit_status+")'>"+stext+"</a>|<a onclick='xiangqing("+value.id+")'>详情</a></td>");
+                           innerHtml.push("<td><a onclick='jinyong("+value.id+","+value.audit_status+")'>"+stext+"</a>|<a target='_blank' href='index.php?r=site/zufangdetail&id="+value.id+"'>详情</a></td>");
                     })
                    
                        

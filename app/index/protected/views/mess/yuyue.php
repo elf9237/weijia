@@ -61,7 +61,13 @@
                                         </a>
                                     </td></tr>
                                     <tr class="bg-zmz" style="text-align:center"><td colspan="2"><img src="img/zmz-3.png" width="100%"></td></tr>
-                                    <tr class="bg-zmz" style="text-align:center;margin-bottom:10px"><td colspan="2"><a href="tel:4006783666"><img class="noborder" src="img/button-phone.png" width="80%"></a></td></tr>
+                                    <tr class="bg-zmz" style="text-align:center;margin-bottom:10px"><td colspan="2"><a href="tel:<?php 
+                                    if($cyuser->type=='1'||$cyuser->type=='2'){
+                                        echo $cyuser->login_id;
+                                    }else{
+                                        echo '0591-8855-5353';
+                                    }
+                                    ?>"><img class="noborder" src="img/button-phone.png" width="80%"></a></td></tr>
                                    
                                 </tbody></table>
                             

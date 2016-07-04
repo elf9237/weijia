@@ -17,8 +17,9 @@ class MessController extends BaseController
                 $this->redirect ("index.php?r=site/login");
             $infoModel=  Info::model();
             $cyinfo=$infoModel->findByPk($infoid);
+            $cyuser=  User::model()->find('id='.$cyinfo->user_id);
           if( $this->wechat){
-          $this->render('yuyue',array("userid"=>$userid,"infoid"=>$infoid));
+          $this->render('yuyue',array("userid"=>$userid,"infoid"=>$infoid,"cyuser"=>$cyuser));
           
           }else{
               $this->render('desktop/yuyue',array("userid"=>$userid,"infoid"=>$infoid,"cyinfo"=>$cyinfo));

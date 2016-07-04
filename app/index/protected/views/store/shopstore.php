@@ -39,6 +39,20 @@
                     </ul>
                     </div>
                 </div>
+                
+                <div class="filter_outer" id="filter">
+                    <div class="list_filter">
+                    <ul class="nav_filter">
+                    <li class="nav-name icon down">
+                        <div id="addAddress">
+                            <div class="address_input"><input  type="text" placeholder="位置搜索" id="weizhi"  ></div>
+                        </div><a onclick="weizhi()">搜索</a>
+                    </li>
+                    
+                    </ul>
+                    </div>
+                </div>
+                
             </section>
             <div class="ad-banner"> <a  href="" class="”ad-banner”"><img src="img/houseBanner5.png" style="width:100%; " alt="pic"></a> </div>
             <section>
@@ -54,6 +68,8 @@
         <script src="lib/searchDiv.js"></script>
         <script src="js/house.js"></script>
         <script>
+            
+            
             function getLocalTime(nS) {
                 return new Date(parseInt(nS) * 1000).toLocaleString().substr(0,12)
 }
@@ -86,7 +102,14 @@
       dist: "仓山区",
       page:0,
       totalPage:1,
+      district:""
   };
+  
+  function weizhi(){
+      var district=$("#weizhi").val().trim();
+      param.district=district;
+      querySecond();
+  }
                 
                  function query(){   Zepto(function($){
         $(window).scroll(function(){
@@ -115,7 +138,7 @@
                                  ding="置顶";
                               var yong="";
                              if(value.yong_jin!=0)
-                                 yong="转发交易成功得佣金"+value.yong_jin*0.2+"元";
+                                 yong="租房返现："+value.yong_jin*0.5+"元";
                              
                                  var lend_status='未租';
                              if(value.lend_status=='1'){

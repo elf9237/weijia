@@ -307,14 +307,14 @@ if(!empty($_POST['username'])){
         $message->message='你的代理申请已通过，审批意见：'.$mes.'.具体事务请联系管理人员进行确认！！';
          if($type==1)
         $message->message='你的代理申请已驳回，审批意见：'.$mes;
-         
+         if($type==2){
          $userInfo =  User::model()->find('id='.$agentInfo->user_id);
-         if(!$userInfo){
-            $userInfo->type=2; 
+         if($userInfo){
+            $userInfo->type='2'; 
             $userInfo->save();
              
          }
-             
+         }     
         
     
     if($agentInfo->save()&&$message->save()){
@@ -551,6 +551,14 @@ if(!empty($_POST['username'])){
        $sql.=" and  t1.province='".$_POST['province']."' and t1.city='".$_POST['city']."' and t1.zone='".$_POST['zone']."'";
        $pagelist=new PageList($sql, $page, 10);
        echo json_encode($pagelist->pageAjax);
+    }
+    function actionForget(){
+        $userinfo=  User::model()->find('id='.$_POST['id']);
+        $ar= new AjaxReturn();
+        $userinfo->password=  md5($_POST['password']);
+        $ar->status=$userinfo->save();
+        echo json_encode($ar);
+        
     }
     
     

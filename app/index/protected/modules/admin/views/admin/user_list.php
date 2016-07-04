@@ -111,7 +111,14 @@
                     $.each(data.pageList,function(n,value){
                         innerHtml.push("<tr>");
                         innerHtml.push("<td>"+value.username+"</td>");
-                          innerHtml.push("<td>"+value.type+"</td>");
+                         var userType="个人";
+                          if(value.type=="0"){
+                              userType="平台";
+                          }
+                          
+                          innerHtml.push("<td>"+userType+"</td>");
+                         
+                          
                         var status="可用";
                         if(value.status=="1")
                           status="禁用"; 
