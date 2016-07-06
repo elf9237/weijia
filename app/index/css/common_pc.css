@@ -1290,11 +1290,11 @@ body.bodyOverflowHide {
 }
 
 #op-content .op-register .passbox,.op-user-register .op-register .passbox {
-	height: 40px;
+	
 	margin-bottom: 20px;
 	position: relative;
 	background: #fcfcfc;
-	padding-left: 20px;
+	
 	font-size: 14px
 }
 
@@ -4665,3 +4665,9 @@ body,html {
 	height: 20px;
 	background-color: transparent
 }
+
+/*注册*/
+.ft-operate{width: 334px}
+.ft-operate a{display: block;background: #999;color: #fff!important;width: 100%;height: 50px;line-height: 50px;text-align: center;}
+.sel-txt{display: block;height: 40px;line-height: 40px;}
+ #city_4 select{width:100px;height: 40px;border: none;}

@@ -50,7 +50,7 @@
 <!--                    <select id="dist" class="dist input" disabled="disabled"></select>-->
                 </div>
             </li>
-            <div class="queren"><input class="fx" type="checkbox" checked="checked" /><p>我已阅读并同意《用户协议》</p></div>
+            <div class="queren"><input class="fx" type="checkbox" checked="checked" /><p><a href="#">我已阅读并同意《用户协议》</a></p></div>
 
         </ul>
         <div class="reg_btn">

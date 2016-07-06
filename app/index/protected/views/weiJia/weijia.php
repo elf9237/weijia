@@ -119,7 +119,7 @@
               time:2000,
               closeBtn: 0,
               shadeClose: true,
-              content: 'index.php?r=weijia/redboot'
+              content: ['index.php?r=weijia/redboot','no']
             });
         })
     })

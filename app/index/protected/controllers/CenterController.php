@@ -317,4 +317,10 @@ class CenterController extends BaseController{
 
         $this -> renderPartial('myyuyue');
     }
+    // 网络电子协议
+     public function actionXieyi(){
+
+
+        $this -> renderPartial('xieyi');
+    }
 }

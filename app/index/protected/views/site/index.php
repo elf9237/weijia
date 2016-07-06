@@ -75,11 +75,35 @@
 			    <p style="font-size:3em;text-align: center;color:#04f512">A node in dom tree.</p>
 			</div>
         </section>
+        <script src="lib/jquery.min.js"></script>
         <script src="lib/zepto.min.js"></script>
         <script src="js/frozen.js"></script>
         <script src="js/house.js"></script>
+        <script src="lib/layer/layer.js"></script>
         <script type="text/javascript" src="./public/js/iSlider.js"></script>
 		<script type="text/javascript" src="./public/js/iSlider.plugin.dot.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                $(window).on('load',function(){
+                    // 加载皮肤
+                    layer.config({
+                        extend: ['skin/layerSkinExtend.css'], //加载新皮肤
+                        skin: 'layerSkinWeb' //一旦设定，所有弹层风格都采用此主题。
+                    });
+                    indexMoney=layer.open({
+                        type: 2,
+                        title: false,
+                        skin: 'layerSkinWeb',
+                        area: ['925px', '950px'],
+                        shade: 0.8,
+                        time:2000,
+                        closeBtn: 0,
+                        shadeClose: true,
+                        content: ['index.php?r=weijia/redboot','no']
+                    });
+                })
+            })
+        </script>
 		<script id="show-code">
 		    var list = [
 

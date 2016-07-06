@@ -96,14 +96,7 @@
                             </div>
                         </div>
 
-                        <h1 class="detail-title">我们为你精心打造</h1>
-                        <h1 class="detail-title">一个<span class="detail-title-b"> “有品质的家”</span></h1>
-                        <div class="area" id="baidudiv">
-                            
-                        </div>
-                        <div class="title">
-                            <div class="title_text" align="left"><strong><a target="blank" href="http://map.baidu.com/mobile/webapp/search/search/qt=s&wd=<?php echo $cyinfo->province.$cyinfo->city.$cyinfo->zone.$cyinfo->district; ?>&c=300/vt=map" style="color:#FFFFFF">点击导航》》</a></strong></div>
-                        </div>
+                        
                         
                         <div class="title">
                             <div class="title_text" align="left"><strong><a style="color:#FFFFFF">标准配置</a></strong></div>
@@ -203,6 +196,14 @@
                         <div class="button_div" id="lendstatusshow">
                             <a href="index.php?r=mess/yu&userid=<?php echo $cyinfo->user_id;?>&infoid=<?php echo $cyinfo->id;?>"><img class="noborder" src="img/button_detail_contact.gif" width="100%"></a>
                             <a href="javascript:zufang()" class="mt10"><img class="noborder" src="img/crent.png" width="100%"></a>
+                        </div>
+                        <h1 class="detail-title">我们为你精心打造</h1>
+                        <h1 class="detail-title">一个<span class="detail-title-b"> “有品质的家”</span></h1>
+                        <div class="area" id="baidudiv">
+                            
+                        </div>
+                        <div class="title">
+                            <div class="title_text" align="left"><strong><a target="blank" href="http://map.baidu.com/mobile/webapp/search/search/qt=s&wd=<?php echo $cyinfo->province.$cyinfo->city.$cyinfo->zone.$cyinfo->district; ?>&c=300/vt=map" style="color:#FFFFFF">点击导航》》</a></strong></div>
                         </div>
                         <div class="police">
                             <a href="index.php?r=mess/jubao&userid=<?php echo $cyinfo->user_id;?>&infoid=<?php echo $cyinfo->id;?>">举报</a>

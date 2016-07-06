@@ -15,7 +15,7 @@
     </head>
     <body ontouchstart="">
         
-        <footer class="ui-footer ui-footer-btn ui-footer-new">
+        <footer class="ui-footer ui-footer-btn ui-footer-new" id="footmenu">
             <ul class="ui-tiled ui-border-t">
                 <li data-href="index.html" class="ui-border-r ui-house"><div>微家</div></li>
                 <li data-href="rent.html" class="ui-border-r ui-rent"><div>我要租房</div></li>
@@ -30,14 +30,14 @@
             <label>
                 举报内容
             </label>
-            <textarea placeholder="举报内容" name="message"></textarea><span name="hiddenmess">请填写举报内容</span>
+            <textarea placeholder="举报内容" name="message"></textarea>
         </div>
         <div class="ui-form-item ui-form-item-l ui-border-b">
             <label class="ui-border-r">
                 中国 +86
             </label>
-            <input type="text" placeholder="请输入手机号码" name="phone"><span name="hiddenmess">请填写手机号</span>
-            <a href="javascript:saveJu()" class="ui-icon-close">
+            <input type="text" placeholder="请输入手机号码" name="phone">
+            <a href="javascript:saveJu()" class="ui-icon-close jubao">
                 举报
             </a>
         </div>
@@ -74,6 +74,20 @@
             
         }
         </script>
-        
+        <script>
+            $(document).ready(function() {
+                $.ajax({
+                    url: 'index.php?r=basemenu/footmenu',
+                    type: 'POST',
+                    //data: { id: idValue },
+                    //timeout: 3000,
+                    success: function (data) {
+                        $("#footmenu").html(data);
+                    },
+                    error: function (data) {
+                        alert('===');},
+                })
+            });
+        </script>
     </body>
 </html>

@@ -12,7 +12,7 @@
         <!-- <header class="ui-header ui-header-positive ui-border-b">
             <i class="ui-icon-return" onclick="history.back()"></i><h1>微家</h1><button class="ui-btn ui-back-index">回首页</button>
         </header> -->
-        <footer class="ui-footer ui-footer-btn ui-footer-new">
+        <footer class="ui-footer ui-footer-btn ui-footer-new" id="foot">
             <ul class="ui-tiled ui-border-t">
                  <li data-href="introduce.html" class="ui-border-r ui-house"><div>微家</div></li>
                 <li data-href="rent.html" class="ui-border-r ui-rent"><div>我要租房</div></li>
@@ -141,6 +141,21 @@
         }
 
       
+        </script>
+        <script>
+            $(document).ready(function() {
+                $.ajax({
+                    url: 'index.php?r=basemenu/footmenu',
+                    type: 'POST',
+                    //data: { id: idValue },
+                    //timeout: 3000,
+                    success: function (data) {
+                        $("#foot").html(data);
+                    },
+                    error: function (data) {
+                        alert('===');},
+                })
+            });
         </script>
     </body>
 </html>

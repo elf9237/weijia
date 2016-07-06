@@ -30,9 +30,6 @@
     <!--[if IE 8]><meta http-equiv="X-UA-Compatible" content="IE=8"><![endif]-->
     <link rel="stylesheet" type="text/css" href="./css/common_pc.css" />
     <link rel="stylesheet" type="text/css" href="./css/m-index.css" />
-    <style>
-        #city_4 select{width:70px;height: 40px;border: none;}
-    </style>
 </head>
 <body>
 <div id="op-wrap">
@@ -82,8 +79,8 @@
                             </div>
                             <div class="passbox" style="background: #efefef">
                                 <div tabindex="0" class="tm_itemtext clearfix">
-                                    <span style="float: left;display: inline-block;height: 40px;line-height: 40px;">请选择区域</span>
-                                    <div id="city_4" style='float: right;'>
+                                    <span  class="sel-txt">请选择区域</span>
+                                    <div id="city_4" >
                   
                     <select id="prov" name='province' class="prov input" ></select>
                     <select id="city" name='city' class="city input" disabled="disabled"></select>
@@ -91,11 +88,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="note">注册微家，就表示您同意微家的<a href="#"  id="xieyi">用户协议</a>。
+                            <div class="note">注册微家，就表示您同意微家的<a href="index.php?r=center/xieyi"  id="xieyi">用户协议</a>。
                             </div>
                              <?php echo CHtml::submitButton('注册',array('class'=>"btn registerBtn",'type'=>"submit")); ?>
 <!--                            <button class="btn registerBtn" type="submit"  et-attached="1">注册</button>-->
-                            <div class="ft-operate"><a href="./index.php?r=site/login" class="link"  et-attached="1"><i class="arrow"></i>登录</a></div>
+                            <div class="ft-operate clearfix"><a href="./index.php?r=site/login" class="link"  et-attached="1">登录</a></div>
                           <?php echo $form->errorSummary($model); ?>
             <?php $this->endWidget(); ?>
                         <div class="otherlogin">
