@@ -44,9 +44,9 @@
                     <div class="list_filter">
                     <ul class="nav_filter">
                     <li class="nav-name icon down">
-                        <div id="addAddress">
-                            <div class="address_input"><input  type="text" placeholder="位置搜索" id="weizhi"  ></div>
-                        </div><a onclick="weizhi()">搜索</a>
+                        <div id="addAddress" class="addAddressWrap">
+                            <div class="address_input clearfix"><input  type="text" placeholder="请输入你想要搜素的位置" id="weizhi"  ><a onclick="weizhi()" class="btn btn-search">搜索</a></div>
+                        </div>
                     </li>
                     
                     </ul>

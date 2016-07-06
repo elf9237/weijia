@@ -993,3 +993,33 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/weijia/app/index/index.php?r=lease/rent
 ---
+2016/07/06 17:12:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assign".' in E:\xampp\htdocs\weijia\app\framework\web\CController.php:483
+Stack trace:
+#0 E:\xampp\htdocs\weijia\app\framework\web\CController.php(270): CController->missingAction('assign')
+#1 E:\xampp\htdocs\weijia\app\framework\web\CWebApplication.php(282): CController->run('assign')
+#2 E:\xampp\htdocs\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('site/assign')
+#3 E:\xampp\htdocs\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 E:\xampp\htdocs\weijia\app\index\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/weijia/app/index/index.php?r=site/assign
+---
+2016/07/06 17:12:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assign".' in E:\xampp\htdocs\weijia\app\framework\web\CController.php:483
+Stack trace:
+#0 E:\xampp\htdocs\weijia\app\framework\web\CController.php(270): CController->missingAction('assign')
+#1 E:\xampp\htdocs\weijia\app\framework\web\CWebApplication.php(282): CController->run('assign')
+#2 E:\xampp\htdocs\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('site/assign')
+#3 E:\xampp\htdocs\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 E:\xampp\htdocs\weijia\app\index\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/weijia/app/index/index.php?r=site/assign
+---
+2016/07/06 17:14:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assign".' in E:\xampp\htdocs\weijia\app\framework\web\CController.php:483
+Stack trace:
+#0 E:\xampp\htdocs\weijia\app\framework\web\CController.php(270): CController->missingAction('assign')
+#1 E:\xampp\htdocs\weijia\app\framework\web\CWebApplication.php(282): CController->run('assign')
+#2 E:\xampp\htdocs\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('site/assign')
+#3 E:\xampp\htdocs\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 E:\xampp\htdocs\weijia\app\index\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/weijia/app/index/index.php?r=site/assign
+---

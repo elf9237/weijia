@@ -102,18 +102,29 @@
                         <tr>
                             <td class="bzp_dot"></td>
                             <td class="bzp_content">
-                                关注“微家在线”微信服务号，<br>点击“微家在线”，获取你的专属链接。
+                                关注“微家在线”微信服务号，<br>点击“微家在线-我要佣金”，获取你的专属链接。
                             </td>
                         </tr>
+                        
                         <tr>
                             <td><div class="bzp_title_num">2</div></td>
                             <td><div class="bzp_title_con">转发获取租客</div></td>
                         </tr>
                         <tr>
-                            <td ></td>
+                            <td class="bzp_dot"></td>
                             <td class="bzp_content">
-                                转发你的专属链接，任何经你转发而关注微家的用户，成为你的租客。<br>
+                                转发你的专属链接，任何经你转发而关注注册微家的用户，成为你的租客。<br>
                                 你的租客成功签约微家房源(房源设置了佣金)，你即得佣金回报。
+                            </td>
+                        </tr>
+                       <tr>
+                            <td><div class="bzp_title_num">3</div></td>
+                            <td><div class="bzp_title_con">佣金说明</div></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td class="bzp_content">
+                              房屋成交后，租客获取55%的佣金
                             </td>
                         </tr>
 <!--                        <tr>-->

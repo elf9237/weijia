@@ -1,15 +1,15 @@
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-        <meta name="format-detection" content="telephone=no">
-        <title>微家</title>
-        <link rel="stylesheet" href="css/frozen.css">
-        <link href="./public/css/iSlider.css" rel="stylesheet">
-        <link href="css/house.css" rel="stylesheet">
-        <style>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>微家</title>
+    <link rel="stylesheet" href="css/frozen.css">
+    <link href="./public/css/iSlider.css" rel="stylesheet">
+    <link href="css/house.css" rel="stylesheet">
+    <style>
         /*ul wrapper*/
         #iSlider-wrapper {
             height: 90%;
@@ -53,47 +53,93 @@
             margin-top: 34%;
         }
     </style>
-    </head>
-    <body ontouchstart="">
-        <header id="headmenu" class="ui-header ui-header-positive ui-border-b ui-header-positive-new">
-<!--           <ul class="ui-tiled ui-border-t">-->
-<!--                <li data-href="shopstore.html" class="ui-border-r ui-rentflow"><div>商铺出租</div></li>-->
-<!--                <li data-href="add.html" class="ui-border-r ui-joinflow"><div>加盟流程</div></li>-->
-<!--                <li data-href="bzp.html" class="ui-bzpo"><div>微家</div></li>-->
-<!--            </ul>-->
-        </header>
-        <footer id="footmenu" class="ui-footer ui-footer-btn ui-footer-new">
-           <ul class="ui-tiled ui-border-t">
-                <li data-href="" class="ui-border-r ui-house"><div><a href="./index.php?r=weijia">微家</a></div></li>
-                <li data-href="" class="ui-border-r ui-rent"><div><a href="./index.php?r=weijia">我要租房</a></div></li>
-                <li data-href="" class="ui-rentout"><div><a href="./index.php?r=weijia">我要出租</a></div></li>
-		</ul>
-        </footer>
-        <section class="ui-container">
-            <div id="bzpjs1_div" style="display: block;" class="ng-scope">
-                <img src="img/bzp-js1.jpg" width="100%">
-                <img src="img/bzp-js2.jpg" width="100%">
-            </div>
-        </section>
-        <script src="lib/zepto.min.js"></script>
-        <script src="js/frozen.js"></script>
-        <script src="js/house.js"></script>
-        <script>
-		$(document).ready(function() {
-			$.ajax({
-		　　　　　　url: 'index.php?r=basemenu/footmenu',
-		　　　　　　type: 'POST',
-		　　　　　　//data: { id: idValue },
-		　　　　　　//timeout: 3000,
-		　　　　　　success: function (data) {
-						$("#footmenu").html(data);
-					 },
-		　　　　　　error: function (data) {
-								 alert('===');},
-　　　　		})
-		});
-		</script>
-        <script>
+</head>
+<body ontouchstart="">
+    <header id="headmenu" class="ui-header ui-header-positive ui-border-b ui-header-positive-new">
+        <!--           <ul class="ui-tiled ui-border-t">
+        -->
+        <!--                <li data-href="shopstore.html" class="ui-border-r ui-rentflow">
+        <div>商铺出租</div>
+    </li>
+    -->
+    <!--                <li data-href="add.html" class="ui-border-r ui-joinflow">
+    <div>加盟流程</div>
+</li>
+-->
+<!--                <li data-href="bzp.html" class="ui-bzpo">
+<div>微家</div>
+</li>
+-->
+<!--            </ul>--></header>
+<footer id="footmenu" class="ui-footer ui-footer-btn ui-footer-new">
+<ul class="ui-tiled ui-border-t">
+<li data-href="" class="ui-border-r ui-house">
+    <div>
+        <a href="./index.php?r=weijia">微家</a>
+    </div>
+</li>
+<li data-href="" class="ui-border-r ui-rent">
+    <div>
+        <a href="./index.php?r=weijia">我要租房</a>
+    </div>
+</li>
+<li data-href="" class="ui-rentout">
+    <div>
+        <a href="./index.php?r=weijia">我要出租</a>
+    </div>
+</li>
+</ul>
+</footer>
+<section class="ui-container">
+<div id="bzpjs1_div" style="display: block;" class="ng-scope">
+<img src="img/bzp-js1.jpg" width="100%">
+<img src="img/bzp-js2.jpg" width="100%"></div>
+</section>
+<div id="layer-photos-demo" class="layer-photos-demo" style="display: none">
+<img  layer-src="img/banner01.jpg" src="img/banner01.jpg" alt="广告"></div>
+
+<script src="lib/zepto.min.js"></script>
+<script src="lib/jquery.min.js"></script>
+<script src="js/frozen.js"></script>
+<script src="lib/layer/layer.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $(window).on('load',function(){
+            // 加载皮肤
+            layer.config({
+                extend: ['skin/layerSkinExtend.css'], //加载新皮肤
+                skin: 'layerSkinWeb' //一旦设定，所有弹层风格都采用此主题。
+            });
+            indexMoney=layer.open({
+              type: 2,
+              title: false,
+              skin: 'layerSkinWeb',
+              area: ['925px', '950px'],
+              shade: 0.8,
+              time:2000,
+              closeBtn: 0,
+              shadeClose: true,
+              content: 'index.php?r=weijia/redboot'
+            });
+        })
+    })
+</script>
+<script>
+        $(document).ready(function() {
+            $.ajax({
+        　　　　　　url: 'index.php?r=basemenu/footmenu',
+        　　　　　　type: 'POST',
+        　　　　　　//data: { id: idValue },
+        　　　　　　//timeout: 3000,
+        　　　　　　success: function (data) {
+                        $("#footmenu").html(data);
+                     },
+        　　　　　　error: function (data) {
+                                 alert('===');},
+　　　　        })
+        });
+        </script>
+<script>
             $(document).ready(function() {
                 $.ajax({
                     url: 'index.php?r=basemenu/headmenu',
@@ -108,6 +154,6 @@
                 })
             });
         </script>
-		
-    </body>
+
+</body>
 </html>

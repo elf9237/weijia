@@ -1,0 +1,23 @@
+/*页面层iframe*/
+.layui-layer-btn{padding: 0 25px 12px;}
+.layui-layer-iframe .layui-layer-btn{padding-top: 0px}
+.layui-layer-btn a{padding: 0 30px;background: #fff;}
+.layui-layer-btn .layui-layer-btn0{background: #3197de;border-color:#3197de;}
+.layui-layer-title{background: #fff;height: 55px;line-height: 55px;border-top-left-radius: 10px;border-top-right-radius: 10px;border-bottom: 1px solid #888;font-size: 16px;}
+.layui-layer-iframe .layui-layer-ico,.layui-layer-page .layui-layer-ico{background: url(../../images/btn-close-layer.png) no-repeat center;}
+.layui-layer-setwin .layui-layer-close1{background-position: 0px 0px;}
+.layui-layer-setwin a{width: 21px;height: 21px;}
+.layer-anim{border-radius: 10px;}
+
+/*弹出确认框*/
+.layui-layer-page .layui-layer-content{padding: 10px 20px 0px 20px;font-size: 14px;color: #414141;}
+.layui-layer-page .layui-layer-title{border-bottom: none;}
+/*.layui-layer-page .layui-layer-btn{text-align: center;}*/
+
+
+/*红包透明背景*/
+body .layerSkinWeb{background: none;box-shadow:1px 1px 50px rgba(0,0,0,0);}
+body .layerSkinWeb .redpacketFlyBig {
+  color: #FFFFFF;
+}
+
