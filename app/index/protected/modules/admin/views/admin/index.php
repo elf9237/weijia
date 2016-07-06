@@ -19,20 +19,20 @@
         }
         
         function xiugai(){
-             layer.open({
+             top.layer.open({
                 type:1,
-                content:'<div style="text-align:center;display:inline-block;padding-top:10px"><span>新密码：</span><input id="pass1"></div>\n\
-<div style="text-align:center;display:inline-block;padding-top:10px"><span>确认密码：</span><input id="pass2"></div>',
-                area:["300px","300px"],
+                content:'<div  class="xiugaiPsw"><span>新密码：</span><input id="pass1" type="password" placeholder="请输入新密码"></div>\n\
+<div  class="xiugaiPsw" ><span>确认密码：</span><input id="pass2" type="password" placeholder="请确认密码"></div>',
+                area:["600px","300px"],
                 title:"审核",
                 btn:["发送","取消"],
                  yes:function(index){
                      if($("#pass1").val()==""||$("#pass2").val()==""){
-                     layer.msg("请填写内容！！");
+                     top.layer.msg("请填写内容！！");
                      return;
                  }
                  if($("#pass1").val()!=$("#pass2").val()){
-                     layer.msg("密码不一致！！");
+                     top.layer.msg("密码不一致！！");
                      return ;
                  }
                  var id='<?php  $session = Yii::app()->session;
@@ -50,17 +50,17 @@
             url:"index.php?r=admin/admin/forget",
             success:function(data){
                 if(data.status){
-                    layer.close(index);
+                    top.layer.close(index);
                    
                 }else{
-                    layer.msg("失败！！");
+                    top.layer.msg("失败！！");
                 }
             }
         })
                      
                  },
              cancel:  function(index){
-                 layer.close(index);
+                 top.layer.close(index);
              }          
                 
             })

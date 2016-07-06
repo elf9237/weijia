@@ -180,7 +180,7 @@
         }
         
         function add(){
-            layer.open({
+            top.layer.open({
                 type:2,
                 content:'index.php?r=admin/admin/adduser',
                 area:["600px","600px"],
@@ -191,15 +191,15 @@
 //layer.msg("hehe");
         }
           function tixing(id){
-                 layer.open({
+                 top.layer.open({
                 type:1,
-                content:'<div style="text-align:center;display:inline-block;padding-top:10px"><span>消息内容：</span><textarea id="message"></textarea></div>',
-                area:["300px","300px"],
+                content:'<div  class="adminTips"><span>消息内容：</span><textarea id="message"></textarea></div>',
+                area:["600px","300px"],
                 title:"添加提醒",
                 btn:["发送","取消"],
                  yes:function(index){
                      if($("#message").val()==""){
-                     layer.msg("请填写内容！！");
+                     top.layer.msg("请填写内容！！");
                      return;
                  }
                      $.ajax({
@@ -212,16 +212,16 @@
             url:"index.php?r=admin/admin/tixing",
             success:function(data){
                 if(data.status){
-                    layer.close(index);
+                    top.layer.close(index);
                 }else{
-                    layer.msg("发送异常！！");
+                    top.layer.msg("发送异常！！");
                 }
             }
         })
                      
                  },
              cancel:  function(index){
-                 layer.close(index);
+                 top.layer.close(index);
              }          
                 
             })

@@ -818,7 +818,7 @@ a{color: #FF662C;}
 .addAddressWrap .address_input .btn-search{position: absolute;right: -11px;top: 11px;background: #ff7e00;width: 30px;height: 30px;line-height: 30px;color: #fff;padding: 0 10px;border-top-right-radius: 5px;border-bottom-right-radius: 5px}
 
 /*定时器广告*/
-.redpacketFlyBig{width: 100%;height: 100%;text-align: center;}
+.redpacketFlyBig{width: 100%;height: 100%;text-align: center;position: fixed;left: 0px;top: 0px;z-index:9999}
 .redpacketFlyBig img{width:100%;height:100%}
 
 

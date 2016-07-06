@@ -55,6 +55,8 @@
     </style>
 </head>
 <body ontouchstart="">
+    <div class="redpacketFlyBig" style="display: none">
+        <img src="img/banner01.jpg"></div>
     <header id="headmenu" class="ui-header ui-header-positive ui-border-b ui-header-positive-new">
         <!--           <ul class="ui-tiled ui-border-t">
         -->
@@ -101,9 +103,20 @@
 <script src="lib/zepto.min.js"></script>
 <script src="lib/jquery.min.js"></script>
 <script src="js/frozen.js"></script>
-<script src="lib/layer/layer.js"></script>
 <script type="text/javascript">
     $(function(){
+        $('.redpacketFlyBig').css('display','block');
+        setInterval("myInterval()",3000);
+
+    });
+    function myInterval(){
+         $('.redpacketFlyBig').css('display','none');
+    }
+</script>
+<!-- <script src="lib/layer/layer.js"></script>
+-->
+<!-- <script type="text/javascript">
+$(function(){
         $(window).on('load',function(){
             // 加载皮肤
             layer.config({
@@ -124,6 +137,7 @@
         })
     })
 </script>
+-->
 <script>
         $(document).ready(function() {
             $.ajax({

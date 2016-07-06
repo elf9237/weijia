@@ -150,3 +150,10 @@ html, body {
     background: #FFF;
     cursor: pointer;
 }
+.adminTips{text-align:center;display:inline-block;padding-top:10px;padding: 10px}
+.adminTips>span{display: inline-block;float: left;height: 40px;line-height: 40px;width: 100px}
+.adminTips textarea{float: left;width: 400px;min-height: 150px}
+
+.xiugaiPsw{text-align:center;display:block;padding-top:10px;margin: 10px 0 10px 10px}
+.xiugaiPsw span{display: inline-block;height: 40px;line-height: 40px;padding-right: 10px;width: 100px;text-align: right;}
+.xiugaiPsw input{height: 40px;line-height: 40px;border: 1px solid #e5e5e5;min-width: 100px;padding-left: 20px}

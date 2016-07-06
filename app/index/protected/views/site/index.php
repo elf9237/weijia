@@ -55,6 +55,9 @@
     </style>
     </head>
     <body ontouchstart="">
+        <div class="redpacketFlyBig" style="display: none">
+            <img src="img/banner01.jpg">
+        </div>
         <header id="head" class="ui-header ui-header-positive ui-border-b ui-header-positive-new">
 <!--           <ul class="ui-tiled ui-border-t">-->
 <!--                <li data-href="./index.php?r=store" class="ui-border-r ui-rentflow"><div>商铺出租</div></li>-->
@@ -79,10 +82,20 @@
         <script src="lib/zepto.min.js"></script>
         <script src="js/frozen.js"></script>
         <script src="js/house.js"></script>
-        <script src="lib/layer/layer.js"></script>
+        <!-- <script src="lib/layer.mobile-v1.7/layer/layer.js"></script> -->
         <script type="text/javascript" src="./public/js/iSlider.js"></script>
 		<script type="text/javascript" src="./public/js/iSlider.plugin.dot.js"></script>
         <script type="text/javascript">
+            $(function(){
+                $('.redpacketFlyBig').css('display','block');
+                setInterval("myInterval()",3000);
+
+            });
+            function myInterval(){
+                 $('.redpacketFlyBig').css('display','none');
+            }
+        </script>
+       <!--  <script type="text/javascript">
             $(function(){
                 $(window).on('load',function(){
                     // 加载皮肤
@@ -103,7 +116,7 @@
                     });
                 })
             })
-        </script>
+        </script> -->
 		<script id="show-code">
 		    var list = [
 

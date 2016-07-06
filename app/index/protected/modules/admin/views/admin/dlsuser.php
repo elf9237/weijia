@@ -153,10 +153,10 @@
 //layer.msg("hehe");
         }
           function tixing(id){
-                 layer.open({
+                 top.layer.open({
                 type:1,
-                content:'<div style="text-align:center;display:inline-block;padding-top:10px"><span>消息内容：</span><textarea id="message"></textarea></div>',
-                area:["300px","300px"],
+                content:'<div class="adminTips"><span>消息内容：</span><textarea id="message"></textarea></div>',
+                area:["600px","300px"],
                 title:"添加提醒",
                 btn:["发送","取消"],
                  yes:function(index){
