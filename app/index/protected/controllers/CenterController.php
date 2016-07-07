@@ -53,8 +53,12 @@ class CenterController extends BaseController{
     }
 //    我的佣金
     public function actionMybroker(){
+        $loginuserid=-1;
+            $userLogin= Yii::app()->session['user'] ;
+            if(!empty($userLogin))
+                $loginuserid=$userLogin->id;
          $userModel=  User::model();
-           $userinfo=$userModel->find('id=123');
+           $userinfo=$userModel->find('id='.$loginuserid);
         
         $this -> renderPartial('mybroker',array("userinfo"=>$userinfo));
     }

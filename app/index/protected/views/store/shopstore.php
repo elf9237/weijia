@@ -108,6 +108,7 @@
   function weizhi(){
       var district=$("#weizhi").val().trim();
       param.district=district;
+      param.page=0;
       querySecond();
   }
                 
@@ -198,26 +199,30 @@
                                  ding="置顶";
                               var yong="";
                              if(value.yong_jin!=0)
-                                 yong="佣："+value.yong_jin;
+                                 yong="租房返现："+value.yong_jin*0.5+"元";
                              var lend_status='未租';
                              if(value.lend_status=='1'){
                                  lend_status='已租';
                              }
                               
                              
-                                 innerHtml.push('<li class="item"><a onclick="showRoom('+value.id+')">'+
-                            '<img src="upload/'+value.mian_url+'" alt="" class="item-thumb"/>'+
+                                innerHtml.push('<li class="item">'+
+                        '<a onclick="showRoom('+value.id+')">'+
+                            '<img src="upload/'+value.mian_url+'" alt="" class="item-thumb">'+
                             '<dl class="item-info">'+
                                ' <dt class="info-title"><strong>'+value.info_name+'</strong></dt>'+
+
                                ' <dd class="info-desc">'+
                                     '<span class="info-desc-detail"><em>'+value.house_type+'</em>'+value.city+'-'+value.zone+'-'+value.district+' </span>'+
-                                    '<span class="info-desc-tag info-desc-tag--right"> <em class="biz">'+ding+'</em> </span>'+
-                                    '<span class="info-desc-tag info-desc-tag--right"> <em class="biz">'+yong+'</em> </span>'+
+                                   
+            '<span class="info-desc-tag info-desc-tag--right"> <em class="biz">'+ding+'</em> </span>'+
                                 '</dd>'+
                                 
                                 '<dd class="info-desc">'+
-                                '<span class="info-desc-price"> '+value.price+'<em class="priceunit"> 元</em></span><span class="info-desc-tag"><em class="time">'+getLocalTime(value.create_time)+'</em></span><span class="info-desc-tag--right">  <em class="personal">'+type+'</em>    </span></span><span class="info-desc-tag--right">  <em class="personal">'+lend_status+'</em>    </span>'+
-                                '</dd></dl> </a>  </li>');
+                                '<span class="info-desc-price"> '+value.price+'<em class="priceunit"> 元</em></span><span class="info-desc-tag"><em class="time">'+getLocalTime(value.create_time)+'</em></span><span class="info-desc-tag--right">  <em class="personal">'+type+'</em>    </span></span><span class="info-desc-tag--right">  <em class="personal personal-type">'+lend_status+'</em>    </span>'+
+                                '</dd>' +
+                                 '<dd class="info-desc"><span class="info-desc-tag info-desc-tag--right"> <em class="biz">'+yong+'</em> </span></dd>'+
+                                     '</dl> </a>  </li>');
                             
                        
                   
