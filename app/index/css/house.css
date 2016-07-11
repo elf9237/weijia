@@ -19,7 +19,7 @@ html{font-size: 42px;}
 /*我要租房*/
 .filter_outer{width: 100%;color: #555;font-size: .34375rem;height: 1.25rem;line-height: 1.25rem;border-top: 1px solid #f3f3f3;}
 .list_filter{width: 100%;height: 1.25rem;}
-.nav_filter{position: relative;z-index: 1000;width: 100%;display: -webkit-box;display: -webkit-flex;display: flex;background: #FFF;border-bottom: 1px solid #f3f3f3;height: 1.25rem;line-height: 1.25rem;-webkit-user-select: none;}
+.nav_filter{position: relative;z-index: 1000;width: 100%;display: -webkit-box;display: -webkit-flex;display: flex;background: #FFF;border-bottom: 1px solid #f3f3f3;height: 1.25rem;line-height: 1.25rem;-webkit-user-select: none;border: none}
 .nav_filter .nav-name{width: 25%;-webkit-box-flex: 1;-webkit-flex: 1;flex: 1;position: inherit;text-align: center;}
 .nav_filter .nav-name a{display: inline-block;width: 1.34375rem;-o-text-overflow: ellipsis;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;-webkit-user-select: none;margin-left: -.65625rem;color:#000;margin-left: 10px}
 .address_input1{display: inline-block;width: 1.34375rem;-webkit-user-select: none;border: 0 none;text-align: center;color: #000!important;}
@@ -731,7 +731,7 @@ em.time{margin-left:5px;}
 
 .focus {
     /*width: 600px;*/
-    height: 150px;
+    height: 250px;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
@@ -813,10 +813,16 @@ a{color: #FF662C;}
 .usernextWrap{width:100%;display: block}
 
 /*搜索框*/
-.addAddressWrap .address_input{text-align: center;position: relative;width: 300px;height: 30px;left: 50%;margin-left: -150px}
-.addAddressWrap .address_input input[type=text]{width: 100%;height: 30px;line-height: 30px;border: 1px solid #e5e5e5;border-radius: 5px;position: absolute;left: 0;top:10px;padding-left: 10px}
-.addAddressWrap .address_input .btn-search{position: absolute;right: -11px;top: 11px;background: #ff7e00;width: 30px;height: 30px;line-height: 30px;color: #fff;padding: 0 10px;border-top-right-radius: 5px;border-bottom-right-radius: 5px}
+.addAddressWrap .address_input{text-align: center;position: relative;width: 330px;height: 50px;left: 50%;margin-left: -170px;}
+.addAddressWrap .address_input input[type=text]{width: 100%;height: 40px;line-height: 40px;border: 1px solid #e5e5e5;border-radius: 5px;position: absolute;left: 0;top:10px;padding-left: 10px}
+.addAddressWrap .address_input .btn-search{position: absolute;right: -11px;top: 11px;background: #ff7e00;width: 30px;height: 40px;line-height: 40px;color: #fff;padding: 0 10px;border-top-right-radius: 5px;border-bottom-right-radius: 5px}
+.ad-banner{border-top: none}
 
+@media screen and (max-width: 320px){
+ .addAddressWrap .address_input{text-align: center;position: relative;width: 300px;height: 50px;left: 50%;margin-left: -155px}
+ /*.info-desc-tag .time{max-width: 100px;overflow: hidden;display: inline-block;}   */
+ .item a .item-thumb{width: 2.4rem;height: 2.1rem}
+}
 /*定时器广告*/
 .redpacketFlyBig{width: 100%;height: 100%;text-align: center;position: fixed;left: 0px;top: 0px;z-index:9999}
 .redpacketFlyBig img{width:100%;height:100%}
