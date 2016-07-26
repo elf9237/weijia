@@ -56,7 +56,8 @@
 </head>
 <body ontouchstart="">
     <div class="redpacketFlyBig" style="display: none">
-        <img src="img/banner01.jpg"></div>
+        <img src="img/banner01.jpg">
+    </div>
     <header id="headmenu" class="ui-header ui-header-positive ui-border-b ui-header-positive-new">
         <!--           <ul class="ui-tiled ui-border-t">
         -->

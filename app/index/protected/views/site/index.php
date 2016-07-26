@@ -85,7 +85,7 @@
         <!-- <script src="lib/layer.mobile-v1.7/layer/layer.js"></script> -->
         <script type="text/javascript" src="./public/js/iSlider.js"></script>
 		<script type="text/javascript" src="./public/js/iSlider.plugin.dot.js"></script>
-        <script type="text/javascript">
+        <!-- <script type="text/javascript">
             $(function(){
                 $('.redpacketFlyBig').css('display','block');
                 setInterval("myInterval()",3000);
@@ -94,7 +94,7 @@
             function myInterval(){
                  $('.redpacketFlyBig').css('display','none');
             }
-        </script>
+        </script> -->
        <!--  <script type="text/javascript">
             $(function(){
                 $(window).on('load',function(){

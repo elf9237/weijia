@@ -831,3 +831,7 @@ a{color: #FF662C;}
 /*举报*/
 .ui-form-item .ui-icon-close.jubao{font-size: 18px}
 
+/*协议*/
+.xieyi{background: #FF7E00}
+.xieyi h3{font-size: 24px;text-align: center;color: #fff}
+.xieyi p{font-size: 20px;color: #fff}

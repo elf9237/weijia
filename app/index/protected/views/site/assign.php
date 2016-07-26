@@ -39,7 +39,6 @@
         <div id="op-aside"></div>
         <div id="op-wrap-mask"></div>
         <div id="op-content">
-
             <div class="op-alone op-alone-register">
                 <div class="auto-middle">
                     <div class="op-register">
@@ -102,7 +101,9 @@
                     </div>
                 </div>
             </div>
-
+            <div class="redpacketFlyBig" style="display: none">
+                <img src="img/slogon.jpg">
+            </div>
 
 </body>
 
@@ -112,6 +113,16 @@
 <script src="lib/zepto.min.js"></script>
 <script src="js/frozen.js"></script>
 <script src="lib/layer/layer.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('.redpacketFlyBig').css('display','block');
+        setInterval("myInterval()",3000);
+
+    });
+    function myInterval(){
+        $('.redpacketFlyBig').css('display','none');
+    }
+</script>
 <script type="text/javascript">
     $(function(){
         //$(".registerform").Validform();  //就这一行代码！;
