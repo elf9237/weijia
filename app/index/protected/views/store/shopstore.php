@@ -45,7 +45,7 @@
                     <ul class="nav_filter">
                     <li class="nav-name icon down">
                         <div id="addAddress" class="addAddressWrap">
-                            <div class="address_input clearfix"><input  type="text" placeholder="请输入你想要搜素的位置" id="weizhi"  ><a onclick="weizhi()" class="btn btn-search">搜索</a></div>
+                            <div class="address_input clearfix"><input  type="text" placeholder="请输入你想要搜索的位置" id="weizhi"  ><a onclick="weizhi()" class="btn btn-search">搜索</a></div>
                         </div>
                     </li>
                     
@@ -132,7 +132,7 @@
                          var innerHtml=[];
                          $.each(data.pageList,function(n,value){
                               var type="个人";
-                             if(value.type==0)
+                             if(value.type=='0' ||value.type=='admin')
                                  type="微家";
                               var ding="";
                              if(value.orderno!=null)
@@ -192,7 +192,7 @@
                          var innerHtml=[];
                          $.each(data.pageList,function(n,value){
                              var type="个人";
-                             if(value.type=='0')
+                             if(value.type=='0'||value.type=='admin')
                                  type="微家";
                               var ding="";
                              if(value.orderno!=null)

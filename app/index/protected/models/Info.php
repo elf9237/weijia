@@ -55,10 +55,10 @@ class Info extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('province, city, zone, style,  house_type, district, detail, map, bus, market, audit_content,info_name', 'required'),
+			array('province, city, zone, style,  house_type, district, detail, map, market, audit_content,info_name', 'required'),
 			array('price, lend_status, audit_status,user_id', 'numerical', 'integerOnly'=>true),
 			array('province, city, district,  audit_id', 'length', 'max'=>50),
-			array('zone, detail, map, bus, market, public_url,mian_url,room_url, audit_content', 'length', 'max'=>255),
+			array('zone, detail, map, market, public_url,mian_url,room_url, audit_content', 'length', 'max'=>255),
 			array('style, lend_type, rooms, area, floors, nfloor, direction, house_type, create_time, update_time, audit_time, delete_time', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
