@@ -1023,3 +1023,86 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/weijia/app/index/index.php?r=site/assign
 ---
+2016/07/06 20:02:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index/index".' in E:\xampp\htdocs\weijia\app\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('index/index')
+#1 E:\xampp\htdocs\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\weijia\app\index\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/weijia/app/index/index.php?r=index/index
+---
+2016/07/06 20:02:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in E:\xampp\htdocs\weijia\app\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('index')
+#1 E:\xampp\htdocs\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\weijia\app\index\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/weijia/app/index/index.php?r=index
+---
+2016/07/06 20:29:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assign".' in E:\xampp\htdocs\weijia\app\framework\web\CController.php:483
+Stack trace:
+#0 E:\xampp\htdocs\weijia\app\framework\web\CController.php(270): CController->missingAction('assign')
+#1 E:\xampp\htdocs\weijia\app\framework\web\CWebApplication.php(282): CController->run('assign')
+#2 E:\xampp\htdocs\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('site/assign')
+#3 E:\xampp\htdocs\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 E:\xampp\htdocs\weijia\app\index\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/weijia/app/index/index.php?r=site/assign
+---
+2016/07/06 20:56:09 [error] [exception.CException] exception 'CException' with message 'CenterController cannot find the requested view "xiyyi".' in E:\xampp\htdocs\weijia\app\framework\web\CController.php:878
+Stack trace:
+#0 E:\xampp\htdocs\weijia\app\index\protected\controllers\CenterController.php(324): CController->renderPartial('xiyyi')
+#1 E:\xampp\htdocs\weijia\app\framework\web\actions\CInlineAction.php(49): CenterController->actionXieyi()
+#2 E:\xampp\htdocs\weijia\app\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 E:\xampp\htdocs\weijia\app\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#4 E:\xampp\htdocs\weijia\app\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 E:\xampp\htdocs\weijia\app\framework\web\CWebApplication.php(282): CController->run('xieyi')
+#6 E:\xampp\htdocs\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('center/xieyi')
+#7 E:\xampp\htdocs\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 E:\xampp\htdocs\weijia\app\index\index.php(15): CApplication->run()
+#9 {main}
+REQUEST_URI=/weijia/app/index/index.php?r=center/xieyi
+HTTP_REFERER=http://localhost/weijia/app/index/index.php?r=site/register
+---
+2016/07/06 22:19:27 [error] [php] Object of class AjaxReturn could not be converted to string (E:\xampp\htdocs\weijia\app\index\protected\modules\admin\controllers\AdminController.php:334)
+Stack trace:
+#0 E:\xampp\htdocs\weijia\app\framework\web\CController.php(286): AdminController->runAction()
+#1 E:\xampp\htdocs\weijia\app\framework\web\CController.php(265): AdminController->runActionWithFilters()
+#2 E:\xampp\htdocs\weijia\app\framework\web\CWebApplication.php(282): AdminController->run()
+#3 E:\xampp\htdocs\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 E:\xampp\htdocs\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#5 E:\xampp\htdocs\weijia\app\index\index.php(15): CWebApplication->run()
+REQUEST_URI=/weijia/app/index/index.php?r=admin/admin/delagent
+in E:\xampp\htdocs\weijia\app\index\protected\modules\admin\controllers\AdminController.php (334)
+in E:\xampp\htdocs\weijia\app\index\index.php (15)
+2016/07/06 22:19:28 [error] [php] Object of class AjaxReturn could not be converted to string (E:\xampp\htdocs\weijia\app\index\protected\modules\admin\controllers\AdminController.php:334)
+Stack trace:
+#0 E:\xampp\htdocs\weijia\app\framework\web\CController.php(286): AdminController->runAction()
+#1 E:\xampp\htdocs\weijia\app\framework\web\CController.php(265): AdminController->runActionWithFilters()
+#2 E:\xampp\htdocs\weijia\app\framework\web\CWebApplication.php(282): AdminController->run()
+#3 E:\xampp\htdocs\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 E:\xampp\htdocs\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#5 E:\xampp\htdocs\weijia\app\index\index.php(15): CWebApplication->run()
+REQUEST_URI=/weijia/app/index/index.php?r=admin/admin/delagent
+in E:\xampp\htdocs\weijia\app\index\protected\modules\admin\controllers\AdminController.php (334)
+in E:\xampp\htdocs\weijia\app\index\index.php (15)
+2016/07/26 22:32:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assign".' in E:\xampp\htdocs\weijia\app\framework\web\CController.php:483
+Stack trace:
+#0 E:\xampp\htdocs\weijia\app\framework\web\CController.php(270): CController->missingAction('assign')
+#1 E:\xampp\htdocs\weijia\app\framework\web\CWebApplication.php(282): CController->run('assign')
+#2 E:\xampp\htdocs\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('site/assign')
+#3 E:\xampp\htdocs\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 E:\xampp\htdocs\weijia\app\index\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/weijia/app/index/index.php?r=site/assign
+---
+2016/07/26 22:32:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assign".' in E:\xampp\htdocs\weijia\app\framework\web\CController.php:483
+Stack trace:
+#0 E:\xampp\htdocs\weijia\app\framework\web\CController.php(270): CController->missingAction('assign')
+#1 E:\xampp\htdocs\weijia\app\framework\web\CWebApplication.php(282): CController->run('assign')
+#2 E:\xampp\htdocs\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('site/assign')
+#3 E:\xampp\htdocs\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 E:\xampp\htdocs\weijia\app\index\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/weijia/app/index/index.php?r=site/assign
+---
