@@ -223,9 +223,9 @@
          <tr>
 	         <td colspan="5">
 	         	<a target="_blank" href="#" style="display:inline-block;text-decoration:none;height:20px;line-height:20px; color:#FFF;">
-			 		<p style="float:left;height:20px;line-height:20px;margin: 0px;">京ICP备14031269号</p>
+			 		<p style="float:left;height:20px;line-height:20px;margin: 0px;">榕ICP备35010402350208号</p>
 			 		<img src="public/desktop/images/gongan.png" style="float:left;margin: 0px 0px 0px 26px;">
-			 		<p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px;">京公网安备 11010502030270号</p>
+			 		<p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px;">福州公网安备 35010402350208号</p>
 			 	</a>
 	         </td>
          </tr>
