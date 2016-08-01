@@ -103,6 +103,7 @@
 <script src="lib/zepto.min.js"></script>
 <script src="lib/jquery.min.js"></script>
 <script src="js/frozen.js"></script>
+<script src="lib/layer/layer.js"></script>
 <script type="text/javascript">
     $(function(){
         $('.redpacketFlyBig').css('display','block');
@@ -149,7 +150,8 @@ $(function(){
                         $("#footmenu").html(data);
                      },
         　　　　　　error: function (data) {
-                                 alert('===');},
+                                layer.msg('正在加载中');
+                                },
 　　　　        })
         });
         </script>
@@ -164,7 +166,8 @@ $(function(){
                         $("#headmenu").html(data);
                     },
                     error: function (data) {
-                        alert('===');},
+                       layer.msg('正在加载中');
+                    },
                 })
             });
         </script>
