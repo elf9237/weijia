@@ -56,7 +56,8 @@
 </head>
 <body ontouchstart="">
     <div class="redpacketFlyBig" style="display: none">
-        <img src="img/banner01.jpg"></div>
+        <img src="img/banner01.jpg">
+    </div>
     <header id="headmenu" class="ui-header ui-header-positive ui-border-b ui-header-positive-new">
         <!--           <ul class="ui-tiled ui-border-t">
         -->
@@ -150,8 +151,12 @@ $(function(){
                         $("#footmenu").html(data);
                      },
         　　　　　　error: function (data) {
+<<<<<<< HEAD
                                 layer.msg('正在加载中');
                                 },
+=======
+                                 alert('请稍等加载中....');},
+>>>>>>> bf1c2969438e940810b730c88fb4ba18bb737e59
 　　　　        })
         });
         </script>
@@ -166,8 +171,12 @@ $(function(){
                         $("#headmenu").html(data);
                     },
                     error: function (data) {
+<<<<<<< HEAD
                        layer.msg('正在加载中');
                     },
+=======
+                        alert('请稍等加载中....');},
+>>>>>>> bf1c2969438e940810b730c88fb4ba18bb737e59
                 })
             });
         </script>

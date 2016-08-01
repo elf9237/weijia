@@ -85,7 +85,7 @@
                         $("#footmenu").html(data);
                     },
                     error: function (data) {
-                        alert('===');},
+                        alert('请稍等加载中....');},
                 })
             });
         </script>

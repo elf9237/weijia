@@ -126,6 +126,11 @@ class CenterController extends BaseController{
     }
 //    我要佣金
     public function actionWmoney(){
+         $loginuserid=-1;
+            $userLogin= Yii::app()->session['user'] ;
+            if(empty($userLogin)){
+               $this ->redirect ("index.php?r=site/login"); 
+            }
         $jsapiTicket = $this->getJsApiTicket();
         $timestamp = time();
         $nonceStr = $this->createNonceStr(10);

@@ -153,7 +153,7 @@
 //layer.msg("hehe");
         }
           function tixing(id){
-                 top.layer.open({
+                layer.open({
                 type:1,
                 content:'<div class="adminTips"><span>消息内容：</span><textarea id="message"></textarea></div>',
                 area:["600px","300px"],

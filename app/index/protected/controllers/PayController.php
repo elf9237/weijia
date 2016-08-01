@@ -34,8 +34,8 @@ class PayController extends BaseController
         $pay_money = $order->pay_price * 100;
         $input->SetOut_trade_no($order->order_no);
         //$input->SetOut_trade_no(microtime(true));
-        //$input->SetTotal_fee($pay_money);
-        $input->SetTotal_fee(1);
+        $input->SetTotal_fee($pay_money);
+        //$input->SetTotal_fee(1);
         $input->SetTime_start(date("YmdHis"));
         $input->SetTime_expire(date("YmdHis", time() + 24*60*60));
         $input->SetGoods_tag("微家商品");

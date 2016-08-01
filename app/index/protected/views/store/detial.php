@@ -266,18 +266,9 @@
                         success:function(data){
                             if(data.status){
 //                                alert("租房信息提交成功！");
-                                layer.open({
-                                    content: '租房信息提交成功,非平台房源只能线下支付',
-                                    style: 'background-color:#ff6d00; color:#fff; border:none;',
-                                    time: 2
-                                });
+                                layer.msg('租房信息提交成功,非平台房源只能线下支付',3);
                             }else{
-                                layer.open({
-                                    content: '租房信息提交失败',
-                                    style: 'background-color:#ff6d00; color:#fff; border:none;',
-                                    time: 2
-                                });
-
+                                 layer.msg('租房信息提交失败',3);
                             }
                         }
 
@@ -341,7 +332,7 @@
                     $("#foot").html(data);
                 },
                 error: function (data) {
-                    alert('===');},
+                    alert('请稍等加载中....');},
             })
         });
     </script>

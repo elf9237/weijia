@@ -181,7 +181,7 @@ eprice:eprice
             url:"index.php?r=admin/admin/xiajia",
             success:function(data){
                 if(data.status){
-                     queryUsers(1);
+                     queryHouses(1);
                 }
             }
         })
@@ -198,7 +198,7 @@ eprice:eprice
 //layer.msg("hehe");
         }
           function tixing(id){
-                 top.layer.open({
+                 layer.open({
                 type:1,
                 content:'<div class="adminTips"><span>消息内容：</span><textarea id="message"></textarea></div>',
                 area:["600px","300px"],
@@ -206,7 +206,7 @@ eprice:eprice
                 btn:["发送","取消"],
                  yes:function(index){
                      if($("#message").val()==""){
-                     top.layer.msg("请填写内容！！");
+                   layer.msg("请填写内容！！");
                      return;
                  }
                      $.ajax({
@@ -219,16 +219,16 @@ eprice:eprice
             url:"index.php?r=admin/admin/tixing",
             success:function(data){
                 if(data.status){
-                    top.layer.close(index);
+                   layer.close(index);
                 }else{
-                    top.layer.msg("发送异常！！");
+                    layer.msg("发送异常！！");
                 }
             }
         })
                      
                  },
              cancel:  function(index){
-                 top.layer.close(index);
+                 layer.close(index);
              }          
                 
             })

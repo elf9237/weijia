@@ -346,7 +346,7 @@ if($("#uploadnew").css("display")=='none'){
                         $("#foot").html(data);
                     },
                     error: function (data) {
-                        alert('===');
+                        alert('请稍等加载中....');
                     },
                 })
             });
