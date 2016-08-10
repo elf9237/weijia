@@ -1125,3 +1125,11 @@ Stack trace:
 REQUEST_URI=/weijia/app/index/index.php?r=site/assign
 ---
 >>>>>>> bf1c2969438e940810b730c88fb4ba18bb737e59
+2016/08/10 20:09:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "less/rent".' in E:\xampp\htdocs\weijia\app\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\weijia\app\framework\web\CWebApplication.php(141): CWebApplication->runController('less/rent')
+#1 E:\xampp\htdocs\weijia\app\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\weijia\app\index\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/weijia/app/index/index.php?r=less/rent
+---
