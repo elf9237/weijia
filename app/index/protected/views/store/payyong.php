@@ -71,7 +71,7 @@
     </ul>
 </footer>
 <section class="ui-container table-pay">
-    <table style="width:380px" align="center" class="table font_td">
+    <table  align="center" class="table font_td">
         <tbody>
         <tr>
             <td width="20%" align="right">&nbsp;</td>
@@ -80,7 +80,7 @@
         
         <tr>
             <td align="right">房间名称：</td>
-            <td><?php echo $cyInfo->info_name; ?></td>
+            <td><span class="house-name"><?php echo $cyInfo->info_name; ?></span></td>
         </tr>
         <tr>
             <td align="right">月租金(元)：</td>

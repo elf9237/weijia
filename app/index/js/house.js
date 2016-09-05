@@ -8,4 +8,6 @@
         // $('.ui-header .ui-btn').click(function(){
         //     location.href= 'index.html';
         // });
+        wHeight=$(window).height();
+        $('.table-pay').height(wHeight);
             })

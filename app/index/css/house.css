@@ -836,3 +836,5 @@ a{color: #FF662C;}
 .xieyi{background: #FF7E00}
 .xieyi h3{font-size: 24px;text-align: center;color: #fff}
 .xieyi p{font-size: 20px;color: #fff}
+
+.house-name{display: inline-block;width: 145px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
