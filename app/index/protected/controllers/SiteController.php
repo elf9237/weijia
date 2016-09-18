@@ -28,8 +28,8 @@ class SiteController extends BaseController
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
             $cyinfoModel=  Info::model();
-            $newInfos=$cyinfoModel->findAllBySql("select * from {{info}} order by create_time desc limit 10");
-            $starInfos=$cyinfoModel->findAllBySql("select * from {{info}} order by create_time desc limit 5");
+            $newInfos=$cyinfoModel->findAllBySql("select * from {{info}} where audit_status=0 order by create_time desc limit 10");
+            $starInfos=$cyinfoModel->findAllBySql("select * from {{info}} where audit_status=0 order by create_time desc limit 5");
 
 		if( $this->wechat){
 			$this->render('index');

@@ -37,7 +37,7 @@ class AjaxController extends BaseController {
         if(!empty($_POST['district'])){
           $sql.=" and t.district like '%".$_POST['district']."%'";
       }
-          $sql.=" and t.price >= ".$_POST['sprice']." and t.price<=".$_POST['eprice']." order by (t.yong_jin+ifnull(t2.orderno,0)) desc,t.create_time DESC ";
+          $sql.=" and t.price >= ".$_POST['sprice']." and t.price<=".$_POST['eprice']." and t.audit_status=0 order by (t.yong_jin+ifnull(t2.orderno,0)) desc,t.create_time DESC ";
  $pagelist=new PageList($sql, $page, 10);
 
        echo json_encode($pagelist->pageAjax);
