@@ -279,7 +279,7 @@ $roomeqip->info_id=$info->id;
                 $loginuserid=$userLogin->id; 
          
           $page=$_POST['page'];
-       $sql="select t.* from cy_order t   where 1=1  and t.user_id= ".$loginuserid." " ;
+       $sql="select t.*,t1.lend_status from cy_order t  left join cy_info t1 on(t1.id=t.info_id) where 1=1  and t.user_id= ".$loginuserid." " ;
  $pagelist=new PageList($sql, $page, 5);
   echo json_encode($pagelist->pageAjax);
      }
@@ -291,7 +291,7 @@ $roomeqip->info_id=$info->id;
             $id=$_POST['id'];
            $order= Order::model()->findByPk($id);
            $cyInfo=  Info::model()->findByPk($order->info_id);
-           if($cyInfo->lend_type!=1&&$cyInfo->audit_status!=1&&$order->order_type='佣金'){
+           if($cyInfo->lend_status!=1&&$cyInfo->audit_status!=1&&$order->order_type='佣金'){
                $order->audit_status=3;
                $ar->status=$order->save();
            }else{

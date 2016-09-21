@@ -115,7 +115,7 @@
               var info_type=$("#info_type option:selected").val();
               var bprice=$("#bprice").val().trim();
                var eprice=$("#eprice").val().trim();
-               if(bprice>eprice){
+               if(parseInt(bprice)>parseInt(eprice)){
                    top.layer.msg("价格区间输入有误！！");
                    return;
                }

@@ -32,7 +32,7 @@
                 <div id="box_border">
                     <div id="box_top">搜索</div>
                     <div id="box_center">
-                        已租未租
+                        审核状态
                         <select name="audit_status" id="audit_status" class="ui_select01"
                                 >
                             <option value=""

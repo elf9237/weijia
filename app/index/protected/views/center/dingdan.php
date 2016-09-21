@@ -140,7 +140,7 @@
                             infoStatus="退款失败";
                         }
                         var strs='<td>不可操作</td>';
-                        if(value.order_type=="佣金"&&value.status==2)
+                        if(value.order_type=="佣金"&&value.lend_status==0&&value.audit_status==1)
                             strs= '<td class="onCao"><a  onclick="tui('+value.id+')">退款</a></td></tr>';
                         
                          

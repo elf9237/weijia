@@ -231,7 +231,7 @@ if(!empty($_POST['username'])){
         $message->receiver=$fangzi->user_id;
         $message->message_type=2;
         $message->message='你所上传的房源系虚假房源已被下架，房源名称：'.$fangzi->info_name;
-        if($fangzi->save()&&$message.save()){
+        if($fangzi->save()&&$message->save()){
         $ar->status=true;
         
         }else{
