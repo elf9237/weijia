@@ -99,12 +99,11 @@
 <img src="img/bzp-js2.jpg" width="100%"></div>
 </section>
 <div id="layer-photos-demo" class="layer-photos-demo" style="display: none">
-<img  layer-src="img/banner01.jpg" src="img/banner01.jpg" alt="广告"></div>
+<img  layer-src="img/bannerslide.jpg" src="img/bannerslide.jpg" alt="广告"></div>
 
 <script src="lib/zepto.min.js"></script>
 <script src="lib/jquery.min.js"></script>
 <script src="js/frozen.js"></script>
-<script src="lib/layer/layer.js"></script>
 <script type="text/javascript">
     $(function(){
         $('.redpacketFlyBig').css('display','block');
@@ -151,12 +150,7 @@ $(function(){
                         $("#footmenu").html(data);
                      },
         　　　　　　error: function (data) {
-<<<<<<< HEAD
-                                layer.msg('正在加载中');
-                                },
-=======
-                                 alert('请稍等加载中....');},
->>>>>>> bf1c2969438e940810b730c88fb4ba18bb737e59
+                                 alert('===');},
 　　　　        })
         });
         </script>
@@ -171,12 +165,7 @@ $(function(){
                         $("#headmenu").html(data);
                     },
                     error: function (data) {
-<<<<<<< HEAD
-                       layer.msg('正在加载中');
-                    },
-=======
-                        alert('请稍等加载中....');},
->>>>>>> bf1c2969438e940810b730c88fb4ba18bb737e59
+                        alert('===');},
                 })
             });
         </script>

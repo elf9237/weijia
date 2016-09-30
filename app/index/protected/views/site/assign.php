@@ -30,6 +30,7 @@
     <!--[if IE 8]><meta http-equiv="X-UA-Compatible" content="IE=8"><![endif]-->
     <link rel="stylesheet" type="text/css" href="./css/common_pc.css" />
     <link rel="stylesheet" type="text/css" href="./css/m-index.css" />
+    <link href="css/house.css" rel="stylesheet">
 </head>
 <body>
 <div id="op-wrap">
@@ -42,10 +43,13 @@
             <div class="op-alone op-alone-register">
                 <div class="auto-middle">
                     <div class="op-register">
+                    <div style="display: none">
+                        
                          <?php $form=$this->beginWidget('CActiveForm', array(
                 'id'=>'user-input-form',
                 'enableAjaxValidation'=>false
             )); ?>
+                    </div>
                             <h3><span class="titleico">注 册</span></h3>
                             <div class="userbox">
                                 <div class=""></div>
@@ -76,14 +80,13 @@
                                 <input type="password" class="passWord2" placeholder="确认密码" name="password2" datatype="*" recheck="userpassword" errormsg="您两次输入的账号密码不一致！">
                                 <span class="tip Validform_checktip"></span>
                             </div>
-                            <div class="passbox" style="background: #efefef">
+                            <div class="passbox clearfix" style="background: #efefef;min-height: 70px">
                                 <div tabindex="0" class="tm_itemtext clearfix">
                                     <span  class="sel-txt">请选择区域</span>
-                                    <div id="city_4" >
-                  
-                    <select id="prov" name='province' class="prov input" ></select>
-                    <select id="city" name='city' class="city input" disabled="disabled"></select>
-                    <select id="dist" name='zone' class="dist input" disabled="disabled"></select>
+                                    <div id="city_4" class="clearfix">
+                                        <select id="prov" name='province' class="prov input" ></select>
+                                        <select id="city" name='city' class="city input" disabled="disabled"></select>
+                                        <select id="dist" name='zone' class="dist input" disabled="disabled"></select>
                                     </div>
                                 </div>
                             </div>
@@ -116,12 +119,13 @@
 <script type="text/javascript">
     $(function(){
         $('.redpacketFlyBig').css('display','block');
+
         setInterval("myInterval()",3000);
 
     });
     function myInterval(){
         $('.redpacketFlyBig').css('display','none');
-    }
+    };
 </script>
 <script type="text/javascript">
     $(function(){

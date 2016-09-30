@@ -279,7 +279,7 @@ $roomeqip->info_id=$info->id;
                 $loginuserid=$userLogin->id; 
          
           $page=$_POST['page'];
-       $sql="select t.*,t1.lend_status from cy_order t  left join cy_info t1 on(t1.id=t.info_id) where 1=1  and t.user_id= ".$loginuserid." " ;
+       $sql="select t.* from cy_order t left join cy_info t1 on(t1.id=t.info_id)  where 1=1  and t.user_id= ".$loginuserid." " ;
  $pagelist=new PageList($sql, $page, 5);
   echo json_encode($pagelist->pageAjax);
      }

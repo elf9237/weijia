@@ -60,7 +60,7 @@
     <i></i>
     <p>资料已提交审核</p>
     <div class="ui-notice-btn">
-        <a class="ui-btn-primary ui-btn-lg" href="index.php?r=weijia">返回</a>
+        <a class="ui-btn-primary ui-btn-lg" href="index.php?r=weiJia/index">返回</a>
     </div>
 </section>
 <script src="lib/zepto.min.js"></script>

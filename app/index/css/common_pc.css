@@ -1494,7 +1494,7 @@ body.bodyOverflowHide {
 
 #op-content .op-alone-register {
 	padding: 30px 0;
-	background: #e5e5e5
+	background: #EFEFEF
 }
 
 #op-content .op-alone-register h3 .titleico {
@@ -1505,7 +1505,7 @@ body.bodyOverflowHide {
 #op-content .op-alone-register .op-register {
 	margin: 0 auto;
 	max-width: 320px;
-	padding: 40px;
+	padding: 0 10px;
 	background: #efefef
 }
 
@@ -1528,7 +1528,6 @@ body.bodyOverflowHide {
 }
 
 .op-alone-login .ft-operate .link,.op-alone-register .ft-operate .link,.op-user-login .ft-operate .link,.op-user-register .ft-operate .link {
-	float: right;
 	font-size: 14px;
 	color: #1d84ad;
 	cursor: pointer
@@ -4667,7 +4666,14 @@ body,html {
 }
 
 /*注册*/
-.ft-operate{width: 334px}
-.ft-operate a{display: block;background: #999;color: #fff!important;width: 100%;height: 50px;line-height: 50px;text-align: center;}
+.ft-operate{width: 100%;}
+.ft-operate a{display: block;background: #999;color: #fff!important;width: 100%;height: 50px;line-height: 50px;text-align: center;padding: 0 6px}
 .sel-txt{display: block;height: 40px;line-height: 40px;}
- #city_4 select{width:100px;height: 40px;border: none;}
+ #city_4 select{width:90px;height: 40px;border: none;}
+ @media screen and (max-width: 320px){
+ 	 #city_4 select{width:75px;}
+ }
+  @media screen and (min-width: 320px)and(max-width: 376px){
+ 	 #city_4 select{width:90px;}
+ }
+ .otherlogin{width: 100%}

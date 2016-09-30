@@ -302,13 +302,17 @@ class CenterController extends BaseController{
 
     }
     
-    public function actionToUpdateMyhome($infoid){
+   public function actionToUpdateMyhome($infoid){
         $cyinfo = Info::model()->findByPk($infoid);
-         $this -> renderPartial('update_myhome',array("cyinfo"=>$cyinfo));
+        $equs=  Equip::model()->findAll();
+         $equids=  RoomEquip::model()->findAll('info_id='.$infoid);
+         $this -> renderPartial('update_myhome',array("cyinfo"=>$cyinfo,"equs"=>$equs,"equids"=>$equids));
     }
     
     
       public function actionUpdateMyhome($infoid){
+          $roomeqip = new RoomEquip();
+          $roomeqip->deleteAll("info_id=".$infoid);
           $ar = new AjaxReturn();
         $cyinfo = Info::model()->findByPk($infoid);
          $cyinfo->price=$_POST["price"];
@@ -317,7 +321,36 @@ class CenterController extends BaseController{
          $cyinfo->mian_url=$_POST["mian_url"];
          $cyinfo->public_url=$_POST["public_url"];
          $cyinfo->room_url=$_POST["room_url"];
+         $cyinfo->bus=$_POST["bus"];
+         $cyinfo->area=$_POST["area"];
+         $cyinfo->room_url=$_POST["room_url"];
          $ar->status=$cyinfo->save();
+         
+         
+         
+     $shebei=$_POST['shebei'];
+     $shebeis = explode(',',$shebei);
+
+
+   if(count($shebeis)>0){  
+     $transaction=Yii::app()->db->beginTransaction();
+try{
+    for($index=0;$index<count($shebeis);$index++)
+{
+$roomeqip=new RoomEquip();
+$roomeqip->info_id=$infoid;
+ $roomeqip->equip_id=$shebeis[$index];
+ $roomeqip->equiped=1;
+ $roomeqip->room_id=-1;
+ $roomeqip->save();
+} 
+
+
+  $transaction->commit();
+} catch(Exception $e){
+  $transaction->rollBack();
+      }
+   }
         echo json_encode($ar);
     }
 //我的预约

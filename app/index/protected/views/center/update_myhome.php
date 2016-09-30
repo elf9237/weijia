@@ -100,7 +100,60 @@
                             <span></span>
                         </div></li>
                         
+                         <li class="_item huxingLabel"><span class="gr_title">面积</span>
+                            <span class="gr_after">M <sup>2&nbsp;</sup></span>
+                        <div class="gr_itemtext">
+                            
+                               
+                                <div class="gr_itemt_con">
+                                  <input type="number" pattern="[0-9]*" id="area" value="<?php echo $cyinfo->area?>" name="area" max="1000" min="-10" />
+                                </div>
+                         
+                        </div>
+                        <div class="errorTip huxingLabelerror">
+                            <div class="errorTipDiv"></div>
+                            <span></span>
+                        </div></li>
                         
+                         <li class="_item huxingLabel"><span class="gr_title">设备</span>
+                        <div class="gr_itemtext" style="height:180px;line-height: 30px">
+                            
+                            <div class="rows_content">
+                  <div class="tip"></div>
+                  <div class="checkbox_wrap clearfix" name="HouseAllocation" nameid="1022">
+                      <?php  
+                      foreach ($equs as $eq){
+                      ?>
+                           <span style="display:inline-block;margin-right: 10px;width:28%">
+                               <input type="checkbox" <?php foreach($equids as $eqd){
+                                   if($eq->id==$eqd->equip_id){
+                                       echo "checked";
+                                   }
+                               }?>  style="width:30%;appearance:radio;-webkit-appearance:radio;display: inline-block" class="shebei" value="<?php echo $eq->id?>">
+                     <?php echo $eq->equip?></span>
+                      <?php  }?>
+                     
+                    <div class="select_all">
+                      <span>全选</span></div>
+                  </div>
+                </div> 
+                        </div>
+                        <div class="errorTip huxingLabelerror">
+                            <div class="errorTipDiv"></div>
+                            <span></span>
+                        </div></li>
+                        
+                        <li class="_item priceNumber"><span class="nu_title">公交</span>
+                        <div class="nu_itemtext">
+                            <span class="nu_after"></span>
+                            <div class="nu_itemtext_con">
+                                <input   id="bus" name="bus" value="<?php echo $cyinfo->bus?>"  />
+                            </div>
+                        </div>
+                        <div class="errorTip MinPriceerror">
+                            <div class="errorTipDiv"></div>
+                            <span>undefined</span>
+                        </div></li> 
                          <li class="_item titleInput"><span class="tx_title">详细信息</span>
                         <div class="tx_itemtext" style="height:150px">
                             <textarea type="text" style="width:90%" value="<?php echo $cyinfo->detail?>" placeholder="请输入6-30字" id="detail" name="detail" rows="3" ><?php echo $cyinfo->detail?></textarea>
@@ -271,9 +324,16 @@ function submitmyhome(){
     var rex=/^\+?[1-9][0-9]*$/;
     var info_name=$("#info_name").val().trim();
      var detail=$("#detail").val().trim();
-     
+     var bus =$("#bus").val().trim();
+      var area=$("#area").val().trim();
+      var shebei=[];
+       $("input[type='checkbox']:checked").each(
+               function(){
+                   shebei.push($(this).val());
+               }
+                );
       var price =$("#price").val().trim();
-        if(!rex.test(price)){
+        if(!rex.test(price)||!rex.test(area)){
             layer.msg("请输入正确数字");
             return;
         }
@@ -294,6 +354,9 @@ function submitmyhome(){
             price:price,
             detail:detail,
             info_name:info_name,
+             shebei:shebei.join(","),
+               bus:bus,
+                area:area,
             mian_url:miams,
             public_url:publics,
             room_url:roomsurl
