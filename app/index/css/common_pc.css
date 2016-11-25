@@ -625,7 +625,6 @@ body.bodyOverflowHide {
 }
 
 .op-alone {
-	padding: 30px 0;
 	background: #e5e5e5
 }
 
@@ -1150,7 +1149,6 @@ body.bodyOverflowHide {
 }
 
 #op-content .op-alone-login {
-	padding: 30px 0;
 	background: #e5e5e5
 }
 
@@ -1175,7 +1173,8 @@ body.bodyOverflowHide {
 
 #op-content .op-register a,#op-content .op-register a:link,#op-content .op-register a:visited,.op-user-register .op-register a,.op-user-register .op-register a:link,.op-user-register .op-register a:visited {
 	font-size: 14px;
-	color: #1d84ad
+	color: #1d84ad;
+	box-sizing: border-box;
 }
 
 #op-content .op-register a:hover,.op-user-register .op-register a:hover {
@@ -4669,11 +4668,16 @@ body,html {
 .ft-operate{width: 100%;}
 .ft-operate a{display: block;background: #999;color: #fff!important;width: 100%;height: 50px;line-height: 50px;text-align: center;padding: 0 6px}
 .sel-txt{display: block;height: 40px;line-height: 40px;}
- #city_4 select{width:90px;height: 40px;border: none;}
+ #city_4 select{width:80px;height: 40px;border: none;}
  @media screen and (max-width: 320px){
- 	 #city_4 select{width:75px;}
+ 	 #city_4 select{width:70px;}
  }
   @media screen and (min-width: 320px)and(max-width: 376px){
- 	 #city_4 select{width:90px;}
+ 	 #city_4 select{width:80px;}
  }
  .otherlogin{width: 100%}
+
+
+ /*登入*/
+ #op-content .op-login .loginbtn{box-sizing: border-box;}
+.op-alone-login .ft-operate .link{box-sizing: border-box;}

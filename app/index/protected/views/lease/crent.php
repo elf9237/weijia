@@ -9,53 +9,6 @@
         <link rel="stylesheet" href="css/frozen.css">
         <link href="./public/css/iSlider.css" rel="stylesheet">
         <link href="css/house.css" rel="stylesheet">
-        <style>
-            /*ul wrapper*/
-            #iSlider-wrapper {
-                height: 90%;
-                width: 100%;
-                overflow: hidden;
-                position: absolute;
-            }
-            #iSlider-wrapper ul {
-                list-style: none;
-                margin: 0;
-                padding: 0;
-                height: 100%;
-                overflow: hidden;
-            }
-
-            #iSlider-wrapper li {
-                position: absolute;
-                margin: 0;
-                padding: 0;
-                height: 100%;
-                overflow: hidden;
-                display: -webkit-box;
-                -webkit-box-pack: center;
-                -webkit-box-align: center;
-                list-style: none;
-            }
-
-            #iSlider-wrapper li img {
-                max-width: 100%;
-                max-height: 100%;
-            }
-
-            .islider-btn-outer {
-                background-color: rgba(0, 0, 0, .5);
-                border-radius: 99px;
-            }
-
-            .islider-btn-inner {
-                height: 30%;
-                width: 30%;
-                margin-top: 34%;
-            }
-            .gr_itemtext span input{
-                width:30%;appearance:radio;-webkit-appearance:radio;display: inline-block
-            }
-        </style>
     </head>
     <body ontouchstart="">
         <!-- <header class="ui-header ui-header-positive ui-border-b">
@@ -78,10 +31,10 @@
             <div class="list"> 
                 <div class="notNullGroup"> 
                    <li class="_item priceNumber"><span class="nu_title">类别</span>
-                        <div class="nu_itemtext">
-                            <span checked="checked" style="display:inline-block;margin-right: 10px;width:28%"><input type="radio" name="info_type" id="inlineRadio1" value="0" style="width:30%;appearance:radio;-webkit-appearance:radio;display: inline-block" checked> 月租房</span>
-                            <span style="display:inline-block;margin-right: 10px;width:28%"><input type="radio" name="info_type" id="inlineRadio2" value="1" style="width:30%;appearance:radio;-webkit-appearance:radio;display: inline-block"> 日租房</span>
-                            <span style="display:inline-block;margin-right: 10px;width:28%"> <input type="radio" name="info_type" id="inlineRadio2" value="2" style="width:30%;appearance:radio;-webkit-appearance:radio;display: inline-block"> 商铺 </span>  
+                        <div class="nu_itemtext nu_itemtext_type">
+                            <span checked="checked"><input type="radio" name="info_type" id="inlineRadio1" value="0" checked> 月租房</span>
+                            <span><input type="radio" name="info_type" id="inlineRadio2" value="1"> 日租房</span>
+                            <span> <input type="radio" name="info_type" id="inlineRadio2" value="2"> 商铺 </span>  
                         </div>
                         </li>
                    
@@ -100,7 +53,7 @@
                         </div></li>
                     <li class="_item localArea"><span class="tm_title">区域</span><span class="tm_after"><span></span></span>
                         <div tabindex="0" class="tm_itemtext">
-                             <div id="city_4" style='float: right;margin-right:10%'>
+                             <div id="city_4" style='float: right;margin-right:10px'>
                     <select id="prov" class="prov input" ></select> 
                     <select id="city" class="city input" disabled="disabled"></select>
                     <select id="dist" class="dist input" disabled="disabled"></select>
@@ -291,7 +244,7 @@
                         
                          <li class="_item titleInput"><span class="tx_title">详细信息</span>
                         <div class="tx_itemtext" style="height:150px">
-                            <textarea type="text" style="width:90%" value="" placeholder="请输入6-30字" id="detail" name="detail" rows="3" ></textarea>
+                            <textarea type="text" style="width:100%;height: 130px;padding-top: 10px" value="" placeholder="请输入6-30字" id="detail" name="detail" rows="3" ></textarea>
                         </div>
                         <div class="errorTip Titleerror">
                             <div class="errorTipDiv"></div>

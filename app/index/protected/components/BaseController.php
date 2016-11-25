@@ -27,9 +27,9 @@ class BaseController extends CController
 //		
 //	}
 	public function init(){
-		$this->wechat = !(strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') == false);
+		// $this->wechat = !(strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') == false);
 //		return  true;
-		// $this->wechat=true;
+		$this->wechat=true;
        if($this->wechat){
            $openid = $this->getOpenID();
            $usermodel = new User();
@@ -53,7 +53,8 @@ class BaseController extends CController
     public function getOpenID()
     {
         $session = Yii::app()->session;
-        $openid = $session['openid'];
+        // $openid = $session['openid'];
+        $openid = "ofJtawOy4ybdLCR5eATmPi3h1sR8";
         if(empty($openid)){
             //通过code获得openid
             if (!isset($_GET['code'])){

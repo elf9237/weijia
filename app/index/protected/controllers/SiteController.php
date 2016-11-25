@@ -205,10 +205,10 @@ class SiteController extends BaseController
             $openid = $this->getOpenID();
             $usermodel = new User();
             $newUser = $usermodel::model()->find('openid=:openid', array(':openid'=>$openid));
-            if(!empty($newUser)){
-                Yii::app()->session['user'] = $newUser;
-                $this->redirect(Yii::app()->user->returnUrl);
-            }
+            // if(!empty($newUser)){
+            //     Yii::app()->session['user'] = $newUser;
+            //     $this->redirect(Yii::app()->user->returnUrl);
+            // }
         }
 
 		// if it is ajax validation request
